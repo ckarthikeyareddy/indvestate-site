@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/indvestate-design-system-26aecf2e-9619-4b3c-a07d-789c7bd1f9d5/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/indvestate-design-system-26aecf2e-9619-4b3c-a07d-789c7bd1f9d5/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/indvestate-design-system-26aecf2e-9619-4b3c-a07d-789c7bd1f9d5/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/indvestate-design-system-26aecf2e-9619-4b3c-a07d-789c7bd1f9d5/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/indvestate-design-system-26aecf2e-9619-4b3c-a07d-789c7bd1f9d5/tokens/motion.css">
+  <link rel="stylesheet" href="_ds/indvestate-design-system-26aecf2e-9619-4b3c-a07d-789c7bd1f9d5/tokens/base.css">
+  <link rel="stylesheet" href="_ds/indvestate-design-system-26aecf2e-9619-4b3c-a07d-789c7bd1f9d5/components/components.css">
+  <link rel="stylesheet" href="_ds/indvestate-design-system-26aecf2e-9619-4b3c-a07d-789c7bd1f9d5/styles.css">
+  <script src="_ds/indvestate-design-system-26aecf2e-9619-4b3c-a07d-789c7bd1f9d5/_ds_bundle.js"></script>
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+  <style>
+    html,body{margin:0;background:var(--void);color:var(--ink)}
+    a{color:var(--ink);text-decoration-color:var(--hairline-strong)}a:hover{color:var(--saffron-ink)}
+    .pg{container-type:inline-size;container-name:page;background:var(--void);color:var(--ink);margin:0 auto;position:relative;overflow-x:clip}
+    .pg-fluid{width:100%}.pg-1440{width:1440px}.pg-390{width:390px;margin:0;border-right:1px solid var(--hairline)}
+    .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+    .sec{padding:64px 0;border-top:1px solid var(--hairline)}
+    .hero{position:relative;height:100vh;min-height:620px;max-height:920px;overflow:hidden}
+    .pg-1440 .hero{height:810px;max-height:none}.pg-390 .hero{height:760px;min-height:0}
+    .hero-plate{position:absolute;left:24px;bottom:48px;width:min(640px,calc(100% - 48px))}
+    .g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px;align-items:start}
+    .split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:start}
+    .g5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border:1px solid var(--hairline)}
+    .g5>*{border-left:1px solid var(--hairline)}.g5>*:first-child{border-left:0}
+    .m4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+    .m4>*{border-left:1px solid var(--hairline);padding:32px 24px 0}.m4>*:first-child{border-left:0;padding-left:0}
+    .method-pin{height:300vh}.method-stick{position:sticky;top:64px;min-height:calc(100vh - 64px);display:flex;flex-direction:column;justify-content:center}
+    .method-static{height:auto}.method-static .method-stick{position:static;min-height:0}
+    .foot{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1fr);gap:48px}
+    .m-only{display:none}
+    .inside-cols{display:grid;grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr);gap:48px;align-items:start}
+    .brief{display:grid;grid-template-columns:140px minmax(0,1fr) 120px;gap:24px;align-items:baseline;padding:24px 0;border-top:1px solid var(--hairline)}
+    @container page (max-width:1000px){
+      .wrap{padding:0 16px}.sec{padding:48px 0}
+      .hero-plate{left:16px;right:16px;bottom:24px;width:auto}
+      .g2,.split,.foot,.inside-cols{grid-template-columns:minmax(0,1fr);gap:32px}
+      .g5{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .g5>*{border-left:0;border-top:1px solid var(--hairline)}
+      .g5>*:nth-child(odd){border-right:1px solid var(--hairline)}
+      .g5>*:nth-child(-n+2){border-top:0}
+      .g5>*:last-child{grid-column:1 / -1;border-right:0}
+      .m4{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .m4>*{padding:24px 16px 0}.m4>*:nth-child(odd){border-left:0;padding-left:0}.m4>*:nth-child(n+3){border-top:1px solid var(--hairline);margin-top:24px}
+      .d-only{display:none !important}.m-only{display:flex}
+      .h1{font-size:38px !important}.h2{font-size:30px !important}
+      .brief{grid-template-columns:minmax(0,1fr);gap:8px}
+      .method-stick{top:101px;min-height:calc(100vh - 101px)}
+    }
+  </style>
+</helmet>
+<div id="page" class="pg pg-{{ vp }}" style="zoom: {{ zoom }}">
+
+  <!-- 01 NAV -->
+  <div ref="{{ navRef }}" data-screen-label="01 Nav" style="position:sticky;top:0;z-index:40;background:var(--void)">
+    <div class="d-only">
+      <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.Navbar" links="{{ navLinks }}" status="{{ navPill }}" on-navigate="{{ nav }}" on-cta="{{ goInside }}" cta="Join the inside list" hint-size="100%,64px"></x-import>
+    </div>
+    <div class="m-only" style="flex-direction:column;background:var(--void)">
+      <div style="height:64px;padding:0 16px;display:flex;align-items:center;justify-content:space-between;gap:12px">
+        <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.Wordmark" size="{{ n20 }}" hint-size="140px,20px"></x-import>
+        <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.Button" on-click="{{ goInside }}" hint-size="auto,44px">Join the inside list</x-import>
+      </div>
+      <div style="height:36px;padding:0 16px;display:flex;align-items:center;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)">
+        <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.StatusPill" kind="owner-listed" label="RERA agent · in process" hint-size="auto,24px"></x-import>
+      </div>
+    </div>
+  </div>
+
+  <!-- 02 HERO -->
+  <section class="hero iv-grid-bg" data-screen-label="02 Hero" aria-label="Hero">
+    <div style="position:absolute;inset:-18% -8%;transform:perspective(1300px) rotateX(50deg) scale(1.12);transform-origin:50% 62%">
+      <div class="iv-drift" style="position:absolute;inset:0">
+        <svg viewBox="0 0 1200 800" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" style="display:block" aria-hidden="true">
+          <g fill="none" stroke="var(--ink)" stroke-width="1" opacity="0.07">
+            <path d="M-20 180 C 200 120, 380 260, 600 200 S 1000 90, 1240 160"></path>
+            <path d="M-20 300 C 220 240, 400 380, 640 310 S 980 230, 1240 300"></path>
+            <path d="M-20 440 C 180 400, 420 520, 660 450 S 1000 380, 1240 460"></path>
+            <path d="M-20 580 C 240 540, 400 660, 700 590 S 1020 520, 1240 600"></path>
+            <path d="M-20 700 C 200 680, 460 780, 720 710 S 1040 660, 1240 720"></path>
+          </g>
+          <g fill="none" stroke="var(--ink)" stroke-width="1" opacity="0.14">
+            <path d="M600 420 L 40 120 M600 420 L 600 -20 M600 420 L 1180 60 M600 420 L 1240 420 M600 420 L 1120 820 M600 420 L 560 820 M600 420 L 40 760 M600 420 L -20 400"></path>
+            <ellipse cx="600" cy="420" rx="170" ry="120"></ellipse>
+            <path d="M480 300 H 720 M470 340 H 740 M470 380 H 760 M470 460 H 760 M480 500 H 740 M500 540 H 720 M520 280 V 560 M560 270 V 570 M600 265 V 575 M640 270 V 570 M680 280 V 560"></path>
+            <path d="M260 560 H 420 M260 600 H 430 M270 640 H 420 M300 540 V 660 M340 540 V 660 M380 540 V 660"></path>
+            <path d="M820 180 H 980 M820 220 H 990 M830 260 H 980 M860 160 V 280 M900 160 V 280 M940 160 V 280"></path>
+          </g>
+          <ellipse cx="640" cy="372" rx="26" ry="18" fill="none" stroke="var(--signal)" stroke-width="1" opacity="0.5"></ellipse>
+          <ellipse cx="600" cy="430" rx="470" ry="320" fill="none" stroke="var(--signal)" stroke-width="1.5" opacity="0.85"></ellipse>
+          <g fill="none" stroke="var(--signal)" stroke-width="1.25" stroke-dasharray="6 5" opacity="0.8">
+            <path d="M300 520 L 440 470 L 600 430 L 780 380 L 960 300"></path>
+            <path d="M600 430 L 620 580 L 700 720"></path>
+            <path d="M600 430 L 560 290 L 500 150"></path>
+          </g>
+          <g style="font-family:var(--font-mono);font-size:11px;letter-spacing:0.18em" fill="var(--ink-muted)">
+            <text x="1040" y="236">ORR</text><text x="700" y="744">METRO PH-II</text><text x="676" y="366">HUSSAIN SAGAR</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div style="position:absolute;left:28%;top:36%" on-mouse-enter="{{ hoverA }}" on-mouse-leave="{{ hoverNone }}">
+      <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.MapMarker" label="{{ lblA }}" hint-size="auto,24px"></x-import>
+      <sc-if value="{{ isHoverA }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;left:0;top:28px;width:240px;background:var(--scrim);border:1px solid var(--hairline);padding:4px 14px 0">
+          <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.DataRow" label="Area" value="2,400 sq ft" hint-size="100%,44px"></x-import>
+          <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.DataRow" label="EC" value="1983–2026" tone="verified" last="{{ true }}" hint-size="100%,44px"></x-import>
+        </div>
+      </sc-if>
+    </div>
+    <div style="position:absolute;left:60%;top:40%" on-mouse-enter="{{ hoverB }}" on-mouse-leave="{{ hoverNone }}">
+      <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.MapMarker" label="{{ lblB }}" hint-size="auto,24px"></x-import>
+      <sc-if value="{{ isHoverB }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;left:0;top:28px;width:240px;background:var(--scrim);border:1px solid var(--hairline);padding:4px 14px 0">
+          <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.DataRow" label="Area" value="1,480 sq ft" hint-size="100%,44px"></x-import>
+          <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.DataRow" label="EC" value="1996–2026" tone="verified" last="{{ true }}" hint-size="100%,44px"></x-import>
+        </div>
+      </sc-if>
+    </div>
+    <div style="position:absolute;left:53%;top:66%" on-mouse-enter="{{ hoverN }}" on-mouse-leave="{{ hoverNone }}">
+      <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.MapMarker" live="{{ heroLive }}" label="{{ lblN }}" hint-size="auto,24px"></x-import>
+      <sc-if value="{{ isHoverN }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;left:0;top:28px;width:240px;background:var(--scrim);border:1px solid var(--hairline);padding:4px 14px 0">
+          <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.DataRow" label="Status" value="Documents in review" tone="signal" last="{{ true }}" hint-size="100%,44px"></x-import>
+        </div>
+      </sc-if>
+    </div>
+    <span class="iv-data" style="position:absolute;right:24px;top:24px;color:var(--ink-muted)">17.3850° N, 78.4867° E</span>
+    <sc-if value="{{ notes }}" hint-placeholder-val="{{ true }}">
+      <span class="iv-label d-only" style="position:absolute;right:24px;top:52px;color:var(--signal-ink);text-align:right;max-width:360px;line-height:1.6">// MOTION SPEC · map slow-drift ±6px 20s · markers pulse-ring · drag orbits ±15° · marker hover → DataRow tooltip</span>
+    </sc-if>
+    <div class="hero-plate" style="background:var(--scrim);padding:32px;display:flex;flex-direction:column;gap:24px">
+      <span class="iv-label" style="color:var(--signal-ink)">Land intelligence · Hyderabad</span>
+      <h1 class="iv-h1 h1" style="margin:0">Land moves before the {{ heroWord }} notices.</h1>
+      <p class="iv-body-lg" style="margin:0;color:var(--ink-muted)">We study the ground, reject most of it, and open access only when the paperwork holds.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.Button" on-click="{{ goInside }}" hint-size="auto,44px">Join the inside list</x-import>
+        <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.Button" variant="ghost" on-click="{{ goLive }}" hint-size="auto,44px">See what passed →</x-import>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 LIVE NOW -->
+  <section id="live" class="sec" data-screen-label="03 Live now">
+    <div class="wrap" style="display:flex;flex-direction:column;gap:40px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap">
+        <h2 class="iv-h2 h2" style="margin:0;max-width:720px">Two passed. Here is what we checked.</h2>
+        <span class="iv-label" style="color:var(--ink-muted)">Live</span>
+      </div>
+      <div class="g2">
+        <div style="display:flex;flex-direction:column;gap:12px;min-width:0">
+          <sc-if value="{{ notes }}" hint-placeholder-val="{{ true }}"><span class="iv-label" style="color:var(--signal-ink)">// SAMPLE DATA · [FROM LISTING 01]</span></sc-if>
+          <article style="background:var(--carbon);border:1px solid var(--hairline);display:flex;flex-direction:column;min-width:0">
+            <div style="display:flex;flex-wrap:wrap;gap:8px;padding:16px 20px;border-bottom:1px solid var(--hairline)">
+              <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.StatusPill" kind="owner-listed" hint-size="auto,24px"></x-import>
+              <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.StatusPill" kind="oc" hint-size="auto,24px"></x-import>
+              <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.StatusPill" kind="bank-loan" hint-size="auto,24px"></x-import>
+            </div>
+            <div style="padding:20px 20px 16px;display:flex;flex-direction:column;gap:8px">
+              <span class="iv-label" style="color:var(--signal-ink)">Drop 01 — Southline</span>
+              <h3 class="iv-h3" style="margin:0">3 BHK resale, east-facing, 7th floor</h3>
+              <span class="iv-data" style="color:var(--ink-muted);overflow-wrap:anywhere">Kokapet · Gandipet (M) · 17.4065° N, 78.3410° E</span>
+            </div>
+            <div class="iv-plus-grid" style="aspect-ratio:16 / 10;background:var(--graphite);border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);position:relative">
+              <span class="iv-label" style="position:absolute;left:16px;bottom:14px;color:var(--ink-muted)">Media — owner-supplied photo · [PHOTO 01]</span>
+            </div>
+            <div style="padding:4px 20px 0">
+              <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.DataRow" label="Area" value="2,400 sq ft super built" hint-size="100%,44px"></x-import>
+              <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.DataRow" label="EC range" value="1983–2026" tone="verified" hint-size="100%,44px"></x-import>
+              <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.DataRow" label="Facing" value="East" hint-size="100%,44px"></x-import>
+              <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.DataRow" label="Floor" value="7 of 12" hint-size="100%,44px"></x-import>
+              <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.DataRow" label="Loans pre-approved" value="SBI · HDFC" tone="verified" last="{{ true }}" hint-size="100%,44px"></x-import>
+            </div>
+            <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;padding:16px 20px 20px">
+              <span class="iv-price">₹ 2.10 Cr</span>
+              <span class="iv-data" style="color:var(--ink-muted)">≈ US$ 2,52,000 · ₹ 8,750 / sq ft</span>
+            </div>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;padding:0 20px 20px">
+              <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.Button" variant="secondary" hint-size="auto,44px">Book a site visit</x-import>
+              <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.Button" variant="ghost" hint-size="auto,44px">WhatsApp the desk ↗</x-import>
+            </div>
+            <div style="padding:0 20px 20px">
+              <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.Disclaimer" compact="{{ true }}" hint-size="100%,120px"></x-import>
+            </div>
+          </article>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px;min-width:0">
+          <sc-if value="{{ notes }}" hint-placeholder-val="{{ true }}"><span class="iv-label" style="color:var(--signal-ink)">// SAMPLE DATA · [FROM LISTING 02]</span></sc-if>
+          <article style="background:var(--carbon);border:1px solid var(--hairline);display:flex;flex-direction:column;min-width:0">
+            <div style="display:flex;flex-wrap:wrap;gap:8px;padding:16px 20px;border-bottom:1px solid var(--hairline)">
+              <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.StatusPill" kind="owner-listed" hint-size="auto,24px"></x-import>
+              <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.StatusPill" kind="oc" hint-size="auto,24px"></x-import>
+              <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.StatusPill" kind="bank-loan" hint-size="auto,24px"></x-import>
+              <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.StatusPill" kind="nri-ready" hint-size="auto,24px"></x-import>
+            </div>
+            <div style="padding:20px 20px 16px;display:flex;flex-direction:column;gap:8px">
+              <span class="iv-label" style="color:var(--signal-ink)">Drop 02 — Northgate</span>
+              <h3 class="iv-h3" style="margin:0">2 BHK resale, north-facing, 3rd floor</h3>
+              <span class="iv-data" style="color:var(--ink-muted);overflow-wrap:anywhere">Kompally · Quthbullapur (M) · 17.5370° N, 78.4860° E</span>
+            </div>
+            <div class="iv-plus-grid" style="aspect-ratio:16 / 10;background:var(--graphite);border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);position:relative">
+              <span class="iv-label" style="position:absolute;left:16px;bottom:14px;color:var(--ink-muted)">Media — owner-supplied photo · [PHOTO 02]</span>
+            </div>
+            <div style="padding:4px 20px 0">
+              <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.DataRow" label="Area" value="1,480 sq ft super built" hint-size="100%,44px"></x-import>
+              <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.DataRow" label="EC range" value="1996–2026" tone="verified" hint-size="100%,44px"></x-import>
+              <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.DataRow" label="Facing" value="North" hint-size="100%,44px"></x-import>
+              <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.DataRow" label="Floor" value="3 of 5" hint-size="100%,44px"></x-import>
+              <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.DataRow" label="Loans pre-approved" value="SBI" tone="verified" last="{{ true }}" hint-size="100%,44px"></x-import>
+            </div>
+            <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;padding:16px 20px 20px">
+              <span class="iv-price">₹ 1.12 Cr</span>
+              <span class="iv-data" style="color:var(--ink-muted)">≈ US$ 1,34,000 · ₹ 7,570 / sq ft</span>
+            </div>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;padding:0 20px 20px">
+              <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.Button" variant="secondary" hint-size="auto,44px">Book a site visit</x-import>
+              <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.Button" variant="ghost" hint-size="auto,44px">WhatsApp the desk ↗</x-import>
+            </div>
+            <div style="padding:0 20px 20px">
+              <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.Disclaimer" compact="{{ true }}" hint-size="100%,120px"></x-import>
+            </div>
+          </article>
+        </div>
+      </div>
+      <sc-if value="{{ notes }}" hint-placeholder-val="{{ true }}"><span class="iv-label" style="color:var(--ink-muted)">// SAFFRON: NONE IN THIS SECTION · NEW COMPONENT: PropertyCard two-CTA variant (secondary + ghost, see new-components.md)</span></sc-if>
+    </div>
+  </section>
+
+  <!-- 04 METHOD -->
+  <section id="method" class="sec method-pin {{ pinClass }}" data-screen-label="04 Method" ref="{{ pinRef }}" style="padding:0">
+    <div class="method-stick">
+      <div class="wrap" style="display:flex;flex-direction:column;gap:40px;padding-top:64px;padding-bottom:64px">
+        <div style="display:flex;flex-direction:column;gap:12px;max-width:720px">
+          <span class="iv-label" style="color:var(--signal-ink)">The method</span>
+          <h2 class="iv-h2 h2" style="margin:0">Forty-four parcels. Two released.</h2>
+        </div>
+        <div style="position:relative;height:1px;background:var(--hairline)">
+          <div style="position:absolute;inset:0;background:var(--signal);transform-origin:left;transform: scaleX({{ mp }})"></div>
+        </div>
+        <div class="m4">
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <span class="iv-label" style="color:var(--ink-muted)">Watch</span>
+            <span class="iv-price" style="font-size:56px;line-height:1">{{ mWatch }}</span>
+            <span class="iv-body" style="color:var(--ink-muted)">parcels studied on the ground, walked at least once.</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <span class="iv-label" style="color:var(--ink-muted)">Reject</span>
+            <span class="iv-price" style="font-size:56px;line-height:1">{{ mReject }}</span>
+            <span class="iv-body" style="color:var(--ink-muted)">did not pass. The three most common reasons:</span>
+            <ul style="list-style:none;margin:4px 0 0;padding:0;display:flex;flex-direction:column">
+              <sc-if value="{{ c1 }}" hint-placeholder-val="{{ true }}"><li class="iv-check-in" style="display:flex;gap:10px;align-items:baseline;padding:10px 0;border-top:1px solid var(--hairline)"><span class="iv-data" style="color:var(--risk)">✓</span><span class="iv-body">Title gap</span></li></sc-if>
+              <sc-if value="{{ c2 }}" hint-placeholder-val="{{ true }}"><li class="iv-check-in" style="display:flex;gap:10px;align-items:baseline;padding:10px 0;border-top:1px solid var(--hairline)"><span class="iv-data" style="color:var(--risk)">✓</span><span class="iv-body">No OC</span></li></sc-if>
+              <sc-if value="{{ c3 }}" hint-placeholder-val="{{ true }}"><li class="iv-check-in" style="display:flex;gap:10px;align-items:baseline;padding:10px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)"><span class="iv-data" style="color:var(--risk)">✓</span><span class="iv-body">Exit doubtful</span></li></sc-if>
+            </ul>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <span class="iv-label" style="color:var(--ink-muted)">Thesis</span>
+            <span class="iv-price" style="font-size:56px;line-height:1">{{ mThesis }}</span>
+            <span class="iv-body" style="color:var(--ink-muted)">passed title, approvals, location logic and exit.</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <span class="iv-label" style="color:var(--ink-muted)">Release</span>
+            <span class="iv-price" style="font-size:56px;line-height:1">{{ mRelease }}</span>
+            <span class="iv-body" style="color:var(--ink-muted)">released to the inside list with the risk memo attached.</span>
+          </div>
+        </div>
+        <sc-if value="{{ notes }}" hint-placeholder-val="{{ true }}"><span class="iv-label" style="color:var(--ink-muted)">// SAMPLE FIGURES · SCROLL {{ mPct }}% · pinned 300vh · border-draw + count-up + check-in · reduced motion: static end state · SAFFRON: NONE</span></sc-if>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 SERVICES -->
+  <section id="services" class="sec" data-screen-label="05 Services">
+    <div class="wrap" style="display:flex;flex-direction:column;gap:40px">
+      <h2 class="iv-h2 h2" style="margin:0">One desk. Five ways in.</h2>
+      <div class="g5">
+        <sc-for list="{{ services }}" as="s" hint-placeholder-count="5">
+          <div style="padding:24px;display:flex;flex-direction:column;gap:16px;min-height:280px;background:var(--void);min-width:0" style-hover="background:var(--carbon)">
+            {{ s.icon }}
+            <span style="font-family:var(--font-headline);font-weight:500;font-size:20px;letter-spacing:-0.02em">{{ s.title }}</span>
+            <span class="iv-body" style="color:var(--ink-muted)">{{ s.body }}</span>
+            <sc-if value="{{ s.book }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex"><x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.Button" variant="secondary" hint-size="auto,44px">Book an inspection</x-import></div>
+            </sc-if>
+            <div style="margin-top:auto;display:flex">
+              <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.StatusPill" kind="{{ s.kind }}" label="{{ s.pill }}" hint-size="auto,24px"></x-import>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <sc-if value="{{ notes }}" hint-placeholder-val="{{ true }}"><span class="iv-label" style="color:var(--ink-muted)">// SAFFRON: 1 (live-drop pill "2 LIVE") · cell hover → carbon · mobile 2+2+1</span></sc-if>
+    </div>
+  </section>
+
+  <!-- 06 NRI DESK -->
+  <section id="nri" class="sec" data-screen-label="06 NRI desk">
+    <div class="wrap split">
+      <div style="display:flex;flex-direction:column;gap:32px;min-width:0">
+        <h2 class="iv-h2 h2" style="margin:0">Buying from abroad. We are your eyes on the ground.</h2>
+        <div>
+          <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.DataRow" label="Video site visits" value="Same week" hint-size="100%,44px"></x-import>
+          <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.DataRow" label="Document checks" value="EC, OC, approvals" hint-size="100%,44px"></x-import>
+          <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.DataRow" label="Loan and registration" value="Handled with the bank" hint-size="100%,44px"></x-import>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <span class="iv-body-lg">You see the parcel before you fly. We walk it for you.</span>
+          <span class="iv-body-lg" lang="te" style="font-family:'Noto Sans Telugu',var(--font-body);color:var(--ink-muted)">మీరు రాకముందే స్థలం చూస్తారు. మేము మీ కోసం నడిచి చూస్తాం.</span>
+        </div>
+        <div style="display:flex">
+          <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.Button" variant="secondary" hint-size="auto,44px">Talk to the NRI desk</x-import>
+        </div>
+      </div>
+      <div style="background:var(--carbon);border:1px solid var(--hairline);padding:32px;display:flex;flex-direction:column;gap:24px;min-width:0">
+        <span class="iv-label" style="color:var(--signal-ink)">Converter</span>
+        <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.TextField" label="Amount in rupees" value="{{ amount }}" on-change="{{ setAmount }}" input-mode="numeric" hint="SAMPLE rates · ₹ 83.40 / US$ · ₹ 22.72 / AED" style="{{ monoInput }}" hint-size="100%,96px"></x-import>
+        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px">
+          <div style="display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--hairline);padding-top:12px">
+            <span class="iv-label" style="color:var(--ink-muted)">USD</span>
+            <span style="font-family:var(--font-mono);font-size:22px;font-variant-numeric:tabular-nums">{{ usd }}</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--hairline);padding-top:12px">
+            <span class="iv-label" style="color:var(--ink-muted)">AED</span>
+            <span style="font-family:var(--font-mono);font-size:22px;font-variant-numeric:tabular-nums">{{ aed }}</span>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <span class="iv-caption">Desk hours shown in your time zone · {{ tz }}</span>
+          <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.DataRow" label="Hyderabad desk" value="{{ hyd }}" hint-size="100%,44px"></x-import>
+          <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.DataRow" label="Gulf desk" value="{{ gulf }}" hint-size="100%,44px"></x-import>
+          <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.DataRow" label="US desk" value="{{ us }}" last="{{ true }}" hint-size="100%,44px"></x-import>
+        </div>
+        <sc-if value="{{ notes }}" hint-placeholder-val="{{ true }}"><span class="iv-label" style="color:var(--ink-muted)">// SAFFRON: NONE BY DESIGN · NEW COMPONENT: ConverterPanel · [TELUGU LINE: native review]</span></sc-if>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 DATA DESK -->
+  <section id="data" class="sec" data-screen-label="07 Data desk">
+    <div class="wrap" style="display:flex;flex-direction:column;gap:40px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap">
+        <h2 class="iv-h2 h2" style="margin:0">The map is the product.</h2>
+        <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.StatusPill" kind="coming-soon" hint-size="auto,24px"></x-import>
+      </div>
+      <div class="iv-plus-grid" style="position:relative;aspect-ratio:21 / 9;min-height:280px;background:var(--carbon);border:1px solid var(--hairline);overflow:hidden">
+        <svg viewBox="0 0 1200 800" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" style="display:block;position:absolute;inset:0" aria-hidden="true">
+          <g fill="none" stroke="var(--ink)" stroke-width="1" opacity="0.07">
+            <path d="M-20 180 C 200 120, 380 260, 600 200 S 1000 90, 1240 160"></path>
+            <path d="M-20 300 C 220 240, 400 380, 640 310 S 980 230, 1240 300"></path>
+            <path d="M-20 440 C 180 400, 420 520, 660 450 S 1000 380, 1240 460"></path>
+            <path d="M-20 580 C 240 540, 400 660, 700 590 S 1020 520, 1240 600"></path>
+          </g>
+          <g fill="none" stroke="var(--ink)" stroke-width="1" opacity="0.14">
+            <path d="M600 420 L 40 120 M600 420 L 600 -20 M600 420 L 1180 60 M600 420 L 1240 420 M600 420 L 1120 820 M600 420 L 560 820 M600 420 L 40 760 M600 420 L -20 400"></path>
+            <ellipse cx="600" cy="420" rx="170" ry="120"></ellipse>
+            <path d="M480 300 H 720 M470 340 H 740 M470 380 H 760 M470 460 H 760 M480 500 H 740 M500 540 H 720 M520 280 V 560 M560 270 V 570 M600 265 V 575 M640 270 V 570 M680 280 V 560"></path>
+          </g>
+          <ellipse cx="600" cy="430" rx="470" ry="320" fill="none" stroke="var(--signal)" stroke-width="1.5" opacity="0.85"></ellipse>
+          <g fill="none" stroke="var(--signal)" stroke-width="1.25" stroke-dasharray="6 5" opacity="0.8">
+            <path d="M300 520 L 440 470 L 600 430 L 780 380 L 960 300"></path>
+            <path d="M600 430 L 620 580 L 700 720"></path>
+          </g>
+        </svg>
+        <div style="position:absolute;left:16px;top:16px;display:flex;gap:8px;flex-wrap:wrap">
+          <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.StatusPill" kind="coming-soon" label="Corridors" hint-size="auto,24px"></x-import>
+          <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.StatusPill" kind="coming-soon" label="Parcel history" hint-size="auto,24px"></x-import>
+          <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.StatusPill" kind="coming-soon" label="Price per sq ft" hint-size="auto,24px"></x-import>
+        </div>
+        <span class="iv-data" style="position:absolute;right:16px;top:16px;color:var(--ink-muted)">17.3850° N, 78.4867° E</span>
+        <span class="iv-label" style="position:absolute;left:16px;bottom:14px;color:var(--ink-muted)">Hyderabad · 2D · layers off</span>
+      </div>
+      <p class="iv-body-lg" style="margin:0;color:var(--ink-muted)">Landeed and Square Yards feeds in progress.</p>
+      <sc-if value="{{ notes }}" hint-placeholder-val="{{ true }}"><span class="iv-label" style="color:var(--ink-muted)">// SAFFRON: NONE · layer toggles are coming-soon pills, non-interactive · contour-shift on layer change</span></sc-if>
+    </div>
+  </section>
+
+  <!-- 08 BRIEFS -->
+  <section id="briefs" class="sec" data-screen-label="08 Briefs">
+    <div class="wrap" style="display:flex;flex-direction:column;gap:32px">
+      <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+        <h2 class="iv-h2 h2" style="margin:0">Most opportunities do not pass.</h2>
+        <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.StatusPill" kind="coming-soon" hint-size="auto,24px"></x-import>
+      </div>
+      <div style="display:flex;flex-direction:column;border-bottom:1px solid var(--hairline)">
+        <sc-for list="{{ briefs }}" as="b" hint-placeholder-count="3">
+          <a href="#briefs" class="brief" style="text-decoration:none;color:inherit" style-hover="background:var(--carbon)">
+            <span class="iv-label" style="color:var(--signal-ink)">{{ b.kicker }}</span>
+            <span style="display:flex;flex-direction:column;gap:6px;min-width:0">
+              <span class="iv-h3">{{ b.title }}</span>
+              <span class="iv-body" style="color:var(--ink-muted)">{{ b.line }}</span>
+            </span>
+            <span class="iv-data" style="color:var(--ink-muted)">{{ b.date }}</span>
+          </a>
+        </sc-for>
+      </div>
+      <sc-if value="{{ notes }}" hint-placeholder-val="{{ true }}"><span class="iv-label" style="color:var(--ink-muted)">// SAFFRON: NONE · list, not cards · dates SAMPLE</span></sc-if>
+    </div>
+  </section>
+
+  <!-- 09 FOUNDER NOTE -->
+  <section id="founder" class="sec" data-screen-label="09 Founder note">
+    <div class="wrap" style="display:flex;flex-direction:column;gap:16px;max-width:880px">
+      <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.FounderNote" quote="I reject most of what I see. That is the job." name="— Karthikeya, INDVESTATE" role="Founder" date="09 OCT 2026" hint-size="100%,320px">
+        <p style="margin:0">I started INDVESTATE because the paperwork was always the last thing anyone looked at. I look at it first. If the title, the OC and the exit do not hold, you will never hear about the parcel from me.</p>
+        <p style="margin:0">Two have passed so far. Forty-one did not. I will keep publishing the rejections, because that is where you learn.</p>
+      </x-import>
+      <sc-if value="{{ notes }}" hint-placeholder-val="{{ true }}"><span class="iv-label" style="color:var(--ink-muted)">// SAFFRON: NONE · Monogram in place of portrait until a real one exists</span></sc-if>
+    </div>
+  </section>
+
+  <!-- 10 INSIDE LIST -->
+  <section id="inside" class="sec iv-grid-bg" data-screen-label="10 Inside list">
+    <div class="wrap inside-cols">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <span class="iv-label" style="color:var(--signal-ink)">Inside list</span>
+        <h2 class="iv-h2 h2" style="margin:0">Documents first. Price second.</h2>
+        <p class="iv-body-lg" style="margin:0;color:var(--ink-muted)">One WhatsApp per verified release. Nothing else.</p>
+        <sc-if value="{{ notes }}" hint-placeholder-val="{{ true }}"><span class="iv-label" style="color:var(--ink-muted)">// SAFFRON: 1 (submit) · success → stamp-in "ON THE LIST" · NEW COMPONENT: InsideListForm extended fields</span></sc-if>
+      </div>
+      <sc-if value="{{ notDone }}" hint-placeholder-val="{{ true }}">
+        <form on-submit="{{ submit }}" novalidate="{{ true }}" style="background:var(--carbon);border:1px solid var(--hairline);padding:32px;display:flex;flex-direction:column;gap:20px;min-width:0">
+          <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.TextField" label="Name" placeholder="As on your PAN or passport" value="{{ name }}" on-change="{{ setName }}" error="{{ nameErr }}" hint-size="100%,84px"></x-import>
+          <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.TextField" label="WhatsApp" type="tel" placeholder="+91 98765 43210" value="{{ phone }}" on-change="{{ setPhone }}" error="{{ phoneErr }}" hint-size="100%,84px"></x-import>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px">
+            <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.Select" label="Country" options="{{ countries }}" hint-size="100%,84px"></x-import>
+            <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.Select" label="Budget band" options="{{ budgets }}" hint-size="100%,84px"></x-import>
+          </div>
+          <div class="iv-field">
+            <span class="iv-field__label">Intent</span>
+            <div class="iv-seg" role="group">
+              <button type="button" aria-pressed="{{ isBuy }}" on-click="{{ setBuy }}" style="min-height:44px">Buy</button>
+              <button type="button" aria-pressed="{{ isInvest }}" on-click="{{ setInvest }}" style="min-height:44px">Invest</button>
+              <button type="button" aria-pressed="{{ isSell }}" on-click="{{ setSell }}" style="min-height:44px">Sell</button>
+            </div>
+          </div>
+          <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.Select" label="Horizon" options="{{ horizons }}" hint-size="100%,84px"></x-import>
+          <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.Checkbox" checked="{{ consent }}" on-change="{{ setConsent }}" hint-size="100%,48px">I agree to be contacted by INDVESTATE on WhatsApp about verified releases. INDVESTATE never collects a booking amount.</x-import>
+          <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.Button" type="submit" block="{{ true }}" size="lg" hint-size="100%,52px">Join the inside list</x-import>
+        </form>
+      </sc-if>
+      <sc-if value="{{ done }}" hint-placeholder-val="{{ false }}">
+        <div style="background:var(--carbon);border:1px solid var(--hairline);padding:32px;display:flex;flex-direction:column;gap:20px;min-height:320px;justify-content:center">
+          <span class="iv-label iv-stamp-in" style="color:var(--verified);font-size:13px;border:1px solid var(--verified);padding:8px 12px;align-self:flex-start;display:inline-flex;align-items:center;gap:8px"><span class="iv-pill__tick" aria-hidden="true"></span>On the list</span>
+          <h3 class="iv-h3" style="margin:0">You are on the inside list.</h3>
+          <p class="iv-body" style="margin:0;color:var(--ink-muted)">Expect one WhatsApp per verified release, with the risk memo attached.</p>
+          <div style="display:flex"><x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.Button" variant="ghost" on-click="{{ reset }}" hint-size="auto,44px">Add another number →</x-import></div>
+        </div>
+      </sc-if>
+    </div>
+  </section>
+
+  <!-- 11 FOOTER -->
+  <footer data-screen-label="11 Footer" style="border-top:1px solid var(--hairline);padding:64px 0 32px">
+    <div class="wrap" style="display:flex;flex-direction:column;gap:48px">
+      <div class="foot">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.Wordmark" lockup="tagline" size="{{ n28 }}" hint-size="260px,48px"></x-import>
+          <span class="iv-label" style="color:var(--signal-ink)">Verified before it is visible.</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <span class="iv-label" style="color:var(--ink-muted)">INDVESTATE</span>
+          <a href="#about" style="text-decoration:none;font-size:15px;line-height:44px;display:inline-block">About</a>
+          <a href="#contact" style="text-decoration:none;font-size:15px;line-height:44px;display:inline-block">Contact</a>
+          <a href="#pricing" style="text-decoration:none;font-size:15px;line-height:44px;display:inline-block">Pricing</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <span class="iv-label" style="color:var(--ink-muted)">Legal</span>
+          <a href="#terms" style="text-decoration:none;font-size:15px;line-height:44px;display:inline-block">Terms</a>
+          <a href="#privacy" style="text-decoration:none;font-size:15px;line-height:44px;display:inline-block">Privacy</a>
+          <a href="#refunds" style="text-decoration:none;font-size:15px;line-height:44px;display:inline-block">Refunds and cancellation</a>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;border-top:1px solid var(--hairline);padding-top:24px">
+        <span class="iv-data" style="color:var(--ink-muted)">Agent RERA No.: pending · Project RERA No.: per listing</span>
+        <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.Disclaimer" hint-size="100%,120px"></x-import>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap">
+        <div style="display:flex;gap:24px;flex-wrap:wrap">
+          <a href="#instagram" class="iv-data" style="text-decoration:none;color:var(--ink-muted);line-height:44px">@indvestate</a>
+          <a href="#instagram-hyd" class="iv-data" style="text-decoration:none;color:var(--ink-muted);line-height:44px">@indvestate.hyd</a>
+          <span class="iv-data" style="color:var(--ink-muted);line-height:44px">© 2026 INDVESTATE</span>
+        </div>
+        <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.Monogram" size="{{ n48 }}" hint-size="48px,48px"></x-import>
+      </div>
+      <sc-if value="{{ notes }}" hint-placeholder-val="{{ true }}"><span class="iv-label" style="color:var(--ink-muted)">// SAFFRON: NONE · six Razorpay links present · owner Disclaimer 15px</span></sc-if>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;viewport&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;fluid&quot;,&quot;1440&quot;,&quot;390&quot;],&quot;default&quot;:&quot;fluid&quot;,&quot;tsType&quot;:&quot;'fluid'|'1440'|'390'&quot;,&quot;section&quot;:&quot;Mockup&quot;},&quot;annotations&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Mockup&quot;},&quot;heroLiveMarker&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;reducedMotion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
+class Component extends DCLogic {
+  state = { vp:null, zoom:1, word:0, p:0, pOv:null, rm:false, hover:null, consent:false, done:false, name:'', phone:'', nameErr:'', phoneErr:'', intent:'buy', amount:'2,10,00,000', tz:'' };
+  pinRef = React.createRef();
+  navRef = React.createRef();
+  componentDidMount(){
+    this.mq = matchMedia('(prefers-reduced-motion: reduce)');
+    this.setState({ rm:this.mq.matches, tz:Intl.DateTimeFormat().resolvedOptions().timeZone });
+    this.onScroll = () => {
+      const el = this.pinRef.current; if(!el) return;
+      const r = el.getBoundingClientRect(); const st = el.firstElementChild;
+      const sh = st ? st.getBoundingClientRect().height : 0; const total = r.height - sh; if(total <= 0) return;
+      const nb = this.navRef.current ? this.navRef.current.getBoundingClientRect().bottom : 64;
+      const p = Math.max(0, Math.min(1, (nb - r.top) / total));
+      if(Math.abs(p - this.state.p) > 0.003) this.setState({ p });
+    };
+    addEventListener('scroll', this.onScroll, { passive:true });
+    this.onResize = () => this.fit(); addEventListener('resize', this.onResize);
+    this.wordT = setInterval(() => { if(!this.rm()) this.setState(s => ({ word:(s.word + 1) % 4 })); }, 2600);
+    window.__iv = {
+      setVp: v => this.setState({ vp:v }, () => this.fit()),
+      setMethod: p => this.setState({ pOv:p }),
+      setDone: d => this.setState({ done:d }),
+      setErr: e => this.setState({ nameErr:e ? 'Required.' : '', phoneErr:e ? 'Enter a WhatsApp number with country code.' : '' }),
+      setNotes: n => this.setState({ notesOv:n }),
+      go: id => this.go(id, true),
+      setRm: r => this.setState({ rm:r })
+    };
+    if(!window.lucide){ this.lt = setInterval(() => { if(window.lucide){ clearInterval(this.lt); this.forceUpdate(); } }, 200); }
+    const pg = document.getElementById('page');
+    if(pg && window.ResizeObserver){ this.ro = new ResizeObserver(() => { const m = pg.getBoundingClientRect().width / (this.state.zoom || 1) <= 1000; if(m !== this.state.mobile) this.setState({ mobile:m }); }); this.ro.observe(pg); }
+    this.fit(); this.onScroll();
+  }
+  componentWillUnmount(){ removeEventListener('scroll', this.onScroll); removeEventListener('resize', this.onResize); clearInterval(this.wordT); clearInterval(this.lt); if(this.ro) this.ro.disconnect(); }
+  componentDidUpdate(pp){ if(pp.viewport !== this.props.viewport) this.fit(); }
+  vp(){ return this.state.vp || this.props.viewport || 'fluid'; }
+  fit(){ const v = this.vp(); const z = v === '1440' ? Math.min(1, document.documentElement.clientWidth / 1440) : 1; if(z !== this.state.zoom) this.setState({ zoom:z }); }
+  rm(){ return this.state.rm || !!this.props.reducedMotion; }
+  go(id, instant){ const el = document.getElementById(id); if(!el) return; const nb = this.navRef.current ? this.navRef.current.getBoundingClientRect().height : 64; scrollTo({ top: el.getBoundingClientRect().top + scrollY - nb, behavior: (instant || this.rm()) ? 'auto' : 'smooth' }); }
+  icon(name){
+    const L = window.lucide; const key = name.split('-').map(s => s[0].toUpperCase() + s.slice(1)).join('');
+    const node = L && L.icons && L.icons[key];
+    if(!node) return React.createElement('span', { style:{ width:20, height:20, display:'inline-block' } });
+    const kids = Array.isArray(node[0]) ? node : (node[2] || []);
+    return React.createElement('svg', { width:20, height:20, viewBox:'0 0 24 24', fill:'none', stroke:'var(--signal)', strokeWidth:1.5, strokeLinecap:'round', strokeLinejoin:'round', style:{ flex:'none' } }, kids.map(([t, a], i) => React.createElement(t, { key:i, ...a })));
+  }
+  renderVals(){
+    const DS = window.INDVESTATEDesignSystem_26aecf || {};
+    const s = this.state; const rm = this.rm();
+    const words = ['market', 'crowd', 'headlines', 'brokers'];
+    const heroWord = React.createElement('span', { style:{ display:'inline-block', position:'relative' } },
+      React.createElement('span', { key: rm ? 'static' : s.word, style:{ display:'inline-block', borderBottom:'2px solid var(--signal)', animation: rm ? 'none' : 'iv-word-cycle 2600ms var(--ease-out) both' } }, rm ? 'market' : words[s.word]));
+    const p = s.pOv != null ? s.pOv : (rm ? 1 : s.p);
+    const n = parseInt((s.amount || '').replace(/[^0-9]/g, ''), 10) || 0;
+    const fmtT = (h, m) => { const d = new Date(); d.setUTCHours(h, m, 0, 0); return d.toLocaleTimeString([], { hour:'2-digit', minute:'2-digit' }); };
+    const notes = s.notesOv != null ? s.notesOv : (this.props.annotations ?? true);
+    const links = { 'Live':'live', 'Method':'method', 'Services':'services', 'NRI desk':'nri', 'Briefs':'briefs' };
+    return {
+      vp: this.vp(), zoom: s.zoom, notes, n20:20, n28:28, n48:48,
+      navRef: this.navRef, pinRef: this.pinRef,
+      navLinks: Object.keys(links),
+      navPill: DS.StatusPill ? React.createElement(DS.StatusPill, { kind:'owner-listed', label:'RERA agent · In process' }) : null,
+      nav: l => this.go(links[l] || 'live'),
+      goInside: () => this.go('inside'), goLive: () => this.go('live'),
+      pillSm: { height:20, padding:'0 8px', fontSize:10 }, btn44: { minHeight:44 }, monoInput: { fontFamily:'var(--font-mono)', fontVariantNumeric:'tabular-nums' },
+      heroWord, heroLive: !!this.props.heroLiveMarker,
+      lblA: s.mobile ? null : 'Drop 01 · Kokapet', lblB: s.mobile ? null : 'Drop 02 · Kompally', lblN: s.mobile ? null : 'Next drop · [date]',
+      hoverA: () => this.setState({ hover:'a' }), hoverB: () => this.setState({ hover:'b' }), hoverN: () => this.setState({ hover:'n' }), hoverNone: () => this.setState({ hover:null }),
+      isHoverA: s.hover === 'a', isHoverB: s.hover === 'b', isHoverN: s.hover === 'n',
+      pinClass: rm ? 'method-static' : '', mp: p, mPct: Math.round(p * 100),
+      mWatch: Math.round(p * 44), mReject: Math.round(p * 41), mThesis: Math.round(p * 3), mRelease: Math.round(p * 2),
+      c1: p >= 0.45, c2: p >= 0.6, c3: p >= 0.75,
+      services: [
+        { icon:this.icon('layers'), title:'Drops', body:'Owner-direct and builder-direct releases. OC, RERA and bank-loan approval on file before you hear of them.', kind:'live-drop', pill:'2 live' },
+        { icon:this.icon('compass'), title:'Buyer concierge + NRI desk', body:'Shortlists, site visits and negotiation from one desk. US and Gulf hours covered.', kind:'owner-listed', pill:'Live' },
+        { icon:this.icon('scan-search'), title:'Home inspection', body:'A written report before you sign. Fixed fee, paid online.', kind:'owner-listed', pill:'Bookable', book:true },
+        { icon:this.icon('route'), title:'Reel + distribution', body:'Owners and builders: we film, verify and distribute. Upfront fee, then a commission on sale.', kind:'owner-listed', pill:'Live' },
+        { icon:this.icon('map'), title:'Data desk', body:'Corridors, parcel histories and price per sq ft, read from the ground up.', kind:'coming-soon', pill:'Coming soon' }
+      ],
+      amount: s.amount, setAmount: e => { const v = parseInt(e.target.value.replace(/[^0-9]/g, ''), 10); this.setState({ amount: isNaN(v) ? '' : v.toLocaleString('en-IN') }); },
+      usd: 'US$ ' + Math.round(n / 83.4).toLocaleString('en-US'), aed: 'AED ' + Math.round(n / 22.72).toLocaleString('en-US'),
+      tz: s.tz, hyd: fmtT(4, 30) + ' – ' + fmtT(13, 30), gulf: fmtT(4, 30) + ' – ' + fmtT(13, 30), us: fmtT(13, 0) + ' – ' + fmtT(17, 0),
+      briefs: [
+        { kicker:'Rejections · 01', title:'What we rejected this month.', line:'Nine parcels, three reasons. The title gap is the one nobody checks.', date:'[DATE] · Oct 2026' },
+        { kicker:'Documents · 02', title:'Reading an EC: the forty-year pull.', line:'Why 13 years is not enough, and what a clean chain actually looks like.', date:'[DATE] · Oct 2026' },
+        { kicker:'Corridors · 03', title:'ORR exits and the price of distance.', line:'What one kilometre from an exit does to a plot over five years.', date:'[DATE] · Nov 2026' }
+      ],
+      notDone: !s.done, done: s.done,
+      name: s.name, phone: s.phone, nameErr: s.nameErr, phoneErr: s.phoneErr, consent: s.consent,
+      setName: e => this.setState({ name:e.target.value, nameErr:'' }), setPhone: e => this.setState({ phone:e.target.value, phoneErr:'' }), setConsent: e => this.setState({ consent:e.target.checked }),
+      countries: ['India', 'United States', 'UAE / Gulf', 'United Kingdom', 'Other'],
+      budgets: ['₹ 50 L – 1 Cr', '₹ 1 – 2 Cr', '₹ 2 – 5 Cr', '₹ 5 Cr +'],
+      horizons: ['Under 6 months', '6 – 12 months', '1 – 3 years', 'Holding'],
+      isBuy: s.intent === 'buy', isInvest: s.intent === 'invest', isSell: s.intent === 'sell',
+      setBuy: () => this.setState({ intent:'buy' }), setInvest: () => this.setState({ intent:'invest' }), setSell: () => this.setState({ intent:'sell' }),
+      submit: e => { e.preventDefault(); const nameErr = s.name.trim() ? '' : 'Required.'; const phoneErr = /^\+?[0-9 ]{10,16}$/.test(s.phone.trim()) ? '' : 'Enter a WhatsApp number with country code.'; if(nameErr || phoneErr || !s.consent){ this.setState({ nameErr, phoneErr }); return; } this.setState({ done:true }); },
+      reset: () => this.setState({ done:false, name:'', phone:'', consent:false })
+    };
+  }
+}
+</script>
+</body>
+</html>

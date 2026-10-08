@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/indvestate-design-system-26aecf2e-9619-4b3c-a07d-789c7bd1f9d5/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/indvestate-design-system-26aecf2e-9619-4b3c-a07d-789c7bd1f9d5/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/indvestate-design-system-26aecf2e-9619-4b3c-a07d-789c7bd1f9d5/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/indvestate-design-system-26aecf2e-9619-4b3c-a07d-789c7bd1f9d5/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/indvestate-design-system-26aecf2e-9619-4b3c-a07d-789c7bd1f9d5/tokens/motion.css">
+  <link rel="stylesheet" href="_ds/indvestate-design-system-26aecf2e-9619-4b3c-a07d-789c7bd1f9d5/tokens/base.css">
+  <link rel="stylesheet" href="_ds/indvestate-design-system-26aecf2e-9619-4b3c-a07d-789c7bd1f9d5/components/components.css">
+  <script src="_ds/indvestate-design-system-26aecf2e-9619-4b3c-a07d-789c7bd1f9d5/_ds_bundle.js"></script>
+  <style>
+    html,body{margin:0;background:var(--void);color:var(--ink)}
+    a{color:var(--ink)}a:hover{color:var(--saffron-ink)}
+    /* Simulated interaction states — mirror components.css so hover/press/focus can be shown statically */
+    .sim-hover .iv-btn--primary{background:#F5B259;border-color:#F5B259;box-shadow:var(--glow-saffron)}
+    .sim-hover .iv-btn--secondary{border-color:var(--ink)}
+    .sim-hover .iv-btn--ghost{color:var(--ink);background:var(--hairline)}
+    .sim-press .iv-btn--primary{background:#E0912A;border-color:#E0912A;box-shadow:none}
+    .sim-press .iv-btn--secondary{background:var(--hairline)}
+    .sim-press .iv-btn--ghost{color:var(--ink);background:var(--hairline-strong)}
+    .sim-focus .iv-btn{outline:1px solid var(--signal);outline-offset:2px}
+    .sim-focus .iv-input{border-color:var(--signal)}
+    .row{display:grid;grid-template-columns:120px repeat(3,auto);gap:24px;align-items:center;padding:16px 0;border-top:1px solid var(--hairline)}
+  </style>
+</helmet>
+<div style="background:var(--void);color:var(--ink);padding:48px 24px;display:flex;flex-direction:column;gap:64px;max-width:1100px;margin:0 auto">
+  <section id="buttons" data-screen-label="States · Button" style="display:flex;flex-direction:column;gap:16px">
+    <span class="iv-label" style="color:var(--signal-ink)">States · Button · primary / secondary / ghost</span>
+    <div class="row" style="border-top:0"><span class="iv-label" style="color:var(--ink-muted)">Default</span>
+      <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.Button" hint-size="auto,44px">Join the inside list</x-import>
+      <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.Button" variant="secondary" hint-size="auto,44px">Book a site visit</x-import>
+      <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.Button" variant="ghost" hint-size="auto,44px">WhatsApp the desk ↗</x-import>
+    </div>
+    <div class="row sim-hover"><span class="iv-label" style="color:var(--ink-muted)">Hover</span>
+      <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.Button" hint-size="auto,44px">Join the inside list</x-import>
+      <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.Button" variant="secondary" hint-size="auto,44px">Book a site visit</x-import>
+      <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.Button" variant="ghost" hint-size="auto,44px">WhatsApp the desk ↗</x-import>
+    </div>
+    <div class="row sim-press"><span class="iv-label" style="color:var(--ink-muted)">Press</span>
+      <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.Button" hint-size="auto,44px">Join the inside list</x-import>
+      <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.Button" variant="secondary" hint-size="auto,44px">Book a site visit</x-import>
+      <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.Button" variant="ghost" hint-size="auto,44px">WhatsApp the desk ↗</x-import>
+    </div>
+    <div class="row sim-focus"><span class="iv-label" style="color:var(--ink-muted)">Focus</span>
+      <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.Button" hint-size="auto,44px">Join the inside list</x-import>
+      <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.Button" variant="secondary" hint-size="auto,44px">Book a site visit</x-import>
+      <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.Button" variant="ghost" hint-size="auto,44px">WhatsApp the desk ↗</x-import>
+    </div>
+    <div class="row"><span class="iv-label" style="color:var(--ink-muted)">Disabled</span>
+      <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.Button" disabled="{{ true }}" hint-size="auto,44px">Join the inside list</x-import>
+      <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.Button" variant="secondary" disabled="{{ true }}" hint-size="auto,44px">Book a site visit</x-import>
+      <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.Button" variant="ghost" disabled="{{ true }}" hint-size="auto,44px">WhatsApp the desk ↗</x-import>
+    </div>
+    <span class="iv-label" style="color:var(--ink-muted)">// hover: saffron #F5B259 + glow-saffron · press: #E0912A, glow off · focus: 1px signal, 2px offset · no scale, no radius</span>
+  </section>
+
+  <section id="pills" data-screen-label="States · StatusPill tones" style="display:flex;flex-direction:column;gap:16px">
+    <span class="iv-label" style="color:var(--signal-ink)">States · StatusPill tones</span>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;padding-top:16px;border-top:1px solid var(--hairline)">
+      <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.StatusPill" kind="live-drop" label="2 live" hint-size="auto,24px"></x-import>
+      <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.StatusPill" kind="coming-soon" hint-size="auto,24px"></x-import>
+      <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.StatusPill" kind="owner-listed" hint-size="auto,24px"></x-import>
+      <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.StatusPill" kind="owner-listed" label="RERA agent · in process" hint-size="auto,24px"></x-import>
+      <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.StatusPill" kind="oc" hint-size="auto,24px"></x-import>
+      <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.StatusPill" kind="bank-loan" hint-size="auto,24px"></x-import>
+      <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.StatusPill" kind="approved" hint-size="auto,24px"></x-import>
+      <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.StatusPill" kind="dtcp" hint-size="auto,24px"></x-import>
+      <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.StatusPill" kind="rera" value="P02400001234" hint-size="auto,24px"></x-import>
+      <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.StatusPill" kind="nri-ready" hint-size="auto,24px"></x-import>
+      <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.StatusPill" kind="risk" hint-size="auto,24px"></x-import>
+    </div>
+    <span class="iv-label" style="color:var(--ink-muted)">// tones: live (saffron, pulsing dot) · neutral · verified (tick) · signal · risk · the only round element in the system</span>
+  </section>
+
+  <section id="form-error" data-screen-label="States · Form error" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:start">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <span class="iv-label" style="color:var(--signal-ink)">States · Form error</span>
+      <div style="background:var(--carbon);border:1px solid var(--hairline);padding:32px;display:flex;flex-direction:column;gap:20px">
+        <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.TextField" label="Name" placeholder="As on your PAN or passport" error="Required." hint-size="100%,84px"></x-import>
+        <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.TextField" label="WhatsApp" type="tel" default-value="98765" error="Enter a WhatsApp number with country code." hint-size="100%,84px"></x-import>
+        <div class="sim-focus"><x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.TextField" label="Focused field" placeholder="1px signal border" hint="Hint text, 13px ink-muted" hint-size="100%,84px"></x-import></div>
+        <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.Checkbox" hint-size="100%,48px">Consent unchecked — submit stays disabled.</x-import>
+        <x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.Button" block="{{ true }}" size="lg" disabled="{{ true }}" hint-size="100%,52px">Join the inside list</x-import>
+      </div>
+      <span class="iv-label" style="color:var(--ink-muted)">// error: border → risk, 13px risk message below · no icon, no shake</span>
+    </div>
+    <div id="form-success" data-screen-label="States · Form success" style="display:flex;flex-direction:column;gap:16px">
+      <span class="iv-label" style="color:var(--signal-ink)">States · Form success</span>
+      <div style="background:var(--carbon);border:1px solid var(--hairline);padding:32px;display:flex;flex-direction:column;gap:20px;min-height:320px;justify-content:center">
+        <span class="iv-label iv-stamp-in" style="color:var(--verified);font-size:13px;border:1px solid var(--verified);padding:8px 12px;align-self:flex-start;display:inline-flex;align-items:center;gap:8px"><span class="iv-pill__tick" aria-hidden="true"></span>On the list</span>
+        <h3 class="iv-h3" style="margin:0">You are on the inside list.</h3>
+        <p class="iv-body" style="margin:0;color:var(--ink-muted)">Expect one WhatsApp per verified release, with the risk memo attached.</p>
+        <div style="display:flex"><x-import component-from-global-scope="INDVESTATEDesignSystem_26aecf.Button" variant="ghost" hint-size="auto,44px">Add another number →</x-import></div>
+      </div>
+      <span class="iv-label" style="color:var(--ink-muted)">// stamp-in 420ms (scale 1.35 → 1, fade) · verified tone · reduced motion: static</span>
+    </div>
+  </section>
+</div>
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,7 @@
+/* Space Grotesk, Inter, JetBrains Mono — Google Fonts (must precede @font-face) */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600&family=Noto+Sans+Telugu:wght@400;500;600&display=swap");
+/* Inversionz — display. Licensed per project (Darrell Flood / Hawtpixel). ~52 glyphs: A–Z, 0–9, basic punctuation. No lowercase, no ₹, no Telugu. */
+@font-face{font-family:"Inversionz";src:url("../fonts/Inversionz.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Inversionz";src:url("../fonts/Inversionz-Italic.ttf") format("truetype");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Inversionz Unboxed";src:url("../fonts/Inversionz-Unboxed.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Inversionz Unboxed";src:url("../fonts/Inversionz-Unboxed-Italic.ttf") format("truetype");font-weight:400;font-style:italic;font-display:swap}

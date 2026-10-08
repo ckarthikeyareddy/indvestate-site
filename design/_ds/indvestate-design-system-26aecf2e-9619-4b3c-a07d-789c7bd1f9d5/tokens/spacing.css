@@ -1,0 +1,16 @@
+/* Space, shape, depth. 4-based. Depth = borders, never shadows. */
+:root{
+  --space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:24px;--space-6:32px;--space-7:48px;--space-8:64px;--space-9:96px;
+  --section-pad-mobile:48px;--section-pad-desktop:64px;--hero-top:96px;
+  --container:1200px;--gutter:24px;
+  --radius-none:0;      /* cards, media, buttons — the brand is square */
+  --radius-input:2px;   /* inputs, selects, checkboxes */
+  --radius-pill:999px;  /* StatusPill only — the single round element */
+  --border-width:1px;
+  --shadow:none;
+  --glow-saffron:0 0 24px rgba(242,163,58,0.25); /* primary button hover, live markers */
+  --glow-signal:0 0 20px rgba(53,224,210,0.20);  /* verified ticks */
+  --grid-pitch:72px;    /* background hairline grid (64–80) */
+  --plus-pitch:24px;    /* plus-grid / crosshair motif */
+  --focus-ring:0 0 0 1px var(--void),0 0 0 2px var(--signal);
+}

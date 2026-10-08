@@ -1,0 +1,23 @@
+/* Four families, four jobs. */
+:root{
+  --font-display:"Inversionz Unboxed","Space Grotesk",sans-serif; /* wordmark + UPPERCASE display only. A–Z 0–9. */
+  --font-display-boxed:"Inversionz","Space Grotesk",sans-serif;   /* numerals render inverted in boxes — drop numbers only */
+  --font-headline:"Space Grotesk","Noto Sans Telugu",system-ui,sans-serif;           /* headlines, prices, section titles. Sentence case. 500–600 */
+  --font-body:"Inter","Noto Sans Telugu",system-ui,sans-serif;                        /* body, UI, disclaimers. ≥15px for buyer-facing text. Telugu falls to Noto Sans Telugu */
+  --font-mono:"JetBrains Mono",ui-monospace,monospace;             /* labels, figures, survey/RERA numbers, coordinates */
+
+  --tracking-display:0.04em;--tracking-headline:-0.02em;--tracking-label:0.18em;--tracking-none:0;
+
+  /* scale: size / line-height / weight */
+  --type-wordmark:96px;
+  --type-display-lg:56px;--type-display-md:32px;
+  --type-h1:56px;--lh-h1:1.05;/* @kind other */
+  --type-h2:36px;--lh-h2:1.1;/* @kind other */
+  --type-h3:24px;--lh-h3:1.2;/* @kind other */
+  --type-price:28px;--weight-price:600;
+  --type-body-lg:18px;--lh-body-lg:1.6;/* @kind other */
+  --type-body:15px;--lh-body:1.6;/* @kind other */
+  --type-caption:13px;--lh-caption:1.5;/* @kind other */
+  --type-label:11px;
+  --type-data:13px;
+}

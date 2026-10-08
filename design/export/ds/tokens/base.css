@@ -1,0 +1,28 @@
+/* Base + brand textures + text utilities */
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;background:var(--void);color:var(--ink);font-family:var(--font-body);font-size:var(--type-body);line-height:var(--lh-body);-webkit-font-smoothing:antialiased}
+a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--hairline-strong);text-underline-offset:3px}
+a:hover{color:var(--saffron-ink);text-decoration-color:currentColor}
+::selection{background:var(--saffron);color:var(--on-saffron)}
+:focus-visible{outline:1px solid var(--signal);outline-offset:2px}
+
+/* Hairline grid — faint 72px background grid */
+.iv-grid-bg{background-image:linear-gradient(var(--grid-line) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);background-size:var(--grid-pitch) var(--grid-pitch)}
+/* Plus-grid — the brand's decorative crosshair motif, 24px pitch */
+:root,[data-theme="dark"]{--plus-grid-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cg fill='rgba(243,239,230,0.22)'%3E%3Crect x='11' y='8' width='1' height='7'/%3E%3Crect x='8' y='11' width='7' height='1'/%3E%3C/g%3E%3C/svg%3E")/* @kind other */}
+[data-theme="light"]{--plus-grid-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cg fill='rgba(14,16,19,0.22)'%3E%3Crect x='11' y='8' width='1' height='7'/%3E%3Crect x='8' y='11' width='7' height='1'/%3E%3C/g%3E%3C/svg%3E")/* @kind other */}
+.iv-plus-grid{background-image:var(--plus-grid-image);background-size:var(--plus-pitch) var(--plus-pitch)}
+
+/* Type roles */
+.iv-wordmark{font-family:var(--font-display);font-size:var(--type-wordmark);letter-spacing:var(--tracking-display);text-transform:uppercase;line-height:1;font-weight:400}
+.iv-display-lg{font-family:var(--font-display);font-size:var(--type-display-lg);letter-spacing:var(--tracking-display);text-transform:uppercase;line-height:1.05}
+.iv-display-md{font-family:var(--font-display);font-size:var(--type-display-md);letter-spacing:var(--tracking-display);text-transform:uppercase;line-height:1.1}
+.iv-h1{font-family:var(--font-headline);font-weight:600;font-size:var(--type-h1);line-height:var(--lh-h1);letter-spacing:var(--tracking-headline);text-wrap:balance}
+.iv-h2{font-family:var(--font-headline);font-weight:600;font-size:var(--type-h2);line-height:var(--lh-h2);letter-spacing:var(--tracking-headline);text-wrap:balance}
+.iv-h3{font-family:var(--font-headline);font-weight:500;font-size:var(--type-h3);line-height:var(--lh-h3);letter-spacing:var(--tracking-headline)}
+.iv-price{font-family:var(--font-headline);font-weight:var(--weight-price);font-size:var(--type-price);line-height:1.1;letter-spacing:var(--tracking-headline);font-variant-numeric:tabular-nums}
+.iv-body-lg{font-family:var(--font-body);font-size:var(--type-body-lg);line-height:var(--lh-body-lg);text-wrap:pretty}
+.iv-body{font-family:var(--font-body);font-size:var(--type-body);line-height:var(--lh-body);text-wrap:pretty}
+.iv-caption{font-family:var(--font-body);font-size:var(--type-caption);line-height:var(--lh-caption);color:var(--ink-muted)}
+.iv-label{font-family:var(--font-mono);font-size:var(--type-label);letter-spacing:var(--tracking-label);text-transform:uppercase;line-height:1.4;font-weight:500}
+.iv-data{font-family:var(--font-mono);font-size:var(--type-data);letter-spacing:0;line-height:1.5;font-variant-numeric:tabular-nums}

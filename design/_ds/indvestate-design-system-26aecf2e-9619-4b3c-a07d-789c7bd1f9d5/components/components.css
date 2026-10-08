@@ -1,0 +1,75 @@
+/* Component styles. Square, hairline, no shadows. */
+/* Button */
+.iv-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:44px;padding:0 20px;border:1px solid transparent;border-radius:0;background:transparent;color:var(--ink);font-family:var(--font-body);font-size:15px;font-weight:500;line-height:1;letter-spacing:0;white-space:nowrap;cursor:pointer;text-decoration:none;transition:background-color var(--dur-fast) var(--ease-out),border-color var(--dur-fast) var(--ease-out),color var(--dur-fast) var(--ease-out),box-shadow var(--dur-base) var(--ease-out)}
+.iv-btn--sm{height:36px;padding:0 14px;font-size:14px}
+.iv-btn--lg{height:52px;padding:0 28px;font-size:16px}
+.iv-btn--block{display:flex;width:100%}
+.iv-btn--mono{font-family:var(--font-mono);font-size:11px;letter-spacing:var(--tracking-label);text-transform:uppercase}
+.iv-btn--primary{background:var(--saffron);color:var(--on-saffron);border-color:var(--saffron)}
+.iv-btn--primary:hover{background:#F5B259;border-color:#F5B259;box-shadow:var(--glow-saffron);color:var(--on-saffron)}
+.iv-btn--primary:active{background:#E0912A;border-color:#E0912A;box-shadow:none}
+.iv-btn--secondary{border-color:var(--hairline-strong);color:var(--ink)}
+.iv-btn--secondary:hover{border-color:var(--ink);color:var(--ink)}
+.iv-btn--secondary:active{background:var(--hairline)}
+.iv-btn--ghost{color:var(--ink-muted);padding-left:12px;padding-right:12px}
+.iv-btn--ghost:hover{color:var(--ink);background:var(--hairline)}
+.iv-btn:disabled,.iv-btn[aria-disabled="true"]{opacity:.4;cursor:not-allowed;box-shadow:none;pointer-events:none}
+.iv-btn:focus-visible{outline:1px solid var(--signal);outline-offset:2px}
+.iv-btn__icon{display:inline-flex;width:16px;height:16px;align-items:center;justify-content:center}
+
+/* StatusPill — the one round element */
+.iv-pill{display:inline-flex;align-items:center;gap:8px;height:24px;padding:0 10px;border:1px solid var(--hairline-strong);border-radius:var(--radius-pill);font-family:var(--font-mono);font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;line-height:1;color:var(--ink-muted);white-space:nowrap;background:transparent}
+.iv-pill__value{letter-spacing:0;text-transform:none;color:var(--ink)}
+.iv-pill--live{border-color:var(--saffron);background:var(--saffron-faint);color:var(--saffron-ink)}
+.iv-pill--verified{border-color:color-mix(in srgb,var(--verified) 45%,transparent);color:var(--verified)}
+.iv-pill--signal{border-color:color-mix(in srgb,var(--signal) 45%,transparent);color:var(--signal-ink)}
+.iv-pill--risk{border-color:color-mix(in srgb,var(--risk) 45%,transparent);color:var(--risk)}
+.iv-pill__dot{position:relative;width:6px;height:6px;border-radius:50%;background:currentColor;flex:none}
+.iv-pill__dot::after{content:"";position:absolute;inset:0;border-radius:50%;background:currentColor;animation:iv-pulse-ring 1.8s var(--ease-out) infinite}
+.iv-pill__tick{width:9px;height:5px;border-left:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:translateY(-1px) rotate(-45deg);flex:none}
+@media (prefers-reduced-motion:reduce){.iv-pill__dot::after{animation:none;opacity:0}}
+
+/* DataRow */
+.iv-datarow{display:grid;grid-template-columns:minmax(120px,40%) minmax(0,1fr);gap:16px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--hairline)}
+.iv-datarow--stack{grid-template-columns:1fr;gap:6px}
+.iv-datarow__label{font-family:var(--font-mono);font-size:11px;letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--ink-muted);font-weight:500}
+.iv-datarow__value{font-family:var(--font-mono);font-size:13px;color:var(--ink);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+
+/* Inputs */
+.iv-field{display:flex;flex-direction:column;gap:8px;min-width:0}
+.iv-field__label{font-family:var(--font-mono);font-size:11px;letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--ink-muted);font-weight:500}
+.iv-field__hint{font-size:13px;line-height:1.5;color:var(--ink-muted)}
+.iv-field__error{font-size:13px;line-height:1.5;color:var(--risk)}
+.iv-input{height:48px;width:100%;padding:0 14px;background:var(--graphite);border:1px solid var(--hairline);border-radius:var(--radius-input);color:var(--ink);font-family:var(--font-body);font-size:15px;outline:none;transition:border-color var(--dur-fast) var(--ease-out)}
+.iv-input::placeholder{color:var(--ink-faint)}
+.iv-input:hover{border-color:var(--hairline-strong)}
+.iv-input:focus{border-color:var(--signal)}
+.iv-input[aria-invalid="true"]{border-color:var(--risk)}
+.iv-input:disabled{opacity:.5;cursor:not-allowed}
+select.iv-input{appearance:none;padding-right:40px;background-image:linear-gradient(45deg,transparent 50%,var(--ink-muted) 50%),linear-gradient(135deg,var(--ink-muted) 50%,transparent 50%);background-position:calc(100% - 20px) 21px,calc(100% - 15px) 21px;background-size:5px 5px;background-repeat:no-repeat}
+.iv-check{display:flex;gap:12px;align-items:flex-start;cursor:pointer;font-size:15px;line-height:1.5;color:var(--ink-muted)}
+.iv-check input{appearance:none;flex:none;width:18px;height:18px;margin:2px 0 0;border:1px solid var(--hairline-strong);border-radius:var(--radius-input);background:var(--graphite);display:grid;place-content:center;cursor:pointer}
+.iv-check input::after{content:"";width:9px;height:5px;border-left:1.5px solid var(--void);border-bottom:1.5px solid var(--void);transform:translateY(-1px) rotate(-45deg);opacity:0}
+.iv-check input:checked{background:var(--ink);border-color:var(--ink)}
+.iv-check input:checked::after{opacity:1}
+.iv-check input:focus-visible{outline:1px solid var(--signal);outline-offset:2px}
+.iv-seg{display:flex;border:1px solid var(--hairline);border-radius:var(--radius-input);background:var(--graphite);padding:3px;gap:3px}
+.iv-seg button{flex:1;height:40px;border:0;background:transparent;color:var(--ink-muted);font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;border-radius:1px}
+.iv-seg button:hover{color:var(--ink)}
+.iv-seg button[aria-pressed="true"]{background:var(--void);color:var(--ink);box-shadow:inset 0 0 0 1px var(--hairline-strong)}
+
+/* Navbar */
+.iv-nav{display:flex;align-items:center;gap:32px;height:64px;padding:0 24px;background:var(--void);border-bottom:1px solid var(--hairline)}
+.iv-nav__links{display:flex;gap:4px;margin-left:auto;align-items:center}
+.iv-nav__link{padding:8px 12px;color:var(--ink-muted);font-size:15px;text-decoration:none;cursor:pointer;background:none;border:0;font-family:var(--font-body)}
+.iv-nav__link:hover,.iv-nav__link[aria-current="page"]{color:var(--ink)}
+
+/* Map marker */
+.iv-marker{position:relative;display:inline-flex;align-items:center;gap:10px}
+.iv-marker__dot{position:relative;width:10px;height:10px;border-radius:50%;background:var(--signal);flex:none}
+.iv-marker__dot::before{content:"";position:absolute;inset:-5px;border:1px solid var(--signal);border-radius:50%;opacity:.35}
+.iv-marker__ring{position:absolute;inset:0;border-radius:50%;background:var(--signal)}
+.iv-marker--live .iv-marker__dot{background:var(--saffron);box-shadow:var(--glow-saffron)}
+.iv-marker--live .iv-marker__dot::before{border-color:var(--saffron)}
+.iv-marker--live .iv-marker__ring{background:var(--saffron)}
+.iv-marker__label{font-family:var(--font-mono);font-size:11px;letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--ink);background:var(--void);border:1px solid var(--hairline);padding:4px 8px;white-space:nowrap}

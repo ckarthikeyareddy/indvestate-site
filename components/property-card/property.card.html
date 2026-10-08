@@ -1,0 +1,15 @@
+<!-- @dsCard group="Components" viewport="700x900" name="PropertyCard" subtitle="Status strip → headline → media → data → price → disclaimer" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0}.pane{padding:24px;display:flex;flex-direction:column;gap:16px}.tag{font-family:var(--font-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-muted)}</style>
+</head><body><div id="root"></div>
+<script type="text/babel">
+const NS=window.INDVESTATEDesignSystem_26aecf;const {PropertyCard}=NS;
+const demo=(t)=> t==='dark'?<PropertyCard statuses={['live-drop','oc','bank-loan','owner-listed']} kicker="DROP 01 — SOUTHLINE" title="3 BHK, east-facing, 11th floor" location="Kokapet · Hyderabad" data={[{label:'Area',value:'2,400 sq ft'},{label:'EC',value:'1983–2026',tone:'verified'},{label:'Facing',value:'East'}]} price="₹ 1.42 Cr" priceNote="₹ 5,917 / sq ft"/>
+:<PropertyCard variant="builder" reraNumber="TG RERA No. P02400004521" project="Southline Residences" statuses={['coming-soon',{kind:'rera',value:'P02400004521'},'approved','nri-ready']} kicker="DROP 02 — TELLAPUR" title="Builder-direct 4 BHK villas" location="Tellapur · Hyderabad" data={[{label:'Plot',value:'267 sq yd'},{label:'Built',value:'3,850 sq ft'},{label:'Handover',value:'Q4 2027'}]} price="₹ 3.10 Cr" priceNote="Developer price list v2"/>;
+function Pane({theme}){return <div data-theme={theme} className="pane">{demo(theme)}</div>;}
+ReactDOM.createRoot(document.getElementById('root')).render(<div style={{display:'grid',gridTemplateColumns:'1fr 1fr'}}><Pane theme="dark"/><Pane theme="light"/></div>);
+</script></body></html>

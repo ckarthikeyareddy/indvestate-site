@@ -1,0 +1,34 @@
+/* Motion: precise, not playful. Nothing bounces. */
+:root{
+  --ease-out:cubic-bezier(0.22,0.61,0.36,1);/* @kind other */
+  --ease-in-out:cubic-bezier(0.65,0,0.35,1);/* @kind other */
+  --dur-fast:160ms;/* @kind other */
+  --dur-base:240ms;/* @kind other */
+  --dur-reveal:800ms;/* @kind other */
+  --dur-slow:1200ms;/* @kind other */
+  --stagger:100ms;/* @kind other */
+  --rise:28px;/* @kind spacing */
+  --drift:6px;/* @kind spacing */
+  --drift-loop:20s;/* @kind other */
+}
+@keyframes iv-reveal{from{opacity:0;transform:translateY(var(--rise))}to{opacity:1;transform:none}}
+@keyframes iv-pulse-ring{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.8);opacity:0}}
+@keyframes iv-drift{0%,100%{transform:translate(0,0)}25%{transform:translate(var(--drift),calc(var(--drift) * -1))}50%{transform:translate(0,var(--drift))}75%{transform:translate(calc(var(--drift) * -1),0)}}
+@keyframes iv-line-grow-down{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes iv-border-draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes iv-stamp-in{0%{opacity:0;transform:scale(1.35)}60%{opacity:1}100%{opacity:1;transform:scale(1)}}
+@keyframes iv-check-in{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:none}}
+@keyframes iv-word-cycle{0%{opacity:0;transform:translateY(40%)}12%,88%{opacity:1;transform:none}100%{opacity:0;transform:translateY(-40%)}}
+@keyframes iv-contour-shift{from{background-position:0 0}to{background-position:var(--plus-pitch) var(--plus-pitch)}}
+.iv-reveal{animation:iv-reveal var(--dur-reveal) var(--ease-out) both;animation-delay:calc(var(--i,0) * var(--stagger))}
+.iv-pulse-ring{animation:iv-pulse-ring 1.8s var(--ease-out) infinite}
+.iv-drift{animation:iv-drift var(--drift-loop) ease-in-out infinite}
+.iv-line-grow-down{transform-origin:top;animation:iv-line-grow-down var(--dur-slow) var(--ease-out) both}
+.iv-border-draw{transform-origin:left;animation:iv-border-draw var(--dur-reveal) var(--ease-out) both}
+.iv-stamp-in{animation:iv-stamp-in 420ms var(--ease-out) both}
+.iv-check-in{animation:iv-check-in 400ms var(--ease-out) both;animation-delay:calc(var(--i,0) * 80ms)}
+.iv-contour-shift{animation:iv-contour-shift 8s linear infinite}
+@media (prefers-reduced-motion:reduce){
+  .iv-reveal,.iv-pulse-ring,.iv-drift,.iv-line-grow-down,.iv-border-draw,.iv-stamp-in,.iv-check-in,.iv-contour-shift{animation:none!important;opacity:1;transform:none}
+  .iv-pulse-ring{opacity:0}
+}
