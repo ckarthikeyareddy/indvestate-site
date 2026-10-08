@@ -67,7 +67,7 @@ Run `pnpm acceptance`. Commit "phase 2: hero field and motion".
 ## Phase 3 · Every other page (one or two sessions)
 Build the routes in BRIEF.md: /live and both property pages (PropertyCard two-CTA
 variant, availability table for Kompally, "documents in review" state when reraNumber
-is empty), /services/reel (tiers, how it works, FAQ, booking form), /services/inspection
+is empty), /services/sell-with-us (tiers, how it works, FAQ, booking form), /services/inspection
 (scope dropdown, fee, form then Razorpay link), /nri-desk, /briefs + five case pages
 (source link mandatory), the six policy pages, /thank-you end card, 404, sitemap,
 robots, OG image, JSON-LD. /api/lead with KV + Resend + honeypot + rate limit; env vars
@@ -79,7 +79,7 @@ WhatsApp and email buttons prefilled. Commit "phase 3: pages and forms".
    overscroll, 44 px targets, the compact nav strip.
 2. Wire Playwright and Lighthouse into scripts/acceptance.mjs; make every check in
    BRIEF.md real; run it; fix until green. Target Lighthouse mobile ≥ 90 on `/`.
-3. `/taste` pre-flight sweep (its tells list) on `/`, `/services/reel` and one property
+3. `/taste` pre-flight sweep (its tells list) on `/`, `/services/sell-with-us` and one property
    page; fix what applies; list what the design system overrides.
 4. Print the full list of remaining "[CONFIRM]" values grouped by file. Stop there; I
    fill them.

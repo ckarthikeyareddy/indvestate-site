@@ -19,7 +19,7 @@ Queried: `"error summary validation" --domain ux`.
   → wired in `TextField` (`<id>-error`), `Select`, `Checkbox`.
 - **Inline validation (Medium).** Validate on blur, not only on submit.
   → extended `InsideListForm` validates on blur; the consent error clears on tick.
-- Apply the same pattern to the reel, inspection and NRI forms in Phase 3.
+- Apply the same pattern to the Sell with us, inspection and NRI forms in Phase 3.
 
 ## 2. Focus not obscured
 Queried: `"focus not obscured" --domain ux`.

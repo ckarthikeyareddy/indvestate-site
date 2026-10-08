@@ -50,12 +50,15 @@
 
 /* 8. ServiceCell — ruled grid cell; grid 5 → 2+2+1 under 1000px. */
 .iv-services{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border:1px solid var(--hairline)}
-.iv-cell{border-left:1px solid var(--hairline);padding:var(--space-5);display:flex;flex-direction:column;gap:var(--space-4);min-height:280px;background:var(--void);min-width:0;transition:background-color var(--dur-fast) var(--ease-out)}
+.iv-cell{position:relative;border-left:1px solid var(--hairline);padding:var(--space-5);display:flex;flex-direction:column;gap:var(--space-4);min-height:280px;background:var(--void);min-width:0;transition:background-color var(--dur-fast) var(--ease-out)}
 .iv-services>.iv-cell:first-child{border-left:0}
 .iv-cell__icon{display:inline-flex;width:20px;height:20px;color:var(--signal);flex:none}
 .iv-cell__icon svg{width:20px;height:20px}
 .iv-cell__title{font-family:var(--font-headline);font-weight:500;font-size:20px;letter-spacing:var(--tracking-headline);color:var(--ink);text-decoration:none}
 .iv-cell__pill{margin-top:auto;display:flex}
+.iv-cell--active{background:var(--carbon)}
+.iv-cell--active::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--signal)}
+.iv-cell:focus-visible{outline:1px solid var(--signal);outline-offset:-2px}
 @media (hover:hover) and (pointer:fine){.iv-cell:hover{background:var(--carbon)}}
 
 /* 9. Annotation — mockup only, sits outside frames. */

@@ -1,4 +1,5 @@
 // Generated from docs/CONTENT.md §3, §4, §5 and docs/BRIEF.md.
+// "Sell with us" is the reel + distribution service (renamed in Phase 1.5).
 // "[CONFIRM]" stays until replaced.
 import { CONFIRM, type Confirm } from "./confirm";
 
@@ -15,9 +16,9 @@ export interface Tier {
   byReviewOnly?: boolean;
 }
 
-export const reel = {
-  slug: "reel",
-  name: "Reel + distribution",
+export const sellWithUs = {
+  slug: "sell-with-us",
+  name: "Sell with us",
   position: "Have a property? We film it, post it and send you the leads.",
   difference: [
     "We post on a page that only shows verified properties.",
@@ -73,6 +74,16 @@ export const reel = {
   status: "live" as ServiceStatus,
 };
 
+const inspectionScope = [
+  "Structure and cracks",
+  "Waterproofing and seepage",
+  "Electrical load and earthing",
+  "Plumbing and drainage",
+  "Doors, windows, fittings",
+  "Approvals and OC cross-check",
+  "Snag list with photos",
+];
+
 export const inspection = {
   slug: "inspection",
   name: "Home inspection",
@@ -93,15 +104,7 @@ export const inspection = {
     razorpayLink: CONFIRM as string | Confirm,
     note: "Form first, then the payment link opens in a new tab.",
   },
-  scope: [
-    "Structure and cracks",
-    "Waterproofing and seepage",
-    "Electrical load and earthing",
-    "Plumbing and drainage",
-    "Doors, windows, fittings",
-    "Approvals and OC cross-check",
-    "Snag list with photos",
-  ],
+  scope: inspectionScope,
   form: {
     fields: ["name", "whatsapp", "address", "date"] as const,
     labels: {
@@ -116,6 +119,12 @@ export const inspection = {
   status: "bookable" as ServiceStatus,
 };
 
+export interface ServicePanel {
+  /** Scope list (CONTENT §3 / §4). "tiers" renders the three tiers with prices. */
+  scope?: string[] | "tiers";
+  cta?: { label: string; href: string };
+}
+
 export interface ServiceCellContent {
   key: string;
   /** Lucide icon name (kebab-case). */
@@ -129,6 +138,12 @@ export interface ServiceCellContent {
   pillLabel?: string;
   cta?: { label: string; href: string };
   href: string;
+  /** Detail panel under the Services grid. Coming-soon services show line + pill only. */
+  panel?: ServicePanel;
+  /** The highlighted cell: pill "Live · from <price>" and the panel open on load. */
+  highlight?: boolean;
+  /** Entry price for the highlighted pill. CONFIRM until confirmed. */
+  fromPrice?: string | Confirm;
 }
 
 /** The five services for the Services grid and the nav dropdown (CONTENT §5, BRIEF §1, §6). */
@@ -141,6 +156,7 @@ export const services: ServiceCellContent[] = [
     body: "Owner-direct and builder-direct releases. Documents on file before you hear of them.",
     status: "live",
     href: "/live",
+    panel: { cta: { label: "Join the inside list", href: "/#inside" } },
   },
   {
     key: "concierge",
@@ -150,6 +166,7 @@ export const services: ServiceCellContent[] = [
     body: "Shortlists, site visits and negotiation from one desk. US and Gulf hours covered. Enquiries on WhatsApp and email.",
     status: "live",
     href: "/nri-desk",
+    panel: { cta: { label: "Talk to the NRI desk", href: "/nri-desk" } },
   },
   {
     key: "inspection",
@@ -160,15 +177,19 @@ export const services: ServiceCellContent[] = [
     status: "bookable",
     cta: { label: "Book an inspection", href: "/services/inspection" },
     href: "/services/inspection",
+    panel: { scope: inspectionScope, cta: { label: "Book an inspection", href: "/services/inspection" } },
   },
   {
-    key: "reel",
+    key: "sell",
     icon: "route",
-    name: "Reel + distribution",
+    name: "Sell with us",
     line: "We film, post and distribute.",
     body: "Owners and builders: we film, post and distribute. Upfront fee, then a commission on sale.",
     status: "live",
-    href: "/services/reel",
+    href: "/services/sell-with-us",
+    panel: { scope: "tiers", cta: { label: "Book a reel", href: "/services/sell-with-us" } },
+    highlight: true,
+    fromPrice: CONFIRM, // ₹ 2,499 (Post tier)
   },
   {
     key: "data",
@@ -180,6 +201,9 @@ export const services: ServiceCellContent[] = [
     href: "/#data",
   },
 ];
+
+/** Pill label for the highlighted cell. */
+export const highlightPillLabel = "Live · from";
 
 /** CONTENT §5 also lists these; no cell on the landing grid. */
 export const otherServices = [

@@ -89,7 +89,7 @@ Full stops. No exclamation marks. No superlatives.
 Under the two cards: one line in `.iv-caption`: "More are being checked. One WhatsApp per
 release, nothing else." plus the Inside list button (ghost).
 
-## 3. The Reel + distribution service (the revenue focus)
+## 3. Sell with us: the reel + distribution service (the revenue focus)
 Position: "Have a property? We film it, post it and send you the leads."
 Difference from others (say it plainly): we post on a page that only shows verified
 properties, every lead lands on WhatsApp with the viewer's name and intent, and we
@@ -102,7 +102,7 @@ report what the reel did. Tiers (suggested, [CONFIRM prices]):
 
 Who can book: owners, builders, resale agents. What we need from you: the address, the
 documents on file, a 2-hour window to shoot, the price. Turnaround: posted within 5
-working days of the shoot [CONFIRM]. Booking: the /services/reel form (name, WhatsApp,
+working days of the shoot [CONFIRM]. Booking: the /services/sell-with-us form (name, WhatsApp,
 property type, location, tier) → /thank-you, and the same data mailed to
 reels@indvestate.com. Payment: a Razorpay Payment Link sent on WhatsApp after the
 call [CONFIRM link]. No payment collected on the site at launch.

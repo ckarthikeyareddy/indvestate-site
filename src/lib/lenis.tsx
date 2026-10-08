@@ -5,9 +5,16 @@
 // Drop into: lib/lenis.tsx   (then wrap the app body in <SmoothScroll>)
 //
 // Do NOT also call ScrollSmoother.create() — Lenis replaces it. Pick one.
+//
+// Fix (Phase 1.5): lenis/react 1.3.x stores the instance in React state and
+// updates the imperative ref only after a re-render, so reading
+// `lenisRef.current.lenis` inside a mount-only effect returned undefined. The
+// ticker was never wired, and with autoRaf off Lenis swallowed every wheel
+// event without scrolling. The sync now lives in a child that reads the
+// instance through useLenis() and re-runs when it appears.
 
-import { useEffect, useRef, type ReactNode } from "react";
-import { ReactLenis, useLenis, type LenisRef } from "lenis/react";
+import { useEffect, type ReactNode } from "react";
+import { ReactLenis, useLenis } from "lenis/react";
 import type { LenisOptions } from "lenis";
 import "lenis/dist/lenis.css";
 
@@ -31,11 +38,10 @@ const defaults: Omit<LenisOptions, "autoRaf"> = {
   stopInertiaOnNavigate: true,
 };
 
-export function SmoothScroll({ children, options }: SmoothScrollProps) {
-  const lenisRef = useRef<LenisRef>(null);
+function TickerSync() {
+  const lenis = useLenis();
 
   useEffect(() => {
-    const lenis = lenisRef.current?.lenis;
     if (!lenis) return;
 
     // 1. Keep ScrollTrigger in sync with Lenis' virtual scroll position.
@@ -52,14 +58,15 @@ export function SmoothScroll({ children, options }: SmoothScrollProps) {
       lenis.off("scroll", ScrollTrigger.update);
       gsap.ticker.remove(update);
     };
-  }, []);
+  }, [lenis]);
 
+  return null;
+}
+
+export function SmoothScroll({ children, options }: SmoothScrollProps) {
   return (
-    <ReactLenis
-      root
-      ref={lenisRef}
-      options={{ ...defaults, ...options, autoRaf: false }}
-    >
+    <ReactLenis root options={{ ...defaults, ...options, autoRaf: false }}>
+      <TickerSync />
       {children}
     </ReactLenis>
   );

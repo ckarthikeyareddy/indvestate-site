@@ -8,20 +8,9 @@
 import Link from "next/link";
 import { useEffect, useId, useRef, useState, type KeyboardEvent } from "react";
 import { Icon, Navbar, StatusPill } from "@/components/ds";
+import { ServicePill } from "./ServicePill";
 import { site } from "@/content/site";
-import { services, statusPillLabel } from "@/content/services";
-import { ledger } from "@/content/ledger";
-
-function ServicePill({ k }: { k: (typeof services)[number] }) {
-  if (k.key === "drops")
-    return <StatusPill kind="live-drop" label={`${ledger.released} live`} />;
-  return (
-    <StatusPill
-      kind={k.status === "coming-soon" ? "coming-soon" : "owner-listed"}
-      label={statusPillLabel[k.status]}
-    />
-  );
-}
+import { services } from "@/content/services";
 
 function ServiceRows({ onPick, role }: { onPick?: () => void; role?: "menuitem" }) {
   return (
@@ -35,7 +24,7 @@ function ServiceRows({ onPick, role }: { onPick?: () => void; role?: "menuitem" 
             <span className="nav-dd__name">{s.name}</span>
             <span className="iv-caption">{s.line}</span>
           </span>
-          <ServicePill k={s} />
+          <ServicePill s={s} />
         </Link>
       ))}
     </>

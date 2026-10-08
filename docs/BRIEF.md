@@ -11,7 +11,7 @@ Design mockup is approved; build it, with the changes below. Do not redesign.
 | `/live` | Both property cards + "more are being checked" | |
 | `/live/meerpet-3bhk-investor-share` | Property page A | per documentsOnFile |
 | `/live/kompally-triplex-villas` | Property page B (renders only with reraNumber) | per documentsOnFile |
-| `/services/reel` | Reel + distribution: tiers, how it works, FAQ, booking form | LIVE |
+| `/services/sell-with-us` | Sell with us (reel + distribution): tiers, how it works, FAQ, booking form. `/services/reel` redirects here | LIVE |
 | `/services/inspection` | Home inspection: scope, fee, booking form → Razorpay link | BOOKABLE |
 | `/nri-desk` | NRI desk: what we do, converter, desk hours, enquiry form | LIVE |
 | `/briefs` and `/briefs/[slug]` | The five real cases B01–B05 | |
@@ -34,12 +34,12 @@ favicon from the Monogram, JSON-LD (Organization, RealEstateListing on property 
    under the map and the zoom-out to the RRR ring after load.
 3. **Live now**: title "Two passed. Here is what we checked." Two PropertyCards (two-CTA
    variant from new-components.md) from CONTENT §2, then the "more coming soon" line.
-4. **Reel + distribution** (NEW, the revenue section; give it room): split layout.
+4. **Sell with us** (NEW, the revenue section; give it room): split layout.
    Left: title "Have a property? We film it, post it and send you the leads." three
    lines on how it differs (CONTENT §3). Right: the three tiers as a hairline-divided
    list (not three cards): tier name in .iv-h3, price in .iv-price, two-line body,
    "1% on sale" / "2% on sale" in .iv-data. Under the list: Button secondary
-   "Book a reel" (→ /services/reel) and a ghost link "How it works →". This section's
+   "Book a reel" (→ /services/sell-with-us) and a ghost link "How it works →". This section's
    saffron: none (the hero and the form hold saffron; keep the rule one per viewport).
 5. **Method**: WATCH · REJECT · THESIS · RELEASE, pinned scroll per motion-spec.md,
    counters only from `ledger` (CONTENT §6). If a figure is empty, the column shows the

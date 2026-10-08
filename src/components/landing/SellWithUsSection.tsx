@@ -1,26 +1,26 @@
-// 04 Reel + distribution · BRIEF §4. Split: title + three difference lines on
+// 04 Sell with us (reel + distribution) · BRIEF §4. Split: title + three difference lines on
 // the left; the three tiers as a hairline-divided list on the right. No saffron
 // in this section.
 import { Button } from "@/components/ds";
 import { Fact } from "@/components/Fact";
 import { site } from "@/content/site";
-import { reel } from "@/content/services";
+import { sellWithUs } from "@/content/services";
 
-export function ReelSection() {
+export function SellWithUsSection() {
   return (
-    <section id="reel" className="sec">
+    <section id="sell" className="sec">
       <div className="wrap split">
         <div className="stack g-32">
-          <h2 className="iv-h2">{site.reel.title}</h2>
+          <h2 className="iv-h2">{site.sellWithUs.title}</h2>
           <ul className="reel__lines iv-body-lg muted">
-            {reel.difference.map((line) => (
+            {sellWithUs.difference.map((line) => (
               <li key={line}>{line}</li>
             ))}
           </ul>
         </div>
         <div className="stack">
           <div className="tiers">
-            {reel.tiers.map((t) => (
+            {sellWithUs.tiers.map((t) => (
               <div className="tier" key={t.name}>
                 <span className="iv-h3 tier__name">{t.name}</span>
                 <span className="iv-price tier__price">
@@ -36,11 +36,11 @@ export function ReelSection() {
             ))}
           </div>
           <div className="reel__ctas">
-            <Button variant="secondary" href={site.reel.cta.href}>
-              {site.reel.cta.label}
+            <Button variant="secondary" href={site.sellWithUs.cta.href}>
+              {site.sellWithUs.cta.label}
             </Button>
-            <Button variant="ghost" href={site.reel.how.href}>
-              {site.reel.how.label}
+            <Button variant="ghost" href={site.sellWithUs.how.href}>
+              {site.sellWithUs.how.label}
             </Button>
           </div>
         </div>

@@ -67,7 +67,19 @@
 .m4>*:first-child{border-left:0;padding-left:0}
 .figure{font-size:56px;line-height:1}
 
-/* 06 Services: the grid lives in new-components.css */
+/* 06 Services: the grid lives in new-components.css. The detail panel sits
+   directly under it, full width, carbon, hairline sides; it keeps its space
+   and reveals its content with transform + opacity only (never height). */
+.services{display:flex;flex-direction:column}
+.sp{background:var(--carbon);border:1px solid var(--hairline);border-top:0;min-height:260px}
+.sp__inner{padding:var(--space-5);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-6);align-items:start;opacity:0;transform:translateY(8px);visibility:hidden;transition:opacity 240ms var(--ease-out),transform 240ms var(--ease-out),visibility 0s linear 240ms}
+.sp[data-open="true"] .sp__inner{opacity:1;transform:none;visibility:visible;transition-delay:0s}
+.sp__head{display:flex;flex-direction:column;gap:var(--space-3)}
+.sp__foot{display:flex;align-items:center;gap:var(--space-4);flex-wrap:wrap;padding-top:var(--space-2)}
+.sp__scope{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.sp__scope li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:var(--space-4);align-items:baseline;padding:10px 0;border-top:1px solid var(--hairline)}
+.sp__scope li:last-child{border-bottom:1px solid var(--hairline)}
+@media (prefers-reduced-motion:reduce){.sp__inner{transition:none}}
 
 /* 07 NRI */
 .nri__lines{display:flex;flex-direction:column;gap:var(--space-2)}
@@ -102,6 +114,7 @@
   .hero .iv-h1{font-size:38px}.iv-h2{font-size:30px}
   .hero .iv-marker__label{display:none}
   .g2,.split,.foot,.inside-cols{grid-template-columns:minmax(0,1fr);gap:var(--space-6)}
+  .sp{min-height:0}.sp__inner{grid-template-columns:minmax(0,1fr)}
   .m4{grid-template-columns:repeat(2,minmax(0,1fr))}
   .m4>*{padding:var(--space-5) var(--space-4) 0}.m4>*:nth-child(odd){border-left:0;padding-left:0}
   .m4>*:nth-child(n+3){border-top:1px solid var(--hairline);margin-top:var(--space-5)}

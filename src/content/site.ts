@@ -54,7 +54,7 @@ export const site = {
     pill: "RERA agent · in process",
     links: [
       { label: "Live", href: "/live" },
-      { label: "Services", href: "/services/reel", dropdown: true },
+      { label: "Services", href: "/services/sell-with-us", dropdown: true },
       { label: "Method", href: "/#method" },
       { label: "NRI desk", href: "/nri-desk" },
       { label: "Briefs", href: "/briefs" },
@@ -98,10 +98,10 @@ export const site = {
     moreCta: { label: "Join the inside list", href: "/#inside" },
   },
 
-  reel: {
+  sellWithUs: {
     title: "Have a property? We film it, post it and send you the leads.",
-    cta: { label: "Book a reel", href: "/services/reel" },
-    how: { label: "How it works →", href: "/services/reel#how" },
+    cta: { label: "Book a reel", href: "/services/sell-with-us" },
+    how: { label: "How it works →", href: "/services/sell-with-us#how" },
   },
 
   method: {
