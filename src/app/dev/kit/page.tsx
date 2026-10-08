@@ -442,10 +442,7 @@ export default function KitPage() {
         <div className="kit__frame kit__frame--tight">
           <HeroMap
             style={{ height: 520 }}
-            labels={[
-              { x: 1040, y: 236, text: site.hero.map.orr.label },
-              { x: 700, y: 744, text: "METRO PH-II" },
-            ]}
+            labels={[{ x: 1040, y: 236, text: site.hero.map.orr.label }, ...site.hero.map.places]}
           >
             <HeroMarker left="28%" top="36%">
               <MarkerTooltip rows={[{ label: "Area", value: meerpet.area.label }, { label: "Price", value: meerpet.price.label }]}>

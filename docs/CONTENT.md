@@ -185,6 +185,7 @@ Sources: ETV Bharat, 24 Aug 2024, https://www.etvbharat.com/en/!bharat/hyderabad
   awaiting CCEA approval. Southern section: DPR not finalised.
 - Labels: `ORR · 158 KM` · `RRR · PROPOSED · 340 KM` · `N SECTION · LAND 99% NOTIFIED` ·
   `S SECTION · DPR PENDING`. Sources: Swarajya 30 Jul 2026; Telangana Today 25 Aug 2026.
+- Place labels (names, not claims): `HUSSAIN SAGAR` · `METRO PH-II · PROPOSED`.
 
 ## 9. Founder note (replaces the mockup text; no counts)
 Quote: I reject most of what I see. That is the job.

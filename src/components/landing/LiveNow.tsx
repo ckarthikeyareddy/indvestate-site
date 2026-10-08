@@ -3,7 +3,7 @@
 // without a RERA number is not live and does not appear here.
 import { Button, PropertyCard } from "@/components/ds";
 import { Fact } from "@/components/Fact";
-import { site, whatsappHref } from "@/content/site";
+import { liveTitle, site, whatsappHref } from "@/content/site";
 import { confirmed, isConfirm } from "@/content/confirm";
 import { docsOnFile, liveProperties, type Property } from "@/content/properties";
 
@@ -53,7 +53,7 @@ export function LiveNow() {
     <section id="live" className="sec">
       <div className="wrap stack g-40">
         <div className="between">
-          <h2 className="iv-h2">{site.live.title}</h2>
+          <h2 className="iv-h2">{liveTitle(liveProperties.length)}</h2>
           <span className="iv-label muted">{site.live.label}</span>
         </div>
         <div className="g2">{liveProperties.map(card)}</div>

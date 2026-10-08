@@ -22,7 +22,7 @@ export function Hero() {
   return (
     <section id="top" className="hero iv-grid-bg" aria-label="Hero">
       <HeroMap
-        labels={[{ x: 1040, y: 236, text: h.map.orr.label }]}
+        labels={[{ x: 1040, y: 236, text: h.map.orr.label }, ...h.map.places]}
         ground={<div className="hero__field" data-field="placeholder" aria-hidden="true" />}
       >
         {liveProperties.map((p) => {

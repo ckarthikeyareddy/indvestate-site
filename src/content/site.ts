@@ -82,12 +82,18 @@ export const site = {
         south: { label: "S SECTION · DPR PENDING" },
       },
       sources: ["Swarajya, 30 Jul 2026", "Telangana Today, 25 Aug 2026"],
+      // Place labels (names, not claims), positioned in the 1200×800 map space.
+      places: [
+        { x: 676, y: 366, text: "HUSSAIN SAGAR" },
+        { x: 700, y: 744, text: "METRO PH-II · PROPOSED" },
+      ],
     },
   },
 
   live: {
     label: "Live",
-    title: "Two passed. Here is what we checked.",
+    // Title follows the live count: liveTitle(n). Spelled out up to nine.
+    titleAfter: "passed. Here is what we checked.",
     more: "More are being checked. One WhatsApp per release, nothing else.",
     moreCta: { label: "Join the inside list", href: "/#inside" },
   },
@@ -292,6 +298,14 @@ export const site = {
 } as const;
 
 export type Site = typeof site;
+
+const COUNT_WORDS = ["None", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"];
+
+/** Live section title from the number of live properties: "One passed. Here is what we checked." */
+export function liveTitle(n: number): string {
+  const word = COUNT_WORDS[n] ?? String(n);
+  return `${word} ${site.live.titleAfter}`;
+}
 
 /** wa.me link with a prefilled message. */
 export function whatsappHref(text: string): string {
