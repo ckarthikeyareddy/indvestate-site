@@ -1,0 +1,30 @@
+/* Dev kit only (/dev/kit). Layout for the specimen page plus a mirror of the
+   hover / press / focus rules in design-system/components/components.css so
+   each state can be eyeballed without a pointer. The two saffron hex values
+   below are copied from that file on purpose; scripts/acceptance.mjs exempts
+   this one file from the src/ hex check for that reason. Never import it
+   from a public page. */
+.kit{max-width:var(--container);margin:0 auto;padding:var(--space-8) var(--gutter) var(--space-9);display:flex;flex-direction:column;gap:var(--space-9)}
+.kit__head{display:flex;flex-direction:column;gap:var(--space-3);border-bottom:1px solid var(--hairline);padding-bottom:var(--space-6)}
+.kit__sec{display:flex;flex-direction:column;gap:var(--space-5);scroll-margin-top:var(--nav-height)}
+.kit__sec>h2{margin:0}
+.kit__row{display:flex;flex-wrap:wrap;gap:var(--space-4);align-items:center}
+.kit__row--top{align-items:flex-start}
+.kit__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--space-6);align-items:start}
+.kit__frame{border:1px solid var(--hairline);padding:var(--space-5);display:flex;flex-direction:column;gap:var(--space-4);min-width:0}
+.kit__frame--tight{padding:0}
+.kit__toc{display:flex;flex-wrap:wrap;gap:var(--space-2) var(--space-4)}
+.kit__toc a{font-family:var(--font-mono);font-size:11px;letter-spacing:var(--tracking-label);text-transform:uppercase;text-decoration:none;color:var(--ink-muted);line-height:44px}
+.kit__toc a:hover{color:var(--ink)}
+.kit__light{background:var(--void);color:var(--ink);padding:var(--space-5)}
+
+/* Forced states — mirror of components.css */
+.kit-hover.iv-btn--primary{background:#F5B259;border-color:#F5B259;box-shadow:var(--glow-saffron)}
+.kit-press.iv-btn--primary{background:#E0912A;border-color:#E0912A;box-shadow:none}
+.kit-hover.iv-btn--secondary{border-color:var(--ink);color:var(--ink)}
+.kit-press.iv-btn--secondary{background:var(--hairline)}
+.kit-hover.iv-btn--ghost{color:var(--ink);background:var(--hairline)}
+.kit-focus{outline:1px solid var(--signal);outline-offset:2px}
+.kit-hover.iv-input{border-color:var(--hairline-strong)}
+.kit-focus.iv-input{border-color:var(--signal);outline:none}
+.kit-hover.iv-cell,.kit-hover.iv-brief{background:var(--carbon)}

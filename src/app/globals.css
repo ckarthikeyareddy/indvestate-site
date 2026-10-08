@@ -1,0 +1,89 @@
+/* INDVESTATE global stylesheet.
+   The design system is the source of every value. Its entry file
+   (design-system/styles.css) is reproduced here import-by-import, minus
+   tokens/fonts.css: that file pulls Google Fonts over the network and declares
+   Inversionz @font-face rules, both of which next/font replaces (see
+   src/app/fonts.ts). Everything else is imported unchanged. */
+@import "tailwindcss";
+@import "../../design-system/tokens/colors.css";
+@import "../../design-system/tokens/typography.css";
+@import "../../design-system/tokens/spacing.css";
+@import "../../design-system/tokens/motion.css";
+@import "../../design-system/tokens/base.css";
+@import "../../design-system/components/components.css";
+@import "../components/ds/new-components.css";
+
+/* Tailwind theme. Colours map to the design-system variables, never to hex.
+   The default palette, shadows, blur and radius scales are removed so no
+   utility can introduce a value the system does not have. */
+@theme {
+  --color-*: initial;
+  --font-*: initial;
+  --shadow-*: initial;
+  --inset-shadow-*: initial;
+  --drop-shadow-*: initial;
+  --blur-*: initial;
+  --radius-*: initial;
+}
+
+@theme inline {
+  --color-void: var(--void);
+  --color-carbon: var(--carbon);
+  --color-graphite: var(--graphite);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-faint: var(--ink-faint);
+  --color-hairline: var(--hairline);
+  --color-hairline-strong: var(--hairline-strong);
+  --color-saffron: var(--saffron);
+  --color-saffron-ink: var(--saffron-ink);
+  --color-on-saffron: var(--on-saffron);
+  --color-signal: var(--signal);
+  --color-signal-ink: var(--signal-ink);
+  --color-verified: var(--verified);
+  --color-risk: var(--risk);
+  --color-saffron-faint: var(--saffron-faint);
+  --color-signal-faint: var(--signal-faint);
+  --color-verified-faint: var(--verified-faint);
+  --color-risk-faint: var(--risk-faint);
+  --color-scrim: var(--scrim);
+  --color-grid-line: var(--grid-line);
+  --color-plus-mark: var(--plus-mark);
+
+  --font-display: var(--font-display);
+  --font-headline: var(--font-headline);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+
+  --radius-none: var(--radius-none);
+  --radius-input: var(--radius-input);
+  --radius-pill: var(--radius-pill);
+
+  --ease-out: var(--ease-out);
+  --ease-in-out: var(--ease-in-out);
+}
+
+/* Font bridge: the next/font variables feed the design-system family tokens.
+   The boxed Inversionz cut is not loaded at launch; --font-display-boxed falls
+   through to Space Grotesk until drop numbers need it. */
+:root {
+  --font-display: var(--font-inversionz-unboxed), var(--font-space-grotesk), sans-serif;
+  --font-display-boxed: var(--font-space-grotesk), sans-serif;
+  --font-headline: var(--font-space-grotesk), var(--font-noto-telugu), system-ui, sans-serif;
+  --font-body: var(--font-inter), var(--font-noto-telugu), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+
+  /* Site chrome. Sticky nav height (64 desktop, 101 compact) so keyboard focus
+     is never hidden under it (WCAG 2.2 focus-not-obscured). */
+  --nav-height: 64px;
+}
+
+html {
+  scroll-padding-top: var(--nav-height);
+}
+
+@media (max-width: 1000px) {
+  :root {
+    --nav-height: 101px;
+  }
+}

@@ -1,0 +1,52 @@
+// Generated from docs/CONTENT.md §6. No invented ledger. Counters render only
+// from here; an unconfirmed figure means the column shows the step line only
+// and the count-up is skipped. Never show 44 / 41 / 3 from the mockup.
+import { CONFIRM, isConfirm, type Confirm } from "./confirm";
+
+export type StepKey = "watch" | "reject" | "thesis" | "release";
+
+export interface Step {
+  key: StepKey;
+  label: string;
+  line: string;
+  count: number | Confirm;
+}
+
+export const ledger = {
+  reviewed: CONFIRM as number | Confirm,
+  rejected: CONFIRM as number | Confirm,
+  inThesis: CONFIRM as number | Confirm,
+  released: 2,
+};
+
+export const steps: Step[] = [
+  {
+    key: "watch",
+    label: "Watch",
+    line: "Parcels studied on the ground, walked at least once.",
+    count: ledger.reviewed,
+  },
+  {
+    key: "reject",
+    label: "Reject",
+    line: "Did not pass.",
+    count: ledger.rejected,
+  },
+  {
+    key: "thesis",
+    label: "Thesis",
+    line: "Passed title, approvals, location logic and exit.",
+    count: ledger.inThesis,
+  },
+  {
+    key: "release",
+    label: "Release",
+    line: "Released to the inside list with the risk memo attached.",
+    count: ledger.released,
+  },
+];
+
+/** A real figure or undefined. The UI must branch on this, never on the raw value. */
+export function figure(step: Step): number | undefined {
+  return isConfirm(step.count) ? undefined : step.count;
+}
