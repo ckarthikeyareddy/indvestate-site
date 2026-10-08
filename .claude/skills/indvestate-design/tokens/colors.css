@@ -1,0 +1,92 @@
+/* INDVESTATE colour. Dark is primary. "Saffron sells, signal informs."
+   Raw palette first, then theme-scoped role tokens, then semantic aliases. */
+:root{
+  /* raw — dark */
+  --palette-void-dark:#07080A;--palette-carbon-dark:#111317;--palette-graphite-dark:#1C2026;
+  --palette-ink-dark:#F3EFE6;--palette-ink-muted-dark:#9A9DA3;--palette-ink-faint-dark:#5D6168;
+  /* raw — light */
+  --palette-void-light:#F6F4EE;--palette-carbon-light:#FFFFFF;--palette-graphite-light:#EAE7DF;
+  --palette-ink-light:#0E1013;--palette-ink-muted-light:#5B5F66;--palette-ink-faint-light:#8D9097;
+  /* raw — accents */
+  --palette-saffron:#F2A33A;--palette-saffron-ink:#9A5A00;
+  --palette-signal-dark:#35E0D2;--palette-signal-light:#0E8C82;--palette-signal-ink-light:#0B6F67;
+  --palette-verified-dark:#5CD68A;--palette-verified-light:#1E7A45;
+  --palette-risk-dark:#E8604C;--palette-risk-light:#B43A2A;
+  --palette-whatsapp:#25D366;
+}
+/* DARK (default) */
+:root{
+  color-scheme:dark;
+  --void:#07080A;          /* page ground. Never pure #000. */
+  --carbon:#111317;        /* cards, panels, media frames */
+  --graphite:#1C2026;      /* controls: inputs, selects, toggles */
+  --ink:#F3EFE6;           /* bone-white primary text. Warm, never #FFF. 18.4:1 on void */
+  --ink-muted:#9A9DA3;     /* secondary text, captions. 7.4:1 on void — OK for body */
+  --ink-faint:#5D6168;     /* decorative / disabled only. 3.2:1 — never for text a buyer must read */
+  --hairline:rgba(243,239,230,0.12);        /* every border, rule, divider */
+  --hairline-strong:rgba(243,239,230,0.24); /* hover / focus border, active rule */
+  --saffron:#F2A33A;       /* brand accent. Primary CTA, live-drop marker. One per screen. */
+  --saffron-ink:#F2A33A;   /* saffron as text. Dark: same hue (9.7:1) */
+  --on-saffron:#07080A;    /* text/icons on saffron fills — always void */
+  --signal:#35E0D2;        /* data + intelligence. Labels, map markers, ticks. Never a CTA. */
+  --signal-ink:#35E0D2;    /* signal as small text. 12.1:1 on void */
+  --verified:#5CD68A;      /* document on file / check passed */
+  --risk:#E8604C;          /* flag, missing document, risk memo. 5.5:1 on void */
+  --saffron-faint:rgba(242,163,58,0.12);   /* saffron wash: live-drop rows, selected */
+  --signal-faint:rgba(53,224,210,0.12);    /* signal wash: data panels, map layers */
+  --verified-faint:rgba(92,214,138,0.12);
+  --risk-faint:rgba(232,96,76,0.12);
+  --scrim:rgba(7,8,10,0.80);               /* bg-void plate over footage */
+  --grid-line:rgba(243,239,230,0.05);      /* background grid hairline */
+  --plus-mark:rgba(243,239,230,0.16);      /* plus-grid crosshair */
+}
+[data-theme="dark"]{
+  color-scheme:dark;
+  --void:#07080A;--carbon:#111317;--graphite:#1C2026;
+  --ink:#F3EFE6;--ink-muted:#9A9DA3;--ink-faint:#5D6168;
+  --hairline:rgba(243,239,230,0.12);--hairline-strong:rgba(243,239,230,0.24);
+  --saffron:#F2A33A;--saffron-ink:#F2A33A;--on-saffron:#07080A;
+  --signal:#35E0D2;--signal-ink:#35E0D2;--verified:#5CD68A;--risk:#E8604C;
+  --saffron-faint:rgba(242,163,58,0.12);--signal-faint:rgba(53,224,210,0.12);
+  --verified-faint:rgba(92,214,138,0.12);--risk-faint:rgba(232,96,76,0.12);
+  --scrim:rgba(7,8,10,0.80);--grid-line:rgba(243,239,230,0.05);--plus-mark:rgba(243,239,230,0.16);
+}
+/* LIGHT */
+[data-theme="light"]{
+  color-scheme:light;
+  --void:#F6F4EE;          /* paper ground */
+  --carbon:#FFFFFF;        /* cards */
+  --graphite:#EAE7DF;      /* controls */
+  --ink:#0E1013;           /* 17.6:1 on void */
+  --ink-muted:#5B5F66;     /* 5.9:1 on void */
+  --ink-faint:#8D9097;     /* decorative / disabled only, 2.9:1 */
+  --hairline:rgba(14,16,19,0.12);--hairline-strong:rgba(14,16,19,0.28);
+  --saffron:#F2A33A;       /* fills only on light — never as text */
+  --saffron-ink:#9A5A00;   /* saffron as text on light, 5.3:1 */
+  --on-saffron:#07080A;
+  --signal:#0E8C82;        /* markers, ticks, rules, large labels (3.8:1) */
+  --signal-ink:#0B6F67;    /* signal as small text (<18px), 5.6:1 */
+  --verified:#1E7A45;      /* 4.9:1 */
+  --risk:#B43A2A;          /* 5.6:1 */
+  --saffron-faint:rgba(242,163,58,0.12);--signal-faint:rgba(14,140,130,0.12);
+  --verified-faint:rgba(30,122,69,0.12);--risk-faint:rgba(180,58,42,0.12);
+  --scrim:rgba(246,244,238,0.80);--grid-line:rgba(14,16,19,0.05);--plus-mark:rgba(14,16,19,0.18);
+}
+/* Semantic aliases — redeclared per scope so nested themes resolve correctly */
+:root{
+  --bg-page:var(--void);--surface-card:var(--carbon);--surface-control:var(--graphite);
+  --text-primary:var(--ink);--text-secondary:var(--ink-muted);--text-tertiary:var(--ink-faint);
+  --border-default:var(--hairline);--border-strong:var(--hairline-strong);
+  --accent-primary:var(--saffron);--accent-primary-text:var(--saffron-ink);--accent-primary-on:var(--on-saffron);
+  --accent-data:var(--signal);--accent-data-text:var(--signal-ink);
+  --status-verified:var(--verified);--status-risk:var(--risk);
+}
+[data-theme]{
+  --bg-page:var(--void);--surface-card:var(--carbon);--surface-control:var(--graphite);
+  --text-primary:var(--ink);--text-secondary:var(--ink-muted);--text-tertiary:var(--ink-faint);
+  --border-default:var(--hairline);--border-strong:var(--hairline-strong);
+  --accent-primary:var(--saffron);--accent-primary-text:var(--saffron-ink);--accent-primary-on:var(--on-saffron);
+  --accent-data:var(--signal);--accent-data-text:var(--signal-ink);
+  --status-verified:var(--verified);--status-risk:var(--risk);
+  background-color:var(--void);color:var(--ink);
+}
