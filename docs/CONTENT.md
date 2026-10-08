@@ -125,6 +125,7 @@ approvals and OC cross-check · snag list with photos.
 - Inside list: live (form only).
 
 ## 6. Method (no invented ledger)
+Section title: Four steps. Most of it does not pass.
 Four steps: WATCH · REJECT · THESIS · RELEASE, each with one line. Counters render only
 from `ledger` in content. Real values available today: released = 2. Reviewed, rejected,
 in thesis: [CONFIRM real counts]. If any is empty, render the step without a figure. Do

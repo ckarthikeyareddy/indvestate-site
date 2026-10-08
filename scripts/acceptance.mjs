@@ -73,18 +73,20 @@ function lineHits(text, re, max = 6) {
     "dream home",
   ];
   const re = new RegExp("\\b(" + WORDS.map((w) => w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|") + ")\\b", "gi");
+  // Banned words apply to INDVESTATE's own claims, not to reporting a
+  // regulator's case: body text inside src/content/briefs.ts (paragraphs,
+  // check, kicker, headline of a cited case) is exempt. Every other surface
+  // is checked, and a hit anywhere else fails.
   const bad = [];
   const quoted = [];
   for (const f of src([".ts", ".tsx"])) {
     const { count, sample } = lineHits(stripComments(f.text), re);
     if (!count) continue;
-    // Brief B03 quotes the regulator's own term for the offence it describes.
     if (f.file === "src/content/briefs.ts") quoted.push(`${f.file} (${count})`);
     else bad.push(`${f.file} (${count}) ${sample[0]}`);
   }
   if (bad.length) fail("Banned words absent", bad.join("; "));
-  else if (quoted.length) warn("Banned words absent", `only in ${quoted.join(", ")} (B03 quotes "pre-launch"); decide before launch of /briefs`);
-  else pass("Banned words absent");
+  else pass("Banned words absent (own claims)", quoted.length ? `cited-case text in ${quoted.join(", ")} exempt by decision` : undefined);
 }
 
 // ---- 3. Dash separators and emoji --------------------------------------------

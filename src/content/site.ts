@@ -100,8 +100,7 @@ export const site = {
 
   method: {
     eyebrow: "The method",
-    // CONTENT.md gives no Method title; the mockup line uses sample counts.
-    title: CONFIRM as string | Confirm,
+    title: "Four steps. Most of it does not pass.",
   },
 
   services: {

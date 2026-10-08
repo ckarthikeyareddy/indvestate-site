@@ -60,5 +60,7 @@ Package manager: pnpm.
 - Reduced motion: every animated block has a static end state. Lenis respects it;
   GSAP work sits inside `gsap.matchMedia("(prefers-reduced-motion: no-preference)")`.
 - Only `transform` and `opacity` animate (canvas excepted). No `transition: all`.
+  The transform/opacity rule is for motion; hover colour and border transitions at
+  `--dur-fast` are allowed per the system.
 - Hover motion is gated by `@media (hover: hover) and (pointer: fine)`.
 - Commit per phase with the phase name. Do not force-push.
