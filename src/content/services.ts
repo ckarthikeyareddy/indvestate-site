@@ -121,6 +121,8 @@ export interface ServiceCellContent {
   /** Lucide icon name (kebab-case). */
   icon: string;
   name: string;
+  /** One line for the nav dropdown row. */
+  line: string;
   body: string;
   status: ServiceStatus;
   /** Pill label override, e.g. "2 live" computed from the ledger. */
@@ -135,6 +137,7 @@ export const services: ServiceCellContent[] = [
     key: "drops",
     icon: "layers",
     name: "Drops",
+    line: "Owner-direct and builder-direct releases.",
     body: "Owner-direct and builder-direct releases. Documents on file before you hear of them.",
     status: "live",
     href: "/live",
@@ -143,6 +146,7 @@ export const services: ServiceCellContent[] = [
     key: "concierge",
     icon: "compass",
     name: "Buyer concierge + NRI desk",
+    line: "Shortlists, site visits and negotiation from one desk.",
     body: "Shortlists, site visits and negotiation from one desk. US and Gulf hours covered. Enquiries on WhatsApp and email.",
     status: "live",
     href: "/nri-desk",
@@ -151,6 +155,7 @@ export const services: ServiceCellContent[] = [
     key: "inspection",
     icon: "scan-search",
     name: "Home inspection",
+    line: "A written report before you sign.",
     body: "A written report before you sign. Fixed fee, paid online.",
     status: "bookable",
     cta: { label: "Book an inspection", href: "/services/inspection" },
@@ -160,6 +165,7 @@ export const services: ServiceCellContent[] = [
     key: "reel",
     icon: "route",
     name: "Reel + distribution",
+    line: "We film, post and distribute.",
     body: "Owners and builders: we film, post and distribute. Upfront fee, then a commission on sale.",
     status: "live",
     href: "/services/reel",
@@ -168,6 +174,7 @@ export const services: ServiceCellContent[] = [
     key: "data",
     icon: "map",
     name: "Data desk",
+    line: "Corridors, parcel histories and price per sq ft.",
     body: "Corridors, parcel histories and price per sq ft, read from the ground up. Landeed and Square Yards feeds in progress.",
     status: "coming-soon",
     href: "/#data",

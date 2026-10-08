@@ -378,7 +378,7 @@ export default function KitPage() {
               { label: "Units", value: meerpet.units },
             ]}
             price={meerpet.price.label}
-            priceNote={<Fact value={meerpet.indicativeTotal} /> as unknown as string}
+            priceNote={<Fact value={meerpet.indicativeTotal} />}
             ctaHref={whatsappHref(meerpet.ctas.whatsapp.prefill)}
             cta={meerpet.ctas.whatsapp.label}
           />

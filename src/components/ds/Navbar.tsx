@@ -28,6 +28,8 @@ export interface NavbarProps {
   compact?: boolean;
   /** Extra content inside the compact strip (e.g. the services list). */
   strip?: ReactNode;
+  /** Replaces the rendered link list (e.g. links with a dropdown menu). Same .iv-nav__links slot. */
+  linksSlot?: ReactNode;
   className?: string;
   style?: CSSProperties;
 }
@@ -44,6 +46,7 @@ export function Navbar({
   homeHref = "/",
   compact = false,
   strip,
+  linksSlot,
   className = "",
   style,
 }: NavbarProps) {
@@ -91,7 +94,8 @@ export function Navbar({
     <nav className={["iv-nav", className].filter(Boolean).join(" ")} style={style}>
       {home}
       <div className="iv-nav__links">
-        {links.map((l) =>
+        {linksSlot ??
+          links.map((l) =>
           typeof l === "string" ? (
             <button
               key={l}
@@ -111,7 +115,7 @@ export function Navbar({
               {l.label}
             </Link>
           ),
-        )}
+          )}
       </div>
       {ctaNode}
     </nav>

@@ -33,7 +33,7 @@ export interface PropertyCardProps {
   /** Up to 3 per row in stack layout; any number in list layout. */
   data?: PropertyDatum[];
   price: string;
-  priceNote?: string;
+  priceNote?: ReactNode;
   cta?: string;
   ctaHref?: string;
   onCta?: () => void;
