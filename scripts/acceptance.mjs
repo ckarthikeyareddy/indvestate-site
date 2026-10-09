@@ -139,7 +139,7 @@ stub("Property surface: StatusPill strip before heading, verbatim Disclaimer aft
 stub("Kompally absent from /live and / while reraNumber is empty", "rendered check · Phase 4");
 stub("Saffron (bg or border) ≤ 1 per section wrapper", "rendered check · Phase 4");
 stub("Banned words and dash separators absent from rendered HTML", "rendered check · Phase 4");
-stub("Playwright: 375px no horizontal scroll · keyboard reaches every submit + Services dropdown · reduced-motion end states · hero canvas paused off-screen · every /briefs/[slug] has a source link", "Phase 4");
+stub("Playwright: 375px no horizontal scroll · keyboard reaches every submit + Services dropdown · reduced-motion end states · every /briefs/[slug] has a source link", "Phase 4");
 stub("Lighthouse mobile on /: performance ≥ 90 · LCP < 2.5 s · CLS < 0.1 · a11y ≥ 95", "Phase 4");
 
 // ---- report -----------------------------------------------------------------

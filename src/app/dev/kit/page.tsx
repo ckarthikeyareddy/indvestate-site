@@ -438,7 +438,7 @@ export default function KitPage() {
         </div>
       </Sec>
 
-      <Sec id="maps" title="HeroMap (3D) · MapFrame (2D)" note="placeholder art direction · markers upright in hero space · ground slot for the Phase 2 canvas">
+      <Sec id="maps" title="HeroMap (3D) · MapFrame (2D)" note="placeholder art direction · markers upright in hero space">
         <div className="kit__frame kit__frame--tight">
           <HeroMap
             style={{ height: 520 }}

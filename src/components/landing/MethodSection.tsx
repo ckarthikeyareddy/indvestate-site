@@ -1,8 +1,11 @@
 "use client";
 // 05 Method · BRIEF §5 + motion-spec row 04. WATCH · REJECT · THESIS · RELEASE
 // pinned for 300vh (pin: true, scrub: 1, invalidateOnRefresh). Progress drives
-// border-draw (0–40%) → count-up (40–75%, linear, skipped where the ledger is
-// unconfirmed) → check-in of the four step lines (75–100%, 8px from left).
+// border-draw (0–40%) with the four step lines checking in under their labels
+// as the rule starts (5–25%, 8px from left), then the count-up (40–75%,
+// linear, skipped where the ledger is unconfirmed). The lines check in early so
+// each column reads label · figure · line for the whole pin; parked at the end
+// they were on screen only as the section released.
 // Reduced motion: not pinned, static end state (the markup is the end state;
 // GSAP only sets initial values inside the no-preference query).
 import { useRef } from "react";
@@ -36,6 +39,7 @@ export function MethodSection() {
           },
         });
         tl.fromTo(".method__rule-draw", { scaleX: 0 }, { scaleX: 1, duration: 0.4 }, 0);
+        tl.fromTo(".method__line", { x: -8, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 0.12, stagger: 0.03 }, 0.05);
         // Figures snap to integers and sit in tabular numerals (.iv-price).
         figures.forEach((el) => {
           const to = Number(el.dataset.to);
@@ -55,7 +59,6 @@ export function MethodSection() {
             0.4,
           );
         });
-        tl.fromTo(".method__line", { x: -8, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 0.15, stagger: 0.03 }, 0.75);
         return () => {
           tl.scrollTrigger?.kill();
           tl.kill();

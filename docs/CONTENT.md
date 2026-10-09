@@ -127,9 +127,13 @@ approvals and OC cross-check · snag list with photos.
 ## 6. Method (no invented ledger)
 Section title: Four steps. Most of it does not pass.
 Four steps: WATCH · REJECT · THESIS · RELEASE, each with one line. Counters render only
-from `ledger` in content. Real values available today: released = 2. Reviewed, rejected,
-in thesis: [CONFIRM real counts]. If any is empty, render the step without a figure. Do
-not show 44 / 41 / 3 from the mockup anywhere.
+from `ledger` in content. Real values today: watched 55 · rejected 32 · in checks 21 ·
+released 2. If any is ever empty, render the step without a figure. Do not show
+44 / 41 / 3 from the mockup anywhere.
+- WATCH: Parcels studied on the ground, walked at least once.
+- REJECT: Did not pass.
+- THESIS: Passed title, approvals, location logic and exit.
+- RELEASE: Released to the inside list with the risk memo attached.
 
 ## 7. Briefs: "What did not pass" (real cases from the market, each with a source)
 Section title: Most opportunities do not pass. Subtitle: Cases from the Hyderabad market,

@@ -42,17 +42,17 @@ Queried: `"reduced motion final state" --domain ux`.
   Lenis has `respectReducedMotion: true` (`src/lib/lenis.tsx`).
 - **No scroll-jacking under reduce (High).** The Method pin is not pinned and
   shows end values; the hero zoom-out renders its end state directly
-  (BRIEF "Hero field" §B).
+  (BRIEF "Hero zoom-out" §B).
 - **Excessive motion (High).** One orchestrated moment per page: the hero
-  (field + zoom-out) and the Method pin. No other section gets scroll-driven
+  (load ease + zoom-out) and the Method pin. No other section gets scroll-driven
   motion (`/taste` rule, BRIEF).
 
 ## 4. Hero media pause off-screen
 Queried: `"hero media pause offscreen" --domain ux`.
 - **Auto-playing media (Medium).** Stop off-screen, honour reduced motion, no
-  autoplay loops without pause. → the Canvas 2D field pauses its rAF loop via
-  `IntersectionObserver` and draws one static frame under reduced motion
-  (BRIEF §A). No autoplay video anywhere; the Instagram reel embed on property
+  autoplay loops without pause. → nothing in the hero loops: the load ease and
+  the zoom-out run once and render their end state under reduced motion
+  (BRIEF §B). No autoplay video anywhere; the Instagram reel embed on property
   pages is click-to-play.
 
 ## 5. Next.js stack

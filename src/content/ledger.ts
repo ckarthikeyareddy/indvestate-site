@@ -1,7 +1,7 @@
 // Generated from docs/CONTENT.md §6. No invented ledger. Counters render only
 // from here; an unconfirmed figure means the column shows the step line only
 // and the count-up is skipped. Never show 44 / 41 / 3 from the mockup.
-import { CONFIRM, isConfirm, type Confirm } from "./confirm";
+import { isConfirm, type Confirm } from "./confirm";
 
 export type StepKey = "watch" | "reject" | "thesis" | "release";
 
@@ -13,10 +13,10 @@ export interface Step {
 }
 
 export const ledger = {
-  reviewed: CONFIRM as number | Confirm,
-  rejected: CONFIRM as number | Confirm,
-  inThesis: CONFIRM as number | Confirm,
-  released: 2,
+  watched: 55 as number | Confirm,
+  rejected: 32 as number | Confirm,
+  inChecks: 21 as number | Confirm,
+  released: 2 as number | Confirm,
 };
 
 export const steps: Step[] = [
@@ -24,7 +24,7 @@ export const steps: Step[] = [
     key: "watch",
     label: "Watch",
     line: "Parcels studied on the ground, walked at least once.",
-    count: ledger.reviewed,
+    count: ledger.watched,
   },
   {
     key: "reject",
@@ -36,7 +36,7 @@ export const steps: Step[] = [
     key: "thesis",
     label: "Thesis",
     line: "Passed title, approvals, location logic and exit.",
-    count: ledger.inThesis,
+    count: ledger.inChecks,
   },
   {
     key: "release",

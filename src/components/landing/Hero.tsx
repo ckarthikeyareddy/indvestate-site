@@ -1,15 +1,14 @@
 "use client";
-// 02 Hero · BRIEF §2 and "Hero field" (Phase 2, revised). Flat 2D map in a
-// hairline frame: on load it eases from scale 1.06 to 1.0 over 1.2s
-// --ease-out. The Canvas 2D field (§A) is the ground layer under the SVG in
-// the same frame. §B: 400ms after the H1 reveal the map wrapper scales
+// 02 Hero · BRIEF §2 and "Hero zoom-out" (Phase 2, revised). Flat framed SVG
+// map on plain void with the system .iv-grid-bg behind it, nothing animated
+// under the roads: on load it eases from scale 1.06 to 1.0 over 1.2s
+// --ease-out. §B: 400ms after the H1 reveal the map wrapper scales
 // 1 → 0.62 and rises 6% over 2.4s --ease-in-out while the RRR dashed ellipse
 // draws in and its labels fade up at 2.0s; markers counter-scale. Reduced
 // motion renders the end state. Everything sits in gsap.matchMedia.
 import { useRef } from "react";
 import { gsap, useGSAP, CustomEase } from "@/lib/gsap";
 import { Button, HeroMap, HeroMarker, MapMarker, MarkerTooltip } from "@/components/ds";
-import { GravityField } from "@/components/hero/GravityField";
 import { WordCycle } from "@/components/hero/WordCycle";
 import { site } from "@/content/site";
 import { liveProperties } from "@/content/properties";
@@ -116,7 +115,6 @@ export function Hero() {
         labels={[{ x: 1040, y: 236, text: h.map.orr.label }, ...h.map.places]}
         overlay={<RrrOverlay />}
         zoomRef={zoomRef}
-        ground={<GravityField />}
         ui={<span className="iv-data hero__coord">{h.coordinate}</span>}
       >
         {liveProperties.map((p) => {
