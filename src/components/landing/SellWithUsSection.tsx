@@ -2,6 +2,8 @@
 // the left; the three tiers as a hairline-divided list on the right. No saffron
 // in this section.
 import { Button } from "@/components/ds";
+import { RevealScope } from "./Reveal";
+
 import { Fact } from "@/components/Fact";
 import { site } from "@/content/site";
 import { sellWithUs } from "@/content/services";
@@ -9,19 +11,20 @@ import { sellWithUs } from "@/content/services";
 export function SellWithUsSection() {
   return (
     <section id="sell" className="sec">
+      <RevealScope>
       <div className="wrap split">
         <div className="stack g-32">
-          <h2 className="iv-h2">{site.sellWithUs.title}</h2>
+          <h2 className="iv-h2" data-split="">{site.sellWithUs.title}</h2>
           <ul className="reel__lines iv-body-lg muted">
             {sellWithUs.difference.map((line) => (
-              <li key={line}>{line}</li>
+              <li key={line} data-checkin="">{line}</li>
             ))}
           </ul>
         </div>
         <div className="stack">
           <div className="tiers">
             {sellWithUs.tiers.map((t) => (
-              <div className="tier" key={t.name}>
+              <div className="tier" key={t.name} data-reveal="">
                 <span className="iv-h3 tier__name">{t.name}</span>
                 <span className="iv-price tier__price">
                   <Fact value={t.price} />
@@ -35,7 +38,7 @@ export function SellWithUsSection() {
               </div>
             ))}
           </div>
-          <div className="reel__ctas">
+          <div className="reel__ctas" data-reveal="">
             <Button variant="secondary" href={site.sellWithUs.cta.href}>
               {site.sellWithUs.cta.label}
             </Button>
@@ -45,6 +48,7 @@ export function SellWithUsSection() {
           </div>
         </div>
       </div>
+      </RevealScope>
     </section>
   );
 }

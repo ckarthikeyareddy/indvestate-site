@@ -21,14 +21,23 @@ export function WordCycle({ words }: { words: readonly string[] }) {
   useEffect(() => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (reduce.matches || words.length < 2) return;
-    const id = window.setInterval(() => {
+    const advance = (fresh: boolean) =>
       setSlots((prev) => {
         const last = prev[prev.length - 1];
         const next = { idx: (last.idx + 1) % words.length, cycle: last.cycle + 1 };
-        return [last, next];
+        return fresh ? [next] : [last, next];
       });
-    }, HANDOFF);
-    return () => window.clearInterval(id);
+    const id = window.setInterval(() => advance(false), HANDOFF);
+    // Timers throttle in a hidden tab and the finished word sits at opacity 0;
+    // start a fresh word the moment the tab is visible again.
+    const onVisible = () => {
+      if (!document.hidden) advance(true);
+    };
+    document.addEventListener("visibilitychange", onVisible);
+    return () => {
+      window.clearInterval(id);
+      document.removeEventListener("visibilitychange", onVisible);
+    };
   }, [words.length]);
 
   return (

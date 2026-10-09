@@ -7,15 +7,17 @@ import type { ReactNode } from "react";
 
 export interface BriefRowProps {
   href: string;
+  /** Marks the row for the section's reveal. */
+  "data-reveal"?: string;
   kicker: string;
   headline: string;
   line?: string;
   date?: string;
 }
 
-export function BriefRow({ href, kicker, headline, line, date }: BriefRowProps) {
+export function BriefRow({ href, kicker, headline, line, date, ...rest }: BriefRowProps) {
   return (
-    <Link href={href} className="iv-brief">
+    <Link href={href} className="iv-brief" {...rest}>
       <span className="iv-label" style={{ color: "var(--signal-ink)" }}>
         {kicker}
       </span>

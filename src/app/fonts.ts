@@ -45,6 +45,7 @@ export const inversionzUnboxed = localFont({
   display: "swap",
   variable: "--font-inversionz-unboxed",
   adjustFontFallback: false,
+  fallback: ["Space Grotesk", "sans-serif"],
   declarations: [{ prop: "unicode-range", value: "U+0041-005A, U+0030-0039" }],
 });
 

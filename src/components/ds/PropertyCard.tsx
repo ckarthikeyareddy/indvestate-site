@@ -129,7 +129,7 @@ export function PropertyCard({
         (dataLayout === "list" ? (
           <div style={{ padding: "4px 20px 0" }}>
             {data.map((d, i) => (
-              <DataRow key={i} label={d.label} value={d.value} tone={d.tone} last={i === data.length - 1} />
+              <DataRow key={i} label={d.label} value={d.value} tone={d.tone} last={i === data.length - 1} data-checkin="" />
             ))}
           </div>
         ) : (

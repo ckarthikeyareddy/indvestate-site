@@ -3,6 +3,8 @@
 // to /api/lead arrives in Phase 3; until then the form validates and shows
 // the success state locally.
 import { Button, InsideListForm, type InsideListFieldSpec } from "@/components/ds";
+import { RevealScope } from "./Reveal";
+
 import { site, whatsappHref } from "@/content/site";
 
 const f = site.insideList.fields;
@@ -23,12 +25,14 @@ export function InsideListSection() {
   const end = site.endCard;
   return (
     <section id="inside" className="sec iv-grid-bg">
+      <RevealScope>
       <div className="wrap inside-cols">
         <div className="stack g-16">
-          <span className="iv-label signal">{il.eyebrow}</span>
-          <h2 className="iv-h2">{il.title}</h2>
-          <p className="iv-body-lg muted">{il.line}</p>
+          <span className="iv-label signal" data-reveal="">{il.eyebrow}</span>
+          <h2 className="iv-h2" data-split="">{il.title}</h2>
+          <p className="iv-body-lg muted" data-reveal="">{il.line}</p>
         </div>
+        <div data-reveal="">
         <InsideListForm
           eyebrow=""
           title=""
@@ -53,7 +57,9 @@ export function InsideListSection() {
             </>
           }
         />
+        </div>
       </div>
+      </RevealScope>
     </section>
   );
 }

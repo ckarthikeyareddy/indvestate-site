@@ -2,6 +2,8 @@
 // content (unconfirmed shows a chip, never "SAMPLE"); desk hours are computed
 // into the viewer's zone from the IST window.
 import { Button, ConverterPanel, DataRow } from "@/components/ds";
+import { RevealScope } from "./Reveal";
+
 import { ConfirmChip } from "@/components/Fact";
 import { site } from "@/content/site";
 import { isConfirm } from "@/content/confirm";
@@ -12,15 +14,16 @@ export function NriSection() {
   const ratesReady = !isConfirm(r.usd) && !isConfirm(r.aed);
   return (
     <section id="nri" className="sec">
+      <RevealScope>
       <div className="wrap split">
         <div className="stack g-32">
-          <h2 className="iv-h2">{n.title}</h2>
+          <h2 className="iv-h2" data-split="">{n.title}</h2>
           <div>
             {n.rows.map((row, i) => (
-              <DataRow key={row.label} label={row.label} value={row.value} last={i === n.rows.length - 1} />
+              <DataRow key={row.label} label={row.label} value={row.value} last={i === n.rows.length - 1} data-checkin="" />
             ))}
           </div>
-          <div className="nri__lines">
+          <div className="nri__lines" data-reveal="">
             <span className="iv-body-lg">{n.line}</span>
             {isConfirm(n.teluguLine) ? (
               <span className="iv-body-lg telugu" lang="te">
@@ -32,12 +35,13 @@ export function NriSection() {
               </span>
             )}
           </div>
-          <div className="row">
+          <div className="row" data-reveal="">
             <Button variant="secondary" href={n.cta.href}>
               {n.cta.label}
             </Button>
           </div>
         </div>
+        <div data-reveal="">
         <ConverterPanel
           title={n.converter.title}
           amountLabel={n.converter.amountLabel}
@@ -62,7 +66,9 @@ export function NriSection() {
           window={{ start: site.deskHours.ist.start, end: site.deskHours.ist.end }}
           desks={[...n.converter.desks]}
         />
+        </div>
       </div>
+      </RevealScope>
     </section>
   );
 }

@@ -124,6 +124,8 @@ export function GravityField({ className = "" }: GravityFieldProps) {
     const target: Point = { x: 0.5, y: 0.5 };
     const eased: Point = { x: 0.5, y: 0.5 };
     let hasPointer = false;
+    const client: Point = { x: 0, y: 0 };
+    let pointerDirty = false;
 
     function layout() {
       const dpr = Math.min(DPR_CAP, window.devicePixelRatio || 1);
@@ -233,6 +235,12 @@ export function GravityField({ className = "" }: GravityFieldProps) {
       if (!hasPointer) {
         target.x = 0.5 + 0.34 * Math.sin(t * 0.7) * Math.cos(t * 0.23);
         target.y = 0.5 + 0.3 * Math.sin(t * 0.52 + 1.1);
+      } else if (pointerDirty) {
+        // One inverse projection per frame, whatever the pointer event rate.
+        const p = toLocal(client.x, client.y);
+        target.x = p.x;
+        target.y = p.y;
+        pointerDirty = false;
       }
       eased.x += (target.x - eased.x) * LERP;
       eased.y += (target.y - eased.y) * LERP;
@@ -272,9 +280,9 @@ export function GravityField({ className = "" }: GravityFieldProps) {
 
     const onMove = (e: PointerEvent) => {
       if (e.pointerType === "touch" || coarse.matches) return; // keep drifting on touch
-      const p = toLocal(e.clientX, e.clientY);
-      target.x = p.x;
-      target.y = p.y;
+      client.x = e.clientX;
+      client.y = e.clientY;
+      pointerDirty = true;
     };
     const onEnter = (e: PointerEvent) => {
       if (e.pointerType === "touch" || coarse.matches) return;
@@ -321,5 +329,5 @@ export function GravityField({ className = "" }: GravityFieldProps) {
     };
   }, []);
 
-  return <canvas ref={canvasRef} className={["hero__field", className].filter(Boolean).join(" ")} aria-hidden="true" />;
+  return <canvas ref={canvasRef} width={1200} height={800} className={["hero__field", className].filter(Boolean).join(" ")} aria-hidden="true" />;
 }

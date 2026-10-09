@@ -20,7 +20,7 @@ export interface MapSvgProps extends SVGProps<SVGSVGElement> {
 
 export function MapSvg({ labels = [], children, detail = true, ...rest }: MapSvgProps) {
   return (
-    <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true" {...rest}>
+    <svg viewBox="0 0 1200 800" width="1200" height="800" preserveAspectRatio="xMidYMid slice" aria-hidden="true" {...rest}>
       <g fill="none" stroke="var(--ink)" strokeWidth="1" opacity="0.07">
         <path d="M-20 180 C 200 120, 380 260, 600 200 S 1000 90, 1240 160" />
         <path d="M-20 300 C 220 240, 400 380, 640 310 S 980 230, 1240 300" />

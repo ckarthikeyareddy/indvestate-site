@@ -8,6 +8,8 @@
 import { useRef } from "react";
 import { gsap, useGSAP, ScrollTrigger } from "@/lib/gsap";
 import { site } from "@/content/site";
+import { RevealScope } from "./Reveal";
+
 import { steps, figure } from "@/content/ledger";
 
 export function MethodSection() {
@@ -34,6 +36,7 @@ export function MethodSection() {
           },
         });
         tl.fromTo(".method__rule-draw", { scaleX: 0 }, { scaleX: 1, duration: 0.4 }, 0);
+        // Figures snap to integers and sit in tabular numerals (.iv-price).
         figures.forEach((el) => {
           const to = Number(el.dataset.to);
           if (!Number.isFinite(to)) return;
@@ -44,6 +47,7 @@ export function MethodSection() {
             {
               v: to,
               duration: 0.35,
+              snap: { v: 1 },
               onUpdate: () => {
                 el.textContent = String(Math.round(n.v));
               },
@@ -68,11 +72,12 @@ export function MethodSection() {
 
   return (
     <section id="method" className="sec method" ref={scope}>
+      <RevealScope>
       <div className="method__stick">
         <div className="wrap stack g-40">
           <div className="stack g-12">
-            <span className="iv-label signal">{site.method.eyebrow}</span>
-            <h2 className="iv-h2">{site.method.title}</h2>
+            <span className="iv-label signal" data-reveal="">{site.method.eyebrow}</span>
+            <h2 className="iv-h2" data-split="">{site.method.title}</h2>
           </div>
           <div className="method__rule">
             <div className="method__rule-draw" />
@@ -95,6 +100,7 @@ export function MethodSection() {
           </div>
         </div>
       </div>
+      </RevealScope>
     </section>
   );
 }

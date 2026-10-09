@@ -2,6 +2,8 @@
 // property, then the "more are being checked" line. A builder-direct page
 // without a RERA number is not live and does not appear here.
 import { Button, PropertyCard } from "@/components/ds";
+import { RevealScope } from "./Reveal";
+
 import { Fact } from "@/components/Fact";
 import { liveTitle, site, whatsappHref } from "@/content/site";
 import { confirmed, isConfirm } from "@/content/confirm";
@@ -10,8 +12,8 @@ import { docsOnFile, liveProperties, type Property } from "@/content/properties"
 function card(p: Property) {
   const stills = confirmed(p.media.stills);
   return (
+    <div key={p.slug} data-reveal="">
     <PropertyCard
-      key={p.slug}
       statuses={docsOnFile(p)}
       kicker={p.kicker}
       title={p.title}
@@ -45,25 +47,28 @@ function card(p: Property) {
       cta={p.ctas.whatsapp.label}
       ctaHref={whatsappHref(p.ctas.whatsapp.prefill)}
     />
+    </div>
   );
 }
 
 export function LiveNow() {
   return (
     <section id="live" className="sec">
+      <RevealScope>
       <div className="wrap stack g-40">
         <div className="between">
-          <h2 className="iv-h2">{liveTitle(liveProperties.length)}</h2>
-          <span className="iv-label muted">{site.live.label}</span>
+          <h2 className="iv-h2" data-split="">{liveTitle(liveProperties.length)}</h2>
+          <span className="iv-label muted" data-reveal="">{site.live.label}</span>
         </div>
         <div className="g2">{liveProperties.map(card)}</div>
-        <div className="live__more">
+        <div className="live__more" data-reveal="">
           <span className="iv-caption">{site.live.more}</span>
           <Button variant="ghost" href={site.live.moreCta.href}>
             {site.live.moreCta.label}
           </Button>
         </div>
       </div>
+      </RevealScope>
     </section>
   );
 }

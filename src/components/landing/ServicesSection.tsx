@@ -13,6 +13,8 @@ import { Fact } from "@/components/Fact";
 import { site } from "@/content/site";
 import { services, sellWithUs, type ServiceCellContent } from "@/content/services";
 import { ServicePill } from "./ServicePill";
+import { RevealScope } from "./Reveal";
+
 
 const CLOSE_DELAY = 200;
 
@@ -99,10 +101,12 @@ export function ServicesSection() {
 
   return (
     <section id="services" className="sec">
+      <RevealScope>
       <div className="wrap stack g-40">
-        <h2 className="iv-h2">{site.services.title}</h2>
+        <h2 className="iv-h2" data-split="">{site.services.title}</h2>
         <div
           className="services"
+          data-reveal=""
           onPointerEnter={clear}
           onPointerLeave={(e) => {
             if (e.pointerType === "mouse") scheduleClose();
@@ -140,6 +144,7 @@ export function ServicesSection() {
           </div>
         </div>
       </div>
+      </RevealScope>
     </section>
   );
 }
