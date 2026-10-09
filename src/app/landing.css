@@ -57,6 +57,38 @@
 .g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-7);align-items:start}
 .live__more{display:flex;align-items:center;gap:var(--space-5);flex-wrap:wrap}
 
+/* 03b Watch: a scroll-snap rail of 9:16 reel cards (320px desktop, 78vw
+   mobile) in hairline frames on carbon; plus-grid where there is no video.
+   Progress rule along the top edge (transform only); one mute control. */
+.rail-wrap{display:flex;flex-direction:column;gap:var(--space-5);padding-top:var(--space-6)}
+.rail-bar{width:100%;display:flex;justify-content:space-between;align-items:center;gap:var(--space-4)}
+.rail-ctl{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 12px;background:none;border:1px solid transparent;color:var(--ink-muted);cursor:pointer;transition:color var(--dur-fast) var(--ease-out),border-color var(--dur-fast) var(--ease-out)}
+.rail-ctl[aria-pressed="true"]{color:var(--ink);border-color:var(--hairline-strong)}
+.rail-ctl:disabled{opacity:.4;cursor:not-allowed}
+.rail-ctl:focus-visible{outline:1px solid var(--signal);outline-offset:2px}
+.rail-arrows{display:flex;gap:var(--space-2)}
+.rail-arrow{width:44px;padding:0}
+/* Centred carousel: enough inline padding that any card, first or last, can sit at the rail's centre. */
+.rail{display:flex;gap:var(--space-5);overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scrollbar-width:none;padding:0 calc(50% - 160px) 2px}
+.rail::-webkit-scrollbar{display:none}
+.rail:focus-visible{outline:1px solid var(--signal);outline-offset:2px}
+.reel{position:relative;flex:none;width:320px;aspect-ratio:9 / 16;scroll-snap-align:center;background:var(--carbon);border:1px solid var(--hairline);overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;transition:border-color var(--dur-fast) var(--ease-out)}
+.reel[data-active="true"]{border-color:var(--hairline-strong)}
+.reel__link{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;text-decoration:none;color:inherit}
+.reel__video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;background:var(--carbon)}
+.reel__progress{position:absolute;left:0;right:0;top:0;height:2px;background:var(--hairline);z-index:2}
+.reel__bar{position:absolute;inset:0;background:var(--signal);transform-origin:left;transform:scaleX(0)}
+.reel__plate{position:relative;z-index:1;background:var(--scrim);padding:var(--space-4);display:flex;flex-direction:column;gap:var(--space-2);align-items:flex-start}
+.reel__watch{margin-top:var(--space-1)}
+.reel__play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:1;height:44px;display:inline-flex;align-items:center;padding:0 16px;background:var(--scrim);border:1px solid var(--hairline-strong);color:var(--ink)}
+.reel--next .reel__plate{background:transparent}
+@media (hover:none){.rail-arrows{display:none}}
+@media (max-width:1000px){
+  .reel{width:78vw}
+  .rail{padding:0 11vw 2px}
+}
+@media (prefers-reduced-motion:reduce){.reel,.rail-ctl{transition:none}}
+
 /* 04 Reel + distribution */
 .split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-7);align-items:start}
 .reel__lines{display:flex;flex-direction:column}

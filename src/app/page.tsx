@@ -9,6 +9,7 @@ import {
   LiveNow,
   MethodSection,
   NriSection,
+  ReelsSection,
   SellWithUsSection,
   ServicesSection,
   SiteFooter,
@@ -22,6 +23,7 @@ export default function Home() {
       <main id="main">
         <Hero />
         <LiveNow />
+        <ReelsSection />
         <SellWithUsSection />
         <MethodSection />
         <ServicesSection />

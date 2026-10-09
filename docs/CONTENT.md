@@ -441,3 +441,19 @@ instead."
   /briefs and /briefs/[slug] → "Hi, I read a brief on indvestate.com."
   /thank-you → "Hi, I just sent a request on indvestate.com."
 - Preloader: wordmark and a mono counter 00→100, once per session. No copy.
+
+## 14. Watch (the reel carousel, Phase 3.6)
+Section on / after Live, before Sell with us. Eyebrow: Watch. Title: Walk it before you
+call. Cards link to the reel on Instagram ("Watch on Instagram ↗"). One rail-level
+mute control: "Unmute" / "Mute". Reduced motion: "Play" / "Pause" on the centred card.
+Placeholder card kicker: NEXT REEL · <AREA>, pill "Coming soon". Fewer than three
+published reels pad with placeholders; none published hides the section.
+Data: the admin's list (store key reels:list) or the seed below. Each reel: id, kicker,
+caption, stat, videoUrl, posterUrl, instagramUrl, order, published.
+- meerpet-3bhk · kicker `LIVE 01 · MEERPET` · stat `₹ 5,300 / sq ft · 1,600 sq ft` ·
+  caption [CONFIRM] · instagramUrl [CONFIRM] · published: false until media exists.
+- kompally-villas · kicker `LIVE 02 · KOMPALLY` · stat `₹ 12,000 / sq ft · 300 sq yd` ·
+  caption [CONFIRM] · instagramUrl [CONFIRM] · published: false until media exists.
+- upcoming (placeholder areas): Tellapur · Shadnagar.
+Admin (/admin): password sign-in (ADMIN_PASSWORD), reels manager (reorder, publish,
+edit, delete, add with in-browser compression and poster), leads table with CSV export.

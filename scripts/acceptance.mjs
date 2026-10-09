@@ -45,7 +45,9 @@ function lineHits(text, re, max = 6) {
 {
   // kit.css mirrors two hover/press values from design-system/components/components.css
   // so forced states can be eyeballed; it is dev-only and exempt by design.
-  const EXEMPT = new Set(["src/app/dev/kit/kit.css"]);
+  // proxy.ts answers /admin with a standalone 401 page served without the app
+  // stylesheet, so it carries the void/carbon/ink/hairline token values inline.
+  const EXEMPT = new Set(["src/app/dev/kit/kit.css", "src/proxy.ts"]);
   const HEX = /(?<![\w/&])#(?:[0-9a-fA-F]{8}|[0-9a-fA-F]{6}|[0-9a-fA-F]{4}|[0-9a-fA-F]{3})\b/g;
   const bad = [];
   for (const f of src([".ts", ".tsx", ".css", ".mjs"])) {
@@ -143,12 +145,25 @@ stub("Saffron (bg or border) ≤ 1 per section wrapper", "rendered check · Phas
 stub("Banned words and dash separators absent from rendered HTML", "rendered check · Phase 4");
 stub("Playwright: 375px no horizontal scroll · keyboard reaches every submit + Services dropdown · every /briefs/[slug] has a source link", "Phase 4");
 
-// ---- 7. Reduced-motion end states (Playwright, Phase 3.5) ------------------
+// ---- 7. Static Phase 3.6 checks ----------------------------------------------
+{
+  const rail = readFileSync(join(SRC, "components/landing/ReelRail.tsx"), "utf8");
+  const videoTag = rail.match(/<video[\s\S]*?\/>/)?.[0] ?? "";
+  if (/\bmuted\b/.test(videoTag) && /playsInline/.test(videoTag) && !/autoPlay/.test(videoTag)) pass("Reel <video> is muted, playsInline, never autoPlay");
+  else fail("Reel <video> is muted, playsInline, never autoPlay", "check src/components/landing/ReelRail.tsx");
+  const proxy = readFileSync(join(SRC, "proxy.ts"), "utf8");
+  if (/status: 401/.test(proxy) && /\/admin\/:path\*/.test(proxy)) pass("proxy.ts gates /admin with 401");
+  else fail("proxy.ts gates /admin with 401", "src/proxy.ts missing the matcher or the 401");
+}
+
+// ---- 8. Browser checks (Playwright) ------------------------------------------
 // Real when playwright is installed and a server answers at BASE_URL
 // (default http://localhost:3000); otherwise reported as a stub with the reason.
-{
+for (const [name, script] of [
+  ["Playwright: reduced-motion end states at 1440 and 375", "scripts/reduced-motion.mjs"],
+  ["Playwright: /admin 401 · reels muted · 375 no horizontal scroll · Watch from content", "scripts/smoke.mjs"],
+]) {
   const BASE = (process.env.BASE_URL || "http://localhost:3000").replace(/\/$/, "");
-  const name = "Playwright: reduced-motion end states at 1440 and 375";
   let reason = "";
   try {
     createRequire(import.meta.url).resolve("playwright");
@@ -165,7 +180,7 @@ stub("Playwright: 375px no horizontal scroll · keyboard reaches every submit + 
   }
   if (reason) stub(name, reason);
   else {
-    const run = spawnSync(process.execPath, [join(ROOT, "scripts/reduced-motion.mjs")], { encoding: "utf8", env: { ...process.env, BASE_URL: BASE } });
+    const run = spawnSync(process.execPath, [join(ROOT, script)], { encoding: "utf8", env: { ...process.env, BASE_URL: BASE } });
     const summary = (run.stdout.match(/PASS \d+ · FAIL \d+/) || [run.stderr.trim().split("\n").pop() || "no output"])[0];
     const failed = run.stdout.split("\n").filter((l) => /^\s+FAIL/.test(l)).map((l) => l.trim().slice(5)).join("; ");
     if (run.status === 0) pass(name, summary);

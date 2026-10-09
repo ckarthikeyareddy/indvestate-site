@@ -24,6 +24,7 @@ export function prefillFor(pathname: string): string {
 export function WhatsAppFloat() {
   const pathname = usePathname() ?? "/";
   const [hidden, setHidden] = useState(false);
+  const admin = pathname.startsWith("/admin");
 
   useEffect(() => {
     const visible = new Set<Element>();
@@ -58,6 +59,7 @@ export function WhatsAppFloat() {
     };
   }, [pathname]);
 
+  if (admin) return null;
   return (
     <a
       className="wa-float"

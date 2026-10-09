@@ -9,6 +9,7 @@ import { kv } from "@vercel/kv";
 import { Resend } from "resend";
 import { leadTopics, type LeadTopic } from "@/content/pages";
 import { site } from "@/content/site";
+import { kvReady, storeLpush, storeSet } from "@/lib/store";
 
 const LIMIT = 10;
 const WINDOW_S = 60;
@@ -26,7 +27,6 @@ interface Lead {
   receivedAt: string;
 }
 
-const kvReady = () => Boolean(process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN);
 const mailReady = () => Boolean(process.env.RESEND_API_KEY);
 
 // ---- rate limit ----------------------------------------------------------------
@@ -74,10 +74,11 @@ function cleanFields(raw: unknown): Fields | null {
 }
 
 // ---- side effects ----------------------------------------------------------------
+// KV when configured; a JSON file under .data/ in development (src/lib/store).
 async function store(lead: Lead): Promise<boolean> {
-  if (!kvReady()) return false;
-  await kv.set(`lead:${lead.id}`, lead);
-  await kv.lpush("leads", lead.id);
+  if (!kvReady() && process.env.NODE_ENV === "production") return false;
+  await storeSet(`lead:${lead.id}`, lead);
+  await storeLpush("leads", lead.id);
   return true;
 }
 
@@ -140,8 +141,9 @@ export async function POST(req: NextRequest) {
       console.error("/api/lead: RESEND_API_KEY and KV_* are not set; lead dropped", lead.id);
       return NextResponse.json({ ok: false, error: "not-configured" }, { status: 503 });
     }
-    console.log("/api/lead (dev, no KV or Resend configured):\n" + render(lead));
-    return NextResponse.json({ ok: true, stored: false, mailed: false });
+    console.log("/api/lead (dev, no KV or Resend configured; row kept in .data/store.json):\n" + render(lead));
+    const kept = await store(lead).catch(() => false);
+    return NextResponse.json({ ok: true, stored: kept, mailed: false });
   }
 
   const [stored, mailed] = await Promise.allSettled([store(lead), mail(lead)]);

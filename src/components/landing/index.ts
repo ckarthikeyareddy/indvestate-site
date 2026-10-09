@@ -1,6 +1,7 @@
 export * from "./SiteNav";
 export * from "./Hero";
 export * from "./LiveNow";
+export * from "./ReelsSection";
 export * from "./SellWithUsSection";
 export * from "./MethodSection";
 export * from "./ServicesSection";

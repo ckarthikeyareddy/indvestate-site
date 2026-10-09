@@ -1,6 +1,7 @@
 // Lucide, 20px, stroke 1.5, round caps (design-system/README.md · Iconography).
 // Explicit map of the core set so only these icons ship in the bundle.
 import {
+  ArrowLeft,
   ArrowRight,
   ArrowUpRight,
   BadgeCheck,
@@ -21,6 +22,8 @@ import {
   ScanSearch,
   ShieldCheck,
   TriangleAlert,
+  Volume2,
+  VolumeX,
   type LucideProps,
 } from "lucide-react";
 
@@ -38,6 +41,9 @@ export const ICONS = {
   "message-circle": MessageCircle,
   "arrow-up-right": ArrowUpRight,
   "arrow-right": ArrowRight,
+  "arrow-left": ArrowLeft,
+  "volume-2": Volume2,
+  "volume-x": VolumeX,
   globe: Globe,
   house: House,
   scale: Scale,

@@ -7,6 +7,7 @@
 // which hides this element (also under reduced motion). The lift is started
 // from here so the hero sequence can begin as the curtain rises, and never
 // before hydration (no flash of an unstaged hero).
+import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
 import { PRE_DONE, PRE_LIFT } from "@/lib/motion";
 import { PRELOADER_KEY as KEY } from "@/lib/preloader-script";
@@ -16,6 +17,7 @@ const SAFETY_MS = 1400;
 
 export function Preloader() {
   const ref = useRef<HTMLDivElement>(null);
+  const admin = (usePathname() ?? "/").startsWith("/admin");
 
   useEffect(() => {
     const html = document.documentElement;
@@ -48,6 +50,7 @@ export function Preloader() {
     return () => window.clearTimeout(timer);
   }, []);
 
+  if (admin) return null;
   return (
     <div className="pre iv-plus-grid" ref={ref} aria-hidden="true">
       <span className="pre__mark iv-wordmark">INDVESTATE</span>
