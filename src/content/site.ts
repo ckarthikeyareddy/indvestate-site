@@ -15,9 +15,7 @@ export const site = {
 
   handles: {
     instagram: { handle: "@indvestate", url: "https://instagram.com/indvestate" },
-    // Hyderabad page. CONTENT §1: "[CONFIRM handle exists]".
-    instagramHyd: { handle: "@indvestate.hyd", url: CONFIRM as string | Confirm },
-    // CONTENT §1: company page "Indvestate" [CONFIRM URL].
+    // CONTENT §1: company page "Indvestate"; the text shows unlinked until the URL is confirmed.
     linkedin: { label: "Indvestate", url: CONFIRM as string | Confirm },
   },
 
@@ -29,15 +27,18 @@ export const site = {
     reels: "reels@indvestate.com",
     inspect: "inspect@indvestate.com",
     nri: "nri@indvestate.com",
-    // CONTENT §1: "[CONFIRM mailbox set up]".
-    mailboxSetUp: CONFIRM as string | Confirm,
   },
 
-  // CONTENT §1: legal entity for policies.
+  // CONTENT §1: legal entity (policy pages, footer legal line, Contact, JSON-LD).
   legalEntity: {
-    name: CONFIRM as string | Confirm,
-    registrationNumber: CONFIRM as string | Confirm, // CIN / LLPIN
-    address: CONFIRM as string | Confirm,
+    name: "INDVESTATE INFRA PRIVATE LIMITED",
+    registrationNumber: "U68200TS2026PTC214790", // CIN
+    address: "1st Floor, Pavan Complex, Manikonda Rd, Puppalguda, Hyderabad, Telangana 500089",
+    street: "1st Floor, Pavan Complex, Manikonda Rd, Puppalguda",
+    locality: "Hyderabad",
+    region: "Telangana",
+    postalCode: "500089",
+    area: "Puppalguda, Manikonda Rd",
   },
 
   // Never shown as anything else until Karthikeya sets it.
@@ -47,7 +48,6 @@ export const site = {
   deskHours: {
     // Hyderabad window in IST. Gulf and US windows are computed from this.
     ist: { start: "10:00", end: "19:00", zone: "Asia/Kolkata", label: "IST" },
-    confirmed: CONFIRM as string | Confirm, // CONTENT §1: "[CONFIRM]"
   },
 
   nav: {
@@ -261,14 +261,8 @@ export const site = {
     contact: { title: "Contact" },
     pricing: {
       title: "Pricing",
-      buyerConcierge: {
-        line: "No fee to the buyer. INDVESTATE is paid by the seller on completion.",
-        confirmed: CONFIRM as string | Confirm,
-      },
-      nriDesk: {
-        line: "No fee to the buyer. INDVESTATE is paid by the seller on completion.",
-        confirmed: CONFIRM as string | Confirm,
-      },
+      buyerConcierge: { line: "No fee to the buyer. INDVESTATE is paid by the seller on completion." },
+      nriDesk: { line: "No fee to the buyer. INDVESTATE is paid by the seller on completion." },
     },
     terms: {
       title: "Terms",

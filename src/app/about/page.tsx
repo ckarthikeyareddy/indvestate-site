@@ -2,9 +2,8 @@
 // are paid, RERA status, the founder, the entity line.
 import type { Metadata } from "next";
 import { DataRow } from "@/components/ds";
-import { ConfirmChip, Fact } from "@/components/Fact";
+import { Fact } from "@/components/Fact";
 import { PolicyBlock, PolicyShell, sectionId } from "@/components/policy/PolicyShell";
-import { isConfirm } from "@/content/confirm";
 import { figure, steps } from "@/content/ledger";
 import { policyPages } from "@/content/pages";
 import { site } from "@/content/site";
@@ -17,7 +16,6 @@ const HEADINGS = [S.what.heading, S.method.heading, S.paid.heading, S.rera.headi
 const TOC = HEADINGS.map((h, i) => ({ id: sectionId(i, h), label: h }));
 
 export default function AboutPage() {
-  const pricing = site.policies.pricing;
   return (
     <PolicyShell title={c.title} lead={c.lead} toc={TOC}>
       <PolicyBlock n={1} heading={S.what.heading} id={TOC[0].id}>
@@ -45,9 +43,9 @@ export default function AboutPage() {
       </PolicyBlock>
 
       <PolicyBlock n={3} heading={S.paid.heading} id={TOC[2].id}>
-        {S.paid.body.map((para, i) => (
+        {S.paid.body.map((para) => (
           <p key={para} className="iv-body muted">
-            {para} {i === 1 && isConfirm(pricing.buyerConcierge.confirmed) && <ConfirmChip note="Buyer concierge and NRI desk fee line" />}
+            {para}
           </p>
         ))}
       </PolicyBlock>

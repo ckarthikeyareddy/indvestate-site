@@ -26,6 +26,8 @@ export interface LeadFormProps {
   successTitle?: string;
   successBody?: string;
   successActions?: ReactNode;
+  /** A computed line above the submit (e.g. the fee for the typed area). */
+  summary?: (values: InsideListData) => ReactNode;
 }
 
 export async function postLead(topic: LeadTopic, fields: InsideListData, reference?: string): Promise<void> {
@@ -56,6 +58,7 @@ export function LeadForm({
   successTitle,
   successBody,
   successActions,
+  summary,
 }: LeadFormProps) {
   const router = useRouter();
   const phrase = reference ? `${leadTopics[topic].phrase} for ${reference}` : leadTopics[topic].phrase;
@@ -74,6 +77,7 @@ export function LeadForm({
       successTitle={successTitle ?? site.endCard.headline}
       successBody={successBody ?? site.endCard.body}
       successActions={successActions}
+      summary={summary}
       networkActions={
         <Button variant="ghost" href={whatsappHref(site.endCard.whatsapp.prefill(phrase))} target="_blank" rel="noreferrer">
           {site.endCard.whatsapp.label} ↗

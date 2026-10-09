@@ -16,12 +16,21 @@ const organization = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: site.name,
+  legalName: site.legalEntity.name,
   alternateName: site.meaning,
   url: site.url,
   logo: `${site.url}/icon`,
   telephone: site.phone.e164,
   email: site.email.primary,
-  address: { "@type": "PostalAddress", addressLocality: site.city, addressCountry: "IN" },
+  identifier: { "@type": "PropertyValue", propertyID: "CIN", value: site.legalEntity.registrationNumber },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: site.legalEntity.street,
+    addressLocality: site.legalEntity.locality,
+    addressRegion: site.legalEntity.region,
+    postalCode: site.legalEntity.postalCode,
+    addressCountry: "IN",
+  },
   sameAs: [site.handles.instagram.url],
 };
 

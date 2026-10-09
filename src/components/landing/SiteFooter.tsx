@@ -45,6 +45,9 @@ export function SiteFooter() {
         </div>
         <div className="legal" data-reveal="">
           <span className="iv-data muted">
+            {site.legalEntity.name} · CIN {site.legalEntity.registrationNumber} · {site.legalEntity.address}
+          </span>
+          <span className="iv-data muted">
             {site.agentRera.label}: {site.agentRera.value} · {site.projectReraLine}
           </span>
           <Disclaimer style={{ paddingTop: 20 }} />
@@ -52,8 +55,7 @@ export function SiteFooter() {
         <div className="handles" data-reveal="">
           <div className="row g-24">
             <Handle label={site.handles.instagram.handle} url={site.handles.instagram.url} note="" />
-            <Handle label={site.handles.instagramHyd.handle} url={confirmed(site.handles.instagramHyd.url)} note="Hyderabad page: confirm the handle exists" />
-            <Handle label="LinkedIn" url={confirmed(site.handles.linkedin.url)} note="LinkedIn company page URL" />
+            <Handle label={`LinkedIn · ${site.handles.linkedin.label}`} url={confirmed(site.handles.linkedin.url)} note="LinkedIn company page URL" />
             <a className="iv-data" href={whatsappHref("Hi, I found indvestate.com.")} target="_blank" rel="noreferrer">
               {site.phone.display}
             </a>

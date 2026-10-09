@@ -66,6 +66,7 @@
 .tier{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"name price" "body body" "sale sale";gap:var(--space-2) var(--space-5);padding:var(--space-5) 0;border-bottom:1px solid var(--hairline);align-items:baseline}
 .tier__name{grid-area:name}.tier__price{grid-area:price;text-align:right}.tier__body{grid-area:body}.tier__sale{grid-area:sale}
 .tier__price.iv-price{font-size:22px}
+.reel__all{padding-top:var(--space-4)}
 .reel__ctas{display:flex;gap:var(--space-3);flex-wrap:wrap;align-items:center;padding-top:var(--space-5)}
 
 /* 05 Method · pinned 300vh (GSAP pin: true, scrub: 1). The markup is the end

@@ -13,7 +13,7 @@ import { Button } from "./Button";
 const BASES = ["India", "US", "Gulf", "Other"];
 const CODES: Record<string, string> = { India: "+91", US: "+1", Gulf: "+971", Other: "+" };
 
-export type InsideListFieldKind = "text" | "tel" | "date" | "select" | "segment" | "checkbox";
+export type InsideListFieldKind = "text" | "tel" | "date" | "number" | "select" | "segment" | "checkbox";
 
 export interface InsideListField {
   kind: InsideListFieldKind;
@@ -24,6 +24,8 @@ export interface InsideListField {
   required?: boolean;
   /** Checkbox copy. */
   text?: string;
+  /** Hint under a field (e.g. what the number is used for). */
+  hint?: string;
 }
 
 /** A pair renders as a 2-up auto-fit row. */
@@ -38,6 +40,8 @@ export interface InsideListErrors {
   summary: string;
   /** Shown when onSubmit rejects (Phase 3: the POST to /api/lead failed). */
   network?: string;
+  /** A number field that is not a number. */
+  number?: string;
 }
 
 /**
@@ -67,6 +71,8 @@ export interface InsideListFormProps {
   submittingLabel?: string;
   /** Rendered under the network error, e.g. a WhatsApp fallback link. */
   networkActions?: ReactNode;
+  /** A computed line above the submit (e.g. the fee for the typed area). */
+  summary?: (values: Record<string, string | boolean>) => ReactNode;
 }
 
 const DEFAULT_ERRORS: InsideListErrors = {
@@ -131,6 +137,7 @@ export function InsideListForm({
   honeypot = "company",
   submittingLabel,
   networkActions,
+  summary: computed,
 }: InsideListFormProps) {
   const [base, setBase] = useState("India");
   const [consent, setConsent] = useState(false);
@@ -242,6 +249,7 @@ export function InsideListForm({
     const s = String(v).trim();
     if (f.required && !s) return errors.required;
     if (f.kind === "tel" && s && !TEL.test(s)) return errors.whatsapp;
+    if (f.kind === "number" && s && !(Number(s.replace(/,/g, "")) > 0)) return errors.number ?? errors.required;
     return undefined;
   };
 
@@ -311,14 +319,17 @@ export function InsideListForm({
       case "text":
       case "tel":
       case "date":
+      case "number":
         return (
           <TextField
             key={f.name}
             id={id}
             name={f.name}
             label={f.label}
-            type={f.kind}
-            inputMode={f.kind === "tel" ? "tel" : undefined}
+            type={f.kind === "number" ? "text" : f.kind}
+            className={f.kind === "number" ? "iv-input--mono" : undefined}
+            hint={f.hint}
+            inputMode={f.kind === "tel" ? "tel" : f.kind === "number" ? "numeric" : undefined}
             autoComplete={f.kind === "tel" ? "tel" : f.name === "name" ? "name" : undefined}
             placeholder={f.placeholder}
             required={f.required}
@@ -426,6 +437,12 @@ export function InsideListForm({
           renderField(spec)
         ),
       )}
+      {computed && (() => {
+        const current: Record<string, string | boolean> = {};
+        for (const f of flat) current[f.name] = get(f);
+        const node = computed(current);
+        return node ? <div className="iv-form__summary-line" aria-live="polite">{node}</div> : null;
+      })()}
       <input type="text" name={honeypot} tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: "absolute", left: -9999, width: 1, height: 1, opacity: 0 }} />
       <Button type="submit" block size="lg" disabled={pending} aria-busy={pending || undefined}>
         {pending && submittingLabel ? submittingLabel : submitLabel}

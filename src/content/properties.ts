@@ -17,12 +17,16 @@ export interface VillaRow {
   rooms: string;
 }
 
+export type DisclaimerVariant = "owner" | "builder" | "completed";
+
 export interface Property {
   slug: string;
   kicker: string;
   title: string;
   /** Building or project line. */
   project: string | Confirm;
+  /** The facts, said plainly (CONTENT §2 "framing"); an Overview block on the page. */
+  summary?: string[];
   locality: string;
   city: string;
   coordinates: { lat: number; lng: number; label: string };
@@ -43,11 +47,15 @@ export interface Property {
   amenities?: string[];
   amenitiesCharge?: string;
   availability?: VillaRow[];
-  /** Documents actually on file. CONFIRM until Karthikeya picks. */
+  /** Documents actually on file. A pill is shown only for these. */
   documentsOnFile: DocKind[] | Confirm;
+  /** Documents still being confirmed (yes/no); added to documentsOnFile only on a yes. */
+  pendingDocs?: Partial<Record<DocKind, Confirm>>;
+  /** Pill label overrides per document, e.g. approved → "GHMC building permission". */
+  docLabels?: Partial<Record<DocKind, string>>;
   bankLoanBanks?: string | Confirm;
-  disclaimerVariant: "owner" | "builder";
-  /** Builder-direct only. Empty or CONFIRM = "documents in review", not linked from Live. */
+  disclaimerVariant: DisclaimerVariant;
+  /** Builder- or developer-sold only: renders live with a reraNumber OR `oc` on file. */
   reraNumber: string | Confirm;
   media: { dir: string; stills: string[] | Confirm };
   reel: string | Confirm;
@@ -65,12 +73,12 @@ export const meerpet: Property = {
   locality: "Agriculture Colony / RN Reddy Colony, Meerpet",
   city: "Hyderabad",
   coordinates: { lat: 17.312, lng: 78.536, label: "17.3120° N, 78.5360° E" },
-  units: "3 flats",
+  units: "3 flats available in the same building",
   facing: "East and west",
   floor: CONFIRM, // per unit
   area: { value: 1600, unit: "sq ft", label: "1,600 sq ft" },
   price: { perSqFt: 5300, label: "₹ 5,300 / sq ft" },
-  indicativeTotal: CONFIRM, // ₹ 84.8 L per flat
+  indicativeTotal: "₹ 84.8 L per flat",
   status: "Ready to move, construction complete, unfurnished",
   layout: [
     "3 bedrooms",
@@ -80,7 +88,7 @@ export const meerpet: Property = {
     "Balconies",
     "Terrace access",
   ],
-  building: ["Independent building", "CCTV", "Ample parking"],
+  building: ["Independent apartment building", "CCTV", "Ample parking"],
   whyThePrice: "Investor share, not builder rate.",
   nearby: [
     { label: "Krishna Multispeciality Hospital", value: "~700 m" },
@@ -91,12 +99,14 @@ export const meerpet: Property = {
     { label: "Airport", value: "~30 min" },
     { label: "Midhani / DRDO / BDL belt", value: "~3 km" },
   ],
-  // Options: oc · approved (GHMC building permission) · bank-loan · owner-listed.
-  documentsOnFile: CONFIRM,
-  bankLoanBanks: CONFIRM,
+  // CONTENT §2: approved (GHMC building permission) · owner-listed on file;
+  // oc and bank-loan each [CONFIRM yes/no], added here only on a yes.
+  documentsOnFile: ["approved", "owner-listed"],
+  pendingDocs: { oc: CONFIRM, "bank-loan": CONFIRM },
+  docLabels: { approved: "GHMC building permission" },
   disclaimerVariant: "owner",
   reraNumber: "",
-  media: { dir: "/media/meerpet", stills: CONFIRM },
+  media: { dir: "/media/meerpet", stills: CONFIRM }, // photos
   reel: CONFIRM,
   ctas: {
     siteVisit: { label: "Book a site visit" },
@@ -112,6 +122,10 @@ export const kompally: Property = {
   kicker: "LIVE 02 · KOMPALLY",
   title: "Triplex villas, 300 sq yd, ready to move",
   project: CONFIRM, // Alpine Aavas by Samruddhi Infra
+  summary: [
+    "A plotted layout that became a gated community. One builder constructed all the villas, with customisation per buyer.",
+    "The remaining nine are completed villas with occupancy certificates, and bank loans are available.",
+  ],
   locality: "Kompally side",
   city: "Hyderabad",
   coordinates: { lat: 17.537, lng: 78.471, label: "17.5370° N, 78.4710° E" },
@@ -164,12 +178,13 @@ export const kompally: Property = {
     { label: "Hospitals", value: "2–3 km · Srikara, Surekha, Sai Siddhartha" },
     { label: "Raichandani Mall, Fairmount Downtown", value: "~2 km" },
   ],
-  // Options: rera (REQUIRED for a builder-direct page) · approved (GHMC) · oc · bank-loan.
-  documentsOnFile: CONFIRM,
-  bankLoanBanks: CONFIRM,
-  disclaimerVariant: "builder",
-  // HARD RULE: empty or CONFIRM = "documents in review". TG RERA No. P0240…
-  reraNumber: CONFIRM,
+  // CONTENT §2: oc · bank-loan · approved (GHMC) on file.
+  documentsOnFile: ["oc", "bank-loan", "approved"],
+  docLabels: { approved: "GHMC permission", "bank-loan": "Bank loans available" },
+  disclaimerVariant: "completed",
+  // No project RERA number: completed villas sold by the developer. The page
+  // renders live on the occupancy certificate (gate: reraNumber OR oc).
+  reraNumber: "",
   media: { dir: "/media/kompally", stills: CONFIRM },
   reel: CONFIRM,
   ctas: {
@@ -183,18 +198,24 @@ export const kompally: Property = {
 
 export const properties: Property[] = [meerpet, kompally];
 
-/** A builder-direct page goes live only with a real RERA number. */
+/** A real project RERA number on file. */
 export function hasRera(p: Property): boolean {
   return typeof p.reraNumber === "string" && p.reraNumber.length > 0 && !isConfirm(p.reraNumber);
-}
-
-export function isLive(p: Property): boolean {
-  return p.disclaimerVariant === "owner" || hasRera(p);
 }
 
 /** Documents on file, or none while unconfirmed. Pills come only from here. */
 export function docsOnFile(p: Property): DocKind[] {
   return isConfirm(p.documentsOnFile) ? [] : p.documentsOnFile;
+}
+
+export function hasOc(p: Property): boolean {
+  return docsOnFile(p).includes("oc");
+}
+
+/** Owner-listed pages are live. A builder- or developer-sold page goes live with a
+ *  RERA number OR the occupancy certificate on file (CLAUDE.md truth rules). */
+export function isLive(p: Property): boolean {
+  return p.disclaimerVariant === "owner" || hasRera(p) || hasOc(p);
 }
 
 export const liveProperties: Property[] = properties.filter(isLive);

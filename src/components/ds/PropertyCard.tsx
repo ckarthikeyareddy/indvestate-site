@@ -37,7 +37,7 @@ export interface PropertyCardProps {
   cta?: string;
   ctaHref?: string;
   onCta?: () => void;
-  variant?: "owner" | "builder";
+  variant?: "owner" | "builder" | "completed";
   reraNumber?: string;
   project?: string;
   compactDisclaimer?: boolean;

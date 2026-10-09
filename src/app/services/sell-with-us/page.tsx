@@ -2,11 +2,9 @@
 // (CONTENT §3, §12). /services/reel redirects here (next.config.ts).
 import type { Metadata } from "next";
 import { DataRow, StatusPill, type InsideListFieldSpec } from "@/components/ds";
-import { ConfirmChip } from "@/components/Fact";
 import { LeadForm } from "@/components/LeadForm";
 import { Block, PageHeader, PageShell } from "@/components/PageShell";
 import { TierList } from "@/components/TierList";
-import { isConfirm } from "@/content/confirm";
 import { formCopy, sellWithUsPage as copy } from "@/content/pages";
 import { sellWithUs, statusPillLabel } from "@/content/services";
 
@@ -38,6 +36,7 @@ export default function SellWithUsPage() {
         <div className="wrap stack g-32">
           <h2 className="iv-h2">{copy.tiersTitle}</h2>
           <TierList />
+          <p className="iv-body-lg">{sellWithUs.allInclusive}</p>
         </div>
       </section>
 
@@ -70,9 +69,7 @@ export default function SellWithUsPage() {
               </ul>
             </Block>
             <Block title={copy.how.turnaround}>
-              <p className="iv-body">
-                {sellWithUs.turnaround.line} {isConfirm(sellWithUs.turnaround.confirmed) && <ConfirmChip note="Turnaround" />}
-              </p>
+              <p className="iv-body">{sellWithUs.turnaround.line}</p>
             </Block>
             <Block title={copy.how.payment}>
               <p className="iv-body">{sellWithUs.payment.line}</p>

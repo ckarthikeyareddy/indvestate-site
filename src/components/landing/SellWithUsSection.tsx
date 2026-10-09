@@ -23,6 +23,9 @@ export function SellWithUsSection() {
         </div>
         <div className="stack">
           <TierList reveal />
+          <p className="iv-body muted reel__all" data-reveal="">
+            {sellWithUs.allInclusive}
+          </p>
           <div className="reel__ctas" data-reveal="">
             <Button variant="secondary" href={site.sellWithUs.cta.href}>
               {site.sellWithUs.cta.label}

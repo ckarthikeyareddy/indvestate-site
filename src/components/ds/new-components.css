@@ -13,6 +13,7 @@
 .iv-form__summary{border:1px solid var(--risk);padding:var(--space-3) var(--space-4);display:flex;flex-direction:column;gap:var(--space-2);color:var(--risk)}
 .iv-form__summary a{color:var(--risk);font-size:13px;line-height:1.5}
 .iv-seg button{min-height:44px}
+.iv-form__summary-line{display:grid;grid-template-columns:minmax(120px,40%) minmax(0,1fr);gap:16px;align-items:baseline;padding:12px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
 .iv-stamp{display:inline-flex;align-items:center;gap:var(--space-2);align-self:flex-start;padding:var(--space-2) var(--space-3);border:1px solid var(--verified);color:var(--verified);font-family:var(--font-mono);font-size:13px;letter-spacing:0.14em;text-transform:uppercase;line-height:1}
 
 /* 4. HeroMap (flat, framed) and MapFrame (2D). */

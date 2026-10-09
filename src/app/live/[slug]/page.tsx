@@ -14,10 +14,10 @@ import { JsonLd } from "@/components/JsonLd";
 import { LeadForm } from "@/components/LeadForm";
 import { Block, PageFallback, PageShell } from "@/components/PageShell";
 import { RevealScope } from "@/components/landing/Reveal";
-import { firstStill, priceNote, propertyData } from "@/components/PropertyCardFor";
+import { docPills, firstStill, priceNote, propertyData } from "@/components/PropertyCardFor";
 import { confirmed, isConfirm } from "@/content/confirm";
 import { formCopy, propertyPage as copy } from "@/content/pages";
-import { docsOnFile, isLive, properties, propertyBySlug, type DataPoint, type Property } from "@/content/properties";
+import { isLive, properties, propertyBySlug, type DataPoint, type Property } from "@/content/properties";
 import { site, whatsappHref } from "@/content/site";
 
 type Params = { slug: string };
@@ -59,17 +59,13 @@ function Plain({ items }: { items: string[] }) {
 }
 
 function Pills({ p }: { p: Property }) {
-  const docs = docsOnFile(p);
+  const docs = docPills(p);
   if (!isLive(p)) return <StatusPill label={copy.inReview.pill} />;
   if (!docs.length) return <span className="iv-caption">{copy.sections.noDocuments}</span>;
   return (
     <>
-      {docs.map((kind) => (
-        <StatusPill
-          key={kind}
-          kind={kind}
-          value={kind === "rera" ? confirmed(p.reraNumber) : kind === "bank-loan" ? confirmed(p.bankLoanBanks) : undefined}
-        />
+      {docs.map((d) => (
+        <StatusPill key={d.kind} {...d} />
       ))}
     </>
   );
@@ -111,6 +107,15 @@ function Availability({ p }: { p: Property }) {
 function Facts({ p, live }: { p: Property; live: boolean }) {
   return (
     <>
+      {p.summary && (
+        <Block title={copy.sections.overview}>
+          {p.summary.map((line) => (
+            <p key={line} className="iv-body">
+              {line}
+            </p>
+          ))}
+        </Block>
+      )}
       <div className="prop__grid">
         <Block title={copy.sections.layout}>
           <Plain items={p.layout} />

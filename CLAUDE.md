@@ -39,8 +39,9 @@ Package manager: pnpm.
   dev and FAILS the production build until replaced. Never fill it yourself.
 - Never state or imply INDVESTATE is RERA-registered. The agent number field reads
   "pending" until Karthikeya replaces it.
-- A builder-direct property page renders only when its `reraNumber` is set. If it is
-  empty, the page shows the "documents in review" state and the live pill is not shown.
+- A builder- or developer-sold property page renders only when it has either a
+  `reraNumber` or `oc` (occupancy certificate) in `documentsOnFile`. If it has neither,
+  the page shows the "documents in review" state and the live pill is not shown.
 - Status pills appear only for documents listed under `documentsOnFile`.
 - Banned words anywhere in UI: launch, guaranteed, assured returns, 100% safe,
   pre-launch, expression of interest, EOI, RERA-approved, limited time, last few,

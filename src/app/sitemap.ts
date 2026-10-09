@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   return [
     ...STATIC.map((path) => ({ url: `${site.url}${path}`, lastModified: now })),
-    // A builder-direct page without a RERA number is not live and not listed.
+    // A developer-sold page with neither a RERA number nor an OC is not live and not listed.
     ...liveProperties.map((p) => ({ url: `${site.url}/live/${p.slug}`, lastModified: now })),
     ...briefs.map((b) => ({ url: `${site.url}/briefs/${b.slug}`, lastModified: now })),
   ];

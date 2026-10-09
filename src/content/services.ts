@@ -25,23 +25,25 @@ export const sellWithUs = {
     "Every lead lands on WhatsApp with the viewer's name and intent.",
     "We report what the reel did.",
   ],
+  // Under the tiers wherever they appear (CONTENT §3).
+  allInclusive: "Everything in every package is handled by us: shoot, edit, captions, posting, leads.",
   tiers: [
     {
       name: "Post",
-      price: CONFIRM,
+      price: "₹ 2,499",
       suggestedPrice: "₹ 2,499",
       body: "We come, shoot a 30 s reel, cut it with Telugu + English captions, post it on @indvestate and give the property its own page on indvestate.com for 30 days. Leads come to you on WhatsApp.",
     },
     {
       name: "Push",
-      price: CONFIRM,
+      price: "₹ 6,999",
       suggestedPrice: "₹ 6,999",
       body: "Post, plus ₹ 4,000 of Meta ad spend on the reel, lead qualification on WhatsApp by the desk, and site visits coordinated.",
       onSale: "1% on sale",
     },
     {
       name: "Partner",
-      price: CONFIRM,
+      price: "₹ 0 upfront",
       suggestedPrice: "₹ 0 upfront",
       body: "For properties that pass our checks: we fund the ads, run the leads and the visits.",
       onSale: "2% on sale",
@@ -50,10 +52,7 @@ export const sellWithUs = {
   ] satisfies Tier[],
   whoCanBook: ["Owners", "Builders", "Resale agents"],
   whatWeNeed: ["The address", "The documents on file", "A 2-hour window to shoot", "The price"],
-  turnaround: {
-    line: "Posted within 5 working days of the shoot.",
-    confirmed: CONFIRM as string | Confirm,
-  },
+  turnaround: { line: "Posted within 5 working days of the shoot." },
   form: {
     fields: ["name", "whatsapp", "propertyType", "location", "tier"] as const,
     labels: {
@@ -69,7 +68,9 @@ export const sellWithUs = {
   },
   payment: {
     line: "A Razorpay Payment Link is sent on WhatsApp after the call. No payment is collected on the site.",
-    link: CONFIRM as string | Confirm,
+    // Arrives in 3 days (CONTENT §3). Empty = /thank-you says the link comes on WhatsApp.
+    link: "",
+    pending: "We will send the payment link on WhatsApp.",
   },
   status: "live" as ServiceStatus,
 };
@@ -84,6 +85,27 @@ const inspectionScope = [
   "Snag list with photos",
 ];
 
+export interface InspectionFeeBand {
+  /** Inclusive upper bound in sq ft. */
+  upTo: number;
+  label: string;
+  fee: string;
+  amount: number;
+}
+
+export const inspectionFees: InspectionFeeBand[] = [
+  { upTo: 1500, label: "Up to 1,500 sq ft", fee: "₹ 4,999", amount: 4999 },
+  { upTo: 2500, label: "1,501–2,500 sq ft", fee: "₹ 6,999", amount: 6999 },
+  { upTo: 4000, label: "2,501–4,000 sq ft", fee: "₹ 9,999", amount: 9999 },
+  { upTo: Number.POSITIVE_INFINITY, label: "Above 4,000 sq ft", fee: "₹ 12,999", amount: 12999 },
+];
+
+/** The fee band for a carpet area in sq ft, or undefined for a non-positive number. */
+export function inspectionFee(areaSqFt: number): InspectionFeeBand | undefined {
+  if (!Number.isFinite(areaSqFt) || areaSqFt <= 0) return undefined;
+  return inspectionFees.find((b) => areaSqFt <= b.upTo);
+}
+
 export const inspection = {
   slug: "inspection",
   name: "Home inspection",
@@ -96,22 +118,25 @@ export const inspection = {
     hours: CONFIRM as number | Confirm, // e.g. 48
     line: (h: number | string) => `Delivered as a PDF in ${h} hours.`,
   },
-  fees: {
-    flat: CONFIRM as string | Confirm, // e.g. ₹ 4,999
-    villa: CONFIRM as string | Confirm, // e.g. ₹ 7,999
-  },
+  // CONTENT §4: fee by carpet area, not property type.
+  fees: inspectionFees,
+  feeColumns: { area: "Carpet area", fee: "Fee" },
   booking: {
-    razorpayLink: CONFIRM as string | Confirm,
+    // Arrives in 3 days (CONTENT §4). Empty = /thank-you says the link comes on WhatsApp.
+    razorpayLink: "",
+    pending: "We will send the payment link on WhatsApp.",
     note: "Form first, then the payment link opens in a new tab.",
   },
   scope: inspectionScope,
   form: {
-    fields: ["name", "whatsapp", "address", "date"] as const,
+    fields: ["name", "whatsapp", "area", "address", "date"] as const,
     labels: {
       name: "Name",
       whatsapp: "WhatsApp",
+      area: "Carpet area (sq ft)",
       address: "Property address",
       date: "Preferred date",
+      fee: "Fee for this area",
     },
     submit: "Book an inspection",
     mailTo: "inspect@indvestate.com",
@@ -189,7 +214,7 @@ export const services: ServiceCellContent[] = [
     href: "/services/sell-with-us",
     panel: { scope: "tiers", cta: { label: "Book a reel", href: "/services/sell-with-us" } },
     highlight: true,
-    fromPrice: CONFIRM, // ₹ 2,499 (Post tier)
+    fromPrice: "₹ 2,499", // Post tier
   },
   {
     key: "data",

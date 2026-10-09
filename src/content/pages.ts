@@ -19,6 +19,7 @@ export const formCopy = {
     consent: "Tick the box so we can message you.",
     summary: "Check the fields marked below.",
     network: "Could not send. WhatsApp the desk instead.",
+    number: "Enter a number.",
   },
   whatsappPlaceholder: "+91 98765 43210",
   namePlaceholder: "As on your PAN or passport",
@@ -34,6 +35,7 @@ export const livePage = {
 export const propertyPage = {
   sections: {
     documents: "Documents on file",
+    overview: "Overview",
     noDocuments: "No pill is shown until the document is on file.",
     details: "Details",
     layout: "Layout",
@@ -60,7 +62,7 @@ export const propertyPage = {
   inReview: {
     pill: "Documents in review",
     title: "Documents in review.",
-    body: "This release goes live when the project's TG RERA number is on file. Until then there is no price, no pill and no site visit from this page.",
+    body: "This release goes live when the project's TG RERA number or the occupancy certificate is on file. Until then there is no price, no pill and no site visit from this page.",
     cta: { label: "Join the inside list", href: "/#inside" },
   },
 };
@@ -115,15 +117,14 @@ export const inspectionPage = {
   eyebrow: "Home inspection",
   description: "A written report before you sign. Fixed fee, delivered as a PDF.",
   scopeLabel: "What the checklist covers",
-  feeLabel: "Fee",
-  feeRows: { flat: "Flat", villa: "Villa" },
-  propertyTypeLabel: "Property type",
-  propertyTypes: ["Flat", "Villa"],
+  feeLabel: "Fee by carpet area",
   form: {
     eyebrow: "Booking",
     title: "Book an inspection",
     intro: "Form first, then the payment link opens in a new tab.",
     addressPlaceholder: "Flat or villa number, project, locality",
+    areaPlaceholder: "1,600",
+    feeHint: "Type the carpet area to see the fee.",
   },
   pay: { label: "Pay the inspection fee", note: "Opens Razorpay in a new tab." },
 };
@@ -198,13 +199,13 @@ export const policyPages = {
       rera: {
         heading: "RERA status",
         body: [
-          "Agent registration in process. Agent RERA No.: pending. Project RERA numbers are shown per listing. A builder-direct page goes live only when the project's TG RERA number is on file, and no price, pill or site visit is shown before that.",
+          "Agent registration in process. Agent RERA No.: pending. Project RERA numbers are shown per listing. A builder- or developer-sold page goes live only when the project's TG RERA number or the occupancy certificate is on file, and no price, pill or site visit is shown before that.",
         ],
       },
       founder: { heading: "Founder" },
       entity: { heading: "Entity" },
     },
-    entityRows: { name: "Registered name", registration: "CIN / LLPIN", address: "Registered address" },
+    entityRows: { name: "Registered name", registration: "CIN", address: "Registered address" },
   },
   contact: {
     title: "Contact",
@@ -215,7 +216,7 @@ export const policyPages = {
     hoursLine: "Hyderabad 10:00–19:00 IST, shown in three zones and in yours.",
     aliasesNote: "Every alias forwards to the same inbox.",
     yourZone: "Your zone",
-    map: { caption: "Office area · Hyderabad", note: "The frame shows the city, not a pin, until the address is confirmed." },
+    map: { caption: "Office · Puppalguda, Manikonda Rd", note: "The frame shows the city map; no pin is placed." },
   },
   pricing: {
     title: "Pricing",
@@ -247,7 +248,7 @@ export const policyPages = {
       {
         heading: "Listings",
         body: [
-          "Every listing is subject to owner or developer confirmation. Price, availability and the documents on file can change before a site visit. A status pill is shown only for a document actually on file. A builder-direct listing goes live only when the project's TG RERA number is on file.",
+          "Every listing is subject to owner or developer confirmation. Price, availability and the documents on file can change before a site visit. A status pill is shown only for a document actually on file. A builder- or developer-sold listing goes live only when the project's TG RERA number or the occupancy certificate is on file.",
         ],
       },
       {

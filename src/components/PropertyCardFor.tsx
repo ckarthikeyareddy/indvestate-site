@@ -5,7 +5,17 @@ import { PropertyCard } from "@/components/ds";
 import { Fact } from "@/components/Fact";
 import { whatsappHref } from "@/content/site";
 import { confirmed, isConfirm } from "@/content/confirm";
-import { docsOnFile, type Property } from "@/content/properties";
+import { docsOnFile, type DocKind, type Property } from "@/content/properties";
+import type { StatusPillProps } from "@/components/ds";
+
+/** StatusPill props for every document on file: kind, label override, value (RERA number, banks). */
+export function docPills(p: Property): StatusPillProps[] {
+  return docsOnFile(p).map((kind: DocKind) => ({
+    kind,
+    label: p.docLabels?.[kind],
+    value: kind === "rera" ? confirmed(p.reraNumber) : kind === "bank-loan" ? confirmed(p.bankLoanBanks) : undefined,
+  }));
+}
 
 export function propertyData(p: Property) {
   return [
@@ -31,7 +41,7 @@ export function firstStill(p: Property): string | undefined {
 export function PropertyCardFor({ p }: { p: Property }) {
   return (
     <PropertyCard
-      statuses={docsOnFile(p)}
+      statuses={docPills(p)}
       kicker={p.kicker}
       title={p.title}
       location={`${p.locality} · ${p.coordinates.label}`}

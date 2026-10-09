@@ -124,9 +124,9 @@ function lineHits(text, re, max = 6) {
 // ---- 5. Content gates (static) ----------------------------------------------
 {
   const props = readFileSync(join(SRC, "content/properties.ts"), "utf8");
-  const ok = /export function isLive\(/.test(props) && /disclaimerVariant === "owner" \|\| hasRera\(p\)/.test(props);
-  if (ok) pass("Builder-direct pages gate on reraNumber (isLive)");
-  else fail("Builder-direct pages gate on reraNumber", "isLive() missing or changed in src/content/properties.ts");
+  const ok = /export function isLive\(/.test(props) && /disclaimerVariant === "owner" \|\| hasRera\(p\) \|\| hasOc\(p\)/.test(props);
+  if (ok) pass("Developer-sold pages gate on reraNumber or oc (isLive)");
+  else fail("Developer-sold pages gate on reraNumber or oc", "isLive() missing or changed in src/content/properties.ts");
   const pills = /export function docsOnFile\(/.test(props);
   if (pills) pass("StatusPills come only from documentsOnFile (docsOnFile)");
   else fail("StatusPills come only from documentsOnFile", "docsOnFile() missing");
@@ -138,7 +138,7 @@ function lineHits(text, re, max = 6) {
 // ---- 6. Rendered-HTML checks (Phase 4) --------------------------------------
 stub("Inversionz only on display/wordmark text ^[A-Z0-9 ·]+$", "rendered check · Phase 4");
 stub("Property surface: StatusPill strip before heading, verbatim Disclaimer after price", "rendered check · Phase 4");
-stub("Kompally absent from /live and / while reraNumber is empty", "rendered check · Phase 4");
+stub("A developer-sold page absent from /live and / while it has neither reraNumber nor oc", "rendered check · Phase 4");
 stub("Saffron (bg or border) ≤ 1 per section wrapper", "rendered check · Phase 4");
 stub("Banned words and dash separators absent from rendered HTML", "rendered check · Phase 4");
 stub("Playwright: 375px no horizontal scroll · keyboard reaches every submit + Services dropdown · every /briefs/[slug] has a source link", "Phase 4");

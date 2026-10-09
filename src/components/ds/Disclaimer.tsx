@@ -1,5 +1,7 @@
 // Ported from design-system/components/disclaimer/Disclaimer.jsx. Not restyled.
-// Verbatim text. The builder wording is a draft and needs legal review.
+// Verbatim text. The builder and completed wordings are drafts and need legal
+// review. "completed" (Phase 3.6, CONTENT §2 B): a completed villa with OC sold
+// by the developer.
 import type { CSSProperties, HTMLAttributes, ReactNode } from "react";
 
 export const OWNER_DISCLAIMER =
@@ -15,10 +17,13 @@ export function builderDisclaimer(rera = "TG RERA No. —", project = "this proj
   );
 }
 
+export const COMPLETED_DISCLAIMER =
+  "Completed villa with occupancy certificate, sold by the developer. INDVESTATE is engaged to market this property and coordinate site visits. INDVESTATE does not collect any booking amount; all payments are made directly to the seller after independent verification. Price and availability subject to seller confirmation.";
+
 /** Mandatory closing block on every property surface. 15px, verbatim text. */
 export interface DisclaimerProps extends Omit<HTMLAttributes<HTMLElement>, "style"> {
-  /** owner = resale with OC (verbatim). builder = cites the project's TG RERA number. */
-  variant?: "owner" | "builder";
+  /** owner = resale with OC (verbatim). builder = cites the project's TG RERA number. completed = villa with OC sold by the developer. */
+  variant?: "owner" | "builder" | "completed";
   /** e.g. "TG RERA No. P02400004521" — required for builder. */
   reraNumber?: string;
   project?: string;
@@ -37,7 +42,7 @@ export function Disclaimer({
   style,
   ...rest
 }: DisclaimerProps) {
-  const text = children || (variant === "builder" ? builderDisclaimer(reraNumber, project) : OWNER_DISCLAIMER);
+  const text = children || (variant === "builder" ? builderDisclaimer(reraNumber, project) : variant === "completed" ? COMPLETED_DISCLAIMER : OWNER_DISCLAIMER);
   return (
     <aside
       style={{

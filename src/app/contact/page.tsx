@@ -4,7 +4,7 @@
 import type { Metadata } from "next";
 import { DataRow, MapFrame } from "@/components/ds";
 import { DeskHours } from "@/components/DeskHours";
-import { ConfirmChip, Fact } from "@/components/Fact";
+import { ConfirmChip } from "@/components/Fact";
 import { PolicyBlock, PolicyShell, sectionId } from "@/components/policy/PolicyShell";
 import { confirmed } from "@/content/confirm";
 import { policyPages, whatsappFloat } from "@/content/pages";
@@ -27,7 +27,6 @@ function Mail({ address }: { address: string }) {
 export default function ContactPage() {
   const r = c.rows;
   const linkedin = confirmed(site.handles.linkedin.url);
-  const hyd = confirmed(site.handles.instagramHyd.url);
   return (
     <PolicyShell title={c.title} lead={c.lead} toc={TOC}>
       <PolicyBlock n={1} heading={c.sections.reach} id={TOC[0].id}>
@@ -50,9 +49,7 @@ export default function ContactPage() {
       </PolicyBlock>
 
       <PolicyBlock n={2} heading={c.sections.hours} id={TOC[1].id}>
-        <p className="iv-body muted">
-          {c.hoursLine} <Fact value={site.deskHours.confirmed}>{""}</Fact>
-        </p>
+        <p className="iv-body muted">{c.hoursLine}</p>
         <DeskHours />
       </PolicyBlock>
 
@@ -61,21 +58,9 @@ export default function ContactPage() {
           <DataRow
             label={r.instagram}
             value={
-              <>
-                <a className="iv-data" href={site.handles.instagram.url} target="_blank" rel="noreferrer">
-                  {site.handles.instagram.handle}
-                </a>
-                {" · "}
-                {hyd ? (
-                  <a className="iv-data" href={hyd} target="_blank" rel="noreferrer">
-                    {site.handles.instagramHyd.handle}
-                  </a>
-                ) : (
-                  <>
-                    {site.handles.instagramHyd.handle} <ConfirmChip note="Hyderabad page: confirm the handle exists" />
-                  </>
-                )}
-              </>
+              <a className="iv-data" href={site.handles.instagram.url} target="_blank" rel="noreferrer">
+                {site.handles.instagram.handle}
+              </a>
             }
           />
           <DataRow
@@ -86,7 +71,9 @@ export default function ContactPage() {
                   {site.handles.linkedin.label}
                 </a>
               ) : (
-                <ConfirmChip note="LinkedIn company page URL" />
+                <>
+                  {site.handles.linkedin.label} <ConfirmChip note="LinkedIn company page URL" />
+                </>
               )
             }
             last
@@ -96,14 +83,12 @@ export default function ContactPage() {
 
       <PolicyBlock n={4} heading={c.sections.office} id={TOC[3].id}>
         <div>
-          <DataRow label={r.address} value={<Fact value={site.legalEntity.address} />} last />
+          <DataRow label={r.address} value={site.legalEntity.address} last />
         </div>
         <div data-frame="">
-          <MapFrame caption={c.map.caption} coordinate={site.hero.coordinate} />
+          <MapFrame caption={c.map.caption} />
         </div>
-        <p className="iv-caption">
-          {c.map.note} <ConfirmChip note="Office address" />
-        </p>
+        <p className="iv-caption">{c.map.note}</p>
       </PolicyBlock>
     </PolicyShell>
   );

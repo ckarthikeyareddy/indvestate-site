@@ -8,16 +8,19 @@ Full stops. No exclamation marks. No superlatives.
 - Name: INDVESTATE. Meaning: Invest In India. Positioning: Land Intelligence, Hyderabad.
 - Hero line: Land moves before the market notices. Trust line: Verified before it is visible.
 - Instagram bio line: Signals before the market.
-- Instagram: @indvestate (brand). Hyderabad page: @indvestate.hyd [CONFIRM handle exists].
-- LinkedIn: company page "Indvestate" [CONFIRM URL].
+- Instagram: @indvestate (brand). No Hyderabad page yet (do not show one).
+- LinkedIn: company page "Indvestate" [CONFIRM URL]. The text "Indvestate" shows unlinked
+  until the URL is confirmed.
 - Phone and WhatsApp: +91 79890 70079. wa.me link: https://wa.me/917989070079
 - Email (primary, on every page): desk@indvestate.com
   (chosen because the brand already speaks of "the desk": WhatsApp the desk, NRI desk).
   Service aliases, all forwarding to the same inbox: reels@indvestate.com (reel bookings),
-  inspect@indvestate.com (inspections), nri@indvestate.com (NRI desk). [CONFIRM mailbox set up]
-- Legal entity for policies: [CONFIRM: registered company name, CIN/LLPIN, registered address].
+  inspect@indvestate.com (inspections), nri@indvestate.com (NRI desk). All live.
+- Legal entity (every policy page, the footer legal line, Contact, JSON-LD):
+  INDVESTATE INFRA PRIVATE LIMITED · CIN U68200TS2026PTC214790 ·
+  1st Floor, Pavan Complex, Manikonda Rd, Puppalguda, Hyderabad, Telangana 500089.
 - Agent RERA No.: pending (application in process). Never shown as anything else until set.
-- Desk hours: Hyderabad 10:00–19:00 IST [CONFIRM]. Gulf and US windows are the same
+- Desk hours: Hyderabad 10:00–19:00 IST (confirmed). Gulf and US windows are the same
   hours converted into the viewer's zone (compute, do not hardcode).
 
 ## 2. Live properties (two)
@@ -28,32 +31,34 @@ Full stops. No exclamation marks. No superlatives.
 - title: 3 BHK, 1,600 sq ft, ready to move
 - building: Apex Serenity, Agriculture Colony / RN Reddy Colony, Meerpet, Hyderabad
 - coordinates: 17.3120° N, 78.5360° E (from the Google Maps link resolved in research)
-- units: 3 flats. Facing: east and west. Floor: [CONFIRM per unit]
-- area: 1,600 sq ft. Price: ₹ 5,300 / sq ft. Indicative total: ₹ 84.8 L per flat [CONFIRM]
+- units: 3 flats available in the same building. Facing: east and west. Floor: [CONFIRM per unit]
+- area: 1,600 sq ft. Price: ₹ 5,300 / sq ft. Total: ₹ 84.8 L per flat (confirmed)
 - status: ready to move, construction complete, unfurnished
 - layout: 3 bedrooms, 3 bathrooms (2 attached, 1 common), pooja room, dedicated wash
   area in the kitchen, balconies, terrace access
-- building: independent building, CCTV, ample parking
+- building: independent apartment building, CCTV, ample parking
 - why the price: investor share, not builder rate (say exactly this, nothing more)
 - nearby (verified in research, keep as DataRows): Krishna Multispeciality Hospital ~700 m ·
   Santinos Global School under 1 km · Meerpet X Road (Anand Mall, More) ~2 km ·
   TKR College of Engineering ~2 km · LB Nagar Metro ~5 km · Airport ~30 min ·
   Midhani / DRDO / BDL belt ~3 km
-- documentsOnFile: [CONFIRM: pick only what is actually on file]
-  options: `oc` (occupancy certificate) · `approved` (building permission, GHMC) ·
-  `bank-loan` (name the banks) · `owner-listed`
+- documentsOnFile: `approved` (GHMC building permission) · `owner-listed`.
+  `oc` [CONFIRM yes/no] · `bank-loan` [CONFIRM yes/no]: each is added only on a yes.
 - disclaimer variant: owner (verbatim from the design system)
-- media: `/media/meerpet/*.jpg` [CONFIRM upload; the reel footage exists, pull stills]
+- media: `/media/meerpet/*.jpg` [CONFIRM photos; the reel footage exists, pull stills]
 - reel: embed the Instagram reel URL once posted [CONFIRM]
 - CTAs: Book a site visit (→ /thank-you after form) · WhatsApp the desk ↗
   (wa.me prefilled: "Hi, I saw the Meerpet 3 BHK (LIVE 01) on indvestate.com.")
 
-### Property B · Kompally · triplex villas, builder-direct
+### Property B · Kompally · triplex villas, completed, sold by the developer
 - slug: `kompally-triplex-villas`
 - kicker: `LIVE 02 · KOMPALLY`
 - title: Triplex villas, 300 sq yd, ready to move
 - project: Alpine Aavas by Samruddhi Infra, Kompally side, Hyderabad [CONFIRM project name]
 - coordinates: 17.5370° N, 78.4710° E
+- framing (the facts, said plainly): a plotted layout that became a gated community. One
+  builder constructed all the villas, with customisation per buyer. The remaining nine
+  are completed villas with occupancy certificates, and bank loans are available.
 - community: 4 acres, 42 villas (brochure says 40: [CONFIRM which]), GHMC permission,
   gated, CC roads, underground electricity, lift and backup generator per villa
 - typical villa: 300 sq yd · 4,300 sq ft · 5 BHK + home theatre · east and west facing ·
@@ -76,12 +81,16 @@ Full stops. No exclamation marks. No superlatives.
 - nearby (verified in research): international schools within 1–2 km (Sadhu Vaswani,
   Indic, Innovious, Sanskriti) · hospitals within 2–3 km (Srikara, Surekha,
   Sai Siddhartha) · Raichandani Mall, Fairmount Downtown ~2 km
-- documentsOnFile: [CONFIRM] options: `rera` (TG RERA No. of the project, REQUIRED for a
-  builder-direct page to go live) · `approved` (GHMC) · `oc` · `bank-loan` (banks)
-- reraNumber: [CONFIRM: TG RERA No. P0240…]. HARD RULE: if empty, this page renders in
-  "documents in review" state and is not linked from Live. See docs/BRIEF.md §Truth.
-- disclaimer variant: builder (design-system wording, cites the TG RERA number; the
-  wording is a draft and needs legal review before launch: [CONFIRM])
+- documentsOnFile: `oc` · `bank-loan` · `approved` (GHMC).
+- reraNumber: none. GATE (Phase 3.6): a builder- or developer-sold property renders when
+  it has EITHER a reraNumber OR `oc` on file; otherwise it shows "documents in review"
+  and is not linked from Live. Kompally passes on `oc` and shows on /, /live and the
+  sitemap.
+- disclaimer variant: completed (added to the ported component; draft, legal review
+  [CONFIRM]): "Completed villa with occupancy certificate, sold by the developer.
+  INDVESTATE is engaged to market this property and coordinate site visits. INDVESTATE
+  does not collect any booking amount; all payments are made directly to the seller after
+  independent verification. Price and availability subject to seller confirmation."
 - media: `/media/kompally/*.jpg` [CONFIRM]. reel: [CONFIRM URL]
 - CTAs: as Property A, prefilled "Hi, I saw the Kompally villas (LIVE 02) on indvestate.com."
 
@@ -93,25 +102,37 @@ release, nothing else." plus the Inside list button (ghost).
 Position: "Have a property? We film it, post it and send you the leads."
 Difference from others (say it plainly): we post on a page that only shows verified
 properties, every lead lands on WhatsApp with the viewer's name and intent, and we
-report what the reel did. Tiers (suggested, [CONFIRM prices]):
+report what the reel did. Tiers (prices confirmed):
 
 | Tier | Price | What you get |
 | Post | ₹ 2,499 | We come, shoot a 30 s reel, cut it with Telugu + English captions, post it on @indvestate and give the property its own page on indvestate.com for 30 days. Leads come to you on WhatsApp. |
 | Push | ₹ 6,999 | Post, plus ₹ 4,000 of Meta ad spend on the reel, lead qualification on WhatsApp by the desk, and site visits coordinated. 1% on sale. |
 | Partner | ₹ 0 upfront | For properties that pass our checks: we fund the ads, run the leads and the visits. 2% on sale. By review only. |
 
+All-inclusive line (under the tiers, everywhere they appear): "Everything in every
+package is handled by us: shoot, edit, captions, posting, leads."
 Who can book: owners, builders, resale agents. What we need from you: the address, the
 documents on file, a 2-hour window to shoot, the price. Turnaround: posted within 5
-working days of the shoot [CONFIRM]. Booking: the /services/sell-with-us form (name, WhatsApp,
-property type, location, tier) → /thank-you, and the same data mailed to
+working days of the shoot (confirmed). Booking: the /services/sell-with-us form (name,
+WhatsApp, property type, location, tier) → /thank-you, and the same data mailed to
 reels@indvestate.com. Payment: a Razorpay Payment Link sent on WhatsApp after the
-call [CONFIRM link]. No payment collected on the site at launch.
+call. The link arrives in 3 days; until it is set, /thank-you?topic=reel says "We will
+send the payment link on WhatsApp." and shows no [CONFIRM]. No payment is collected on
+the site.
 
 ## 4. Home inspection
 Position: "A written report before you sign." 140-point checklist [CONFIRM count],
-delivered as a PDF in 48 hours [CONFIRM]. Fixed fee: [CONFIRM, e.g. ₹ 4,999 for a flat,
-₹ 7,999 for a villa]. Booking: Razorpay Payment Link [CONFIRM URL] opened in a new tab;
-form first (name, WhatsApp, property address, preferred date) → /thank-you.
+delivered as a PDF in 48 hours [CONFIRM]. Fee by carpet area, not property type
+(render as a hairline table on /services/inspection and /pricing):
+| Carpet area | Fee |
+| Up to 1,500 sq ft | ₹ 4,999 |
+| 1,501–2,500 sq ft | ₹ 6,999 |
+| 2,501–4,000 sq ft | ₹ 9,999 |
+| Above 4,000 sq ft | ₹ 12,999 |
+Booking: form first (name, WhatsApp, carpet area in sq ft, property address, preferred
+date; the fee for the typed area shows before submit) → /thank-you. Payment: Razorpay
+Payment Link, same handling as §3 (arrives in 3 days; until then /thank-you?topic=inspection
+says "We will send the payment link on WhatsApp.").
 Scope list for the dropdown: structure and cracks · waterproofing and seepage ·
 electrical load and earthing · plumbing and drainage · doors, windows, fittings ·
 approvals and OC cross-check · snag list with photos.
@@ -210,7 +231,7 @@ Footer line: INDVESTATE never collects a booking amount.
 
 ## 11. Policy pages (full text; legal review [CONFIRM]; "Last updated 09 Oct 2026")
 Each page: a lead-in sentence in .iv-body-lg, a hairline table of contents on desktop,
-numbered sections, the entity line (§1 [CONFIRM]) with the last-updated date, then the
+numbered sections, the entity line (§1) with the last-updated date, then the
 end-card CTAs (§10 buttons and footer line). Voice as everywhere: plain, short, no promises.
 
 ### /about · About
@@ -230,27 +251,28 @@ one idea: the paperwork comes first.
      and the property's page. The Push and Partner tiers add a commission on sale, stated
      on the pricing page.
    - Buyers pay nothing to INDVESTATE. For buyer concierge and the NRI desk, INDVESTATE is
-     paid by the seller on completion. [CONFIRM, same as /pricing]
+     paid by the seller on completion. (confirmed)
    - A home inspection is a fixed fee paid by the person who books it.
    - INDVESTATE never collects a booking amount. All payments for a property go directly
      to the registered owner or the developer's designated project account after
      independent verification.
 4. RERA status
    - Agent registration in process. Agent RERA No.: pending. Project RERA numbers are
-     shown per listing. A builder-direct page goes live only when the project's TG RERA
-     number is on file, and no price, pill or site visit is shown before that.
+     shown per listing. A builder- or developer-sold page goes live only when the project's
+     TG RERA number or the occupancy certificate is on file, and no price, pill or site
+     visit is shown before that.
 5. Founder: the §9 quote, signature and role.
-6. Entity: registered name, CIN/LLPIN, registered address (§1 [CONFIRM]), Agent RERA No.
+6. Entity: registered name, CIN, registered address (§1), Agent RERA No.
 
 ### /contact · Contact
 Lead-in: One desk. Every alias forwards to the same inbox, and a person replies.
 Rows: Phone and WhatsApp · Email (desk@) · Reel bookings (reels@) · Inspections (inspect@) ·
-NRI desk (nri@) · Instagram (@indvestate · @indvestate.hyd [CONFIRM]) · LinkedIn [CONFIRM] ·
-Address (§1 [CONFIRM]).
+NRI desk (nri@) · Instagram (@indvestate) · LinkedIn ("Indvestate", URL [CONFIRM]) ·
+Address (§1).
 Desk hours: the IST window of §1 shown in three zones, computed (Hyderabad · Gulf · US),
 plus the viewer's own zone.
-Map: MapFrame captioned "Office area · Hyderabad" with the address [CONFIRM]; the frame
-shows the city map, not a pin, until the address is confirmed.
+Map: MapFrame captioned "Office · Puppalguda, Manikonda Rd"; the frame shows the city
+map (no pin is placed, the art is placeholder).
 
 ### /pricing · Pricing
 Lead-in: Every fee on one page. Nothing is collected on the site.
@@ -259,8 +281,7 @@ Lead-in: Every fee on one page. Nothing is collected on the site.
 2. Home inspection: Flat · Villa fee rows (§4), then "Form first, then the payment link
    opens in a new tab."
 3. Buyer concierge: No fee to the buyer. INDVESTATE is paid by the seller on completion.
-   [CONFIRM]
-4. NRI desk: No fee to the buyer. INDVESTATE is paid by the seller on completion. [CONFIRM]
+4. NRI desk: No fee to the buyer. INDVESTATE is paid by the seller on completion.
 5. Booking amounts: INDVESTATE never collects a booking amount. All payments for a
    property go directly to the registered owner or the developer's designated project
    account after independent verification.
@@ -269,7 +290,7 @@ Lead-in: Every fee on one page. Nothing is collected on the site.
 Lead-in: What INDVESTATE does, what it does not do, and where the line sits. Plain words,
 no small print.
 1. Who we are. These terms cover indvestate.com and the services of INDVESTATE (entity
-   per §1 [CONFIRM]). Using the site or sending a form means you accept them.
+   per §1). Using the site or sending a form means you accept them.
 2. Scope of service. INDVESTATE markets properties on behalf of owners and developers,
    coordinates site visits, films and distributes reels, and carries out home
    inspections. It is not a bank, a lawyer or an investment adviser, and nothing here
@@ -281,8 +302,8 @@ no small print.
    and write to desk@indvestate.com.
 4. Listings. Every listing is subject to owner or developer confirmation. Price,
    availability and the documents on file can change before a site visit. A status pill
-   is shown only for a document actually on file. A builder-direct listing goes live only
-   when the project's TG RERA number is on file.
+   is shown only for a document actually on file. A builder- or developer-sold listing
+   goes live only when the project's TG RERA number or the occupancy certificate is on file.
 5. Documents and verification. We read the documents we show. We do not certify them. A
    risk memo or a document check is our reading of the paperwork on the date it was
    done. It is not a legal opinion and not a certificate of title.
@@ -334,7 +355,7 @@ because there is not much to say.
 7. Deletion. Write to desk@indvestate.com from the number or address you used, and your
    rows and emails are deleted within 7 days.
 8. Changes. We update this page when the handling changes and show the date at the top.
-9. Who holds the data. The entity in §1 [CONFIRM]. Questions to desk@indvestate.com.
+9. Who holds the data. The entity in §1. Questions to desk@indvestate.com.
 
 ### /refunds · Refunds and cancellation
 Lead-in: Two paid services, one rule each. Cancel before the work, full refund. After
@@ -366,15 +387,17 @@ and email buttons prefilled (§10). Send failure line: "Could not send. WhatsApp
 instead."
 
 - /live: intro "Every listing opens with the documents on file and closes with the
-  disclaimer." Cards as on the landing; Kompally absent while reraNumber is empty.
+  disclaimer." Cards as on the landing; a developer-sold page is absent while it has
+  neither a reraNumber nor `oc` on file.
 - Property page sections: Documents on file ("No pill is shown until the document is on
   file.") · Details · Layout · Building · Community · Typical villa · Availability (table
   Villa · Facing · Sq yd · Sq ft · Rooms) · Amenities · Distances · Nearby · Reel ("The
   reel is embedded here once it is posted."). Site visit form: Name · WhatsApp · Preferred
   date, intro "A real person confirms the slot on WhatsApp. INDVESTATE never collects a
-  booking amount." In-review state (no reraNumber): pill "Documents in review", title
-  "Documents in review.", body "This release goes live when the project's TG RERA number
-  is on file. Until then there is no price, no pill and no site visit from this page.",
+  booking amount." In-review state (neither reraNumber nor oc): pill "Documents in
+  review", title "Documents in review.", body "This release goes live when the project's
+  TG RERA number or the occupancy certificate is on file. Until then there is no price,
+  no pill and no site visit from this page.",
   button "Join the inside list".
 - /services/sell-with-us: How it works: Book (Send the form below. We call to fix a 2-hour
   window to shoot.) · Shoot (We come and shoot a 30 s reel.) · Post (Cut with Telugu +
@@ -385,10 +408,12 @@ instead."
   properties that have not been checked? ("No. The page only shows verified
   properties."), answers from §3. Form intro: "We call back on WhatsApp to fix the shoot.
   No payment is collected on the site."
-- /services/inspection: scope dropdown "What the checklist covers" (§4 list), fee rows Flat
-  · Villa (§4), property type Flat / Villa, form intro "Form first, then the payment link
-  opens in a new tab." /thank-you?topic=inspection shows "Pay the inspection fee ↗" (opens
-  Razorpay in a new tab) once the link is confirmed.
+- /services/inspection: scope dropdown "What the checklist covers" (§4 list), the fee
+  table by carpet area (§4), form (name, WhatsApp, carpet area, address, preferred date)
+  with the fee for the typed area shown before submit, intro "Form first, then the
+  payment link opens in a new tab." /thank-you?topic=inspection shows "Pay the inspection
+  fee ↗" (opens Razorpay in a new tab) once the link is set; until then "We will send the
+  payment link on WhatsApp."
 - /nri-desk: What we do (§ NRI rows), Desk hours (computed), enquiry form Name · WhatsApp ·
   Country · Budget band · Intent, intro "Tell us where you are and what you are looking
   for. The desk replies on WhatsApp in your hours."
