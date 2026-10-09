@@ -1,3 +1,4 @@
+"use client";
 // design/new-components.md §8 · ServiceCell. Ruled grid cell (no fill), 24px
 // padding, min-height 280: Lucide icon 20px signal · 20px Space Grotesk 500
 // headline · .iv-body muted · optional Button secondary (44px) · StatusPill
