@@ -99,7 +99,7 @@ export const site = {
   },
 
   sellWithUs: {
-    title: "Have a property? We film it, post it and send you the leads.",
+    title: "Have a property? We film it, post it and handle the leads.",
     cta: { label: "Book a reel", href: "/services/sell-with-us" },
     how: { label: "How it works →", href: "/services/sell-with-us#how" },
   },

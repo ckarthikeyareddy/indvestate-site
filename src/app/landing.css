@@ -48,8 +48,11 @@
 .hero__plate h1,.hero__plate p{margin:0}
 .word-slot{display:inline-grid;border-bottom:2px solid var(--signal);vertical-align:bottom}
 .word-slot__word{grid-area:1 / 1;visibility:hidden}
-.word-slot__word.is-active{visibility:visible;animation:iv-word-cycle 2.6s var(--ease-out) both}
-@media (prefers-reduced-motion:reduce){.word-slot__word.is-active{animation:none}}
+/* One word at a time: in (rise 8px) → active → out (lift 8px, removed). Transitions, so a rapid tick retargets. */
+.word-slot__word.is-active{visibility:visible;opacity:1;transform:none;transition:opacity var(--dur-base) var(--ease-out),transform var(--dur-base) var(--ease-out)}
+.word-slot__word.is-in{visibility:visible;opacity:0;transform:translateY(8px)}
+.word-slot__word.is-out{visibility:visible;opacity:0;transform:translateY(-8px);transition:opacity var(--dur-base) var(--ease-out),transform var(--dur-base) var(--ease-out)}
+@media (prefers-reduced-motion:reduce){.word-slot__word.is-active,.word-slot__word.is-out{transition:none}}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .hero .iv-heromap__marker{z-index:1}
 
@@ -98,6 +101,7 @@
 .tier{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"name price" "body body" "sale sale";gap:var(--space-2) var(--space-5);padding:var(--space-5) 0;border-bottom:1px solid var(--hairline);align-items:baseline}
 .tier__name{grid-area:name}.tier__price{grid-area:price;text-align:right}.tier__body{grid-area:body}.tier__sale{grid-area:sale}
 .tier__price.iv-price{font-size:22px}
+.reel__offer{display:flex;align-items:center;gap:var(--space-3);flex-wrap:wrap;padding-bottom:var(--space-4)}
 .reel__all{padding-top:var(--space-4)}
 .reel__ctas{display:flex;gap:var(--space-3);flex-wrap:wrap;align-items:center;padding-top:var(--space-5)}
 

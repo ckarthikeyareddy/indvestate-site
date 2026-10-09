@@ -3,6 +3,7 @@
 // in this section.
 import { Button } from "@/components/ds";
 import { TierList } from "@/components/TierList";
+import { TierOfferLine, TierOfferPill } from "@/components/TierOffer";
 import { RevealScope } from "./Reveal";
 
 import { site } from "@/content/site";
@@ -22,6 +23,10 @@ export function SellWithUsSection() {
           </ul>
         </div>
         <div className="stack">
+          <div className="reel__offer" data-reveal="">
+            <TierOfferPill />
+            <TierOfferLine />
+          </div>
           <TierList reveal />
           <p className="iv-body muted reel__all" data-reveal="">
             {sellWithUs.allInclusive}

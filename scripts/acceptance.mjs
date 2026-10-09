@@ -161,7 +161,7 @@ stub("Playwright: 375px no horizontal scroll · keyboard reaches every submit + 
 // (default http://localhost:3000); otherwise reported as a stub with the reason.
 for (const [name, script] of [
   ["Playwright: reduced-motion end states at 1440 and 375", "scripts/reduced-motion.mjs"],
-  ["Playwright: /admin 401 · reels muted · 375 no horizontal scroll · Watch from content", "scripts/smoke.mjs"],
+  ["Playwright: /admin 401 · reels muted · 375 no horizontal scroll · Watch always renders", "scripts/smoke.mjs"],
 ]) {
   const BASE = (process.env.BASE_URL || "http://localhost:3000").replace(/\/$/, "");
   let reason = "";

@@ -15,9 +15,7 @@ const results = [];
 const check = (name, ok, detail) => results.push({ ok, name, detail });
 
 // Expected Watch state: the local dev store (.data/store.json) when it holds a
-// list, else the content seed. Against a remote BASE_URL the store is unknown,
-// so only the card invariant is asserted there.
-const local = /localhost|127\.0\.0\.1/.test(BASE);
+// list, else the content seed.
 let expected = null;
 try {
   const doc = JSON.parse(readFileSync(new URL("../.data/store.json", import.meta.url), "utf8"));
@@ -53,7 +51,7 @@ try {
     };
   });
   check("no reel card autoplays with sound", v.unmuted === 0 && v.playing <= 1, `${v.count} videos, ${v.unmuted} unmuted, ${v.playing} playing`);
-  if (local) check("Watch section renders from the store or the content seed", v.watch === expected, `section ${v.watch ? "present" : "absent"}, expected ${expected}`);
+  check("Watch section always renders (store or content seed)", v.watch && (expected ? v.cards > 0 : v.cards === 0), `section ${v.watch ? "present" : "absent"}, ${v.cards} video cards, expected video ${expected}`);
   check("every reel card in the Watch rail has a video", v.cards === v.withSrc, `${v.cards} cards, ${v.withSrc} with video`);
   await ctx.close();
 

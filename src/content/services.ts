@@ -19,12 +19,21 @@ export interface Tier {
 export const sellWithUs = {
   slug: "sell-with-us",
   name: "Sell with us",
-  position: "Have a property? We film it, post it and send you the leads.",
+  position: "Have a property? We film it, post it and handle the leads.",
   difference: [
     "We post on a page that only shows verified properties.",
-    "Every lead lands on WhatsApp with the viewer's name and intent.",
+    "Every lead comes to our desk. We qualify on WhatsApp, run the site visits, negotiate, and keep you updated.",
     "We report what the reel did.",
   ],
+  // CONTENT §3 leads flow, said once in full.
+  leadsFlow: "Every lead comes to the INDVESTATE desk, never to you. We qualify on WhatsApp, run the site visits, negotiate, and keep you updated. You only hear from us.",
+  // CONTENT §3 offer label beside the tiers heading. "launch" is a banned UI word.
+  offer: {
+    pill: "Introductory offer",
+    line: (date: string) => `Introductory pricing for owners listing before ${date}.`,
+    until: "31 Dec 2026",
+    untilConfirmed: CONFIRM as string | Confirm,
+  },
   // Under the tiers wherever they appear (CONTENT §3).
   allInclusive: "Everything in every package is handled by us: shoot, edit, captions, posting, leads.",
   tiers: [
@@ -32,7 +41,7 @@ export const sellWithUs = {
       name: "Post",
       price: "₹ 2,499",
       suggestedPrice: "₹ 2,499",
-      body: "We come, shoot a 30 s reel, cut it with Telugu + English captions, post it on @indvestate and give the property its own page on indvestate.com for 30 days. Leads come to you on WhatsApp.",
+      body: "We come, shoot a 30 s reel, cut it with Telugu + English captions, post it on @indvestate and give the property its own page on indvestate.com for 30 days. Leads come to our desk; we qualify them and keep you updated.",
     },
     {
       name: "Push",

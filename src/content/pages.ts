@@ -69,7 +69,7 @@ export const propertyPage = {
 
 export const sellWithUsPage = {
   eyebrow: "Sell with us",
-  description: "We film it, post it and send you the leads. Three tiers, one page on indvestate.com.",
+  description: "We film it, post it and handle the leads. Three tiers, one page on indvestate.com.",
   tiersTitle: "Three tiers.",
   how: {
     id: "how",
@@ -81,7 +81,7 @@ export const sellWithUsPage = {
         label: "Post",
         line: "Cut with Telugu + English captions, posted on @indvestate, with the property's own page on indvestate.com for 30 days.",
       },
-      { label: "Leads", line: "Every lead lands on your WhatsApp with the viewer's name and intent. We report what the reel did." },
+      { label: "Leads", line: "Every lead comes to our desk. We qualify on WhatsApp, run the site visits, negotiate, and keep you updated. We report what the reel did." },
     ],
     whoCanBook: "Who can book",
     whatWeNeed: "What we need from you",
@@ -93,7 +93,10 @@ export const sellWithUsPage = {
     items: [
       { q: "Who can book?", a: "Owners, builders and resale agents." },
       { q: "What do you need from me?", a: "The address, the documents on file, a 2-hour window to shoot, and the price." },
-      { q: "Where do the leads go?", a: "To your WhatsApp, with the viewer's name and intent." },
+      {
+        q: "Where do the leads go?",
+        a: "To the INDVESTATE desk, never to you directly. We qualify them on WhatsApp, run the site visits, negotiate, and keep you updated. You only hear from us.",
+      },
       {
         q: "What is the Partner tier?",
         a: "For properties that pass our checks: we fund the ads, run the leads and the visits. 2% on sale. By review only.",

@@ -1,16 +1,19 @@
-// 03b Watch · Phase 3.6. "Walk it before you call." A horizontal rail of
-// 9:16 reel cards from the store (admin) or src/content/reels.ts. Fewer than
-// three published reels are padded with placeholder cards from `upcoming`;
-// none published hides the section.
+// 03b Watch · Phase 3.6, always rendered since Phase 3.7. "Walk it before you
+// call." A horizontal rail of 9:16 reel cards from the store (admin) or
+// src/content/reels.ts. Published reels with video play; seeded reels without
+// video show their kicker and stat as coming-soon teasers; `upcoming` areas
+// pad the rail with NEXT REEL placeholders while fewer than three reels are
+// published. The rail's controls render disabled while no card has video.
 import { reelsCopy, upcoming } from "@/content/reels";
-import { getPublishedReels } from "@/lib/reels";
+import { getReels } from "@/lib/reels";
 import { ReelRail } from "./ReelRail";
 import { RevealScope } from "./Reveal";
 
 export async function ReelsSection() {
-  const reels = await getPublishedReels();
-  if (!reels.length) return null;
-  const placeholders = upcoming.slice(0, Math.max(0, reelsCopy.minCards - reels.length));
+  const all = await getReels();
+  const reels = all.filter((r) => r.published && r.videoUrl);
+  const teasers = all.filter((r) => !(r.published && r.videoUrl)).map((r) => ({ kicker: r.kicker, stat: r.stat }));
+  const placeholders = reels.length < reelsCopy.minCards ? upcoming : [];
   return (
     <section id="watch" className="sec">
       <RevealScope>
@@ -25,7 +28,7 @@ export async function ReelsSection() {
           </div>
         </div>
         <div data-reveal="">
-          <ReelRail reels={reels} placeholders={placeholders} />
+          <ReelRail reels={reels} teasers={reels.length ? [] : teasers} placeholders={placeholders} />
         </div>
       </RevealScope>
     </section>

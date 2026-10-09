@@ -99,13 +99,20 @@ Under the two cards: one line in `.iv-caption`: "More are being checked. One Wha
 release, nothing else." plus the Inside list button (ghost).
 
 ## 3. Sell with us: the reel + distribution service (the revenue focus)
-Position: "Have a property? We film it, post it and send you the leads."
+Position: "Have a property? We film it, post it and handle the leads."
+Leads flow (Phase 3.7, everywhere it is stated): every lead comes to the INDVESTATE desk,
+never to the owner. We qualify on WhatsApp, run the site visits, negotiate, and keep the
+owner updated; the owner only hears from us. Never "leads come to you".
 Difference from others (say it plainly): we post on a page that only shows verified
-properties, every lead lands on WhatsApp with the viewer's name and intent, and we
-report what the reel did. Tiers (prices confirmed):
+properties; every lead comes to our desk and we qualify it, run the visits, negotiate and
+keep you updated; and we report what the reel did.
+Offer label beside the tiers heading: StatusPill neutral "Introductory offer" and the line
+"Introductory pricing for owners listing before 31 Dec 2026." [CONFIRM date]. (The brief
+asked for "launch offer"; "launch" is a banned UI word in CLAUDE.md, so the label reads
+"introductory" until that rule is changed.) Tiers (prices confirmed):
 
 | Tier | Price | What you get |
-| Post | ₹ 2,499 | We come, shoot a 30 s reel, cut it with Telugu + English captions, post it on @indvestate and give the property its own page on indvestate.com for 30 days. Leads come to you on WhatsApp. |
+| Post | ₹ 2,499 | We come, shoot a 30 s reel, cut it with Telugu + English captions, post it on @indvestate and give the property its own page on indvestate.com for 30 days. Leads come to our desk; we qualify them and keep you updated. |
 | Push | ₹ 6,999 | Post, plus ₹ 4,000 of Meta ad spend on the reel, lead qualification on WhatsApp by the desk, and site visits coordinated. 1% on sale. |
 | Partner | ₹ 0 upfront | For properties that pass our checks: we fund the ads, run the leads and the visits. 2% on sale. By review only. |
 
@@ -402,8 +409,8 @@ instead."
 - /services/sell-with-us: How it works: Book (Send the form below. We call to fix a 2-hour
   window to shoot.) · Shoot (We come and shoot a 30 s reel.) · Post (Cut with Telugu +
   English captions, posted on @indvestate, with the property's own page on indvestate.com
-  for 30 days.) · Leads (Every lead lands on your WhatsApp with the viewer's name and
-  intent. We report what the reel did.). Questions: Who can book? / What do you need from
+  for 30 days.) · Leads (Every lead comes to our desk. We qualify on WhatsApp, run the site
+  visits, negotiate, and keep you updated. We report what the reel did.). Questions: Who can book? / What do you need from
   me? / Where do the leads go? / What is the Partner tier? / How do I pay? / Do you post
   properties that have not been checked? ("No. The page only shows verified
   properties."), answers from §3. Form intro: "We call back on WhatsApp to fix the shoot.
@@ -442,12 +449,14 @@ instead."
   /thank-you → "Hi, I just sent a request on indvestate.com."
 - Preloader: wordmark and a mono counter 00→100, once per session. No copy.
 
-## 14. Watch (the reel carousel, Phase 3.6)
+## 14. Watch (the reel carousel, Phase 3.6; always rendered since Phase 3.7)
 Section on / after Live, before Sell with us. Eyebrow: Watch. Title: Walk it before you
 call. Cards link to the reel on Instagram ("Watch on Instagram ↗"). One rail-level
 mute control: "Unmute" / "Mute". Reduced motion: "Play" / "Pause" on the centred card.
 Placeholder card kicker: NEXT REEL · <AREA>, pill "Coming soon". Fewer than three
-published reels pad with placeholders; none published hides the section.
+published reels pad with placeholders. With none published the section still renders:
+each seeded reel shows as a teaser card (kicker, stat, "Coming soon", no video) plus
+the upcoming placeholders, and the mute control and arrows render disabled.
 Data: the admin's list (store key reels:list) or the seed below. Each reel: id, kicker,
 caption, stat, videoUrl, posterUrl, instagramUrl, order, published.
 - meerpet-3bhk · kicker `LIVE 01 · MEERPET` · stat `₹ 5,300 / sq ft · 1,600 sq ft` ·

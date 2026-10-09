@@ -5,6 +5,7 @@ import { DataRow, StatusPill, type InsideListFieldSpec } from "@/components/ds";
 import { LeadForm } from "@/components/LeadForm";
 import { Block, PageHeader, PageShell } from "@/components/PageShell";
 import { TierList } from "@/components/TierList";
+import { TierOfferLine, TierOfferPill } from "@/components/TierOffer";
 import { formCopy, sellWithUsPage as copy } from "@/content/pages";
 import { sellWithUs, statusPillLabel } from "@/content/services";
 
@@ -34,9 +35,14 @@ export default function SellWithUsPage() {
 
       <section className="sec">
         <div className="wrap stack g-32">
-          <h2 className="iv-h2">{copy.tiersTitle}</h2>
+          <div className="row g-16">
+            <h2 className="iv-h2">{copy.tiersTitle}</h2>
+            <TierOfferPill />
+          </div>
+          <TierOfferLine className="iv-body muted" />
           <TierList />
           <p className="iv-body-lg">{sellWithUs.allInclusive}</p>
+          <p className="iv-body muted">{sellWithUs.leadsFlow}</p>
         </div>
       </section>
 

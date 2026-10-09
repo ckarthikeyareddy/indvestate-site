@@ -13,13 +13,19 @@ import { Icon, StatusPill } from "@/components/ds";
 import { isConfirm } from "@/content/confirm";
 import { reelsCopy, type Reel } from "@/content/reels";
 
-type Card = { kind: "reel"; reel: Reel } | { kind: "placeholder"; area: string };
+type Teaser = { kicker: string; stat: string };
+type Card = { kind: "reel"; reel: Reel } | { kind: "teaser"; teaser: Teaser } | { kind: "placeholder"; area: string };
 
-export function ReelRail({ reels, placeholders }: { reels: Reel[]; placeholders: string[] }) {
+export function ReelRail({ reels, teasers = [], placeholders }: { reels: Reel[]; teasers?: Teaser[]; placeholders: string[] }) {
   const cards = useMemo<Card[]>(
-    () => [...reels.map((reel) => ({ kind: "reel", reel }) as Card), ...placeholders.map((area) => ({ kind: "placeholder", area }) as Card)],
-    [reels, placeholders],
+    () => [
+      ...reels.map((reel) => ({ kind: "reel", reel }) as Card),
+      ...teasers.map((teaser) => ({ kind: "teaser", teaser }) as Card),
+      ...placeholders.map((area) => ({ kind: "placeholder", area }) as Card),
+    ],
+    [reels, teasers, placeholders],
   );
+  const hasVideo = reels.length > 0;
   const rail = useRef<HTMLDivElement>(null);
   const items = useRef<(HTMLElement | null)[]>([]);
   const videos = useRef<(HTMLVideoElement | null)[]>([]);
@@ -212,15 +218,15 @@ export function ReelRail({ reels, placeholders }: { reels: Reel[]; placeholders:
   return (
     <div className="rail-wrap">
       <div className="wrap rail-bar">
-        <button type="button" className="rail-ctl iv-label" onClick={() => setMuted((m) => !m)} aria-pressed={!muted} disabled={!activeReel}>
+        <button type="button" className="rail-ctl iv-label" onClick={() => setMuted((m) => !m)} aria-pressed={!muted} disabled={!hasVideo || !activeReel}>
           <Icon name={muted ? "volume-x" : "volume-2"} size={16} />
           {muted ? reelsCopy.unmute : reelsCopy.mute}
         </button>
         <div className="rail-arrows">
-          <button type="button" className="iv-btn iv-btn--secondary rail-arrow" onClick={() => advance(-1)} aria-label={reelsCopy.prev}>
+          <button type="button" className="iv-btn iv-btn--secondary rail-arrow" onClick={() => advance(-1)} aria-label={reelsCopy.prev} disabled={!hasVideo}>
             <Icon name="arrow-left" size={16} />
           </button>
-          <button type="button" className="iv-btn iv-btn--secondary rail-arrow" onClick={() => advance(1)} aria-label={reelsCopy.next}>
+          <button type="button" className="iv-btn iv-btn--secondary rail-arrow" onClick={() => advance(1)} aria-label={reelsCopy.next} disabled={!hasVideo}>
             <Icon name="arrow-right" size={16} />
           </button>
         </div>
@@ -240,6 +246,25 @@ export function ReelRail({ reels, placeholders }: { reels: Reel[]; placeholders:
         }}
       >
         {cards.map((card, i) => {
+          if (card.kind === "teaser") {
+            return (
+              <article
+                key={`teaser-${card.teaser.kicker}`}
+                className="reel reel--next iv-plus-grid"
+                role="listitem"
+                ref={(el) => {
+                  items.current[i] = el;
+                }}
+                data-active={i === active ? "true" : "false"}
+              >
+                <div className="reel__plate">
+                  <span className="iv-label signal">{card.teaser.kicker}</span>
+                  <span className="iv-data">{card.teaser.stat}</span>
+                  <StatusPill kind="coming-soon" label={reelsCopy.comingSoon} />
+                </div>
+              </article>
+            );
+          }
           if (card.kind === "placeholder") {
             return (
               <article

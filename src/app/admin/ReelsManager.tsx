@@ -8,8 +8,9 @@
 // first frame on a canvas; client-upload both to Vercel Blob through
 // /api/admin/blob; write the record through /api/admin/reels.
 // ffmpeg.wasm's class spawns a Worker with import.meta.url, which the bundler
-// cannot resolve, so its UMD build is loaded from the CDN at runtime (it then
-// fetches its own worker chunk from the same directory). Nothing is bundled.
+// cannot resolve, and a cross-origin or blob worker cannot import the core, so
+// its ESM build (MIT) is vendored under public/ffmpeg and imported at runtime
+// same-origin, unbundled; the core comes from the CDN through blob URLs.
 import { upload } from "@vercel/blob/client";
 import { useEffect, useRef, useState, type DragEvent } from "react";
 import { Button, Checkbox, TextField } from "@/components/ds";
@@ -19,33 +20,23 @@ const MAX_SECONDS = 60;
 const RATIO = 9 / 16;
 const RATIO_TOLERANCE = 0.05;
 const COMPRESS_OVER_BYTES = 12 * 1024 * 1024;
-const FFMPEG_CORE = "https://unpkg.com/@ffmpeg/core@0.12.10/dist/umd";
-const FFMPEG_UMD = "https://unpkg.com/@ffmpeg/ffmpeg@0.12.15/dist/umd/ffmpeg.js";
+const FFMPEG_CORE = "https://unpkg.com/@ffmpeg/core@0.12.10/dist/esm";
+const FFMPEG_ESM = "/ffmpeg/index.js"; // vendored @ffmpeg/ffmpeg 0.12.15 dist/esm
 
 interface FFmpegLike {
   on(event: "progress", cb: (e: { progress: number }) => void): void;
-  load(opts: { coreURL: string; wasmURL: string }): Promise<boolean>;
+  load(opts: { coreURL: string; wasmURL: string; classWorkerURL?: string }): Promise<boolean>;
   writeFile(name: string, data: Uint8Array): Promise<boolean>;
   exec(args: string[]): Promise<number>;
   readFile(name: string): Promise<Uint8Array | string>;
   terminate(): void;
 }
-declare global {
-  interface Window {
-    FFmpegWASM?: { FFmpeg: new () => FFmpegLike };
-  }
-}
 
-function loadScript(src: string): Promise<void> {
-  return new Promise((resolve, reject) => {
-    if (document.querySelector(`script[src="${src}"]`)) return resolve();
-    const s = document.createElement("script");
-    s.src = src;
-    s.async = true;
-    s.onload = () => resolve();
-    s.onerror = () => reject(new Error("Could not load the compressor."));
-    document.head.appendChild(s);
-  });
+async function loadFFmpeg(): Promise<new () => FFmpegLike> {
+  const url = FFMPEG_ESM;
+  const mod = (await import(/* webpackIgnore: true */ /* turbopackIgnore: true */ url)) as { FFmpeg?: new () => FFmpegLike };
+  if (!mod.FFmpeg) throw new Error("Could not load the compressor.");
+  return mod.FFmpeg;
 }
 
 const ERR: Record<string, string> = {
@@ -71,10 +62,24 @@ async function readMeta(file: File): Promise<{ width: number; height: number; du
     v.preload = "metadata";
     v.muted = true;
     v.src = URL.createObjectURL(file);
-    v.onloadedmetadata = () => {
+    const finish = () => {
       const out = { width: v.videoWidth, height: v.videoHeight, duration: v.duration };
       URL.revokeObjectURL(v.src);
       resolve(out);
+    };
+    v.onloadedmetadata = () => {
+      // Recordings (MediaRecorder output) report Infinity until the end is sought.
+      if (!Number.isFinite(v.duration)) {
+        v.ontimeupdate = () => {
+          if (Number.isFinite(v.duration)) {
+            v.ontimeupdate = null;
+            finish();
+          }
+        };
+        v.currentTime = Number.MAX_SAFE_INTEGER;
+        return;
+      }
+      finish();
     };
     v.onerror = () => reject(new Error("Could not read the video."));
   });
@@ -105,9 +110,7 @@ async function posterFrom(file: File): Promise<Blob> {
 
 async function compress(file: File, onProgress: (p: number) => void, signal: { skip: boolean }): Promise<File> {
   const { fetchFile, toBlobURL } = await import("@ffmpeg/util");
-  await loadScript(FFMPEG_UMD);
-  const FFmpeg = window.FFmpegWASM?.FFmpeg;
-  if (!FFmpeg) throw new Error("Could not load the compressor.");
+  const FFmpeg = await loadFFmpeg();
   const ff = new FFmpeg();
   ff.on("progress", ({ progress }) => onProgress(Math.max(0, Math.min(1, progress))));
   await ff.load({
@@ -148,6 +151,7 @@ export function ReelsManager() {
   const [stage, setStage] = useState<"idle" | "compress" | "poster" | "upload" | "save">("idle");
   const [progress, setProgress] = useState(0);
   const [dropOver, setDropOver] = useState(false);
+  const [compressed, setCompressed] = useState<string | null>(null);
   const skip = useRef({ skip: false });
 
   const fail = (code: string | undefined, fallback: string) => setError(ERR[code ?? ""] ?? fallback);
@@ -263,10 +267,13 @@ export function ReelsManager() {
     skip.current = { skip: false };
     try {
       let video = file;
+      setCompressed(null);
       if (file.size > COMPRESS_OVER_BYTES) {
         setStage("compress");
         setProgress(0);
         video = await compress(file, setProgress, skip.current);
+        const mb = (n: number) => (n / 1024 / 1024).toFixed(1);
+        setCompressed(video === file ? `Compression skipped · ${mb(file.size)} MB` : `Compressed ${mb(file.size)} MB → ${mb(video.size)} MB`);
       }
       setStage("poster");
       const poster = await posterFrom(video);
@@ -289,7 +296,8 @@ export function ReelsManager() {
       setDraft({ kicker: "", caption: "", stat: "", instagramUrl: "", published: false });
       setNotice("Reel added.");
     } catch (e) {
-      const msg = (e as Error).message;
+      // ffmpeg.wasm and the worker can reject with strings or events, not Errors.
+      const msg = e instanceof Error ? e.message : typeof e === "string" ? e : (e as { message?: string })?.message ?? "unknown error";
       fail(msg, msg.includes("token") || msg.includes("BLOB") ? ERR["not-configured"] : `Could not add the reel. ${msg}`);
     } finally {
       setStage("idle");
@@ -365,6 +373,11 @@ export function ReelsManager() {
               <span style={{ transform: `scaleX(${progress})` }} />
             </div>
           </div>
+        )}
+        {compressed && (
+          <span className="iv-data muted" data-compressed="">
+            {compressed}
+          </span>
         )}
         <div className="row">
           <Button variant="secondary" onClick={add} disabled={!file || !meta || busy}>

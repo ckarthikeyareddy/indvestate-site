@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { FeeTable } from "@/components/FeeTable";
 import { PolicyBlock, PolicyShell, sectionId } from "@/components/policy/PolicyShell";
 import { TierList } from "@/components/TierList";
+import { TierOfferLine, TierOfferPill } from "@/components/TierOffer";
 import { policyPages } from "@/content/pages";
 import { inspection, sellWithUs } from "@/content/services";
 import { site } from "@/content/site";
@@ -19,8 +20,13 @@ export default function PricingPage() {
   return (
     <PolicyShell title={c.title} lead={c.lead} toc={TOC}>
       <PolicyBlock n={1} heading={c.sections.reels} id={TOC[0].id}>
+        <div className="row g-12">
+          <TierOfferPill />
+          <TierOfferLine className="iv-body muted" />
+        </div>
         <TierList />
         <p className="iv-body">{sellWithUs.allInclusive}</p>
+        <p className="iv-body muted">{sellWithUs.leadsFlow}</p>
         <p className="iv-body muted">{sellWithUs.payment.line}</p>
       </PolicyBlock>
       <PolicyBlock n={2} heading={c.sections.inspection} id={TOC[1].id}>
