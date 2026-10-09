@@ -2,9 +2,9 @@
 // the left; the three tiers as a hairline-divided list on the right. No saffron
 // in this section.
 import { Button } from "@/components/ds";
+import { TierList } from "@/components/TierList";
 import { RevealScope } from "./Reveal";
 
-import { Fact } from "@/components/Fact";
 import { site } from "@/content/site";
 import { sellWithUs } from "@/content/services";
 
@@ -22,22 +22,7 @@ export function SellWithUsSection() {
           </ul>
         </div>
         <div className="stack">
-          <div className="tiers">
-            {sellWithUs.tiers.map((t) => (
-              <div className="tier" key={t.name} data-reveal="">
-                <span className="iv-h3 tier__name">{t.name}</span>
-                <span className="iv-price tier__price">
-                  <Fact value={t.price} />
-                </span>
-                <span className="iv-body muted tier__body">{t.body}</span>
-                {(t.onSale || t.byReviewOnly) && (
-                  <span className="iv-data muted tier__sale">
-                    {[t.onSale, t.byReviewOnly ? "By review only" : undefined].filter(Boolean).join(" · ")}
-                  </span>
-                )}
-              </div>
-            ))}
-          </div>
+          <TierList reveal />
           <div className="reel__ctas" data-reveal="">
             <Button variant="secondary" href={site.sellWithUs.cta.href}>
               {site.sellWithUs.cta.label}

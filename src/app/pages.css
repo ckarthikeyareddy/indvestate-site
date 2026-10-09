@@ -1,0 +1,83 @@
+/* Layout for the routes off the landing (Phase 3). Tokens only: colours are
+   system variables, type is the .iv-* roles, space is the 4-based scale.
+   Components keep their own styles; this file only places them. */
+.page__head{border-top:0;padding-top:var(--hero-top)}
+.page__head--narrow .wrap{max-width:800px}
+.page__line{max-width:640px}
+.page .sec>.wrap>h2.iv-h2{max-width:800px}
+
+/* Titled block: mono label on a hairline, then content. */
+.block{display:flex;flex-direction:column;gap:var(--space-4)}
+.block__title{padding-bottom:var(--space-3);border-bottom:1px solid var(--hairline)}
+.plain{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.plain li{padding:10px 0;border-bottom:1px solid var(--hairline)}
+.plain li:last-child{border-bottom:0}
+
+/* Property page: content column + sticky price aside. */
+.prop{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:var(--space-7);align-items:start}
+.prop__main{display:flex;flex-direction:column;gap:var(--space-7);min-width:0}
+.prop__aside{position:sticky;top:calc(var(--nav-height) + var(--space-5));background:var(--carbon);border:1px solid var(--hairline);padding:var(--space-6);display:flex;flex-direction:column;gap:var(--space-5);min-width:0}
+.prop__pills{display:flex;flex-wrap:wrap;gap:var(--space-2)}
+.prop__media{position:relative;aspect-ratio:16 / 10;background:var(--carbon);border:1px solid var(--hairline);overflow:hidden}
+.prop__media img{width:100%;height:100%;object-fit:cover;display:block}
+.prop__media .iv-label{position:absolute;left:var(--space-4);bottom:14px;color:var(--ink-muted)}
+.prop__price{display:flex;flex-direction:column;gap:var(--space-2)}
+.prop__ctas{display:flex;flex-direction:column;gap:var(--space-3)}
+.prop__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-7)}
+.review{background:var(--carbon);border:1px solid var(--hairline);padding:var(--space-6);display:flex;flex-direction:column;gap:var(--space-4);max-width:640px}
+
+/* Hairline table (Kompally availability). Numbers in mono, right-aligned. */
+.iv-table{width:100%;border-collapse:collapse}
+.iv-table th{text-align:left;padding:0 var(--space-3) var(--space-3) 0;border-bottom:1px solid var(--hairline);font-weight:500}
+.iv-table td{padding:var(--space-3) var(--space-3) var(--space-3) 0;border-bottom:1px solid var(--hairline);vertical-align:top}
+.iv-table .num{text-align:right;padding-right:var(--space-5);white-space:nowrap}
+.iv-table th.num{padding-right:var(--space-5)}
+.iv-table__wrap{overflow-x:auto}
+
+/* Service pages. */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.steps>*{border-left:1px solid var(--hairline);padding:0 var(--space-5);display:flex;flex-direction:column;gap:var(--space-3)}
+.steps>*:first-child{border-left:0;padding-left:0}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-7);align-items:start}
+.faq{display:flex;flex-direction:column;border-bottom:1px solid var(--hairline)}
+.faq details{border-top:1px solid var(--hairline)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:var(--space-5);align-items:baseline;padding:var(--space-5) 0;font-family:var(--font-headline);font-weight:500;font-size:20px;letter-spacing:var(--tracking-headline)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--font-mono);color:var(--signal-ink);flex:none}
+.faq details[open] summary::after{content:"\2212"}
+.faq summary:focus-visible{outline:1px solid var(--signal);outline-offset:2px}
+.faq .faq__a{padding:0 0 var(--space-5);max-width:640px}
+.scope{border:1px solid var(--hairline);background:var(--carbon)}
+.scope summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:var(--space-4);align-items:center;padding:var(--space-4) var(--space-5);min-height:44px}
+.scope summary::-webkit-details-marker{display:none}
+.scope summary::after{content:"+";font-family:var(--font-mono);color:var(--signal-ink)}
+.scope[open] summary::after{content:"\2212"}
+.scope summary:focus-visible{outline:1px solid var(--signal);outline-offset:-2px}
+.scope .plain{padding:0 var(--space-5) var(--space-3);border-top:1px solid var(--hairline)}
+.form-col{max-width:560px}
+
+/* Brief page. */
+.brief{max-width:760px;display:flex;flex-direction:column;gap:var(--space-6)}
+.brief__nav{display:flex;justify-content:space-between;gap:var(--space-5);flex-wrap:wrap;border-top:1px solid var(--hairline);padding-top:var(--space-5)}
+.brief__check{background:var(--carbon);border:1px solid var(--hairline);padding:var(--space-5);display:flex;flex-direction:column;gap:var(--space-2)}
+.brief__sources{display:flex;flex-direction:column;gap:var(--space-2)}
+.brief__sources a{overflow-wrap:anywhere}
+
+/* Policy pages. */
+.policy{max-width:760px;display:flex;flex-direction:column;gap:var(--space-7)}
+.policy section{display:flex;flex-direction:column;gap:var(--space-3)}
+.policy p{max-width:640px}
+
+/* End card. */
+.end{max-width:640px;display:flex;flex-direction:column;gap:var(--space-5)}
+.end__actions{display:flex;gap:var(--space-3);flex-wrap:wrap}
+
+@media (max-width:1000px){
+  .page__head{padding-top:var(--space-7)}
+  .page .iv-h1{font-size:38px}
+  .prop,.prop__grid,.facts{grid-template-columns:minmax(0,1fr)}
+  .prop__aside{position:static}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:var(--space-6)}
+  .steps>*{padding:0 var(--space-4)}
+  .steps>*:nth-child(odd){border-left:0;padding-left:0}
+}

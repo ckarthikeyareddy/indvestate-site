@@ -4,3 +4,4 @@ export * from "./properties";
 export * from "./services";
 export * from "./briefs";
 export * from "./ledger";
+export * from "./pages";

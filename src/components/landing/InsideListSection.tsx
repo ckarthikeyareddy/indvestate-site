@@ -1,8 +1,8 @@
 // 11 Inside list · BRIEF §11. Form as mocked; success = stamp-in "ON THE LIST"
-// then the end-card copy inline (CONTENT §10) with the two buttons. The POST
-// to /api/lead arrives in Phase 3; until then the form validates and shows
-// the success state locally.
-import { Button, InsideListForm, type InsideListFieldSpec } from "@/components/ds";
+// then the end-card copy inline (CONTENT §10) with the two buttons. Posts to
+// /api/lead through LeadForm (topic "inside-list") and stays on the page.
+import { Button, type InsideListFieldSpec } from "@/components/ds";
+import { LeadForm } from "@/components/LeadForm";
 import { RevealScope } from "./Reveal";
 
 import { site, whatsappHref } from "@/content/site";
@@ -33,16 +33,12 @@ export function InsideListSection() {
           <p className="iv-body-lg muted" data-reveal="">{il.line}</p>
         </div>
         <div data-reveal="">
-        <InsideListForm
-          eyebrow=""
-          title=""
-          intro=""
+        <LeadForm
+          topic="inside-list"
+          after="inline"
           fields={FIELDS}
           submitLabel={il.submit}
-          errors={il.errors}
           successLabel={il.success.stamp}
-          successTitle={end.headline}
-          successBody={end.body}
           successActions={
             <>
               <div className="inside__actions">

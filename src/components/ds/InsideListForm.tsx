@@ -13,7 +13,7 @@ import { Button } from "./Button";
 const BASES = ["India", "US", "Gulf", "Other"];
 const CODES: Record<string, string> = { India: "+91", US: "+1", Gulf: "+971", Other: "+" };
 
-export type InsideListFieldKind = "text" | "tel" | "select" | "segment" | "checkbox";
+export type InsideListFieldKind = "text" | "tel" | "date" | "select" | "segment" | "checkbox";
 
 export interface InsideListField {
   kind: InsideListFieldKind;
@@ -36,6 +36,8 @@ export interface InsideListErrors {
   whatsapp: string;
   consent: string;
   summary: string;
+  /** Shown when onSubmit rejects (Phase 3: the POST to /api/lead failed). */
+  network?: string;
 }
 
 /**
@@ -61,6 +63,10 @@ export interface InsideListFormProps {
   successActions?: ReactNode;
   /** Honeypot field name; left empty by humans. */
   honeypot?: string;
+  /** Submit label while onSubmit is pending (extended). */
+  submittingLabel?: string;
+  /** Rendered under the network error, e.g. a WhatsApp fallback link. */
+  networkActions?: ReactNode;
 }
 
 const DEFAULT_ERRORS: InsideListErrors = {
@@ -119,12 +125,20 @@ export function InsideListForm({
   successBody = "Expect one WhatsApp per verified release, with the risk memo attached.",
   successActions,
   honeypot = "company",
+  submittingLabel,
+  networkActions,
 }: InsideListFormProps) {
   const [base, setBase] = useState("India");
   const [consent, setConsent] = useState(false);
   const [done, setDone] = useState(false);
   const [values, setValues] = useState<Record<string, string | boolean>>({});
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
+  // The summary is frozen at submit time and stays mounted until the next
+  // submit: inline errors clear on blur, but the panel must not unmount under
+  // a pointer mid-click (the layout shift would swallow the submit).
+  const [summary, setSummary] = useState<{ name: string; label: string; message: string }[]>([]);
+  const [pending, setPending] = useState(false);
+  const [netError, setNetError] = useState<string | null>(null);
   const summaryRef = useRef<HTMLDivElement>(null);
 
   const wrap: CSSProperties = {
@@ -218,8 +232,8 @@ export function InsideListForm({
   const get = (f: InsideListField) => values[f.name] ?? (f.kind === "checkbox" ? false : f.kind === "segment" ? f.options?.[0] ?? "" : f.kind === "select" ? f.options?.[0] ?? "" : "");
   const set = (name: string, v: string | boolean) => setValues((s) => ({ ...s, [name]: v }));
 
-  const validate = (f: InsideListField): string | undefined => {
-    const v = get(f);
+  const validate = (f: InsideListField, value: string | boolean = get(f)): string | undefined => {
+    const v = value;
     if (f.kind === "checkbox") return f.required && v !== true ? errors.consent : undefined;
     const s = String(v).trim();
     if (f.required && !s) return errors.required;
@@ -227,18 +241,27 @@ export function InsideListForm({
     return undefined;
   };
 
-  const onBlur = (f: InsideListField) => {
-    const err = validate(f);
-    setFieldErrors((s) => {
-      const next = { ...s };
-      if (err) next[f.name] = err;
-      else delete next[f.name];
-      return next;
-    });
+  // Reward early, punish late: a shown error clears as soon as the typed value
+  // is valid (no layout shift under the pointer on blur); blur only adds errors.
+  const change = (f: InsideListField, v: string) => {
+    set(f.name, v);
+    if (fieldErrors[f.name] && !validate(f, v))
+      setFieldErrors((s) => {
+        const next = { ...s };
+        delete next[f.name];
+        return next;
+      });
   };
 
-  const submit = (e: FormEvent<HTMLFormElement>) => {
+  const onBlur = (f: InsideListField) => {
+    const err = validate(f);
+    if (!err) return;
+    setFieldErrors((s) => ({ ...s, [f.name]: err }));
+  };
+
+  const submit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (pending) return;
     const hp = (e.currentTarget.elements.namedItem(honeypot) as HTMLInputElement | null)?.value;
     if (hp) return; // bot
     const next: Record<string, string> = {};
@@ -247,14 +270,27 @@ export function InsideListForm({
       if (err) next[f.name] = err;
     }
     setFieldErrors(next);
-    if (Object.keys(next).length) {
+    setNetError(null);
+    const list = flat.filter((f) => next[f.name]).map((f) => ({ name: f.name, label: f.label, message: next[f.name] }));
+    setSummary(list);
+    if (list.length) {
       requestAnimationFrame(() => summaryRef.current?.focus());
       return;
     }
     const data: InsideListData = {};
     for (const f of flat) data[f.name] = get(f);
-    setDone(true);
-    onSubmit?.(data);
+    // The success panel shows only once onSubmit resolves; a rejection keeps
+    // the filled form on screen with the network line and a fallback.
+    setPending(true);
+    try {
+      await onSubmit?.(data);
+      setDone(true);
+    } catch {
+      setNetError(errors.network ?? DEFAULT_ERRORS.network ?? null);
+      requestAnimationFrame(() => summaryRef.current?.focus());
+    } finally {
+      setPending(false);
+    }
   };
 
   if (done)
@@ -270,19 +306,20 @@ export function InsideListForm({
     switch (f.kind) {
       case "text":
       case "tel":
+      case "date":
         return (
           <TextField
             key={f.name}
             id={id}
             name={f.name}
             label={f.label}
-            type={f.kind === "tel" ? "tel" : "text"}
+            type={f.kind}
             inputMode={f.kind === "tel" ? "tel" : undefined}
             autoComplete={f.kind === "tel" ? "tel" : f.name === "name" ? "name" : undefined}
             placeholder={f.placeholder}
             required={f.required}
             value={String(get(f))}
-            onChange={(e) => set(f.name, e.target.value)}
+            onChange={(e) => change(f, e.target.value)}
             onBlur={() => onBlur(f)}
             error={err}
           />
@@ -296,7 +333,7 @@ export function InsideListForm({
             label={f.label}
             options={f.options ?? []}
             value={String(get(f))}
-            onChange={(e) => set(f.name, e.target.value)}
+            onChange={(e) => change(f, e.target.value)}
             error={err}
           />
         );
@@ -338,7 +375,6 @@ export function InsideListForm({
     }
   };
 
-  const errorList = flat.filter((f) => fieldErrors[f.name]);
 
   return (
     <form onSubmit={submit} className="iv-form" style={style} noValidate>
@@ -361,14 +397,20 @@ export function InsideListForm({
           )}
         </div>
       )}
-      {errorList.length > 0 && (
+      {summary.length > 0 && (
         <div className="iv-form__summary" role="alert" tabIndex={-1} ref={summaryRef}>
           <span className="iv-body">{errors.summary}</span>
-          {errorList.map((f) => (
+          {summary.map((f) => (
             <a key={f.name} href={"#" + idFor(f.name)}>
-              {f.label}: {fieldErrors[f.name]}
+              {f.label}: {f.message}
             </a>
           ))}
+        </div>
+      )}
+      {netError && summary.length === 0 && (
+        <div className="iv-form__summary" role="alert" tabIndex={-1} ref={summaryRef}>
+          <span className="iv-body">{netError}</span>
+          {networkActions}
         </div>
       )}
       {fields.map((spec, i) =>
@@ -381,8 +423,8 @@ export function InsideListForm({
         ),
       )}
       <input type="text" name={honeypot} tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: "absolute", left: -9999, width: 1, height: 1, opacity: 0 }} />
-      <Button type="submit" block size="lg">
-        {submitLabel}
+      <Button type="submit" block size="lg" disabled={pending} aria-busy={pending || undefined}>
+        {pending && submittingLabel ? submittingLabel : submitLabel}
       </Button>
     </form>
   );

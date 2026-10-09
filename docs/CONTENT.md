@@ -220,3 +220,63 @@ Footer line: INDVESTATE never collects a booking amount.
 - /refunds: reel and inspection fees refundable in full if cancelled before the shoot or
   visit; no refund after delivery; disputes to desk@indvestate.com within 7 days.
   (Razorpay requires this page and /terms, /privacy, /contact, /about, /pricing.)
+
+## 12. Page copy (Phase 3 routes; facts only from §1–§11)
+Mirrored in `src/content/pages.ts`. Form topics and where each lands: inside-list → "the
+inside list" (desk@) · site-visit → "a site visit for {kicker}" (desk@) · reel → "a reel
+booking" (reels@) · inspection → "a home inspection" (inspect@) · nri → "the NRI desk"
+(nri@). Every form posts to /api/lead and ends on /thank-you?topic=… with the WhatsApp
+and email buttons prefilled (§10). Send failure line: "Could not send. WhatsApp the desk
+instead."
+
+- /live: intro "Every listing opens with the documents on file and closes with the
+  disclaimer." Cards as on the landing; Kompally absent while reraNumber is empty.
+- Property page sections: Documents on file ("No pill is shown until the document is on
+  file.") · Details · Layout · Building · Community · Typical villa · Availability (table
+  Villa · Facing · Sq yd · Sq ft · Rooms) · Amenities · Distances · Nearby · Reel ("The
+  reel is embedded here once it is posted."). Site visit form: Name · WhatsApp · Preferred
+  date, intro "A real person confirms the slot on WhatsApp. INDVESTATE never collects a
+  booking amount." In-review state (no reraNumber): pill "Documents in review", title
+  "Documents in review.", body "This release goes live when the project's TG RERA number
+  is on file. Until then there is no price, no pill and no site visit from this page.",
+  button "Join the inside list".
+- /services/sell-with-us: How it works: Book (Send the form below. We call to fix a 2-hour
+  window to shoot.) · Shoot (We come and shoot a 30 s reel.) · Post (Cut with Telugu +
+  English captions, posted on @indvestate, with the property's own page on indvestate.com
+  for 30 days.) · Leads (Every lead lands on your WhatsApp with the viewer's name and
+  intent. We report what the reel did.). Questions: Who can book? / What do you need from
+  me? / Where do the leads go? / What is the Partner tier? / How do I pay? / Do you post
+  properties that have not been checked? ("No. The page only shows verified
+  properties."), answers from §3. Form intro: "We call back on WhatsApp to fix the shoot.
+  No payment is collected on the site."
+- /services/inspection: scope dropdown "What the checklist covers" (§4 list), fee rows Flat
+  · Villa (§4), property type Flat / Villa, form intro "Form first, then the payment link
+  opens in a new tab." /thank-you?topic=inspection shows "Pay the inspection fee ↗" (opens
+  Razorpay in a new tab) once the link is confirmed.
+- /nri-desk: What we do (§ NRI rows), Desk hours (computed), enquiry form Name · WhatsApp ·
+  Country · Budget band · Intent, intro "Tell us where you are and what you are looking
+  for. The desk replies on WhatsApp in your hours."
+- /briefs/[slug]: labels All briefs · What we check · Source · Published · Previous · Next.
+- /not-found: "This page did not pass." line "The address is wrong or the page was never
+  released." links Live · Briefs · Home.
+- Policy bodies (§11, plain and short, legal review [CONFIRM]):
+  - About: What INDVESTATE is (Invest In India; land intelligence; study, reject, open
+    access when the paperwork holds) · The method (§6 four lines) · RERA status (agent
+    registration in process; Agent RERA No.: pending; project numbers per listing; a
+    builder-direct page goes live only with the number on file) · Entity (§1 [CONFIRM]).
+  - Contact: phone and WhatsApp, desk@ and the three aliases ("Every alias forwards to the
+    same inbox."), desk hours 10:00–19:00 IST, Instagram, LinkedIn, address.
+  - Pricing: §3 tiers · §4 fees · Buyer concierge and NRI desk: "No fee to the buyer.
+    INDVESTATE is paid by the seller on completion." [CONFIRM]
+  - Terms: Scope of service (markets for owners and developers, coordinates site visits,
+    films and distributes reels, carries out home inspections; not a bank, a lawyer or an
+    investment adviser) · No booking amounts (payments go directly to the registered owner
+    or the developer's designated project account after independent verification) ·
+    Listings (subject to owner or developer confirmation) · No investment advice ·
+    Limitation (liability limited to the fee paid for that service) · Governing law
+    (India; courts of Telangana).
+  - Privacy: What the forms collect (name, WhatsApp, and the typed details) · WhatsApp
+    contact (consent boxes never pre-ticked) · Storage (Vercel KV; one email per form via
+    Resend to desk@) · No sale of data · Deletion (write to desk@).
+  - Refunds: full refund before the shoot or visit · none after delivery · disputes to
+    desk@ within 7 days; refunds go back through the Razorpay link they were paid on.

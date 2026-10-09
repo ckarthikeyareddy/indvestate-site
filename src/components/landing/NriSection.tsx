@@ -1,7 +1,8 @@
 // 07 NRI desk · BRIEF §7. As mocked. Converter uses a dated static rate from
 // content (unconfirmed shows a chip, never "SAMPLE"); desk hours are computed
 // into the viewer's zone from the IST window.
-import { Button, ConverterPanel, DataRow } from "@/components/ds";
+import { Button, DataRow } from "@/components/ds";
+import { NriConverter } from "@/components/NriConverter";
 import { RevealScope } from "./Reveal";
 
 import { ConfirmChip } from "@/components/Fact";
@@ -10,8 +11,6 @@ import { isConfirm } from "@/content/confirm";
 
 export function NriSection() {
   const n = site.nri;
-  const r = n.converter.rates;
-  const ratesReady = !isConfirm(r.usd) && !isConfirm(r.aed);
   return (
     <section id="nri" className="sec">
       <RevealScope>
@@ -42,30 +41,7 @@ export function NriSection() {
           </div>
         </div>
         <div data-reveal="">
-        <ConverterPanel
-          title={n.converter.title}
-          amountLabel={n.converter.amountLabel}
-          rates={
-            ratesReady
-              ? [
-                  { code: "USD", prefix: "US$", perUnit: r.usd as number },
-                  { code: "AED", prefix: "AED", perUnit: r.aed as number },
-                ]
-              : []
-          }
-          rateNote={
-            isConfirm(r.asOf) ? (
-              <>
-                Rate as of <ConfirmChip note="Converter rate and date" />
-              </>
-            ) : (
-              `Rate as of ${r.asOf}`
-            )
-          }
-          hoursCaption={n.converter.hoursCaption}
-          window={{ start: site.deskHours.ist.start, end: site.deskHours.ist.end }}
-          desks={[...n.converter.desks]}
-        />
+        <NriConverter />
         </div>
       </div>
       </RevealScope>
