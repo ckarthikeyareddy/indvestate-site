@@ -3,6 +3,7 @@
 // landing.css and pages.css; copy from src/content.
 import type { ReactNode } from "react";
 import { SiteFooter, SiteNav } from "@/components/landing";
+import { RevealScope } from "@/components/landing/Reveal";
 
 export function PageShell({ children }: { children: ReactNode }) {
   return (
@@ -29,17 +30,25 @@ export interface PageHeaderProps {
 export function PageHeader({ eyebrow, pill, title, line, children, narrow = false }: PageHeaderProps) {
   return (
     <header className={["sec page__head", narrow ? "page__head--narrow" : ""].filter(Boolean).join(" ")}>
-      <div className="wrap stack g-16">
-        {(eyebrow || pill) && (
-          <div className="row g-12">
-            {eyebrow && <span className="iv-label signal">{eyebrow}</span>}
-            {pill}
-          </div>
-        )}
-        <h1 className="iv-h1">{title}</h1>
-        {line && <p className="iv-body-lg muted page__line">{line}</p>}
-        {children}
-      </div>
+      <RevealScope>
+        <div className="wrap stack g-16">
+          {(eyebrow || pill) && (
+            <div className="row g-12" data-reveal="">
+              {eyebrow && <span className="iv-label signal">{eyebrow}</span>}
+              {pill}
+            </div>
+          )}
+          <h1 className="iv-h1" data-split="">
+            {title}
+          </h1>
+          {line && (
+            <p className="iv-body-lg muted page__line" data-reveal="">
+              {line}
+            </p>
+          )}
+          {children && <div className="stack g-16" data-reveal="">{children}</div>}
+        </div>
+      </RevealScope>
     </header>
   );
 }

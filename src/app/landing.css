@@ -77,21 +77,22 @@
 .m4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
 .m4>*{border-left:1px solid var(--hairline);padding:var(--space-6) var(--space-5) 0;display:flex;flex-direction:column;gap:var(--space-3)}
 .m4>*:first-child{border-left:0;padding-left:0}
-.figure{font-size:56px;line-height:1}
+.figure{font-family:var(--font-mono);font-weight:500;font-size:56px;line-height:1;letter-spacing:0;font-variant-numeric:tabular-nums}
 
 /* 06 Services: the grid lives in new-components.css. The detail panel sits
-   directly under it, full width, carbon, hairline sides; it keeps its space
-   and reveals its content with transform + opacity only (never height). */
+   directly under it, full width, carbon, hairline sides. It is rendered only
+   while a service is open (never an empty block); its content staggers in with
+   the system reveal, keyed on the service, transform + opacity only. */
 .services{display:flex;flex-direction:column}
-.sp{background:var(--carbon);border:1px solid var(--hairline);border-top:0;min-height:260px}
-.sp__inner{padding:var(--space-5);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-6);align-items:start;opacity:0;transform:translateY(8px);visibility:hidden;transition:opacity 240ms var(--ease-out),transform 240ms var(--ease-out),visibility 0s linear 240ms}
-.sp[data-open="true"] .sp__inner{opacity:1;transform:none;visibility:visible;transition-delay:0s}
+.sp{background:var(--carbon);border:1px solid var(--hairline);border-top:0}
+.sp__inner{padding:var(--space-5);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-6);align-items:start}
+.sp__in{animation:iv-reveal var(--dur-base) var(--ease-out) both;animation-delay:calc(var(--i,0) * 40ms)}
 .sp__head{display:flex;flex-direction:column;gap:var(--space-3)}
 .sp__foot{display:flex;align-items:center;gap:var(--space-4);flex-wrap:wrap;padding-top:var(--space-2)}
 .sp__scope{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
 .sp__scope li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:var(--space-4);align-items:baseline;padding:10px 0;border-top:1px solid var(--hairline)}
 .sp__scope li:last-child{border-bottom:1px solid var(--hairline)}
-@media (prefers-reduced-motion:reduce){.sp__inner{transition:none}}
+@media (prefers-reduced-motion:reduce){.sp__in{animation:none}}
 
 /* 07 NRI */
 .nri__lines{display:flex;flex-direction:column;gap:var(--space-2)}
@@ -122,11 +123,11 @@
   .wrap{padding:0 var(--space-4)}.sec{padding:var(--section-pad-mobile) 0}
   .nav-sticky .iv-nav:not(.iv-nav--compact){display:none}
   .nav-sticky .iv-nav--compact{display:flex}
-  .hero__plate{left:var(--space-4);right:var(--space-4);bottom:var(--space-5);width:auto}
+  .hero__plate{left:var(--space-4);right:var(--space-4);bottom:calc(var(--space-5) + 52px);width:auto}
   .hero .iv-h1{font-size:38px}.iv-h2{font-size:30px}
   .hero .iv-marker__label{display:none}
   .g2,.split,.foot,.inside-cols{grid-template-columns:minmax(0,1fr);gap:var(--space-6)}
-  .sp{min-height:0}.sp__inner{grid-template-columns:minmax(0,1fr)}
+  .sp__inner{grid-template-columns:minmax(0,1fr)}
   .method__stick{padding:var(--section-pad-mobile) 0}
   .m4{grid-template-columns:repeat(2,minmax(0,1fr))}
   .m4>*{padding:var(--space-5) var(--space-4) 0}.m4>*:nth-child(odd){border-left:0;padding-left:0}

@@ -32,7 +32,7 @@ export function InsideListSection() {
           <h2 className="iv-h2" data-split="">{il.title}</h2>
           <p className="iv-body-lg muted" data-reveal="">{il.line}</p>
         </div>
-        <div data-reveal="">
+        <div data-reveal-children="">
         <LeadForm
           topic="inside-list"
           after="inline"

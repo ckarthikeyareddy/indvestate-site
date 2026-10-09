@@ -72,6 +72,7 @@ export function PropertyCard({
   const arrow = <span aria-hidden="true">↗</span>;
   return (
     <article
+      className="iv-card"
       style={{
         background: "var(--carbon)",
         border: "1px solid var(--hairline)",
@@ -102,7 +103,8 @@ export function PropertyCard({
         )}
       </div>
       <div
-        className="iv-plus-grid"
+        className="iv-plus-grid iv-card__media"
+        data-frame=""
         style={{
           aspectRatio: "16 / 10",
           background: "var(--graphite)",
@@ -120,7 +122,7 @@ export function PropertyCard({
             media
           )
         ) : (
-          <span className="iv-label" style={{ position: "absolute", left: 16, bottom: 14, color: "var(--ink-muted)" }}>
+          <span className="iv-label iv-card__cap" style={{ position: "absolute", left: 16, bottom: 14, color: "var(--ink-muted)" }}>
             {mediaLabel}
           </span>
         )}

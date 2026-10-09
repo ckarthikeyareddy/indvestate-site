@@ -43,7 +43,8 @@
 
 /* 7. BriefRow — hairline-divided anchor row, 140 | 1fr | 120. */
 .iv-briefs{display:flex;flex-direction:column;border-bottom:1px solid var(--hairline)}
-.iv-brief{display:grid;grid-template-columns:140px minmax(0,1fr) 120px;gap:var(--space-5);align-items:baseline;padding:var(--space-5) 0;border-top:1px solid var(--hairline);text-decoration:none;color:inherit;transition:background-color var(--dur-fast) var(--ease-out)}
+.iv-brief{display:grid;grid-template-columns:140px minmax(0,1fr) 120px auto;gap:var(--space-5);align-items:baseline;padding:var(--space-5) 0;border-top:1px solid var(--hairline);text-decoration:none;color:inherit;transition:background-color var(--dur-fast) var(--ease-out)}
+.iv-brief__arrow{color:var(--ink-muted)}
 .iv-brief__body{display:flex;flex-direction:column;gap:6px;min-width:0}
 .iv-brief:focus-visible{outline:1px solid var(--signal);outline-offset:2px}
 @media (hover:hover) and (pointer:fine){.iv-brief:hover{background:var(--carbon);color:inherit}}
@@ -67,6 +68,10 @@
 
 @media (max-width:1000px){
   .iv-heromap__frame{inset:var(--space-4)}
+  /* aspect-ratio transfers min-height into a 653px min-width; drop it on phones. */
+  .iv-mapframe{aspect-ratio:4 / 3;min-height:0}
+  /* 2-up cells are ~120px wide inside: let the pill wrap instead of overflowing. */
+  .iv-cell__pill .iv-pill{white-space:normal;height:auto;min-height:24px;padding-top:4px;padding-bottom:4px;line-height:1.3}
   .iv-mapframe__coord{top:auto;bottom:14px}
   .iv-brief{grid-template-columns:minmax(0,1fr);gap:var(--space-2)}
   .iv-services{grid-template-columns:repeat(2,minmax(0,1fr))}

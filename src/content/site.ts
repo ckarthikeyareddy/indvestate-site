@@ -121,17 +121,20 @@ export const site = {
       { label: "Loan and registration", value: "Handled with the bank" },
     ],
     line: "You see the parcel before you fly. We walk it for you.",
-    // Telugu twin needs native-speaker review before shipping.
-    teluguLine: CONFIRM as string | Confirm,
+    // CONTENT §13. Telugu twin line (Noto Sans Telugu).
+    teluguLine: "మీరు ఎగిరే ముందు స్థలం చూస్తారు. మేము మీ కోసం నడిచి చూస్తాం.",
     cta: { label: "Talk to the NRI desk", href: "/nri-desk" },
     converter: {
       title: "Converter",
       amountLabel: "Amount in rupees",
-      // Dated static rate. Never "SAMPLE". CONTENT.md carries no rate yet.
+      // CONTENT §13. Live rate fetched server-side (src/lib/rates.ts); this is
+      // the dated static fallback shown only when the fetch fails. Never "SAMPLE".
       rates: {
-        asOf: CONFIRM as string | Confirm, // "DD MMM YYYY"
-        usd: CONFIRM as number | Confirm, // ₹ per US$
-        aed: CONFIRM as number | Confirm, // ₹ per AED
+        asOf: "09 Oct 2026",
+        usd: 96.88, // ₹ per US$
+        aed: 26.38, // ₹ per AED
+        source: "https://open.er-api.com/v6/latest/INR",
+        note: "Rate as of",
       },
       hoursCaption: "Desk hours shown in your time zone",
       desks: [
@@ -205,7 +208,7 @@ export const site = {
   // CONTENT §10. /thank-you and inline success states.
   endCard: {
     headline: "Got it. A real person reads this.",
-    body: "Karthikeya replies on WhatsApp between 10:00 and 19:00 IST. If it is late where you are, the message waits for the morning. Nothing is automated after this screen.",
+    body: "Karthikeya replies on WhatsApp between 10:00 and 19:00 IST. If it is late where you are, the message waits for the morning. No automated follow-up sequence. One reply, from a person.",
     whatsapp: {
       label: "WhatsApp the desk",
       prefill: (topic: string) =>
@@ -249,6 +252,8 @@ export const site = {
   // CONTENT §11. Plain, honest, short. Legal review pending.
   policies: {
     legalReview: CONFIRM as string | Confirm,
+    lastUpdated: "09 Oct 2026",
+    lastUpdatedLabel: "Last updated",
     about: {
       title: "About",
       reraStatus: "Agent registration in process.",

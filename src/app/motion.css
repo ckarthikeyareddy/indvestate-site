@@ -1,0 +1,97 @@
+/* Phase 3.5 motion. Every easing, duration and colour is a system token
+   (design-system/tokens/motion.css). Transform, opacity, clip-path and
+   stroke-dashoffset only; nothing bounces; hover motion gated to fine
+   pointers; reduced motion renders the end state. */
+:root{--dur-route:400ms}
+
+/* Preloader: void, plus-grid, wordmark wipe + mono counter (CSS, from first
+   paint), then the lift (class added from the component). Once per session. */
+@property --pre-n{syntax:"<integer>";inherits:false;initial-value:0}
+.pre{position:fixed;inset:0;z-index:100;background:var(--void);display:grid;place-items:center;pointer-events:none}
+html:not([data-pre]){overflow:hidden}
+html[data-pre="done"] .pre{display:none}
+.pre__mark{font-size:clamp(40px,8vw,96px);clip-path:inset(0 100% 0 0);animation:pre-wipe .9s var(--ease-out) both}
+.pre__count{position:absolute;right:var(--space-5);bottom:var(--space-5);color:var(--ink-muted);counter-reset:pre var(--pre-n);animation:pre-count .9s var(--ease-out) both}
+.pre__count::after{content:counter(pre,decimal-leading-zero)}
+@keyframes pre-wipe{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes pre-count{from{--pre-n:0}to{--pre-n:100}}
+.pre--lift{animation:pre-lift .6s var(--ease-in-out) both}
+@keyframes pre-lift{from{transform:translateY(0)}to{transform:translateY(-100%)}}
+
+/* Hero staging on a repeat visit (no preloader): hold the plate, plane and
+   markers until the sequence has set its start values. On a first visit the
+   hero paints under the preloader (its H1 is the LCP element). */
+@media (prefers-reduced-motion:no-preference){
+  html[data-pre="done"]:not([data-hero]) .hero .iv-heromap__plane,
+  html[data-pre="done"]:not([data-hero]) .hero .iv-heromap__marker,
+  html[data-pre="done"]:not([data-hero]) .hero__plate>*,
+  html[data-pre="done"]:not([data-hero]) .hero__coord{opacity:0}
+}
+.hero .split-line{overflow:hidden}
+
+/* Route curtain: old page wipes up behind a void curtain, the new page wipes
+   in beneath it. 400ms total, --ease-in-out. */
+::view-transition{background:var(--void)}
+::view-transition-old(root),::view-transition-new(root){mix-blend-mode:normal;animation-timing-function:var(--ease-in-out)}
+::view-transition-old(root){animation:vt-out 200ms var(--ease-in-out) both}
+::view-transition-new(root){animation:vt-in 200ms var(--ease-in-out) 200ms both}
+@keyframes vt-out{from{clip-path:inset(0 0 0 0)}to{clip-path:inset(0 0 100% 0)}}
+@keyframes vt-in{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0 0 0 0)}}
+
+/* Section rules border-draw as the section enters (RevealScope sets data-rule
+   inside the no-preference query; reduced motion keeps the static border). */
+.sec[data-rule]{position:relative;border-top-color:transparent}
+.sec[data-rule]::before{content:"";position:absolute;left:0;right:0;top:-1px;height:1px;background:var(--hairline);transform-origin:left;transform:scaleX(0)}
+.sec[data-rule="in"]::before{animation:iv-border-draw var(--dur-reveal) var(--ease-out) both}
+.page__head[data-rule]::before{display:none}
+.block__title[data-rule],.toc[data-rule]{position:relative;border-color:transparent}
+.block__title[data-rule]::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;background:var(--hairline);transform-origin:left;transform:scaleX(0)}
+.toc[data-rule]::before{content:"";position:absolute;left:0;right:0;top:-1px;height:1px;background:var(--hairline);transform-origin:left;transform:scaleX(0)}
+.block__title[data-rule="in"]::after,.toc[data-rule="in"]::before{animation:iv-border-draw var(--dur-reveal) var(--ease-out) both}
+
+/* Media frames: the wipe is set by GSAP; the inner media is oversized for the
+   6% parallax so no edge shows. */
+[data-frame]{overflow:hidden}
+
+/* Footer: the giant faint wordmark (clip-path wipe from the bottom) and the
+   Monogram whose square border is drawn in by stroke-dashoffset. */
+.footer__giant{display:block;font-size:clamp(44px,12.2vw,176px);line-height:.9;white-space:nowrap;overflow:hidden;color:var(--ink);opacity:.06;user-select:none;pointer-events:none;letter-spacing:.02em}
+.foot__mono{position:relative;display:inline-flex;flex:none}
+.foot__mono [role="img"]{border-color:transparent!important}
+.foot__mono-rect{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+
+/* Inside list success: the stamp lands with the system keyframe, the end-card
+   copy fades up after it (.iv-reveal with --i). */
+.iv-form .iv-reveal{animation-delay:calc(var(--i,0) * var(--stagger) + 200ms)}
+
+/* Floating WhatsApp button: carbon, hairline, square, 44px, safe-area aware,
+   hidden (transform + opacity) while a form is in view. Not saffron. */
+.wa-float{position:fixed;right:max(var(--space-4),env(safe-area-inset-right));bottom:max(var(--space-4),env(safe-area-inset-bottom));z-index:30;height:44px;display:inline-flex;align-items:center;gap:10px;padding:0 14px;background:var(--carbon);border:1px solid var(--hairline);color:var(--ink);text-decoration:none;transition:transform var(--dur-base) var(--ease-out),opacity var(--dur-base) var(--ease-out),border-color var(--dur-fast) var(--ease-out)}
+.wa-float svg{color:var(--ink)}
+.wa-float[data-hidden="true"]{transform:translateY(calc(100% + var(--space-5)));opacity:0;pointer-events:none}
+.wa-float:focus-visible{outline:1px solid var(--signal);outline-offset:2px}
+
+/* Hover craft, fine pointers only. */
+@media (hover:hover) and (pointer:fine){
+  .wa-float:hover{border-color:var(--ink);color:var(--ink)}
+  .iv-nav__link{position:relative}
+  .iv-nav__link::after{content:"";position:absolute;left:12px;right:12px;bottom:4px;height:1px;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform var(--dur-fast) var(--ease-out)}
+  .iv-nav__link:hover::after,.iv-nav__link[aria-expanded="true"]::after{transform:scaleX(1)}
+  .iv-cell__icon svg *{stroke-dasharray:64;stroke-dashoffset:0}
+  .iv-cell:hover .iv-cell__icon svg *{animation:iv-stroke-draw 400ms var(--ease-out) both}
+  .iv-brief{transition:background-color var(--dur-fast) var(--ease-out),transform var(--dur-fast) var(--ease-out)}
+  .iv-brief:hover{transform:translateX(6px)}
+  .iv-brief__arrow{transition:transform var(--dur-fast) var(--ease-out)}
+  .iv-brief:hover .iv-brief__arrow{transform:translateX(6px);color:var(--ink)}
+  .iv-card__media,.iv-card__cap{transition:transform var(--dur-fast) var(--ease-out)}
+  .iv-card:hover .iv-card__media{transform:translateY(-2px)}
+  .iv-card:hover .iv-card__cap{transform:translateY(-4px)}
+}
+@keyframes iv-stroke-draw{from{stroke-dashoffset:64}to{stroke-dashoffset:0}}
+
+@media (prefers-reduced-motion:reduce){
+  .pre,.pre__mark,.pre__count,.pre--lift,.sp__in,.iv-cell__icon svg *{animation:none}
+  .wa-float,.iv-nav__link::after,.iv-brief,.iv-brief__arrow,.iv-card__media,.iv-card__cap{transition:none}
+  ::view-transition-old(root),::view-transition-new(root){animation:none}
+  .sec[data-rule]::before,.block__title[data-rule]::after,.toc[data-rule]::before{transform:none}
+}

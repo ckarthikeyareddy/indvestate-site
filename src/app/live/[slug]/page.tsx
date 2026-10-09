@@ -9,6 +9,7 @@ import { ConfirmChip, Fact } from "@/components/Fact";
 import { JsonLd } from "@/components/JsonLd";
 import { LeadForm } from "@/components/LeadForm";
 import { Block, PageShell } from "@/components/PageShell";
+import { RevealScope } from "@/components/landing/Reveal";
 import { firstStill, priceNote, propertyData } from "@/components/PropertyCardFor";
 import { confirmed, isConfirm } from "@/content/confirm";
 import { formCopy, propertyPage as copy } from "@/content/pages";
@@ -172,7 +173,9 @@ export default async function PropertyPage({ params }: { params: Promise<Params>
         <Pills p={p} />
       </div>
       <span className="iv-label signal">{p.kicker}</span>
-      <h1 className="iv-h1">{p.title}</h1>
+      <h1 className="iv-h1" data-split="">
+        {p.title}
+      </h1>
       <span className="iv-data muted">
         {project ? `${project} · ` : isConfirm(p.project) ? <ConfirmChip note="Project name" /> : null}
         {project ? "" : " "}
@@ -231,11 +234,12 @@ export default async function PropertyPage({ params }: { params: Promise<Params>
     <PageShell>
       <JsonLd data={jsonLd} />
       <section className="sec page__head">
+        <RevealScope>
         <div className="wrap stack g-48">
           {header}
           <div className="prop">
             <div className="prop__main">
-              <div className="prop__media iv-plus-grid">
+              <div className="prop__media iv-plus-grid" data-frame="">
                 {still ? (
                   // eslint-disable-next-line @next/next/no-img-element -- owner-supplied still, sized by the frame
                   <img src={still} alt="" width={1600} height={1000} />
@@ -265,7 +269,7 @@ export default async function PropertyPage({ params }: { params: Promise<Params>
                 )}
               </Block>
             </div>
-            <aside className="prop__aside" aria-label={copy.priceLabels.perSqFt}>
+            <aside className="prop__aside" aria-label={copy.priceLabels.perSqFt} data-reveal="">
               <div className="prop__price">
                 <span className="iv-label muted">{copy.priceLabels.perSqFt}</span>
                 <span className="iv-price">{p.price.label}</span>
@@ -288,6 +292,7 @@ export default async function PropertyPage({ params }: { params: Promise<Params>
             </aside>
           </div>
         </div>
+        </RevealScope>
       </section>
       <section className="sec" id="visit">
         <div className="wrap split">

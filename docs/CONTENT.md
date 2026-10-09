@@ -202,24 +202,160 @@ Signature: — Karthikeya, INDVESTATE · Founder. Date: 09 OCT 2026.
 ## 10. End card (/thank-you and inline success states)
 Headline: Got it. A real person reads this.
 Body: Karthikeya replies on WhatsApp between 10:00 and 19:00 IST. If it is late where you
-are, the message waits for the morning. Nothing is automated after this screen.
+are, the message waits for the morning. No automated follow-up sequence. One reply,
+from a person.
 Buttons: WhatsApp the desk ↗ (prefilled "Hi, I just sent a request on indvestate.com
 about {topic}.") · Write to desk@indvestate.com.
 Footer line: INDVESTATE never collects a booking amount.
 
-## 11. Policy pages (plain, honest, short; legal review [CONFIRM])
-- /about: what INDVESTATE is, the method, founder, RERA status "agent registration in
-  process", entity line.
-- /contact: phone, WhatsApp, email aliases, desk hours, Instagram, LinkedIn, address.
-- /pricing: reel tiers (§3), inspection fee (§4), buyer concierge: "no fee to the buyer;
-  INDVESTATE is paid by the seller on completion" [CONFIRM], NRI desk: same.
-- /terms: scope of service, no booking amounts, listings subject to owner confirmation,
-  no investment advice, limitation, governing law Telangana.
-- /privacy: what the forms collect, WhatsApp contact consent, Resend/KV storage, no sale
-  of data, deletion on request to desk@indvestate.com.
-- /refunds: reel and inspection fees refundable in full if cancelled before the shoot or
-  visit; no refund after delivery; disputes to desk@indvestate.com within 7 days.
-  (Razorpay requires this page and /terms, /privacy, /contact, /about, /pricing.)
+## 11. Policy pages (full text; legal review [CONFIRM]; "Last updated 09 Oct 2026")
+Each page: a lead-in sentence in .iv-body-lg, a hairline table of contents on desktop,
+numbered sections, the entity line (§1 [CONFIRM]) with the last-updated date, then the
+end-card CTAs (§10 buttons and footer line). Voice as everywhere: plain, short, no promises.
+
+### /about · About
+Lead-in: INDVESTATE means Invest In India. It is a Hyderabad real-estate brand built on
+one idea: the paperwork comes first.
+1. What INDVESTATE is
+   - INDVESTATE is a land-intelligence desk in Hyderabad. We study parcels and projects on
+     the ground, reject most of what we see, and open access to a property only when its
+     title, approvals, location logic and exit all hold.
+   - We market for owners and developers, coordinate site visits, film and distribute
+     reels, and carry out home inspections. We are not a bank, a lawyer or an investment
+     adviser.
+2. The method (the four steps of §6 with the ledger figures; intro line: "Four steps. The
+   figures are our ledger as of today, and they change as the work moves.")
+3. How we are paid
+   - Owners and developers pay us. A reel booking is an upfront fee for the shoot, the post
+     and the property's page. The Push and Partner tiers add a commission on sale, stated
+     on the pricing page.
+   - Buyers pay nothing to INDVESTATE. For buyer concierge and the NRI desk, INDVESTATE is
+     paid by the seller on completion. [CONFIRM, same as /pricing]
+   - A home inspection is a fixed fee paid by the person who books it.
+   - INDVESTATE never collects a booking amount. All payments for a property go directly
+     to the registered owner or the developer's designated project account after
+     independent verification.
+4. RERA status
+   - Agent registration in process. Agent RERA No.: pending. Project RERA numbers are
+     shown per listing. A builder-direct page goes live only when the project's TG RERA
+     number is on file, and no price, pill or site visit is shown before that.
+5. Founder: the §9 quote, signature and role.
+6. Entity: registered name, CIN/LLPIN, registered address (§1 [CONFIRM]), Agent RERA No.
+
+### /contact · Contact
+Lead-in: One desk. Every alias forwards to the same inbox, and a person replies.
+Rows: Phone and WhatsApp · Email (desk@) · Reel bookings (reels@) · Inspections (inspect@) ·
+NRI desk (nri@) · Instagram (@indvestate · @indvestate.hyd [CONFIRM]) · LinkedIn [CONFIRM] ·
+Address (§1 [CONFIRM]).
+Desk hours: the IST window of §1 shown in three zones, computed (Hyderabad · Gulf · US),
+plus the viewer's own zone.
+Map: MapFrame captioned "Office area · Hyderabad" with the address [CONFIRM]; the frame
+shows the city map, not a pin, until the address is confirmed.
+
+### /pricing · Pricing
+Lead-in: Every fee on one page. Nothing is collected on the site.
+1. Sell with us: the §3 tiers, then "A Razorpay Payment Link is sent on WhatsApp after the
+   call. No payment is collected on the site."
+2. Home inspection: Flat · Villa fee rows (§4), then "Form first, then the payment link
+   opens in a new tab."
+3. Buyer concierge: No fee to the buyer. INDVESTATE is paid by the seller on completion.
+   [CONFIRM]
+4. NRI desk: No fee to the buyer. INDVESTATE is paid by the seller on completion. [CONFIRM]
+5. Booking amounts: INDVESTATE never collects a booking amount. All payments for a
+   property go directly to the registered owner or the developer's designated project
+   account after independent verification.
+
+### /terms · Terms
+Lead-in: What INDVESTATE does, what it does not do, and where the line sits. Plain words,
+no small print.
+1. Who we are. These terms cover indvestate.com and the services of INDVESTATE (entity
+   per §1 [CONFIRM]). Using the site or sending a form means you accept them.
+2. Scope of service. INDVESTATE markets properties on behalf of owners and developers,
+   coordinates site visits, films and distributes reels, and carries out home
+   inspections. It is not a bank, a lawyer or an investment adviser, and nothing here
+   replaces your own legal and financial advice.
+3. No booking amounts. INDVESTATE never collects a booking amount, token or advance for
+   any property. All payments for a property are made directly to the registered owner
+   or the developer's designated project account, after your own independent
+   verification. If anyone asks for a booking amount in INDVESTATE's name, do not pay it
+   and write to desk@indvestate.com.
+4. Listings. Every listing is subject to owner or developer confirmation. Price,
+   availability and the documents on file can change before a site visit. A status pill
+   is shown only for a document actually on file. A builder-direct listing goes live only
+   when the project's TG RERA number is on file.
+5. Documents and verification. We read the documents we show. We do not certify them. A
+   risk memo or a document check is our reading of the paperwork on the date it was
+   done. It is not a legal opinion and not a certificate of title.
+6. Site visits. A site visit is confirmed by a person on WhatsApp. You visit at your own
+   risk and follow the instructions of the owner or developer on site.
+7. Reels and distribution. A reel booking buys the shoot, the edit, the post on
+   @indvestate and the property's page on indvestate.com for 30 days. We decide what
+   passes our checks and may decline a booking that does not. We do not promise a number
+   of views, leads or a sale.
+8. Home inspection. An inspection report records what was visible and testable on the
+   day of the visit. It is not a structural certificate and does not cover hidden
+   defects, future failures or anything not on the checklist.
+9. No investment advice. Nothing on this site is investment advice. Figures, conversions
+   and distances are shown for information and must be verified by you before any
+   decision.
+10. Fees and refunds. Fees are shown on the pricing page. Refunds follow the refunds and
+    cancellation policy.
+11. Your conduct. Do not misuse the forms, scrape the site or pass off its content as
+    your own. Property details and briefs may be quoted with a link to the page.
+12. Limitation. INDVESTATE's liability for any service is limited to the fee paid for
+    that service. INDVESTATE is not liable for a decision you take on a property, for the
+    acts of an owner or developer, or for loss that does not arise from its own service.
+13. Changes. We update these terms when the service changes and show the date at the
+    top. Continued use after a change means you accept it.
+14. Governing law. These terms are governed by the laws of India. Disputes go to the
+    courts of Telangana.
+
+### /privacy · Privacy
+Lead-in: What the forms collect, where it goes, and how to have it deleted. Short,
+because there is not much to say.
+1. What the forms collect. Your name, your WhatsApp number and the details you type in:
+   country, budget band, intent, horizon, property address, preferred date, property
+   type, location and tier. Nothing is collected before you press send. The site sets no
+   advertising or tracking cookies.
+2. Why we collect it. To reply to your request, to confirm a site visit, shoot or
+   inspection, and to send the inside list one WhatsApp per verified release if you asked
+   for it.
+3. WhatsApp contact. By sending a form you agree to be contacted by INDVESTATE on
+   WhatsApp about your request. Consent boxes are never pre-ticked. Reply STOP on
+   WhatsApp or write to desk@indvestate.com to end it.
+4. Storage. Form rows are stored in Vercel KV. One email per form is sent through Resend
+   to desk@indvestate.com and the service alias for that form. WhatsApp messages stay in
+   WhatsApp.
+5. No sale of data. INDVESTATE does not sell, rent or share your data with anyone. The
+   only people who see a form are the people who reply to it. An owner or developer sees
+   your name and number only when you ask for a site visit on their property.
+6. Retention. We keep a form row until the request is closed or you ask for deletion,
+   whichever comes first.
+7. Deletion. Write to desk@indvestate.com from the number or address you used, and your
+   rows and emails are deleted within 7 days.
+8. Changes. We update this page when the handling changes and show the date at the top.
+9. Who holds the data. The entity in §1 [CONFIRM]. Questions to desk@indvestate.com.
+
+### /refunds · Refunds and cancellation
+Lead-in: Two paid services, one rule each. Cancel before the work, full refund. After
+delivery, none.
+1. What is paid. Two services carry a fee: a reel booking (Sell with us) and a home
+   inspection. Both are paid through a Razorpay Payment Link sent on WhatsApp. No fee is
+   collected on the site, and INDVESTATE never collects a booking amount for a property.
+2. Before the shoot or visit. Cancel any time before the shoot or the inspection visit and
+   the fee is refunded in full. Write to desk@indvestate.com or WhatsApp the desk; a
+   reply confirms the cancellation.
+3. Rescheduling. A shoot or visit can be moved to another day at no charge if you tell us
+   before the day.
+4. After delivery. No refund after the reel is posted or the inspection report is
+   delivered.
+5. If we cancel. If INDVESTATE cancels, or a property does not pass our checks after a
+   reel booking, the fee is refunded in full.
+6. How refunds are paid. Refunds go back through the Razorpay link they were paid on, to
+   the same account. Razorpay returns it, usually within 7 working days.
+7. Disputes. Write to desk@indvestate.com within 7 days of delivery with the booking
+   details. A person reads it and replies.
+(Razorpay requires this page and /terms, /privacy, /contact, /about, /pricing.)
 
 ## 12. Page copy (Phase 3 routes; facts only from §1–§11)
 Mirrored in `src/content/pages.ts`. Form topics and where each lands: inside-list → "the
@@ -259,24 +395,24 @@ instead."
 - /briefs/[slug]: labels All briefs · What we check · Source · Published · Previous · Next.
 - /not-found: "This page did not pass." line "The address is wrong or the page was never
   released." links Live · Briefs · Home.
-- Policy bodies (§11, plain and short, legal review [CONFIRM]):
-  - About: What INDVESTATE is (Invest In India; land intelligence; study, reject, open
-    access when the paperwork holds) · The method (§6 four lines) · RERA status (agent
-    registration in process; Agent RERA No.: pending; project numbers per listing; a
-    builder-direct page goes live only with the number on file) · Entity (§1 [CONFIRM]).
-  - Contact: phone and WhatsApp, desk@ and the three aliases ("Every alias forwards to the
-    same inbox."), desk hours 10:00–19:00 IST, Instagram, LinkedIn, address.
-  - Pricing: §3 tiers · §4 fees · Buyer concierge and NRI desk: "No fee to the buyer.
-    INDVESTATE is paid by the seller on completion." [CONFIRM]
-  - Terms: Scope of service (markets for owners and developers, coordinates site visits,
-    films and distributes reels, carries out home inspections; not a bank, a lawyer or an
-    investment adviser) · No booking amounts (payments go directly to the registered owner
-    or the developer's designated project account after independent verification) ·
-    Listings (subject to owner or developer confirmation) · No investment advice ·
-    Limitation (liability limited to the fee paid for that service) · Governing law
-    (India; courts of Telangana).
-  - Privacy: What the forms collect (name, WhatsApp, and the typed details) · WhatsApp
-    contact (consent boxes never pre-ticked) · Storage (Vercel KV; one email per form via
-    Resend to desk@) · No sale of data · Deletion (write to desk@).
-  - Refunds: full refund before the shoot or visit · none after delivery · disputes to
-    desk@ within 7 days; refunds go back through the Razorpay link they were paid on.
+- Policy bodies: the full text of §11 (Phase 3.5).
+
+## 13. Site chrome (Phase 3.5)
+- NRI converter: INR→USD and INR→AED are fetched server-side from
+  https://open.er-api.com/v6/latest/INR, revalidated every 24 hours, and shown as
+  "Rate as of <date of the fetch>". If the fetch fails the static fallback below is
+  shown with its own date. Never "[CONFIRM]", never "SAMPLE".
+  Static fallback (open.er-api.com, fetched 09 Oct 2026): US$ 1 = ₹ 96.88 · AED 1 = ₹ 26.38.
+- NRI Telugu twin line, under "You see the parcel before you fly. We walk it for you.":
+  మీరు ఎగిరే ముందు స్థలం చూస్తారు. మేము మీ కోసం నడిచి చూస్తాం. (Noto Sans Telugu.)
+- Floating WhatsApp button (every page, bottom-right, hidden while a form is in view).
+  Label "WhatsApp ↗". Prefilled text by route:
+  / and the policy pages → "Hi, I found indvestate.com."
+  /live → "Hi, I am looking at the live releases on indvestate.com."
+  /live/[slug] → the property's own prefill (§2).
+  /services/sell-with-us → "Hi, I want to book a reel on indvestate.com."
+  /services/inspection → "Hi, I want to book a home inspection on indvestate.com."
+  /nri-desk → "Hi, I am writing to the NRI desk from indvestate.com."
+  /briefs and /briefs/[slug] → "Hi, I read a brief on indvestate.com."
+  /thank-you → "Hi, I just sent a request on indvestate.com."
+- Preloader: wordmark and a mono counter 00→100, once per session. No copy.

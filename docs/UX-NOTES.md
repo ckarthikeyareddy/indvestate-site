@@ -43,9 +43,13 @@ Queried: `"reduced motion final state" --domain ux`.
 - **No scroll-jacking under reduce (High).** The Method pin is not pinned and
   shows end values; the hero zoom-out renders its end state directly
   (BRIEF "Hero zoom-out" §B).
-- **Excessive motion (High).** One orchestrated moment per page: the hero
-  (load ease + zoom-out) and the Method pin. No other section gets scroll-driven
-  motion (`/taste` rule, BRIEF).
+- **Excessive motion (High).** Phase 3.5 raised the motion budget (the
+  "one orchestrated moment" and "most blocks get none" verdicts were withdrawn
+  for this site). What stays fixed: transform / opacity / clip-path /
+  stroke-dashoffset only, system easing and durations, nothing bounces, no
+  blur, no scale on press, hover gated to fine pointers, and every block has a
+  static end state under reduced motion (the preloader is skipped entirely,
+  the route curtain is off, section rules keep their static border).
 
 ## 4. Hero media pause off-screen
 Queried: `"hero media pause offscreen" --domain ux`.

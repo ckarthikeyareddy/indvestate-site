@@ -1,7 +1,7 @@
 // design/new-components.md §7 · BriefRow. Hairline-divided anchor row, grid
 // 140px | 1fr | 120px (mobile: single column), 24px vertical padding:
 // .iv-label signal kicker · .iv-h3 + .iv-body muted line · .iv-data muted date;
-// hover void → carbon.
+// hover void → carbon; Phase 3.5: the row slides 6px right with the arrow leading.
 import Link from "next/link";
 import type { ReactNode } from "react";
 
@@ -34,6 +34,9 @@ export function BriefRow({ href, kicker, headline, line, date, ...rest }: BriefR
           {date}
         </span>
       )}
+      <span className="iv-data iv-brief__arrow" aria-hidden="true">
+        →
+      </span>
     </Link>
   );
 }

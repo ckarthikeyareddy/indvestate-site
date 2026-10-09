@@ -5,6 +5,7 @@ import { Disclaimer, Monogram, Wordmark } from "@/components/ds";
 import { ConfirmChip } from "@/components/Fact";
 import { site, whatsappHref } from "@/content/site";
 import { confirmed } from "@/content/confirm";
+import { RevealScope } from "./Reveal";
 
 function Handle({ label, url, note }: { label: string; url: string | undefined; note: string }) {
   if (url)
@@ -24,8 +25,9 @@ export function SiteFooter() {
   const f = site.footer;
   return (
     <footer className="footer">
+      <RevealScope>
       <div className="wrap stack g-48">
-        <div className="foot">
+        <div className="foot" data-reveal="">
           <div className="stack g-16">
             <Wordmark size={28} lockup="tagline" tagline={site.tagline} />
             <span className="iv-label signal">{site.trustLine}</span>
@@ -41,13 +43,13 @@ export function SiteFooter() {
             </div>
           ))}
         </div>
-        <div className="legal">
+        <div className="legal" data-reveal="">
           <span className="iv-data muted">
             {site.agentRera.label}: {site.agentRera.value} · {site.projectReraLine}
           </span>
           <Disclaimer style={{ paddingTop: 20 }} />
         </div>
-        <div className="handles">
+        <div className="handles" data-reveal="">
           <div className="row g-24">
             <Handle label={site.handles.instagram.handle} url={site.handles.instagram.url} note="" />
             <Handle label={site.handles.instagramHyd.handle} url={confirmed(site.handles.instagramHyd.url)} note="Hyderabad page: confirm the handle exists" />
@@ -60,9 +62,18 @@ export function SiteFooter() {
             </a>
             <span className="iv-data muted">{f.copyright}</span>
           </div>
-          <Monogram size={48} />
+          <span className="foot__mono" data-draw="">
+            <Monogram size={48} />
+            <svg className="foot__mono-rect" viewBox="0 0 48 48" aria-hidden="true">
+              <rect x="0.5" y="0.5" width="47" height="47" fill="none" stroke="var(--hairline-strong)" strokeWidth="1" />
+            </svg>
+          </span>
         </div>
+        <span className="iv-wordmark footer__giant" aria-hidden="true" data-wipe="">
+          {site.name}
+        </span>
       </div>
+      </RevealScope>
     </footer>
   );
 }

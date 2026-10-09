@@ -26,7 +26,7 @@ export function LiveNow() {
         </div>
         <div className="live__more" data-reveal="">
           <span className="iv-caption">{site.live.more}</span>
-          <Button variant="ghost" href={site.live.moreCta.href}>
+          <Button variant="secondary" href={site.live.moreCta.href}>
             {site.live.moreCta.label}
           </Button>
         </div>

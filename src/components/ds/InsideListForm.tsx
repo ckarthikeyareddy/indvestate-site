@@ -98,15 +98,19 @@ export function InsideListSuccess({
         <span className="iv-pill__tick" aria-hidden="true"></span>
         {label}
       </span>
-      <h3 className="iv-h3" style={{ margin: 0 }}>
+      <h3 className="iv-h3 iv-reveal" style={{ margin: 0, "--i": 1 } as CSSProperties}>
         {title}
       </h3>
       {body && (
-        <p className="iv-body" style={{ margin: 0, color: "var(--ink-muted)" }}>
+        <p className="iv-body iv-reveal" style={{ margin: 0, color: "var(--ink-muted)", "--i": 2 } as CSSProperties}>
           {body}
         </p>
       )}
-      {children}
+      {children && (
+        <div className="iv-reveal" style={{ display: "flex", flexDirection: "column", gap: 16, "--i": 3 } as CSSProperties}>
+          {children}
+        </div>
+      )}
     </div>
   );
 }

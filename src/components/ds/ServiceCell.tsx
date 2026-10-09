@@ -20,8 +20,8 @@ export interface ServiceCellProps {
   pill?: ReactNode;
   /** Open-tab state. */
   active?: boolean;
-  /** Fired on hover (fine pointer), tap (touch) and keyboard focus. */
-  onActivate?: () => void;
+  /** Fired on hover (fine pointer), tap (touch) and keyboard focus, with the source. */
+  onActivate?: (source: "hover" | "tap" | "focus") => void;
   id?: string;
   /** id of the panel this cell controls. */
   panelId?: string;
@@ -29,17 +29,17 @@ export interface ServiceCellProps {
 
 export function ServiceCell({ icon, title, href, body, cta, pill, active = false, onActivate, id, panelId }: ServiceCellProps) {
   const onPointerEnter = (e: PointerEvent<HTMLDivElement>) => {
-    if (e.pointerType === "mouse" && onActivate) onActivate();
+    if (e.pointerType === "mouse" && onActivate) onActivate("hover");
   };
   const onClick = (e: PointerEvent<HTMLDivElement> | React.MouseEvent<HTMLDivElement>) => {
     // Tap anywhere in the cell that is not a link or button.
     if ((e.target as HTMLElement).closest("a,button")) return;
-    onActivate?.();
+    onActivate?.("tap");
   };
   const onKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
     if ((e.key === "Enter" || e.key === " ") && e.target === e.currentTarget) {
       e.preventDefault();
-      onActivate?.();
+      onActivate?.("tap");
     }
   };
   return (
@@ -47,7 +47,7 @@ export function ServiceCell({ icon, title, href, body, cta, pill, active = false
       className={["iv-cell", active ? "iv-cell--active" : ""].filter(Boolean).join(" ")}
       id={id}
       onPointerEnter={onPointerEnter}
-      onFocus={onActivate}
+      onFocus={onActivate ? () => onActivate("focus") : undefined}
       onClick={onClick}
       onKeyDown={onKeyDown}
       tabIndex={onActivate ? 0 : undefined}

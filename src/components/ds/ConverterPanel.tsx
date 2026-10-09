@@ -37,7 +37,7 @@ export interface ConverterPanelProps {
 
 const IST_OFFSET_MIN = 330;
 
-function todayUtcAtIst(hhmm: string): Date {
+export function todayUtcAtIst(hhmm: string): Date {
   const [h, m] = hhmm.split(":").map(Number);
   const now = new Date();
   // Today's date as seen in IST.
@@ -47,7 +47,7 @@ function todayUtcAtIst(hhmm: string): Date {
   );
 }
 
-function fmtWindow(start: Date, end: Date, zone: string): string {
+export function fmtWindow(start: Date, end: Date, zone: string): string {
   const f = new Intl.DateTimeFormat("en-GB", { hour: "2-digit", minute: "2-digit", hour12: false, timeZone: zone });
   const z = new Intl.DateTimeFormat("en-US", { timeZone: zone, timeZoneName: "short" })
     .formatToParts(start)

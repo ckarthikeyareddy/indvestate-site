@@ -2,10 +2,15 @@ import type { Metadata } from "next";
 import { SmoothScroll } from "@/lib/lenis";
 import { site } from "@/content/site";
 import { JsonLd } from "@/components/JsonLd";
+import { Preloader } from "@/components/Preloader";
+import { RouteTransitions } from "@/components/RouteTransitions";
+import { WhatsAppFloat } from "@/components/WhatsAppFloat";
+import { PRELOADER_SCRIPT } from "@/lib/preloader-script";
 import { fontClassNames } from "./fonts";
 import "./globals.css";
 import "./landing.css";
 import "./pages.css";
+import "./motion.css";
 
 const organization = {
   "@context": "https://schema.org",
@@ -32,10 +37,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={fontClassNames}>
+    <html lang="en" className={fontClassNames} suppressHydrationWarning>
       <body>
+        {/* Runs before the body paints: skips the preloader on a repeat visit or under reduced motion. */}
+        <script dangerouslySetInnerHTML={{ __html: PRELOADER_SCRIPT }} />
         <JsonLd data={organization} />
-        <SmoothScroll>{children}</SmoothScroll>
+        <SmoothScroll>
+          <Preloader />
+          <RouteTransitions />
+          {children}
+          <WhatsAppFloat />
+        </SmoothScroll>
       </body>
     </html>
   );
