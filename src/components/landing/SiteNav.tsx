@@ -83,7 +83,7 @@ function ServicesDropdown({ label }: { label: string }) {
         {label}
         <Icon name="arrow-right" size={14} style={{ transform: open ? "rotate(-90deg)" : "rotate(90deg)" }} />
       </button>
-      <div className="nav-dd__panel" role="menu" id={id} aria-label={label} hidden={!open}>
+      <div className="nav-dd__panel" role="menu" id={id} aria-label={label} data-open={open ? "true" : "false"} aria-hidden={!open}>
         <ServiceRows role="menuitem" onPick={() => setOpen(false)} />
       </div>
     </div>

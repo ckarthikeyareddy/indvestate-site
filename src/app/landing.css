@@ -17,9 +17,14 @@
 .nav-sticky .iv-nav--compact{display:none}
 .nav-dd{position:relative;display:inline-flex}
 .nav-dd__trigger{display:inline-flex;align-items:center;gap:6px}
-.nav-dd__trigger svg{width:14px;height:14px}
-.nav-dd__panel{position:absolute;top:calc(100% + 8px);left:0;min-width:440px;background:var(--carbon);border:1px solid var(--hairline);padding:var(--space-2) 0;z-index:50;transform-origin:top left}
-.nav-dd__panel[hidden]{display:none}
+.nav-dd__trigger svg{width:14px;height:14px;transition:transform var(--dur-fast) var(--ease-out)}
+/* Dropdown motion · BRIEF §1: opens from the trigger (transform-origin at the
+   trigger), scale .97 → 1 + opacity, 180ms --ease-out; closes 20% faster
+   (144ms). CSS transitions, not keyframes, so a rapid open/close retargets
+   from the current value. Reduced motion: instant. */
+.nav-dd__panel{position:absolute;top:calc(100% + 8px);left:0;min-width:440px;background:var(--carbon);border:1px solid var(--hairline);padding:var(--space-2) 0;z-index:50;transform-origin:top left;opacity:0;transform:scale(.97);visibility:hidden;transition:opacity 144ms var(--ease-out),transform 144ms var(--ease-out),visibility 0s linear 144ms}
+.nav-dd__panel[data-open="true"]{opacity:1;transform:none;visibility:visible;transition:opacity 180ms var(--ease-out),transform 180ms var(--ease-out),visibility 0s}
+@media (prefers-reduced-motion:reduce){.nav-dd__panel,.nav-dd__trigger svg,.nav-m__toggle svg{transition:none}}
 .nav-dd__row{display:grid;grid-template-columns:20px minmax(0,1fr) auto;gap:var(--space-3) var(--space-4);align-items:center;padding:var(--space-3) var(--space-4);text-decoration:none;color:inherit;transition:background-color var(--dur-fast) var(--ease-out)}
 .nav-dd__row:focus-visible{outline:1px solid var(--signal);outline-offset:-2px}
 .nav-dd__icon{display:inline-flex;width:20px;height:20px;color:var(--signal)}
@@ -27,7 +32,7 @@
 .nav-dd__name{font-family:var(--font-headline);font-weight:500;font-size:16px;color:var(--ink)}
 @media (hover:hover) and (pointer:fine){.nav-dd__row:hover{background:var(--hairline)}}
 .nav-m__toggle{margin-left:auto;background:none;border:0;padding:0 var(--space-2);height:36px;font-family:var(--font-mono);font-size:11px;letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--ink-muted);cursor:pointer;display:inline-flex;align-items:center;gap:6px}
-.nav-m__toggle svg{width:14px;height:14px}
+.nav-m__toggle svg{width:14px;height:14px;transition:transform var(--dur-fast) var(--ease-out)}
 .nav-m__toggle[aria-expanded="true"]{color:var(--ink)}
 .nav-m__list{display:flex;flex-direction:column;border-bottom:1px solid var(--hairline);background:var(--carbon)}
 .nav-m__list[hidden]{display:none}
@@ -37,11 +42,15 @@
 /* 02 Hero */
 .hero{position:relative;height:100svh;min-height:620px;max-height:920px;overflow:hidden}
 .hero .iv-heromap{position:absolute;inset:0}
-.hero__field{position:absolute;inset:0}
+.hero__field{position:absolute;inset:0;display:block;width:100%;height:100%}
 .hero__coord{position:absolute;right:var(--space-5);top:var(--space-5);color:var(--ink-muted)}
 .hero__plate{position:absolute;left:var(--space-5);bottom:var(--space-7);width:min(640px,calc(100% - 48px));background:var(--scrim);padding:var(--space-6);display:flex;flex-direction:column;gap:var(--space-5);z-index:2}
 .hero__plate h1,.hero__plate p{margin:0}
-.word-slot{display:inline-block;border-bottom:2px solid var(--signal)}
+.word-slot{display:inline-grid;border-bottom:2px solid var(--signal);vertical-align:bottom}
+.word-slot__word{grid-area:1 / 1;visibility:hidden}
+.word-slot__word.is-active{visibility:visible;animation:iv-word-cycle 2.6s var(--ease-out) both}
+@media (prefers-reduced-motion:reduce){.word-slot__word.is-active{animation:none}}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .hero .iv-heromap__marker{z-index:1}
 
 /* 03 Live */
@@ -59,7 +68,10 @@
 .tier__price.iv-price{font-size:22px}
 .reel__ctas{display:flex;gap:var(--space-3);flex-wrap:wrap;align-items:center;padding-top:var(--space-5)}
 
-/* 05 Method (static end state; the pin arrives in Phase 2) */
+/* 05 Method · pinned 300vh (GSAP pin: true, scrub: 1). The markup is the end
+   state; GSAP sets the start values only under no-preference. */
+.method{padding:0}
+.method__stick{min-height:calc(100svh - var(--nav-height));display:flex;flex-direction:column;justify-content:center;padding:var(--section-pad-desktop) 0}
 .method__rule{position:relative;height:1px;background:var(--hairline)}
 .method__rule-draw{position:absolute;inset:0;background:var(--signal);transform-origin:left}
 .m4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
@@ -115,6 +127,7 @@
   .hero .iv-marker__label{display:none}
   .g2,.split,.foot,.inside-cols{grid-template-columns:minmax(0,1fr);gap:var(--space-6)}
   .sp{min-height:0}.sp__inner{grid-template-columns:minmax(0,1fr)}
+  .method__stick{padding:var(--section-pad-mobile) 0}
   .m4{grid-template-columns:repeat(2,minmax(0,1fr))}
   .m4>*{padding:var(--space-5) var(--space-4) 0}.m4>*:nth-child(odd){border-left:0;padding-left:0}
   .m4>*:nth-child(n+3){border-top:1px solid var(--hairline);margin-top:var(--space-5)}

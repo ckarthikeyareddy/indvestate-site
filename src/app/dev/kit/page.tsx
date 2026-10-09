@@ -443,6 +443,11 @@ export default function KitPage() {
           <HeroMap
             style={{ height: 520 }}
             labels={[{ x: 1040, y: 236, text: site.hero.map.orr.label }, ...site.hero.map.places]}
+            ui={
+              <span className="iv-data" style={{ position: "absolute", right: 24, top: 24, color: "var(--ink-muted)" }}>
+                {site.hero.coordinate}
+              </span>
+            }
           >
             <HeroMarker left="28%" top="36%">
               <MarkerTooltip rows={[{ label: "Area", value: meerpet.area.label }, { label: "Price", value: meerpet.price.label }]}>
@@ -454,9 +459,6 @@ export default function KitPage() {
                 <MapMarker label={kompally.kicker} />
               </MarkerTooltip>
             </HeroMarker>
-            <span className="iv-data" style={{ position: "absolute", right: 24, top: 24, color: "var(--ink-muted)" }}>
-              {site.hero.coordinate}
-            </span>
           </HeroMap>
         </div>
         <MapFrame
