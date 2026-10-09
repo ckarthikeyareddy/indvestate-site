@@ -3,6 +3,8 @@
 // Phase 0: the static source checks are real; the rendered-HTML, Playwright
 // and Lighthouse runners are stubs that Phase 4 wires up. Exit 1 on any FAIL.
 import { readdirSync, readFileSync, statSync } from "node:fs";
+import { spawnSync } from "node:child_process";
+import { createRequire } from "node:module";
 import { join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { findConfirms } from "./check-confirm.mjs";
@@ -139,7 +141,37 @@ stub("Property surface: StatusPill strip before heading, verbatim Disclaimer aft
 stub("Kompally absent from /live and / while reraNumber is empty", "rendered check · Phase 4");
 stub("Saffron (bg or border) ≤ 1 per section wrapper", "rendered check · Phase 4");
 stub("Banned words and dash separators absent from rendered HTML", "rendered check · Phase 4");
-stub("Playwright: 375px no horizontal scroll · keyboard reaches every submit + Services dropdown · reduced-motion end states · every /briefs/[slug] has a source link", "Phase 4");
+stub("Playwright: 375px no horizontal scroll · keyboard reaches every submit + Services dropdown · every /briefs/[slug] has a source link", "Phase 4");
+
+// ---- 7. Reduced-motion end states (Playwright, Phase 3.5) ------------------
+// Real when playwright is installed and a server answers at BASE_URL
+// (default http://localhost:3000); otherwise reported as a stub with the reason.
+{
+  const BASE = (process.env.BASE_URL || "http://localhost:3000").replace(/\/$/, "");
+  const name = "Playwright: reduced-motion end states at 1440 and 375";
+  let reason = "";
+  try {
+    createRequire(import.meta.url).resolve("playwright");
+  } catch {
+    reason = "playwright not installed";
+  }
+  if (!reason) {
+    try {
+      const res = await fetch(BASE, { method: "HEAD", signal: AbortSignal.timeout(2000) });
+      if (!res.ok && res.status !== 405) reason = `${BASE} answered ${res.status}`;
+    } catch {
+      reason = `no server at ${BASE} (run pnpm dev, or set BASE_URL)`;
+    }
+  }
+  if (reason) stub(name, reason);
+  else {
+    const run = spawnSync(process.execPath, [join(ROOT, "scripts/reduced-motion.mjs")], { encoding: "utf8", env: { ...process.env, BASE_URL: BASE } });
+    const summary = (run.stdout.match(/PASS \d+ · FAIL \d+/) || [run.stderr.trim().split("\n").pop() || "no output"])[0];
+    const failed = run.stdout.split("\n").filter((l) => /^\s+FAIL/.test(l)).map((l) => l.trim().slice(5)).join("; ");
+    if (run.status === 0) pass(name, summary);
+    else fail(name, `${summary}${failed ? " · " + failed : ""}`);
+  }
+}
 stub("Lighthouse mobile on /: performance ≥ 90 · LCP < 2.5 s · CLS < 0.1 · a11y ≥ 95", "Phase 4");
 
 // ---- report -----------------------------------------------------------------

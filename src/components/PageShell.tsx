@@ -53,6 +53,18 @@ export function PageHeader({ eyebrow, pill, title, line, children, narrow = fals
   );
 }
 
+/** Suspense fallback for a route whose body depends on the URL (the App Shell
+ *  stays URL-independent so navigation is instant; the body streams in). */
+export function PageFallback() {
+  return (
+    <section className="sec page__head" aria-busy="true" aria-label="Loading">
+      <div className="wrap stack g-16">
+        <span className="iv-label muted">Loading</span>
+      </div>
+    </section>
+  );
+}
+
 /** A titled block inside a page: .iv-label heading on a hairline, then content. */
 export function Block({ title, children, id }: { title: string; children: ReactNode; id?: string }) {
   return (

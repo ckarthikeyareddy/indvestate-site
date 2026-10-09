@@ -2,13 +2,17 @@
 // file, closes with the verbatim Disclaimer after the price. A builder-direct
 // page renders the "documents in review" state while reraNumber is empty: no
 // price, no live pill, no site-visit form, noindex.
+// The App Shell (nav, footer) is URL-independent; the body reads params inside
+// <Suspense> so navigation is instant and the property streams in (Next 16
+// instant-shell rule).
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 import { Button, DataRow, Disclaimer, StatusPill, type InsideListFieldSpec } from "@/components/ds";
 import { ConfirmChip, Fact } from "@/components/Fact";
 import { JsonLd } from "@/components/JsonLd";
 import { LeadForm } from "@/components/LeadForm";
-import { Block, PageShell } from "@/components/PageShell";
+import { Block, PageFallback, PageShell } from "@/components/PageShell";
 import { RevealScope } from "@/components/landing/Reveal";
 import { firstStill, priceNote, propertyData } from "@/components/PropertyCardFor";
 import { confirmed, isConfirm } from "@/content/confirm";
@@ -159,7 +163,17 @@ const VISIT_FIELDS: InsideListFieldSpec[] = [
   { kind: "date", name: "date", label: copy.visit.fields.date },
 ];
 
-export default async function PropertyPage({ params }: { params: Promise<Params> }) {
+export default function PropertyPage({ params }: { params: Promise<Params> }) {
+  return (
+    <PageShell>
+      <Suspense fallback={<PageFallback />}>
+        <PropertyBody params={params} />
+      </Suspense>
+    </PageShell>
+  );
+}
+
+async function PropertyBody({ params }: { params: Promise<Params> }) {
   const { slug } = await params;
   const p = propertyBySlug(slug);
   if (!p) notFound();
@@ -186,7 +200,7 @@ export default async function PropertyPage({ params }: { params: Promise<Params>
 
   if (!live) {
     return (
-      <PageShell>
+      <>
         <section className="sec page__head">
           <div className="wrap stack g-40">
             {header}
@@ -204,7 +218,7 @@ export default async function PropertyPage({ params }: { params: Promise<Params>
             </div>
           </div>
         </section>
-      </PageShell>
+      </>
     );
   }
 
@@ -231,7 +245,7 @@ export default async function PropertyPage({ params }: { params: Promise<Params>
   };
 
   return (
-    <PageShell>
+    <>
       <JsonLd data={jsonLd} />
       <section className="sec page__head">
         <RevealScope>
@@ -312,6 +326,6 @@ export default async function PropertyPage({ params }: { params: Promise<Params>
           <Disclaimer variant={p.disclaimerVariant} reraNumber={confirmed(p.reraNumber)} project={project} style={{ borderTop: 0, paddingTop: 0 }} />
         </div>
       </section>
-    </PageShell>
+    </>
   );
 }

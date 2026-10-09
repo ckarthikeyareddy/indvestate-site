@@ -1,10 +1,12 @@
 // /briefs/[slug] · one real case: paragraphs, the check we run, the source
-// line with URL and date (mandatory), previous / next.
+// line with URL and date (mandatory), previous / next. The body reads params
+// inside <Suspense> so the App Shell stays URL-independent (instant navigation).
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 import { Button } from "@/components/ds";
-import { PageHeader, PageShell } from "@/components/PageShell";
+import { PageFallback, PageHeader, PageShell } from "@/components/PageShell";
 import { briefBySlug, briefs } from "@/content/briefs";
 import { briefsPage as copy } from "@/content/pages";
 
@@ -21,7 +23,17 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   return { title: `${b.headline} · ${b.kicker}`, description: b.paragraphs[0] };
 }
 
-export default async function BriefPage({ params }: { params: Promise<Params> }) {
+export default function BriefPage({ params }: { params: Promise<Params> }) {
+  return (
+    <PageShell>
+      <Suspense fallback={<PageFallback />}>
+        <BriefBody params={params} />
+      </Suspense>
+    </PageShell>
+  );
+}
+
+async function BriefBody({ params }: { params: Promise<Params> }) {
   const { slug } = await params;
   const b = briefBySlug(slug);
   if (!b) notFound();
@@ -30,7 +42,7 @@ export default async function BriefPage({ params }: { params: Promise<Params> })
   const next = briefs[i + 1];
 
   return (
-    <PageShell>
+    <>
       <PageHeader narrow eyebrow={`${b.kicker} · ${b.id}`} title={b.headline} line={`${copy.published} ${b.date}`}>
         <div className="row">
           <Button variant="ghost" href="/briefs">
@@ -77,6 +89,6 @@ export default async function BriefPage({ params }: { params: Promise<Params> })
           </article>
         </div>
       </section>
-    </PageShell>
+    </>
   );
 }
