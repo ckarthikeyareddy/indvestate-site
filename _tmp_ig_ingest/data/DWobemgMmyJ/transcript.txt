@@ -1,0 +1,34 @@
+[   0.0s] Anthropics EU is not able to sleep right now.
+[   2.1s] And how can anybody when your entire company
+[   4.3s] just became open source
+[   5.3s] and now anybody on the planet can use it for free
+[   7.5s] with any LLM they want.
+[   8.8s] So welcome back guys.
+[   9.9s] And this is day four of learn AI with me.
+[  12.4s] So remember when Anthropics accidentally leaked
+[  15.3s] their entire source code,
+[  16.5s] someone just took that code
+[  17.6s] and built something called Open Cloud.
+[  19.4s] And what this does is it lets you use Cloud code
+[  21.9s] with any AI model you want.
+[  23.5s] GPT, 4.0, Gemini, Deepsea, Lama, Mistral,
+[  27.2s] literally 200 plus models all for free.
+[  29.6s] And the craziest part is everything still works.
+[  32.3s] All the tools, the file editing, the search,
+[  34.6s] the agents, the memory system, everything,
+[  36.6s] just without paying Anthropics a single dollar.
+[  39.3s] Here's how you can use it right now.
+[  41.4s] You just install one package, open your terminal,
+[  43.8s] connect it to whatever AI model you already have access to
+[  46.4s] and that's it.
+[  47.2s] You now have the full Cloud code experience
+[  49.2s] running on any model you want.
+[  50.6s] And here's the terrifying part.
+[  51.9s] They uploaded this to a decentralized platform,
+[  54.6s] which means Anthropics cannot take it down.
+[  56.6s] It's permanent.
+[  57.4s] The code is out there forever
+[  58.7s] and there is nothing anyone can do about it.
+[  61.0s] Comment Cloud code and I'll send you the link
+[  62.8s] so you can use it for free too.
+[  64.2s] And follow for more such videos.

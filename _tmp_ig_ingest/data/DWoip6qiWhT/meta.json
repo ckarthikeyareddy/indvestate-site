@@ -1,0 +1,16 @@
+{
+ "id": "DWoip6qiWhT",
+ "url": "https://www.instagram.com/reel/DWoip6qiWhT/",
+ "type": "reel",
+ "category": "AI tools & agents",
+ "account": "100xengineers",
+ "account_name": "100xEngineers",
+ "caption": "Someone built a tool that jailbreaks 55 major AI models and fits it into a single HTML file.\n\nIt's called G0DM0D3, built by a guy called Pliny the Liberator, a self-taught hacker with zero coding background who TIME magazine named one of the 100 most influential people in AI.\n\nHere's what it actually does.\n\nYou type one prompt. It fires that same prompt at up to 55 AI models simultaneously, ChatGPT, Claude, Gemini, Grok, all of them, and races them against each other.\n\nAny model that refuses, hedges, or adds a disclaimer? Penalized.\n\nThe one that gives the most direct, complete answer? Wins. That's the response you see.\n\nBut here's the part that should concern AI companies. It doesn't just ask nicely. It uses 33 different obfuscation techniques to confuse each model's safety filters before the question even lands.",
+ "duration_s": 53.012993,
+ "likes": 9166,
+ "comments": 11119,
+ "posted": "20260402",
+ "audio_language": "en",
+ "audio_language_prob": 1.0,
+ "has_speech": true
+}

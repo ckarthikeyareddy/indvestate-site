@@ -1,0 +1,16 @@
+{
+ "id": "DVrWSqkEw3w",
+ "url": "https://www.instagram.com/reel/DVrWSqkEw3w/",
+ "type": "reel",
+ "category": "AI tools & agents",
+ "account": "shreeyagupta11",
+ "account_name": "𝐒𝐆",
+ "caption": "Video editing was tougher than the code 😭\n\nBuilt GeoTrade : live at www.web-code.tech\n\nInstead of relying on tons of external open Ai  APIs, most of the intelligence runs through a local ML pipeline.\n\nNews from sources like Reuters and Bloomberg flows into an NLP stack that performs: \n• transformer-based event classification \n• sentiment analysis for geopolitical stress \n• clustering to detect emerging macro narratives \n\nThese signals are aggregated into a Geopolitical Tension Index, which then feeds a LightGBM model predicting things like volatility spikes, bullish/bearish bias, and macro risk shifts.\n\nThe frontend visualizes everything on a live world map — click any continent to see the event and its possible market impact. Currently fixing a few too-many-requests issues because the demo got a bit more traffic than expected causing it to fall back to demo data. \n\nRegister your email if you like it.#tech #ai",
+ "duration_s": 39.15,
+ "likes": 94367,
+ "comments": 1573,
+ "posted": "20260309",
+ "audio_language": "en",
+ "audio_language_prob": 0.98,
+ "has_speech": true
+}

@@ -1,0 +1,17 @@
+[   0.0s] Someone used Claude Court in 11 Labs to turn the Epstein files into a podcast on Spotify.
+[   5.3s] It's now trending.
+[   6.3s] He used the exact same setup.
+[   7.8s] He had a podcast of 7 episodes on the 1100 paid judgment on Ram Mandir.
+[  12.7s] Here's how I did it.
+[  13.7s] So this is the Ram Mandir judgment.
+[  15.6s] It's 1100 pages long.
+[  16.9s] Everybody wants to know what's in it, but nobody wants to read it.
+[  20.2s] So step one, take the PDF and put it inside your Claude Court.
+[  23.5s] Step two, I give it one prompt.
+[  25.0s] It reads the entire 1100 paid judgment.
+[  27.4s] It divides it into seven different turning points, which is the exact number of episodes
+[  31.3s] I wanted and then creates a script for each episode that's exciting, fun and very conversational.
+[  37.2s] Step three, I give the 11 Labs API to Claude Court and it uploads all the scripts to 11
+[  41.4s] Labs and in a single voice, it narrates all seven different episodes.
+[  44.9s] Give me a full guide on how to publish your own AI Podcast on Spotify for free, follow
+[  49.2s] and comment podcasts and I'll send it to you in your DMs.

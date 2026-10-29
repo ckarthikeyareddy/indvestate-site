@@ -1,0 +1,23 @@
+[   0.0s] this effect.
+[   1.0s] It was made with AI and here's how you do it.
+[   5.2s] Let's go.
+[   6.2s] This is going to go super in depth so you might want to save this, send it to yourself, but
+[   8.9s] let's go.
+[   9.9s] Okay first we need to generate a scene of the white void.
+[  11.7s] Truth is I don't know how to write a good prompt for nano banana but claw does.
+[  15.8s] So I brain dump everything into clawed.
+[  18.1s] Clawed sorts me out with a prompt for nano banana too and I get my scene.
+[  21.3s] Next I film my movement matching that roughly to the camera angle for the scene we
+[  24.9s] just generated.
+[  25.9s] I export a still frame, upload that with my scene and prompt to add myself into the image.
+[  31.2s] Next I use cling 3.0 motion control and clawed cooks up another prompt for me so everything
+[  35.4s] around me is static frozen in time.
+[  37.7s] I use my video as the driver for the motion and the image as the reference and I get
+[  41.8s] this.
+[  42.8s] Then I brought that into Capcut and added these effects.
+[  44.6s] Sun, incandescent, chrome blur, motion blur, jumpy film and ink bloom.
+[  49.4s] And for the flash effect I've got a full tutorial on that, my main page, she's
+[  52.5s] probably pinned in the comments.
+[  54.0s] I'm an editor and a filmmaker that's learning AI and how to implement it in my content to
+[  57.9s] speed up my workflow and make these really cool effects that I just I couldn't do otherwise.
+[  62.2s] So follow along if you want to learn how to use AI in your workflow.

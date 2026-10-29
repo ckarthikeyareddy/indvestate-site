@@ -1,0 +1,7 @@
+[   0.1s] Hi guys, I have built your trade which is an application which converts real-time geopolitical news or events happening all around the world
+[   7.6s] into actionable trading market analysis
+[  10.7s] So I am fetching real-time news data from various new sources
+[  14.4s] Which first go through a local NLP layer then an internal ML engine using zero API calls and
+[  21.0s] They give you the analysis whether to buy or sell a trade so instead of scraping news channels or scraping
+[  26.7s] Headlines I can just come on this website and get to know whether what to buy or sell and
+[  31.9s] You can use filters and then if you like it you can also register for updates on the website
