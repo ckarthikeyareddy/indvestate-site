@@ -1,0 +1,21 @@
+[   0.0s] Don't use cloud code until you've installed these five plugins.
+[   3.0s] I've been running all five for a week and I've stopped watching my usage limit entirely.
+[   7.1s] First one's OmniRoot, which connects you to 237 AI providers, 90 of which are free.
+[  12.3s] So when your limit hits, it just switches you to the next model.
+[  14.8s] That's around 1.6 billion free tokens a month sitting there unused.
+[  18.4s] But unlimited usage is useless if you re-explain your project every morning.
+[  22.3s] So second plugin is Cloudmem.
+[  24.3s] It gives cloud memory across every session.
+[  26.5s] Now it remembers everything which will increase your token consumption.
+[  29.7s] Therefore, the third plugin is going to be Headroom,
+[  32.2s] which only passes through the parts that actually matter.
+[  34.6s] Same answers, but way fewer tokens.
+[  36.6s] Those three fix your usage.
+[  38.2s] The fourth one, Cloud Code Setup, fixes your repo.
+[  41.0s] This is an official Anthropic plugin which scans your code base,
+[  43.7s] names the hooks, skills and MCP servers you're missing.
+[  47.4s] And the fifth is the one nobody's talking about yet, Task Observer.
+[  50.9s] It watches how you work, catches every correction you make
+[  53.8s] and quietly rewrites your other skills to match.
+[  56.9s] So the longer you use it, the less you have to fix.
+[  59.5s] Comment Cloud and I'll send you every link.

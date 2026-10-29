@@ -1,0 +1,25 @@
+[   0.0s] The update that we just got in Claude might be one of the craziest ones yet for video editing because it just made all of these motion graphics for this real and under 30 minutes.
+[  10.1s] So I want to show you how it works.
+[  11.3s] There's three different steps to do this and you need to make sure you're doing them in order.
+[  14.6s] Step number one is pretty simple.
+[  16.0s] All you have to do is write your script.
+[  18.4s] That's it.
+[  18.9s] Now for step number two, you have to record your video, but make sure all of the cuts are taken out of the video.
+[  24.2s] So all the silences, all the mess ups, all the pauses, basically just edit your video, but don't put any captions or grub.
+[  30.0s] You just have to record your graphics on it.
+[  31.6s] It should just be you talking directly to the camera.
+[  33.7s] Now, step number three is where we bring in Claude.
+[  36.3s] So I want you to export that first version of the video, upload it to Claude.
+[  40.3s] Now I'm using Claude code with Opus 5.5 extra.
+[  43.7s] I've just found for this to be the best version of this setup.
+[  46.6s] And then I want you to use this prompt on your screen right here.
+[  49.5s] Now, if you want to pause the video, if you want to comment the word prompt, it doesn't matter.
+[  53.3s] I'll send it over to you.
+[  54.2s] I won't even ask for your email.
+[  55.5s] Put that prompt into Claude within 30 minutes or so.
+[  58.2s] It's going to come back with all the motion graphics you need for your video.
+[  61.4s] It's going to save those files to a folder on your computer.
+[  64.0s] And then all you have to do is drag and drop them onto your timeline.
+[  67.4s] And remember, it has your video, so it has all of the timestamps where you say things.
+[  72.6s] So every single motion graphic is going to perfectly cut to the right length when you say these words.
+[  79.4s] It's fucking crazy.

@@ -1,0 +1,19 @@
+[   0.0s] Your Vibe-Coded app can get sued for $100,000 before it makes a single sale,
+[   4.8s] and it can be fixed with one prompt that I'll give you at the end.
+[   7.8s] It starts with your sign-up form, which has no age question,
+[  10.8s] so the first 13-year-old who joins is $53,000 under COPPA.
+[  14.9s] Your fonts load straight from Google's servers, which accord in Munich
+[  18.2s] priced at €100 per visitor for leaking their IP.
+[  21.4s] And the analytics you added has session replay switched on by default,
+[  25.0s] recording every keystroke, which in California is wiretapping at 5,000 per session.
+[  30.0s] We launched email you sent your waitlist has no unsubscribe link and no postal address.
+[  34.5s] That's $53,000 per email. And the subscription you set up in Stripe
+[  38.2s] doesn't show the renewal terms next to the button.
+[  40.5s] So in California, every renewal is legally a gift you have to refund.
+[  44.2s] Even the profile pictures your users upload count,
+[  46.6s] because you never registered a $6 copyright agent,
+[  49.3s] which makes every stolen image there's in yours at $150,000 each.
+[  53.6s] The word is per. Nothing on this list is a percent of revenue.
+[  57.6s] It's per visitor, per session, per email, and that's how zero sales turns into $100,000.
+[  62.6s] Send this video's link to Claude and ask it fix everything.
+[  65.5s] By the way, following me is the cheapest co-founder you'll ever hire.

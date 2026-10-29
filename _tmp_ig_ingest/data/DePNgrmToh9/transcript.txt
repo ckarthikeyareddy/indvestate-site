@@ -1,0 +1,8 @@
+[   0.0s] So you can now make walk style collage animations like this using claw without animating a single frame.
+[   6.8s] The paper cutout style you see in explainer videos and documentaries and claw can now build it for you inside a real video editor.
+[  14.2s] So here is how to do it.
+[  15.0s] Head over to invidus mcp page and select claw.
+[  18.0s] Hit connect then copy the prompt for your agent and paste it into claw and it will finish the setup by itself.
+[  23.7s] Now you can drop new reference folders ask it to make it an explainer on any topic you want.
+[  28.4s] Not only that it doesn't just give you a video file it builds a full video timeline inside invidio video timeline that you can edit.
+[  34.7s] If you want the full setup guide drop here in the comments and I'll send them over.
