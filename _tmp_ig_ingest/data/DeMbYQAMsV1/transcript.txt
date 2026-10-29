@@ -1,0 +1,9 @@
+[   0.0s] Let me show you how you can create animations like these that follow your cursor.
+[   3.6s] Step 1, copy this GitHub link.
+[   5.6s] Step 2, open cloud code, paste it in and type install this skill.
+[   9.8s] Step 3, type slash hairline create, then your idea.
+[  13.1s] I typed a sales funnel.
+[  14.6s] Cloud pitches you a few concepts.
+[  16.2s] Pick one and it draws it.
+[  17.8s] Check it against 10 design rules and test it in a real browser before handing it over.
+[  22.4s] Save this so you have the steps and comment link for GitHub repo.

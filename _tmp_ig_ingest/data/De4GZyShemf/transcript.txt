@@ -1,0 +1,16 @@
+[   0.0s] Google just open sourced a tool that gives your AI agent a real Android phone and you
+[   4.9s] drive it in plain English.
+[   7.0s] It's already past 14,000 GitHub stars, it's called Artemis and it's on Google's own
+[  12.4s] GitHub.
+[  13.4s] Type something like open settings, find battery and tell me the current level and it actually
+[  18.6s] taps to the phone to get it.
+[  20.8s] Or give it a whole job.
+[  22.5s] Build my app, install it, login with a test account, check for weird pop-ups and
+[  27.7s] send me screenshots.
+[  29.2s] It ships with an MCP server so it plugs into Cloud Code, Codex, Cursor and a bunch more.
+[  35.3s] Flash mode is fast for quick steps, Pro mode plans first and double checks its own work.
+[  41.0s] Google says it completes over 99% of tasks on Android world, though that's their own
+[  47.2s] number.
+[  48.4s] If you build Android apps, this could replace a lot of boring manual testing.
+[  52.7s] Follow for more AI tools like this and comment link, I'll send you the repo
+[  56.6s] straight to your DMs.

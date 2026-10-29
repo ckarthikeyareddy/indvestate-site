@@ -1,0 +1,25 @@
+[   0.0s] Same prompt. On the left, Quen 3.827b running on this MacBook. No internet, no bill.
+[   7.8s] On the right, Claude Opus in the cloud. The trending videos say this local model now beats Claude.
+[  14.9s] So I didn't guess. I timed every run, counted every token and added up every cent.
+[  21.3s] And some of the results surprised me. My machine is a MacBook Pro with the M5
+[  27.3s] and 36GB of memory. Both ran the first time and both hit all 7 beats.
+[  33.4s] Quen took 9 minutes and 48 seconds. Claude took 9 minutes and 57. Almost the same.
+[  40.2s] But Claude wrote 6 times more. 64,000 tokens. Most of it thinking. And that one answer
+[  47.6s] cost a dollar 32. Quen wrote under 11,000 tokens. For free.
+[  53.3s] In daylight, Quen's Island looks good. Then night falls and the whole island turns pitch black for
+[  59.5s] half of the loop. Claude's keeps every requirement. Stars, a lit window and an island you can still
+[  66.3s] see at night. And this time Claude was much faster. 4 minutes against Quen's 11 minutes and 46 seconds.
+[  74.2s] Cost 55 cents. Test 3. A real game. Both games work on the first try and the autopilot
+[  82.4s] really plays. Test 4. Prompts are easy. Real work is messy. I gave both models a sales file with
+[  90.1s] duplicate rows, blank lines, three different date formats and amounts typed as text. And I asked for
+[  96.2s] a clean Excel report with real formulas and a chart. Both scored 10 out of 10 on my checker. 200 clean
+[ 103.6s] rows, real formulas, the right grand total and a chart. But look at the clock. Claude had the
+[ 109.4s] report written in 35 seconds. Quen needed 8 minutes and 13 seconds. And then, Quen didn't stop. It tried
+[ 117.1s] to double check its own work by downloading a whole formula engine. And it just sat there, waiting.
+[ 123.0s] I stopped it after 33 minutes. Claude checked its numbers in Python and finished in 6 minutes
+[ 129.0s] and 22 seconds for 31 cents. So, does the local model beat Claude? Not on this Mac and not
+[ 136.8s] on the hard parts. But Claude was better in 3D, far faster as an agent and it knew when to stop.
+[ 144.3s] All four Claude runs together cost about $3.17. My take? Use Quen for private code,
+[ 151.8s] offline work and lots of small jobs where waiting is fine. Use Claude when the task is hard or
+[ 158.1s] when your time is worth more than a few dollars. If you want to see the same tests on an RTX
+[ 163.4s] 5090, tell me in the comments and subscribe so you don't miss it.

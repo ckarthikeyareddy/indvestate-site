@@ -1,0 +1,55 @@
+[f_002] © Open source apache-2.0 ith
+[f_003] your Google wR
+[f_004] a |real) Android your agent —=/my-app L export function onlogin() { const user = await auth.si] © agents coding
+[f_005] Elate} ‘your agent —~/my-app export function ontogin() { const usex = await auth.signIn(enail, pass) if (user) navigate("Home") t 2 agent s coding ( Android «vis ADs & 212 809 Senge
+[f_006] in plain English. Plain English Open the Video app and play a clip @ O Android «via Abs a ns 21° cca re sens
+[f_007] It's Tr GitHub stars googie/artemis 0.0k
+[f_008] 14,000 yy GitHi lub stars — google/artemis 2 e k
+[f_009] 4,000 y¥ GitHub stars —google/artemis
+[f_010] 14,000, GitHub stars.
+[f_011] It's called ARTEMIS, | J ARTEMIS ~~
+[f_012] and it's on |Google’s| J ARTEMIS . & github. com/google/artemis (cs) google / artemis Pubic Let Al assistants and test suites use real phones like a human. android ai-agentstest-automation testing Wak » Apache Pyth
+[f_013] and it's on Google's, own GitHub. , rr oma - ee ee ee a — ee es
+[f_014] Type something Terminal — artemis $ uv run artemis run "I 21° @¢é @@0: 6 °
+[f_015] “open Terminal — artemis $ uv run artemis run "Open 2r @¢é @@0~« G *
+[f_016] find Battery Terminal — artemis $ uy xun artemis run “Open Settings, find Batll ZAR ee @e0- cc o
+[f_017] and tell me the Terminal — artemis $ uv xun artemis run “Open Settings, find Battery and tell mel * 21 809 setae
+[f_018] Terminal — artemis $ uv xun artemis run “Open Settings, find Battery and tell me current level" --pxll ZAR
+[f_019] And it actually taps Terminal — artemis $ uv run artemis run “Open Settings, find Battery and tell me current level" --profile flash Settings © Launching app Settings © Neve sine Connected devices 4a o= eo“ ox © sess veeton
+[f_020] through the phone Terminal — artemis $ uv xun artemis run “Open Settings, find Battery and tell me current level" --profile flash © Launching app Settings © Tapping element ({198, $723) © Reading screen Battery « Battery 78% = Battery usage Battery Saver « Adaptive Batery oOo Battery percentage @E
+[f_023] © Agent chat Buill Buildmy
+[f_024] install it © Agent chat « artemis MCP Build my app, install i] = Task plan pro Build APK e & Det Install
+[f_025] log in with a; ©B Agent chat Build my app, install it, log in with al « artemis - MCP om [oe = Task plan pro ‘Welcome back Build APK e Install testomyepe | By instal C) am nt )
+[f_026] check © Agent chat « artemis MCP Build my app, install it, log in with a test account, c| Hi, Test User = Task plan pro @ Build APK mbleDebug e Install a Login 4 Check popups
+[f_027] check for \weird popups) B® Agent chat «artemis - MCP Build my app, install it, log in with a test account, check for weird p| ‘A unexpected popup = Task plan pro Build APK sssembleDebug ° Install, z + onPixel e eB ‘low My App to send is vou notetont? BD eo e ‘low Don'atow Check popups 4 Odemecc O
+[f_028] © Agent chat @arteris MCP Build my app, install it, log in with a test account, check for weird popups and send me scree| Hi, Test User = Task plan pro Signed in: ee account aaa ssembleDebug e Install le a Login 4 Check popups ismissed Screenshots 0
+[f_029] and send me |screenshots.|
+[f_030] artemis MCP server $ python -m mep_sexver © mobile_run_task © mobile_manage_task © mobile_get_device_state © mobile_inspect_trace © mobile_diagnose running
+[f_031] an MCP server artemis * running MCP server $ python -m mcp_server mobile_run_task mobile_manage_task mobile_get_device_state mobile_inspect_trace mobile_diagnose
+[f_032] so it plugs into artemis rion S python om nep_server nage task obile_get device state > mobile inspect trace - $ uv run artemis mp -~inl auto-contig > mobie diagnose
+[f_033] Claude Code, Codex artemis r— Morse S python «= nep_server sob{le_run_task robile_manage_task obile_get device state sobile_inspect_trace - $ uv run artemis mcp --install all| auto-contig mobile diagnose ee Claude Code connected QD
+[f_034] artemis r— NCP seer S python «= nep_server > nobite_run_task robile_manage_task nobile_get device state > mobile inspect trace > mobie diagnose $ uv run artemis mep --install alll auto-contig & Claude Code connected QD &% Codex connected QD cy Cursor comeced @®
+[f_035] $ uv run artemis mcp --install alll cc o cu oo and a bunch more. Claude Code Codex e Cursor Claude Desktop Windsurf VS Code Cline / Roo Antigravity OpenClaw auto-config connected connected connected connected connected connected connected connected connected
+[f_036] (Hash| mode Fast mode ~3-5sperstep reactive loop 4 a,
+[f_037] for Fast mode seer tap Settings 4 observe — act
+[f_038] Fast mode iSactive en @ tap Settings 3.28 4 @ tap Battery 4.48 observe — act @ read 78% 3.68 ® done
+[f_039] mode plans first Pro mode multi-agent safetynet_ ~15-40's/ step = Planner | D task_plan.ma fo) Operator y Checker
+[f_040] and |double-checks Pro mode multi-agent safetynet_ ~15-40's/ step B Planner j {(o) Operator ; | NJ 3) Checker L nt
+[f_041] Elate} e-check: its own work.
+[f_042] Google says _ C=
+[f_044] over |99%| of tasks 99.1%
+[f_045] on AndroidWorld, G says. AndroidWorld Benchmark Leaderboard ( #6 ca wr m8 #21 Task S -cess Rate (Pass@) across 116 realistic dynamic tasks Google Research Benchmark Project ARTEMIS FinalRun AutoDevice Midscene.js DroidRun gbox.ai ‘AutoGLM-Mobile Human Performance Mobile-Agent-v3 Gemini 2.5 Computer Use MobileUse UL-TARS 97. 93. 88. 22. 1. 62. 43. 35 a7. 2 6% 2% 3% 1% 6% 4% 6% 7% 0% 085 0%
+[f_046] AndroidWorld Benchmark Leaderboard ® Task Success Rate (Pass@') across 116 realistic dynamic tasks Google Research Benchmark (Oro CD A 59.1: | "#2 FinalRun 97 #4 AutoDevice C8: #0 Midscenes EY #7 DroiaRun ee any ghoxal OE #12 AutoGLM-Mobile a 80.2% (2 Human Petonance TT 80.0% ‘18 Mobile-Agent~v3 73.3% #21 Gomini25 p 69.7% #25 MoblleUse 62.9% #94 ULTARS 46.6% 0% #1 ARTEMIS 99.1% & Human 80.0%
+[f_047] _ though that's their own| number. _ C= AndroidWorld Benchmark Leaderboard #1 ARTEMIS 99.1% & Human 80.0% fc) Task Success Rate (Pass@') across N16 realistic dynamic tasks Googie Research Benchmark Choc CO © #2 FinalRun Ee #4 AutoDevice Do: #6 Midscenejs ET #7 DroidRun ne an ghoxal ms 2% #12 AutoGLM-Mobile za 80.2% A Human Performance 20.0% 478. Mobile-Agent-v3 73.3% #21 Gemini2.5 ¢ 69.7% 425 MobileUse 62.9% #34 UFTARS 46.6%
+[f_048] If you build & Manual testing © every bulld Install the build on a phone A you Log in with a test account A you Tap through every screen Ayou Check for popups & crashes & you Screenshot everything A you
+[f_049] If you build Android apps, & Manual testing © every bulls Install the build on a phone A you Log in with a test account A you Tap through every screen Ayou Check for popups & crashes A you Screenshot everything A you
+[f_050] this could ® Manual testing © every build Install the build on a phone A you Log in with a test account A you Tap through every screen A you Check for popups & crashes A you
+[f_051] a lot of |boring| R Manualtesting every build ©@ install the build on a phone 2 ARTEMIS @ Log in with a test account 2 ARTEMIS @ Tap through every screen 2 ARTEMIS @ check for popups & crashes. 2 ARTEMIS @ Screenshot everything 2 ARTEMIS ARTEMIS console
+[f_052] a lot of (borin, manual testing. + Automated @ install the build on a phone ©@ Log in with atest account @ Tap through every screen @ Check for popups & crashes @ Screenshot everything ARTEMIS console © every build 2 ARTEMIS 2 ARTEMIS J ARTEMIS 2 ARTEMIS 2 ARTEMIS
+[f_053] for jagu.builds Jagrit Chawla Building Al films, automations & software - in public
+[f_054] jagu.builds Jagrit Chawla Building Al fil software Following ~
+[f_055] and jagu.builds Jagrit Chawla Building Al films, automations & software - in public Following ~
+[f_056] and comment ey jagu.builds QQ Jagrit chawia ‘| films, automations & Following ~ Comments
+[f_057] I'll send jagu. builds Jagrit Chawla iding Al films automations & Following ~ Comments a you-now € ") iagu.builds - now Done — check your DMs sia
+[f_058] straight jagu.builds Following ~ Comments a you-now (Tyce Done — check your DMs sia
+[f_059] straight to your [DMs| @ jagu.builds now the repo you asked for @ github.com/google/artemis my jagu.builds Jagrit Chawla Building Al films, automations & software - in pl Following ~ Comments you - now @ jagu.builds now. Done — check your DMs sia a

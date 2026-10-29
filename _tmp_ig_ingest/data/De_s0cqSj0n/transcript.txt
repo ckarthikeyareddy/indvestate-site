@@ -1,0 +1,20 @@
+[   0.0s] Claude can now make motion graphics like this using this tool.
+[   2.9s] It's called Null Motion.
+[   4.1s] It's completely free and it runs locally on your own machine.
+[   7.0s] You can use it for SaaS launch videos, product launch videos,
+[   9.7s] any kind of launch film.
+[  10.6s] And the result looks clean, premium and super smooth.
+[  13.5s] You'd think it took a motion designer days to animate,
+[  15.7s] but no, here's how you use it.
+[  17.1s] First, head to the Null Motion repo on GitHub.
+[  19.4s] Second, copy the repo link.
+[  20.6s] Third, go to Claude.
+[  21.6s] And fourth, just tell Claude, using this repo,
+[  24.0s] create a motion graphic video for my website
+[  26.1s] and paste the link.
+[  27.0s] That's literally all it takes.
+[  28.3s] I created a motion graphic video for Claude.com this way.
+[  30.9s] And boom, here's the result.
+[  32.2s] It's super simple.
+[  33.2s] If you want the link too, just comment Null
+[  35.3s] and I'll send it straight to your DM.

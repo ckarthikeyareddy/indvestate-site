@@ -1,0 +1,15 @@
+[   0.0s] Claude can now test your stock trade 10,000 times before you risk a single dollar.
+[   5.0s] Someone just open sourced 11 free day trading skills for Claude, and each one handles a
+[   8.9s] different job.
+[  10.1s] One skill scans thousands of stock charts looking for trading opportunities.
+[  13.8s] Another tracks breaking news that could move those stocks.
+[  16.3s] Then there's an entry skill that watches for the right signal, and an exit skill
+[  19.6s] that plans when to take profit or cut your losses.
+[  22.2s] But the craziest one is called the time machine.
+[  24.7s] It takes your trade and simulates the rest of the trading day 10,000 times using
+[  28.3s] historical price data.
+[  29.8s] Then it shows how often you would have made money, hit your stop loss, or ended somewhere
+[  33.3s] in between.
+[  34.3s] So you get to see the historical odds before putting your money on the line.
+[  37.5s] Of course, it's a simulation, not a guarantee.
+[  39.7s] To get all 11 skills and the full setup guide, follow Build with AI and comment Trade.

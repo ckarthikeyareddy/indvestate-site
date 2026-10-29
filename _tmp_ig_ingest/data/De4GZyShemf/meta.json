@@ -1,0 +1,16 @@
+{
+ "id": "De4GZyShemf",
+ "url": "https://www.instagram.com/reel/De4GZyShemf/",
+ "type": "reel",
+ "category": "AI tools & agents",
+ "account": "jagu.builds",
+ "account_name": "Jagrit",
+ "caption": "Google just open-sourced ARTEMIS, and it gives your AI agent a real Android phone.\n\nYou type what you want in plain English. It opens the apps, taps through the screens and tells you what it found.\n\nWhat it can do:\n→ Run tasks on a real phone or an emulator\n→ Plug into Claude Code, Codex, Cursor and more through its MCP server\n→ Flash mode for quick steps, Pro mode that plans and checks its own work\n→ Build your app, install it, test the login, catch popups and send you screenshots\n\nGoogle says it completes 99%+ of tasks on the AndroidWorld benchmark. That’s their own number, so try it on your app before you trust it.\n\nFree, open source (Apache 2.0) and already past 14k stars on GitHub.\n\nComment “LINK” and I’ll send you the repo.\n\nFollow @jagu.builds for more AI tools like this.\n.\n.\n.\n.\n[ #aiagents #android #OpenSource #tech #jagubuilds MCP AItools Developers BuildInPublic cursor google gemini chatgpt codex ai news aitools aiupdates]",
+ "duration_s": 58.863991,
+ "likes": 552,
+ "comments": 60,
+ "posted": "20261024",
+ "audio_language": "en",
+ "audio_language_prob": 0.99,
+ "has_speech": true
+}

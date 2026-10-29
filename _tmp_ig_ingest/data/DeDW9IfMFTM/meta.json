@@ -1,0 +1,16 @@
+{
+ "id": "DeDW9IfMFTM",
+ "url": "https://www.instagram.com/reel/DeDW9IfMFTM/",
+ "type": "reel",
+ "category": "AI tools & agents",
+ "account": "hackproduct",
+ "account_name": "HackProduct",
+ "caption": "LLM vs RAG vs AI Agent vs Agentic AI — four words people use like they mean the same thing. 🧠\n\nThey don’t. Each one is the last one plus ONE capability.\n\nStop asking “do we need an agent?” Ask: which capability is actually missing?\n\n1️⃣ LLM (Large Language Model) — the model on its own. Knows only its training data.\n→ Perfect for: drafting, summarising, rewriting.\n\n2️⃣ RAG (Retrieval Augmented Generation) — add retrieval. Answers from YOUR docs, not its memory.\n→ Perfect for: internal wikis, support bots, policy Q&A.\n\n3️⃣ AI Agent — add tools in a loop. It acts, checks the result, acts again until the task is done.\n→ Perfect for: tickets, data fixes, multi-step workflows.\n\n4️⃣ Agentic AI — add coordination. Many agents, one goal.\n→ Perfect for: research pipelines, end-to-end ops that one context window can’t hold.\n\n👀 The part nobody says: most products calling themselves “agentic” are step 2 with a nicer UI. That’s not a flaw. Step 2 is cheaper, faster and easier to debug.\n\nRule: add one capability at a time, and only when the step before it is the bottleneck.\n\nWhere teams go wrong: jumping straight to multi-agent for a problem RAG would solve. Now you’re debugging handoffs instead of shipping.\n\n📸 Screenshot the last frame: model + retrieval + tools + coordination. Save it for the next time someone says “we need an agent”.\n\nFollow @hackproduct — we turn scary AI-engineering concepts into things you can actually ship. ⚡\n.\n.\n#AIengineering #machinelearning #softwareengineering #LLM #RAG AIagents GenAI systemdesign promptengineering agenticAI retrievalaugmentedgeneration multiagent LLMops contextengineering AIarchitecture hackproduct",
+ "duration_s": 14.142993,
+ "likes": 8116,
+ "comments": 28,
+ "posted": "20261004",
+ "audio_language": "en",
+ "audio_language_prob": 0.35,
+ "has_speech": false
+}

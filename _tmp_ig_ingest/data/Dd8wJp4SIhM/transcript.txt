@@ -1,0 +1,14 @@
+[   0.0s] The creator of Open Claw just open sourced his entire agent setup and it's going viral.
+[   4.2s] His name is Peter Steinberger.
+[   5.6s] He's the guy who built Open Claw and this is the exact file he uses to run his own AI
+[  10.1s] agents across every single project he works on.
+[  12.2s] Inside it, you get his master rules file.
+[  13.7s] The one document every agent reads before it touches anything.
+[  16.2s] So Codex and Clawed Code behave the same way in every repo.
+[  18.6s] You get his skills folder, which is basically a library of reusable workflows his agents
+[  22.1s] pick up automatically, including tools that crawl Slack, Discord, WhatsApp and iMessage.
+[  26.2s] You get the scripts that sync all of those skills across his machines.
+[  28.8s] A validator that catches broken skills before they cause problems.
+[  31.6s] And even a browser tool that lets his agent open chrome, click around, take screenshots
+[  35.4s] and read what's happening on a page.
+[  36.9s] This is if you want access to it, just comment agent and I'll send it straight to you.

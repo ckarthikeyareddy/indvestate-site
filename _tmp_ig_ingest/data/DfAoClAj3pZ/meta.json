@@ -1,0 +1,16 @@
+{
+ "id": "DfAoClAj3pZ",
+ "url": "https://www.instagram.com/reel/DfAoClAj3pZ/",
+ "type": "reel",
+ "category": "AI tools & agents",
+ "account": "mikemeansbusiness_ai",
+ "account_name": "Mike Oddoye | Ai Revenue Systems",
+ "caption": "Comment \"SOUND\" and I'll send you the paper and every defence in it 🔐🎧\n\nCan AI hear what you type? In a lab study, an AI identified which keys were pressed from Zoom audio with 93% accuracy, and 95% from a phone 17 cm from the laptop. It cuts out each click, turns it into a spectrogram (a picture of the sound), and an image model matches the picture to the key. Even its mistakes were telling: 5 of 9 wrong guesses were the key next door.\n\nOne MacBook Pro, single keys, not whole passwords. The best defence in the paper: fake keystroke sounds added to your call audio beat white noise.\n\nSource: Harrison, Toreini, Mehrnezhad, arXiv:2308.01074.\n\nSend this to the friend who types through every call.\n\n#cybersecurity #ai #zoom #passwordsecurity #techexplained",
+ "duration_s": 84.24500274658203,
+ "likes": 12214,
+ "comments": 479,
+ "posted": "20261027",
+ "audio_language": "en",
+ "audio_language_prob": 1.0,
+ "has_speech": true
+}

@@ -1,0 +1,50 @@
+OK   DfFFh4mIHX5 (reel, AI tools & agents) speech=True 70s
+OK   De_s0cqSj0n (reel, AI tools & agents) speech=True 22s
+OK   DfBvdDXTdav (reel, AI tools & agents) speech=True 28s
+OK   Dd8wJp4SIhM (reel, AI tools & agents) speech=True 29s
+OK   De3VPoaTUVn (reel, AI tools & agents) speech=True 31s
+OK   DfA9lsXDhAC (reel, AI tools & agents) speech=True 31s
+OK   DfAfKSnh814 (reel, AI tools & agents) speech=True 45s
+OK   DfAoClAj3pZ (reel, AI tools & agents) speech=True 45s
+OK   De9mEmdsWB- (reel, AI tools & agents) speech=True 25s
+OK   De98zvGToP7 (reel, AI tools & agents) speech=True 22s
+OK   Des-ZSStQLs (reel, AI tools & agents) speech=True 116s
+OK   De4GZyShemf (reel, AI tools & agents) speech=True 31s
+OK   De043ebsGfH (reel, AI tools & agents) speech=False 14s
+OK   De1O_d0PrT_ (reel, AI tools & agents) speech=True 84s
+MISS Del4hE0jTHB (post): tagram][info] Waiting for 1 minutes until 21:42:53 (429 Too Many Requests)
+[instagram][info] Waiting for 1 minutes until 21:43:54 (429 Too Many Requests)
+[instagram][error] HttpError: '429 Too Many Requests' for 'https://www.instagram.com/accounts/login/?next=/api/v1/media/4009859606767284673/info/'
+Rate limited - sleeping 90s
+MISS DeRCos1DEFF (post): tagram][info] Waiting for 1 minutes until 21:53:20 (429 Too Many Requests)
+[instagram][info] Waiting for 1 minutes until 21:54:21 (429 Too Many Requests)
+[instagram][error] HttpError: '429 Too Many Requests' for 'https://www.instagram.com/accounts/login/?next=/api/v1/media/4003993136715809093/info/'
+Rate limited - sleeping 90s
+MISS DecOqXmAGgF (reel): ERROR: [Instagram] DecOqXmAGgF: Unable to download webpage: HTTP Error 429: Too Many Requests (caused by <HTTPError 429: Too Many Requests>)
+Rate limited - sleeping 90s
+OK   DeYtpsNT5sb (reel, AI tools & agents) speech=True 35s
+OK   DezZ8h7AnWZ (reel, AI tools & agents) speech=True 34s
+OK   DewoVpLI3Qx (reel, AI tools & agents) speech=True 35s
+OK   DezOgThKETj (reel, AI tools & agents) speech=True 22s
+OK   Dey4jafAmwk (reel, AI tools & agents) speech=True 25s
+OK   DewptQ6hB32 (reel, AI tools & agents) speech=True 83s
+OK   DeXdMm_jANn (reel, AI tools & agents) speech=True 27s
+OK   DeXV5AuRHyO (reel, AI tools & agents) speech=True 32s
+OK   DcemC7AsDFN (reel, AI tools & agents) speech=True 16s
+OK   DdALHEEIdu7 (reel, AI tools & agents) speech=False 15s
+OK   DePKR3pTpIm (reel, AI tools & agents) speech=True 30s
+OK   DeUUiBhs01A (reel, AI tools & agents) speech=False 16s
+MISS Dd-BVdTijl_ (reel): ERROR: [Instagram] Dd-BVdTijl_: Unable to download webpage: HTTP Error 429: Too Many Requests (caused by <HTTPError 429: Too Many Requests>)
+Rate limited - sleeping 90s
+OK   DeM8HKhCQjy (reel, AI tools & agents) speech=True 23s
+OK   DeWiaO5xVvO (reel, AI tools & agents) speech=False 11s
+OK   DeWHL2zIIIg (reel, AI tools & agents) speech=True 76s
+OK   DeUyEboAW-F (reel, AI tools & agents) speech=True 29s
+OK   DeUUFJQu8cw (reel, AI tools & agents) speech=True 29s
+OK   DeCSt9ETEWs (reel, AI tools & agents) speech=True 16s
+OK   DeReUcpzUEN (reel, AI tools & agents) speech=True 23s
+OK   DeQfVMhzazS (reel, AI tools & agents) speech=True 17s
+OK   DeDW9IfMFTM (reel, AI tools & agents) speech=False 12s
+OK   DeMbYQAMsV1 (reel, AI tools & agents) speech=True 17s
+MISS Dd1g6pKx68Z (reel): ERROR: [Instagram] Dd1g6pKx68Z: Unable to download webpage: HTTP Error 429: Too Many Requests (caused by <HTTPError 429: Too Many Requests>)
+Rate limited - sleeping 90s

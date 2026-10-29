@@ -1,0 +1,17 @@
+[   0.0s] Apple, the greatest design company in the world, wrote down exactly how it designs.
+[   5.4s] And most people building with Claude have never used it.
+[   8.2s] You build something with Claude, it still feels off.
+[  11.0s] You just can't point to what's wrong.
+[  13.0s] But Apple has some of the best design in the world, and none of it is secret.
+[  17.0s] They wrote it all down.
+[  18.8s] 123 pages of human interface guidelines.
+[  21.9s] Plus, talks that their own designers give at WWDC, Apple's yearly developer conference.
+[  27.5s] Two people took all of that and turned it into Claude skills.
+[  30.8s] One of them takes those 123 pages and gives Claude Apple's rules for how an app should look.
+[  36.3s] The other one comes from the talks and gives Claude rules for motion on the web.
+[  40.4s] Things like responding instantly or letting you grab an animation mid-move.
+[  44.5s] All you do is install them and Claude follows them while it builds.
+[  48.2s] Or pointed at something you already made and asked for a review.
+[  51.5s] The spacing, the type sizes, the way things move, the stuff you could feel but couldn't
+[  56.2s] quite name, now has names.
+[  58.8s] Comment Apple and I'll send you both skills.
