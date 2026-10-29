@@ -1,0 +1,12 @@
+[   0.0s] Here's how you can build these kind of scroll animations that agencies pay thousands for.
+[   4.0s] In four steps with zero code.
+[   5.5s] You know the ones where you scroll and the product spins or builds itself on screen.
+[   8.9s] Here's how to make it.
+[   9.9s] Step one, go to Google Flow and generate two images with these prompts.
+[  13.4s] But basically one is for the start frame and another for the end frame.
+[  16.5s] Step two, in Flow pick frames to video, upload both images and let it animate everything in between.
+[  21.5s] Step three, take that clip to Easy Gift, use video to image sequence, set it to 30 frames per second and download all the frames as is it.
+[  29.0s] Step four, drop that whole folder into your AI coding tool and tell it to build a scroll linked image sequence on a canvas.
+[  35.0s] So the animation plays frame by frame as you scroll.
+[  38.0s] And by the way, this is the exact trick that Apple uses for their product pages.
+[  41.5s] Comment prompt and I'll send you the full walkthrough.

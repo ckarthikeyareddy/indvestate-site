@@ -1,0 +1,9 @@
+[   0.1s] Someone just solved lead scraping for everyone. You can now scrape any platform for free.
+[   5.0s] You used to pay Apify or other third-party tools hundreds of dollars a month for exactly this.
+[   9.9s] So welcome back guys. This is day 35 of making you dangerously good at AI.
+[  14.6s] Three Italian developers dropped a tool on GitHub called ScrapeGraph AI.
+[  18.7s] It scrapes company websites, Amazon, GlassTour and basically any site you throw at it.
+[  23.2s] You describe what you want in plain English and it hands you back clean structured JSON.
+[  27.8s] It also has an MCP server so it plugs directly into your Claude workflows.
+[  32.1s] Now you can just tell Claude to scrape 500 company websites and get a clean lead list back in minutes.
+[  37.6s] So comment leads below and I'll send you the full setup guide.

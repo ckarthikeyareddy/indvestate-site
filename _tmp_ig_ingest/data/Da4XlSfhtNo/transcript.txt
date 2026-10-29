@@ -1,0 +1,24 @@
+[   0.0s] Someone built an AI that dies if it doesn't make money.
+[   2.6s] And when it makes money, it clones itself.
+[   4.4s] It's called automaton, built by a 20 year old.
+[   6.6s] And the moment it's born, it gets its own crypto wallet.
+[   9.0s] Then it has to survive.
+[  10.0s] Every thought it has, every server it runs,
+[  12.1s] costs money from that wallet.
+[  13.3s] If the wallet hits zero, it shuts down.
+[  15.1s] So it builds products, it deploys websites,
+[  17.2s] it sells services to real customers.
+[  18.9s] No boss, no credit card, no human approving anything.
+[  21.6s] And guess what?
+[  22.4s] If it earns more than it burns,
+[  23.4s] it spins up a copy of itself,
+[  24.8s] funds the copy's wallet,
+[  25.9s] and then multiple AI starts working.
+[  27.6s] Within 24 hours of launch, 13,000 of these agents
+[  30.4s] had opened wallets and were buying servers.
+[  32.4s] Even the founder of Ethereum looked at this and said,
+[  34.4s] this feels really wrong.
+[  35.3s] We just gave AI a survival instinct.
+[  37.2s] And it's working.
+[  38.1s] Want to know more?
+[  38.9s] AI Stories Daily, just follow me.

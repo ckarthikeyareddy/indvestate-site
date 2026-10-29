@@ -1,0 +1,21 @@
+[f_001] + Google Omni
+[f_002] + Google Omni Turn the car into Lamb + Agent
+[f_003] + Google Omni LN Turn the car into Lamborghini + Agent
+[f_006] * Google Omni
+[f_008] + Google Omni Change the house into GYM + Agent
+[f_011] + Google Omni on so Suit me up + Agent
+[f_012] + Google Omni Suit me up + Agent
+[f_013] Suit me up + Agent
+[f_015] Google Omni
+[f_016] + Google Omni Add a bodyguard + Agent
+[f_017] bu Google Omni Add a bodyguard + Agent
+[f_018] Add a bodyguard + Agent
+[f_020] + Google Omni se Change my | + Agent
+[f_021] Google Omni FZ
+[f_022] Change my clothes to Beach | + Agent
+[f_023] Change my clothes to Beach clothes, + Agent
+[f_024] ni Ceci + Google Om + Agent
+[f_026] Add beach) + Agent
+[f_027] a Google Omni Lite fa ew Add beach vibes + Agent
+[f_028] + Google Omni Add beach vibes + Agent
+[f_030] +> Google Omni + Agent

@@ -1,0 +1,18 @@
+[   0.0s] These insane animations are created using AI.
+[   2.5s] And here's how you can make them
+[   3.8s] without even touching any editing tool.
+[   5.6s] First, come up with an idea for your animation
+[   7.9s] and describe it to Claude
+[   9.0s] with the skill that I'll share at the end of this video.
+[  10.9s] Take the image prompt and paste it into GPT 2.0
+[  13.4s] and download the best image.
+[  14.8s] Next, upload that generated image back into GPT 2.0
+[  18.3s] with this second prompt and download the result.
+[  20.3s] Now take both images into CDance 2.0
+[  22.6s] inside any Gen AI tool.
+[  23.9s] I specifically used Insmine
+[  25.4s] because it has all the Gen AI tools in one place
+[  27.4s] with a really nice agentec mode.
+[  29.0s] Now here, just paste in the video prompt that Claude generated.
+[  32.1s] Run it and just like that your animation will be ready.
+[  34.6s] Comment guide for the full tutorial.

@@ -1,0 +1,20 @@
+[   0.0s] A Shneer Grover would be shocked because this combo just cut down the most expensive part
+[   3.8s] of starting a business.
+[   4.8s] Claude Code is a genius at logic, but it's honestly terrible at UI design.
+[   8.1s] So Google just updated Stitch to fix that problem for free.
+[  10.5s] Here is the reality, Claude is great at coding, but struggles with front-end design.
+[  14.0s] You solve this by using Google Stitch to generate high-end UI for your apps and websites
+[  18.3s] without paying a designer.
+[  19.5s] All you have to do is go to Stitch and describe your app idea in plain English.
+[  22.6s] You can even drop in reference images from Pinterest or Dribble and it'll instantly
+[  25.5s] generate a clean UI with a complete design system for you.
+[  28.3s] Once you love the look, just hit export, select mcp and copy it into your Claude Code terminal.
+[  31.8s] Now Claude has full access to your designs.
+[  33.6s] Just give it one simple prompt and it magically turns everything into production ready code
+[  36.9s] with smooth animations and connected screens.
+[  38.6s] Fully ready to launch.
+[  39.6s] You don't need to spend lakhs on front-end developers anymore.
+[  41.7s] You just need to deploy the right tools.
+[  43.2s] If you want the full guide and the exact prompts to set this up, just comment coding
+[  46.7s] and I'll send the link directly to your DM.
+[  48.5s] And follow for more.

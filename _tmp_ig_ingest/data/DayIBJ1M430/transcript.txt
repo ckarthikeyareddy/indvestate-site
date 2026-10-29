@@ -1,0 +1,12 @@
+[   0.0s] If your Claude generated websites still look average, you're missing this free workflow.
+[   3.8s] Here's how you can set it up.
+[   5.5s] Step 1, open the UI UX Pro Max GitHub repository, copy the repository URL, paste it into Claude code, and ask Claude to install the skill.
+[  15.3s] This gives Claude access to 50 plus UI styles, 97 color palettes, and dozens of premium font combinations.
+[  22.5s] Step 2, go to 21st.dev, copy the magic MCP server command and install it inside Claude code.
+[  29.5s] Step 3, now describe the website you want.
+[  32.0s] Claude combines both tools to generate a complete landing page with premium layouts, smooth animations,
+[  38.0s] gradients, and modern UI components within minutes.
+[  41.0s] The interesting part, you're not making Claude better at coding, you're giving it the design system
+[  45.0s] and components it needs to build premium websites.
+[  48.0s] Follow for more content like this, and if you want to stay ahead with AI, join our free WhatsApp community,
+[  53.5s] link in bio.
