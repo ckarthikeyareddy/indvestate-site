@@ -1,0 +1,17 @@
+[   0.0s] How is this even legal? Look at this.
+[   3.1s] This is a map that shows you what's happening all around the world.
+[   6.2s] If I click on the satellite, I get the satellite information.
+[  10.1s] Flights.
+[  11.1s] See the sort over here? This is a real-time live camera feed.
+[  14.5s] And there are too much cameras out there.
+[  16.8s] These are live natural calamity alerts.
+[  19.9s] Real-time location of ships.
+[  22.2s] And I'm just sitting here in my room watching all of this from my laptop.
+[  27.9s] And no, you don't need to be a hacker. You don't need to have some secret government access.
+[  31.9s] This, my friend, is called O-Sint. Open Source Intelligence.
+[  35.9s] Basically, we're using information that's already publicly available to figure out what's actually gonna be happening.
+[  42.0s] And bro, this is just one tool.
+[  44.0s] There are hundreds of tools like this that most people have never even heard of.
+[  48.5s] So I'm gonna start showing you all of these.
+[  51.3s] Follow me.
+[  52.3s] Because I promise you the internet is much crazier than you think.

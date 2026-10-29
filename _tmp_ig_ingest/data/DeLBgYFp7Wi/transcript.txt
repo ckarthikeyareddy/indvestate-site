@@ -1,0 +1,14 @@
+[   0.0s] Every website that Claude builds looks the same, and this skill fixes that with 3 dials.
+[   4.9s] So it's called Taste Skill, it's got over 91,000 stars on GitHub,
+[   9.1s] and right at the top of the file there are 3 numbers that go from 1 to 10.
+[  13.3s] The first one is how wild the layout is. So 1 is perfectly neat and even,
+[  18.2s] and 10 is what it actually calls arty chaos.
+[  21.2s] The second one is how much things move, from completely still,
+[  24.6s] all the way up to feeling like a movie. And the third one is how packed it is.
+[  28.7s] So 1 is like an art gallery with loads of empty space, and up at 10 is like a cockpit.
+[  34.2s] And you don't have to touch the file, you just tell Claude the numbers in your message.
+[  37.8s] And it's also got a list of bands, which is the bit that I really like.
+[  41.3s] It bands the purple glow that every AI site has, it bands pure black,
+[  45.2s] it bands the 3 boxes sitting in a row, and it removes the little scroll down arrow
+[  49.0s] that we always see. It also bands the long dash completely as well.
+[  52.3s] So comment Taste down below and I'll send you the link.

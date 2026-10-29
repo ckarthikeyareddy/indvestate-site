@@ -1,0 +1,18 @@
+[   0.0s] An Indian developer just built an open source AI model that's beating Jeff,
+[   3.6s] and it can make decisions in milliseconds.
+[   5.8s] It's called LIAR, built by Nandakishwar Mukunath, founder and CEO of Convy AI Innovations.
+[  11.2s] Unlike ChatGPT or Cloud, LIAR isn't designed to generate text.
+[  14.9s] It's a decision engine.
+[  16.3s] You give it an input and it returns a choice, score or probability instead of writing a paragraph.
+[  21.5s] For simple tasks like spam detection, content moderation or routing requests between AI models,
+[  26.6s] using a large language model for every decision can be unnecessary.
+[  30.4s] LIAR is built specifically for these kinds of tasks and its open source and self-hostability,
+[  34.6s] and it's seriously fast.
+[  35.8s] On a Tesla T4, LIAR reports 32.8 milliseconds for a single question,
+[  41.0s] compared with 236 to 276 milliseconds for JEV in its published comparison.
+[  46.1s] It also reports around 95% accuracy on AG news, compared with JEV's 91%.
+[  51.5s] But LIAR isn't meant to replace general purpose AI.
+[  54.7s] The interesting part is that you can use a small, specialized model for the simple decisions
+[  59.2s] and save larger AI models for the tasks that actually need them.
+[  62.6s] If you're building AI agents or automation tools, this is definitely worth checking out.
+[  66.7s] I've pinned the GitHub repo below if you want to check out LIAR for yourself.

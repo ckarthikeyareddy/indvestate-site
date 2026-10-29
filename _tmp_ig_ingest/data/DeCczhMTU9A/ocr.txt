@@ -1,0 +1,65 @@
+[f_002] “ ASD-STE100 +
+[f_009] a Writing © Explain it in : ASD-STE100. FIRST. WRITING.
+[f_010] Andrej Karpathy @ @karpathy We'll be spending a lot more time trying to understand the outputs of language models. A few thoughts, tips & tricks: Writing. Something I've had success with: Ask your LLM to explain something in ASD-STE100, it’s a controlled language specification originally developed for aerospace maintenance documentation. LLMs well-versed in this language and it comes with heavy constraints on clean writing style that | often find a lot more readable. Sometimes I've tried to soften it a bit gana ‘or "80% of the way to AA scree because the spec is quite stringent. But even better:
+[f_011] ti Andrej Karpathy @ @karpathy We'll be spending a lot more time trying to understand the outputs of language models. A few thoughts, tips & tricks: Writing. Something I've had success with: to ‘explain something in ASD-STE100, it’s a controlled language specification originally developed for aerospace maintenance documentation. LLMs well-versed in this language and it comes with heavy constraints on clean writing style that | often find a lot more readable. Sometimes I've tried to soften it a bit e.g. ask for "80% of the way to TE because the spec is quite stringent. But even better:
+[f_012] Andrej Karpathy @ We'll be spending a lot more time trying to understand the outputs of language models. A few thoughts, tips & tricks: Writing. Something I've had success wi in AS it's a controlled language specification originally developed for aerospace maintenance documentation, LLMs well-versed in this language and it comes with heavy constraints on clean writing style that | often find a lot more readable. Sometimes I've tried to soften it a bit e.g. ask for "80% of the way to ” because the spec | Sa But even better: TE100,
+[f_013] f Andrej Karpathy © We'll be spending a lot more time trying to understand the outputs of language models. A few thoughts, tips & tricks: Writing. Something I've had success with: 0, it's a controlled language specification originally developed for aerospace maintenance documentation. LLMs well-versed in this language and it comes with heavy constraints on clean writing style that | often find a lot more readable. Sometimes I've tried to soften It a bit e.g. ask for "80% of the way to A * because the spec is ESE But even better:
+[f_014] h Andrej Karpathy & ae Okarpathy We'll be spending a lot more time trying to understand the outputs of language models, A few thoughts, tips & tricks: Writing. Something I've had success with: it’s a controlled tanguage specification originally developed for aerospace maintenance documentation. LLMs well-versed in this language and it comes with heavy constraints on clean writing style that | often find a lot more readable, Sometimes I've tried to soften it a bit €.g. ask for "80% of the way to ser because the spec is quite stringent. But even better:
+[f_015] ASD-STE100 It'sa
+[f_016] ASD-STEIO0 SIMPLIFIED TECHNICAL ENGLISH I's a controlled language specification SPECIFICATION
+[f_017] ASD-STEIO0 SIMPLIFIED TECHNICAL ENGLISH It's a controlled originally
+[f_018] ASD-STEIO0 SIMPLIFIED TECHNICAL ENGLISH It's a controlled originally developed for
+[f_019] ASD- -STE100 SIMPLIFIED TECHNICAL ENGLISH It's a controlled originally developed for
+[f_020] Black holes are, in a certain sense, regions
+[f_021] Black holes are, in a certain sense, regions in space where the overall force of gravity is incredibly and extremely strong, so that nothing, and that includes even light, is ever able to escape.
+[f_023] Black holes are, #r-ereerteip-sense-regions in space where #he-overat-foree-oF gravity is Reredibh-enc-extremeh- strong, so that nothing, and that includes even light, is ever able to escape. CLEAN WRITING
+[f_024] A black hole is an area in space. Its gravity is very strong.
+[f_025] one idea per line A black hole is an area in space. Its gravity is very strong. Nothing can escape from it. Not even light.
+[f_026] A black hole is an area. The area is in space. The gravity is strong.
+[f_027] A black hole is an area. The area is in space. The gravity is strong. The gravity is very strong. Light cannot go out. Nothing can go out. ‘SOUND ROBOTIC,
+[f_028] A black hole is an area.
+[f_029] A black hole is an area. ASD-STE1@ TE10( about|
+[f_030] A black hole is an area. this sounds robotic how strictly to follow the rules 100%
+[f_031] A black hole is an area. The area is in space. The gravity is strong. The gravity is very strong. Light cannot go out. Nothing can go out. this sounds robotic i. how strictly to follow the rules 83% ABOUT 82% OF | 0% 50' 100%
+[f_032] A black hole is a place in space where gravity is extremely strong. Nothing can escape it, not even light. That's why it looks black. how strictly to follow the rules 100%
+[f_033] Nothing can escape it, not even light. That's why it looks black. how strictly to follow the rules 100%
+[f_034] A black hole is a place i where gravity is & Nothing can escape it, not even light. how strictly to follow the rules te} 80% 100%
+[f_037] LIVESTREAM TECH PUBLISHED TUE, MAY 19 2026-12:31 PM EDT UPDATED TUE, MAY 19 2026-12:46 PM EDT Andrej Karpathy, an artificial intelligence researcher who co-founded OpenAlI before SI Tuesday that he’s joining Anthropic. getting poached by Tesla *!, announced on “T think the next few years at the frontier of LLMs will be especially formative,” Karpathy wrote in a post on X, referring to large language models. “I am very excited to join the team here and get back to R&D.” Anthropic said Karpathy starts this week and will be building a team focused on using Claude to accelerate pretraining research, which helps the company’s models acquire their core knowledge and capabilities.
+[f_038] 01 od Writing
+[f_042] Diagrams Ask for a diagram instead of text.
+[f_045] ASK YOUR LLM Create a diagram that ex|
+[f_046] TO CREATE Create a diagram that explains how photosynthesis work
+[f_047] How photosynthesis works Create a diagram that ~ explains how BRGRESEEEEEE wor,
+[f_048] How photosynthesis works Create a diagram that es explains how © hotosyntesis work
+[f_049] How photosynthesis works Create a diagram that explains how photosynthesis works
+[f_051] JUST ASK FOR
+[f_052] Give me the output in IN HIPL.
+[f_056] Make| SIP CALCULATOR
+[f_057] Make an SIP calculator that shows SIP CALCULATOR
+[f_058] Make an SIP calculator that shows
+[f_059] ES SIP Calculator Monthly investment 2,000 Sh return (p.a.) 12% ——o Time period 5Yr Invested Est. returns Total value 21,20000 744,973 264,973 invested returns
+[f_060] SIP Calculator Monthly investment Expected return (p.2] 12% Time period 5Yr Invested Est. returns Total value %6,00,000 %2,24,864 %8,24,864 Minvested returns WORKING PAGE
+[f_061] (ee =] SIP Calculator Monthly investment %10,000 Expected return (p.a.) 12% Time period 1B Yr —— Invested Est. returns: Total value 218,00,000 + %32,45,760 %50,45,760 Winvested ™ retun
+[f_062] SIP Calculator Monthly investment %10,000 ———o Expected return (p.a.) 12% ——o Time period 15 Yr Invested Est. returns Total value 218,00,000 %32,45,760 50,45,760 Minvested ™@ retun
+[f_063] : Explainer videos © Custom videos 3 on any topic.
+[f_064] THE FORMAT HE'S text
+[f_065] text diagram webpage video
+[f_066] as Th text diagram web page video
+[f_070] TRY. "CREATE
+[f_071] Create a 3Bluel|
+[f_072] Create a SBlueIBrown ‘style video exp| VIDEO EXPLAINER
+[f_073] Create a SBlueiBrown style video explainer on X. Use my|
+[f_074] Create a 3BlueIBrown ‘style video explainer on X. Use my ElevenLabs APIKGY fo
+[f_075] Create a SBlueIBrown style video explainer on X, Use my ElevenLabs API key for audio narration. 6
+[f_076] Write the code
+[f_077] Fix the bugs L_] Run the tests Write the docs |_| Ship the update WILL DO MORE
+[f_078] Write the docs Ship the update AND MORE OF
+[f_080] nection plan(trip) { const days = |trip.days; if (days > 3) { } return route(days) ;
+[f_081] action plan(trip) { const days = trip.days; if (days > 3) { return route(days) ; ABSTRACTIONS Database
+[f_082] Y Tests passing Y Shipped on timfD Y Users happy
+[f_083] Y Tests passing Y Shipped on time UNDERSTANDING . Y Users happy
+[f_084] (1gea) think() ; learn(x); for (q of questions) answer (q) ; return mind; build(epp);
+[f_085] if (aaea think() ; learn(x); for (q of questions) answer (q); return mind; build(epp) ;
+[f_087] one weddi
+[f_090] Before 3 weeks to build = used for 1day Now MADE SENSE TO
+[f_091] Before 3 weeks to build a used for 1day Now i 3 minutes to build v used for 1day

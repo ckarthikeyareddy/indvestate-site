@@ -1,0 +1,12 @@
+[   0.0s] Everyone uploading PDFs to Claude is basically wasting their tokens and Microsoft has a free fix.
+[   5.2s] So every time you upload a PDF, Claude has to process the entire thing. The formatting,
+[   9.4s] the broken tables, the images and all the extra junk inside the file. Each PDF page can consume
+[  13.8s] between 1500 to 3000 tokens. So a 20 page document can burn through up to 70,000 tokens
+[  20.4s] in one shot. And that's before you even ask your first question. The fix is simple. It's
+[  24.3s] called Markdown, a free Microsoft tool with over 110,000 stars on GitHub. It takes almost any file,
+[  31.1s] PDFs, Word docs, Excel sheets, PowerPoints or even YouTube videos and converts them into clean
+[  36.7s] Markdown text. This can reduce your token usage by up to 70%. And Claude can give better answers
+[  42.2s] because Markdown is a format AI models understand extremely well. Plus Markdown comes with an
+[  47.4s] MCP server. That means when you connect it to Claude desktop, it can automatically convert
+[  51.9s] every file you upload into a dot MD file. So if you want the link and the full guide,
+[  56.2s] just follow me and comment X and I'll send it

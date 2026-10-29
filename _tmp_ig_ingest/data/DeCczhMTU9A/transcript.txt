@@ -1,0 +1,40 @@
+[   0.0s] There's a weird prompting trick called A-S-D-S-T-E-100
+[   3.4s] that's borrowed from aerospace manuals
+[   5.0s] and once you try it, you'll never prompt AI the same way again.
+[   8.1s] First, writing.
+[   9.0s] Basically, you ask your LLM to explain something in S-D-S-T-E-100.
+[  14.0s] It's a controlled language specification
+[  16.3s] originally developed for aerospace maintenance documentation.
+[  19.1s] LLMs are well-versed in it
+[  20.4s] and it comes with heavy constraints on clean writing style
+[  23.2s] that makes answers a lot more readable.
+[  24.9s] But following every rule can sound robotic.
+[  27.1s] So add, follow A-S-D-S-T-E-100 about 80% of the way.
+[  31.0s] You get most of the clarity without losing a natural tone.
+[  33.9s] Now, this trick is from Andhrae Karpati,
+[  35.6s] who trains Claude at Anthropic.
+[  37.4s] It's the first of four prompting tricks he shared
+[  39.5s] and here are the other three.
+[  40.6s] Second diagrams.
+[  41.7s] Even clean writing still has to be read.
+[  43.4s] So instead of writing, ask your LLM to create a diagram.
+[  46.3s] These can be a lot easier to process, pass and understand.
+[  49.0s] Third, web pages.
+[  50.1s] Just ask for the output in HTML.
+[  52.3s] Karpati says LLMs are getting really good at front-end.
+[  54.9s] Ask for an SIP calculator that shows compounding year by year
+[  58.5s] and you get a working page with sliders and animations.
+[  61.5s] Fourth, explainer videos.
+[  63.2s] The format he's most bullish on is fully custom
+[  66.0s] or bespoke explainer videos generated on any arbitrary topic.
+[  69.3s] Try create a three blue and brown style video explainer on X.
+[  72.6s] Use my 11 Labs API key for audio narration.
+[  75.2s] Now LLMs will do more and more of the legwork autonomously
+[  79.2s] and our work will rise up the abstractions
+[  81.3s] into oversight and understanding.
+[  82.8s] Intelligence and code are now abundant.
+[  84.9s] So you can ask for large, custom, discardable software artifacts
+[  88.6s] that would have never made sense to create before.
+[  90.6s] Push the boundaries here and you'll be surprised.
+[  92.9s] What's your favorite prompting trick?
+[  94.3s] Comment below.

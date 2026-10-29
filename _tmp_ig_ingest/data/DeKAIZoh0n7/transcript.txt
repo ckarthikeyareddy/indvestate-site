@@ -1,0 +1,4 @@
+[   2.7s] What the fuck? Go to cloud and click customize, click add custom connector, open this Chrome extension called ultimate web scraper,
+[  10.9s] copy this URL and paste it into cloud. With this tool cloud can now scrape any website
+[  16.7s] So you just give it a link and it will scan the entire catalog and give you all the product data
+[  22.8s] Including the images and then of course you can export it

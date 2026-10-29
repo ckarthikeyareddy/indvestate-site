@@ -1,0 +1,14 @@
+[   0.0s] Someone just launched a free dashboard similar to what governments use for surveillance.
+[   4.2s] And it's called World Monitor.
+[   6.0s] You can open it in your browser and see what's happening right now all around the globe.
+[  10.5s] And you can even filter it down to your region of interest.
+[  13.6s] Not only that but you can also toggle on multiple layers and watch military activity,
+[  18.0s] trade routes or even see natural disasters like earthquake and wildfires caught by
+[  22.2s] NASA satellites.
+[  23.2s] There's also a panel for live webcams and broadcasts where you can choose between
+[  27.4s] multiple news channels for each country like BBC, CNN, playing at the same time.
+[  32.7s] But here's the craziest part.
+[  34.3s] There are six versions right inside the dashboard like World Tech, Finance and even a happy monitor
+[  40.2s] that shows only good news around the world.
+[  42.7s] And you can even connect this monitor to your chat GPT or cloud to investigate further.
+[  47.0s] If you want a link to this website, it's pinned in the comment section.
