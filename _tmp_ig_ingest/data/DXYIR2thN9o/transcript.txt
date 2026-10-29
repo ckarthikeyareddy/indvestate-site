@@ -1,0 +1,11 @@
+[   0.0s] Google just launched JITRO, Google's next generation autonomous coding agent.
+[   3.7s] Unlike chat GPT cursor or copilot, JITRO doesn't need a prompt.
+[   7.0s] You give it a goal, it takes it from there.
+[   8.8s] All day I worked on a loop, you write a prompt, it executes, you write another.
+[  12.4s] JITRO flips that model entirely.
+[  14.0s] You define the outcome, it figures out the path, the steps and the execution itself.
+[  17.8s] JITRO can identify what needs to change inside a codebase to hit a specific target.
+[  22.4s] It runs continuously inside a dedicated workspace as a persistent collaborator.
+[  26.5s] This is the first real shift from prompt based AI.
+[  29.2s] When AI starts choosing what code should exist, oversight matters more than ever.
+[  32.7s] That's why Google is building JITRO with approval checkpoints.

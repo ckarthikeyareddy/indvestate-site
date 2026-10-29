@@ -1,0 +1,10 @@
+[   0.0s] The clot finally launched clot design and it crashed Figma stock.
+[   3.7s] If we now go to clot.ai slash design, it's a brand new platform which you can use to
+[   7.8s] design anything, presentations, apps, websites, that will be on your brand.
+[  12.0s] You just pick what you want to design, a prototype or a slide deck and then you just prompt
+[  15.6s] what you want to design and clot will use opus 4.7 to do the rest.
+[  19.2s] This is the slide deck I was able to generate that is on my brand and there are edit
+[  22.4s] controls right inside the platform if we want to make any changes and I can export
+[  25.8s] this to PowerPoint, Canva or even clot code.
+[  28.4s] HonorScape impressed because it reduces the friction to build skills to generate on brand designs.
+[  32.5s] But the real question is how many tokens will this burn?

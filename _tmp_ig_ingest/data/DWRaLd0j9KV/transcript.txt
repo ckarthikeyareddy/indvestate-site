@@ -1,0 +1,14 @@
+[   0.0s] Anthropic just dropped free AI courses and not enough people know about it.
+[   4.2s] Let me show you.
+[   5.0s] They launched something called Anthropic Academy that's free classes teaching you how to actually use AI properly.
+[  10.0s] We're talking Claude 101, AI fluency for students, how to use Claude code.
+[  14.2s] Even a module on building AI agents, but honestly everyone should be learning right now.
+[  18.6s] But that is not all.
+[  19.8s] I kept digging and found more free stuff for you guys.
+[  22.4s] So what I'm put out of free prompt library, readymade prompts for learning, brainstorming,
+[  27.0s] negotiating, generating ideas which you can copy paste and use right away.
+[  30.3s] And then there's also a free guide on building custom sub agents in Claude code.
+[  34.6s] Basically you create AI assistants that each do one specific thing for you.
+[  38.2s] And building your own team of AI interns of sorts.
+[  40.3s] All of this is free right now.
+[  42.6s] So follow me, comment courses and I will send you every link.

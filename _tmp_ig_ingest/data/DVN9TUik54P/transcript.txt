@@ -1,0 +1,16 @@
+[   0.0s] India quietly did something no one expected and it's a gold mine for developers.
+[   4.3s] This is not another chat GPT competitor. India built something different.
+[   8.2s] A public AI infrastructure that anyone can use.
+[  11.2s] They put 38,000 NVIDIA H100 GPUs online for everyone.
+[  15.8s] The same chips Google and Microsoft use.
+[  18.2s] They charge only 65 rupees per GPUR.
+[  21.1s] Yes, Google charges thousands for the exact same hardware.
+[  24.4s] Startups get 40% extra discount.
+[  26.8s] Students get free credits.
+[  28.3s] Teams building Indian AI models get it completely free.
+[  31.3s] But here's what changes everything.
+[  32.9s] They launched AI KOSHA.
+[  34.5s] 300 plus ready-made datasets.
+[  36.7s] Healthcare, farming, logistics, all organized.
+[  39.8s] Share this with someone building an AI.
+[  41.6s] Follow for breakdowns like this before they go mainstream.

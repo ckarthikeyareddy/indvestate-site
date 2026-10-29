@@ -1,0 +1,30 @@
+[   0.0s] Introducing Gemini Spark
+[   2.8s] Sundar Pichai just built the most indestructible ecosystem in tech
+[   9.0s] Welcome to day 36 of AI update of the day
+[  12.1s] Google just announced something at IO 2026 that works differently from every AI you have ever used
+[  18.3s] It is called Gemini Spark and here is the one thing you need to understand about it
+[  22.7s] Every AI you use today runs on your device
+[  25.2s] You close the laptop, it stops
+[  26.7s] You shut the phone, it is gone
+[  28.3s] Gemini Spark does not run on your device, it runs on Google servers
+[  31.7s] On a dedicated machine assigned to you, you give it a task
+[  34.9s] Close everything, go to sleep
+[  36.8s] Spark keeps working, your phone is dead, your laptop is shut, Spark is still running
+[  41.4s] Now let me make this real
+[  42.7s] You teach Spark how you write emails
+[  44.8s] It reads your last 50 messages, learns your tone, your style
+[  48.5s] You teach it once, it remembers forever
+[  50.8s] Every morning before you wake up, Spark has gone through your inbox
+[  54.2s] Drafted replies that sound like you flagged what is urgent
+[  57.4s] You open your phone and tap approve
+[  59.2s] You give it a research task at night
+[  60.8s] By morning there is a full summary in your docs
+[  63.7s] You are asleep, it is not
+[  65.3s] Google did not build a better chatbot
+[  67.2s] They built a personal AI employee that works while every device you own is off
+[  71.5s] And learns your habits over time
+[  73.2s] That is the game now
+[  74.2s] Not who has the smartest AI
+[  75.8s] Who has the AI that never stopped working
+[  77.9s] I will share a guide about everything it does inside my WhatsApp community
+[  81.3s] Link in bio

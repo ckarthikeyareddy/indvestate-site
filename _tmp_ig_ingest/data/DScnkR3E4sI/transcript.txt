@@ -1,0 +1,15 @@
+[   0.0s] What sort of tools will you recommend for people who are into content creation and they want their content to go viral?
+[   7.1s] So there's no easy way to get billions of views.
+[   9.8s] Now what I do personally, past 10 years on my script, I uploaded it into Cloud AI.
+[  16.0s] And it learned how I talks and creates exact scripts just like I do.
+[  20.8s] Now to do video editing, there is this tool, Submagic.
+[  25.7s] It takes the best part out of YouTube, creates short parts.
+[  30.2s] It adds AI captions. It adds B-rolls.
+[  33.7s] There's a tool like Weiscut.
+[  35.4s] Weiscut is more towards businesses.
+[  37.9s] Against storyboard videos. It automatically adds background music.
+[  41.8s] A lot of stuff.
+[  43.2s] Now for content creators, the main AI tool I would suggest is WIDIQ.
+[  49.4s] They recently added a lot of AI features, which is crazy.
+[  54.1s] This is a thumbnail I made by uploading a picture of me with the help of AI.
+[  58.9s] And you can just upload your video, reference on how you want it to look like.

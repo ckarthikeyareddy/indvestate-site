@@ -1,0 +1,24 @@
+[   0.0s] Writing emails,
+[   0.9s] Quad
+[   1.4s] Brainstorming ideas,
+[   2.1s] ChatGBT
+[   2.6s] Deep research,
+[   3.3s] Proplexity computer,
+[   4.1s] Real-time trends,
+[   5.0s] GROC
+[   5.5s] Image generation,
+[   6.3s] Higgs Field
+[   6.8s] Creating videos,
+[   7.6s] Higgs Field
+[   8.1s] Understanding a podcast,
+[   9.2s] NoPok LM
+[   9.9s] Planning your day,
+[  10.6s] ChatGBT
+[  11.1s] Creating cinematic content,
+[  12.3s] Higgs Field
+[  12.8s] Writing a sales page,
+[  13.7s] Quad
+[  14.2s] Creating product photos,
+[  15.2s] Higgs Field
+[  15.7s] Learning AI faster,
+[  16.8s] Follow MavGBT for daily AI tips.
