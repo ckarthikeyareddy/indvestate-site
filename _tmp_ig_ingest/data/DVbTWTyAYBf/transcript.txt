@@ -1,0 +1,16 @@
+[   0.0s] You can now move your entire AI memory to Claude within seconds.
+[   3.3s] And the best part? You don't even need a paid plan anymore since Claude's memory is now free for everyone.
+[   7.2s] You simply go to claude.com slash import memory, copy this prompt, paste it into your current AI app,
+[  12.1s] Gemini, ChatGPT or whatever you've been using and then paste that output into Claude's memory.
+[  15.9s] That's it. Everything from your name, background, preferences, writing style and recurring projects
+[  20.0s] just gets imported to Claude instantly.
+[  21.7s] But why now? Well, the timing is what makes it so significant because after a very public fight
+[  25.6s] with the US government last week, millions of users switched to Claude.
+[  28.5s] It even shot to number one on the App Store.
+[  30.0s] And it makes sense too. Claude is genuinely one of the best models out there right now.
+[  34.0s] And if there's one thing that can make new users stay, it's to ensure Claude already knows them.
+[  37.7s] Having said that, it wasn't impossible before.
+[  39.5s] But you had to manually ask other apps to give you your memory and then copy-paste it into Claude.
+[  43.7s] Plus, you didn't even know the right prompts and had to figure it out on your own.
+[  46.6s] It was a mess.
+[  47.5s] But with this update, that headache is simply gone.

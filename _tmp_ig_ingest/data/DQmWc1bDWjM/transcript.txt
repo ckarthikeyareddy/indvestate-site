@@ -1,0 +1,11 @@
+[   0.0s] I just found an AI tool that turns simple screenshots into fully animated videos in minutes.
+[   4.7s] It's called Bazaar, and it lets you create proto-demos, tutorials, and more.
+[   9.0s] I tested it by uploading a screenshot from an app interface, and it instantly turned it
+[  13.4s] into a polished demo video that looked professionally made.
+[  16.6s] The best part?
+[  17.6s] You can even edit everything just by describing the change, and it will rebuild the video
+[  21.6s] instantly.
+[  22.6s] Each prompt adds about a 6 second scene so you can chain animations to beautiful
+[  26.0s] walkthroughs, plus you can try free.
+[  28.2s] Wanna check it out?
+[  29.2s] Comment, animate, and I'll send you the link.

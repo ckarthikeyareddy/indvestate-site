@@ -1,0 +1,12 @@
+[   5.7s] Put your phone on a tripod and film yourself in front of an empty wall.
+[   9.7s] In your browser go to Hicksfield.ai website.
+[  12.7s] Select image and new nano banana 2 model.
+[  15.7s] Upload a screenshot from your video and type exactly this prompt.
+[  18.7s] I'll leave it in captions.
+[  19.7s] Select 4k quality and hit generate.
+[  22.7s] You should get something like this.
+[  23.7s] Then go to video and click motion control.
+[  26.7s] Upload your video on the left side and a generated photo here on the right.
+[  31.7s] No prompt is needed.
+[  32.7s] Just make sure to select 180p quality.
+[  34.7s] And hit generate and that's it.

@@ -1,0 +1,14 @@
+[   0.0s] Visit Claude, click on this plus icon, go to connectors and enable a apify.
+[   4.9s] And I will write, scrape the Instagram account of my Nica and give me a detailed analysis
+[   9.0s] on the same and I will click on yes.
+[  10.8s] If you see it will give me a detailed analysis on Nica's Instagram account.
+[  15.5s] So how many followers do they have, what are the followings, how many reels they
+[  19.1s] are posting, what is the average likes, comments and the total engagement that they
+[  22.6s] are getting, what is the content strategy that they are using and let's say if
+[  27.4s] they have recommendation, it will automatically suggest your recommendation also.
+[  31.4s] Find 10 doctors from Mumbai with their contact number to whom I can pitch my
+[  35.6s] automation services to. Now it went to Google Maps and it automatically scraped
+[  40.7s] the name, specialty, phone number and their reviews also.
+[  45.2s] And also I can know from which location they are from.
+[  48.4s] If you want to understand how I did this, then you can comment the word
+[  52.4s] apify and I will share the detailed guide to you in your inbox.

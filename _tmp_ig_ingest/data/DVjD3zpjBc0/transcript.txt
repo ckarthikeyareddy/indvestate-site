@@ -1,0 +1,12 @@
+[   0.0s] This AI tool replaces the lighting and the background in any video, but it gets even cooler
+[   6.2s] because it adds in the VFX passes onto the footage and it even allows you to rotoscope
+[  11.9s] out specific parts about the video that you want to relight.
+[  16.3s] So you can now change your clothing, you can change the background and you can do
+[  20.8s] all of this seamlessly.
+[  23.2s] First step, go to Bevel and go to SwitchX where you can upload the driving input
+[  26.6s] video. Using Smart Select you can select specific parts about the video that you
+[  30.5s] want to keep. Once you've done that you can download the first frame and use
+[  33.7s] Google Nano Banana Pro to adjust the lighting. Upload that back in here and
+[  37.6s] hit Generate and it will then adjust the lighting and keep all of those
+[  40.7s] specific points the same in your video. Now if you want to try it out
+[  44.7s] for yourself type AI in the comments and I'll send you a link.

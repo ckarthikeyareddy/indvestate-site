@@ -1,0 +1,16 @@
+[   0.0s] Oh my God! Bro, this is so cool. I'm almost getting a weird feeling in my chest.
+[   4.6s] So now you can create animations where you control precise movements all in minutes thanks to air.
+[  10.1s] So here we generated an image of a gummy bear.
+[  12.4s] Now to animate this gummy bear and maintain the texture and lighting would be super hard
+[  16.5s] because we would be using 3D workflows.
+[  18.6s] But we traced individual parts of the bear in Illustrator, then animated in After Effects
+[  23.4s] and then used clean motion control to give it this animation.
+[  26.8s] And then just look at the lighting, the reflections. Everything is so precisely controlled.
+[  32.0s] We even made this key animation which is amazing.
+[  34.2s] You can even try it with an original character. This is what we did.
+[  37.0s] You know ever since Generative AI and Diffusion as a technology first came out
+[  40.2s] we've been experimenting with it to see if we can finally reach this stage
+[  44.2s] where I can control precise animations and AI can help me with texturing, lighting
+[  49.0s] and making stuff look really sexy.
+[  50.6s] Well, we are finally here and if you want to learn how you can do this
+[  53.4s] you can join a free masterclass, comment, animation and we will send you the link.
