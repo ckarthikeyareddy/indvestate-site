@@ -1,8 +1,0 @@
-[   0.0s] Dolly Zoom effect.
-[   2.8s] Whoa!
-[   4.3s] Alright, let's do this.
-[   5.9s] Lens flare through the window.
-[   9.8s] Damn, that is good.
-[  11.8s] That's good.
-[  12.6s] Light cascades across the floor.
-[  20.1s] Comment prompts and I'll send you this tool and the exact prompts I use to make these.

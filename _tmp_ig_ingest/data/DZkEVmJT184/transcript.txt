@@ -1,9 +1,0 @@
-[   0.0s] Turn the car into Lamborghini.
-[   2.4s] Woooo!
-[   3.9s] Change the house into gym.
-[   6.6s] Suit me up.
-[  11.6s] Damn!
-[  12.7s] Add a bodyguard.
-[  15.3s] Follow me.
-[  16.9s] Now, change my clothes to beach clothes.
-[  23.6s] Add beach wipes.

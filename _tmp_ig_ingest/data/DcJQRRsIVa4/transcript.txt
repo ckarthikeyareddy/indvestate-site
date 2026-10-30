@@ -1,8 +1,0 @@
-[   0.0s] Anthropic just revealed how their own marketing team uses Claude and every business should
-[   4.6s] copy these workflows. First, they connect Claude to Google Ads. It reviews thousands of search
-[   9.4s] terms, finds irrelevant keywords, suggests negative keywords and recommends optimizations.
-[  14.2s] Second, they connected Claude to Gmail. Every morning, it summarizes important emails and
-[  18.5s] creates a clear priority list. And third, they connected Claude to their marketing dashboards.
-[  22.5s] Claude keeps reports updated automatically so the team can focus on decisions. This is what
-[  26.8s] AI at work should look like. It's not replacing people, it's replacing repetitive work.
-[  30.7s] Comment Claude and I'll send you the full workflow breakdown.

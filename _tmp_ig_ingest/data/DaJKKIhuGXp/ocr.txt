@@ -1,4 +1,0 @@
-[f_002] Client: | need a simple website, don’t overdo me with Claude
-[f_003] client: | need a simple website, don’t overdo me with Claude
-[f_004] client: | need a simple website, don’t overdo me with Claude that sells @
-[f_005] all limits a= 4m

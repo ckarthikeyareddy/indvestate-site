@@ -1,9 +1,0 @@
-[   0.0s] If Claude keeps giving you bad answers, you need to make 100 versions of Claude fight to the death.
-[   4.2s] It's called the Arena Skill, and it's completely free, and you just use it whenever you're not satisfied with the output Claude's giving you.
-[   9.5s] So instead of asking Claude again and again, the Arena Skill spins up 100 sub-agents and gives every one of them the exact same task.
-[  15.6s] But each one attacks it differently, with different reasoning, different workflows, and different strategies.
-[  19.8s] Then they compete, critique, and attack each other until only the strongest solution survives.
-[  24.2s] So instead of wasting time reprompting Claude, you get the best answer every time.
-[  28.1s] And to set it up, just go to Claude and paste in this link.
-[  30.5s] Then say install the skill.
-[  31.8s] If you want the full setup, just come in Arena and I'll shoot it over.
